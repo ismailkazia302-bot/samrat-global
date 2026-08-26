@@ -3,28 +3,547 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAMRAT | Imperial Events (Bangalore & Pan-India) & Global Growth</title>
-  <meta name="description" content="Founded by Ismail Kazia. Premier Event Management across Bangalore & Pan-India, and High-Growth Digital Marketing & Creative Production Worldwide.">
+  <title>SAMRAT WORLDWIDE</title>
+  <meta name="description" content="Guiding You Through Events, Digital Growth & Creative Execution Worldwide.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Rubik:wght@400;500;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
   
-  <!-- Bootstrap 5 & Lucide Icons -->
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ========================================================
+       ALSAYEGH EXACT CLONE STYLES FOR SAMRAT WORLDWIDE
+       ======================================================== */
+    :root {
+      --bg-black: #000000;
+      --yellow-highlight: #FFF200;
+      --text-white: #FFFFFF;
+      --text-gray: #888888;
+      --border-gray: rgba(255, 255, 255, 0.15);
+      --font-main: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP NAVBAR (Exact Alsayegh Header) */
+    .nav-alsayegh {
+      background-color: #000000;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand-logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 1.45rem;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+      text-decoration: none;
+      line-height: 1.1;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .brand-logo-text span {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+      font-weight: 800;
+    }
+
+    .navbar-nav .nav-link {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 18px !important;
+      transition: color 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active-link {
+      color: var(--yellow-highlight) !important;
+    }
+
+    /* HERO SECTION (Exact Fullscreen Video) */
+    .hero-container {
+      position: relative;
+      height: calc(100vh - 85px);
+      min-height: 600px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 40px;
+    }
+
+    .hero-bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero-overlay-dark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.25);
+      z-index: 2;
+    }
+
+    .mute-btn {
+      position: absolute;
+      left: 30px;
+      bottom: 35px;
+      z-index: 10;
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mute-btn i {
+      width: 24px;
+      height: 24px;
+    }
+
+    .explore-services-btn {
+      position: relative;
+      z-index: 10;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      text-transform: lowercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .explore-services-btn:hover {
+      color: var(--yellow-highlight);
+      transform: translateY(-4px);
+    }
+
+    .explore-services-btn i {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* SERVICES SECTION (Exact 8 Full-Width Colored Image Boxes) */
+    .services-wrapper {
+      padding: 0;
+      background: #000000;
+    }
+
+    .service-col {
+      padding: 0;
+    }
+
+    .service-box-item {
+      height: 340px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      padding: 24px;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    .service-box-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      transition: background 0.3s ease;
+      z-index: 1;
+    }
+
+    .service-box-item:hover::before {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .service-title-text {
+      position: relative;
+      z-index: 2;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      text-transform: lowercase;
+      color: #FFFFFF;
+      line-height: 1.2;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .service-box-item:hover .service-title-text {
+      transform: scale(1.06);
+      color: var(--yellow-highlight);
+    }
+
+    .service-sub-tag {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      opacity: 0.8;
+    }
+
+    /* MARQUEE CLIENTS SECTION */
+    .clients-section {
+      padding: 60px 0;
+      background: #000000;
+      text-align: center;
+      border-top: 1px solid var(--border-gray);
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .section-headline {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      color: #FFFFFF;
+      margin-bottom: 30px;
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 50px;
+      animation: marqueeRun 25s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes marqueeRun {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .client-logo-item {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #666666;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .client-logo-item:hover {
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* WORK / PROJECTS SECTION */
+    .projects-section {
+      padding: 80px 0;
+      background: #000000;
+    }
+
+    .project-grid-card {
+      height: 380px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-radius: 0;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-decoration: none;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .project-grid-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 90%);
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
+
+    .project-grid-card:hover::before {
+      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.95) 90%);
+    }
+
+    .project-content-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-header-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .project-sub-place {
+      font-size: 0.9rem;
+      color: #AAAAAA;
+      margin: 0;
+    }
+
+    /* CALCULATOR SECTION */
+    .calc-section {
+      padding: 80px 0;
+      background: #0A0A0A;
+      border-top: 1px solid var(--border-gray);
+    }
+
+    .calc-box-card {
+      background: #111111;
+      border: 1px solid var(--border-gray);
+      padding: 40px;
+    }
+
+    .calc-pill-btn {
+      background: transparent;
+      border: 1px solid var(--border-gray);
+      color: #FFFFFF;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .calc-pill-btn.active {
+      background: #FFFFFF;
+      color: #000000;
+      border-color: #FFFFFF;
+    }
+
+    .calc-slider-input {
+      width: 100%;
+      accent-color: #FFFFFF;
+      margin: 15px 0;
+    }
+
+    .result-display-panel {
+      background: #000000;
+      border: 1px solid var(--border-gray);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .result-price-val {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #FFFFFF;
+    }
+
+    .btn-lock-quote {
+      width: 100%;
+      background: #25D366;
+      color: #000000;
+      font-weight: 800;
+      padding: 14px;
+      border: none;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-lock-quote:hover {
+      background: #20BA5A;
+    }
+
+    /* "let’s talk." CONTACT SECTION (Exact Alsayegh Layout) */
+    .contact-section-alsayegh {
+      padding: 90px 0 60px;
+      background: #000000;
+      border-top: 1px solid var(--border-gray);
+    }
+
+    .letstalk-title {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-transform: lowercase;
+      letter-spacing: -1px;
+    }
+
+    .contact-block-info h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: #FFFFFF;
+    }
+
+    .contact-block-info p,
+    .contact-block-info a {
+      color: #AAAAAA;
+      text-decoration: none;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      transition: color 0.2s ease;
+    }
+
+    .contact-block-info a:hover {
+      color: #FFFFFF;
+    }
+
+    .alsayegh-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      padding: 14px 0;
+      font-size: 0.95rem;
+      font-family: inherit;
+      margin-bottom: 24px;
+      transition: border-color 0.3s ease;
+    }
+
+    .alsayegh-input:focus {
+      outline: none;
+      border-bottom-color: #FFFFFF;
+    }
+
+    .alsayegh-select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      padding: 14px 0;
+      font-size: 0.95rem;
+      font-family: inherit;
+      margin-bottom: 24px;
+    }
+
+    .alsayegh-select option {
+      background: #111111;
+      color: #FFFFFF;
+    }
+
+    .btn-submit-talk {
+      background: #FFFFFF;
+      color: #000000;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-submit-talk:hover {
+      background: var(--yellow-highlight);
+    }
+
+    /* FOOTER */
+    .footer-bar {
+      padding: 30px 0;
+      background: #000000;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      color: #666666;
+    }
+
+    @media (max-width: 768px) {
+      .letstalk-title {
+        font-size: 2.8rem;
+        margin-top: 20px;
+      }
+      .service-box-item {
+        height: 240px;
+      }
+      .service-title-text {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Navigation (Alsayegh Inspired) -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-nav">
+  <!-- Top Navbar (Exact Alsayegh Format) -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-alsayegh">
     <div class="container-fluid px-lg-5">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <span class="brand-crown">👑</span>
-        <span class="brand-title">SAMRAT</span>
-        <span class="brand-badge">GLOBAL</span>
+      <a class="brand-logo-text" href="#">
+        SAMRAT
+        <span>WORLDWIDE</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -32,23 +551,15 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center gap-lg-4">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Work & Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#estimator">Quote Calculator</a></li>
-          <li class="nav-item"><a class="nav-link nav-highlight" href="#bangalore-focus">Bangalore 🇮🇳 ➔ Pan-India</a></li>
-          <li class="nav-item">
-            <!-- Currency Switcher -->
-            <div class="currency-toggle">
-              <button id="curr-inr" class="curr-btn active" onclick="setCurrency('INR')">₹ INR</button>
-              <button id="curr-usd" class="curr-btn" onclick="setCurrency('USD')">$ USD</button>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="https://wa.me/916363962640?text=Hello%20Ismail%20Kazia%20%7C%20SAMRAT!%20I%20would%20like%20to%20discuss%20a%20priority%20project." target="_blank" class="btn btn-talk">
-              <span>let’s talk.</span>
-              <i data-lucide="message-circle" style="width:16px;height:16px;"></i>
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active-link" href="#home">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">WORK</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estimator">CALCULATOR</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+          <li class="nav-item ms-lg-3">
+            <a href="https://wa.me/916363962640?text=Hello%20Ismail%20Kazia%20%7C%20SAMRAT!%20I%20would%20like%20to%20discuss%20a%20priority%20project." target="_blank" style="background:#25D366; color:#000; font-weight:800; font-size:0.8rem; padding:8px 16px; border-radius:4px; text-decoration:none; text-transform:uppercase;">
+              WhatsApp Chat
             </a>
           </li>
         </ul>
@@ -56,169 +567,106 @@
     </div>
   </nav>
 
-  <!-- Cinematic Hero Section -->
-  <header id="home" class="hero-header">
-    <div class="video-overlay"></div>
-    <video autoplay muted loop playsinline id="heroVideo" class="hero-video" poster="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-crowd-at-a-music-and-lights-festival-42589-large.mp4" type="video/mp4">
+  <!-- Fullscreen Cinematic Video Header (Exact Alsayegh Format) -->
+  <header id="home" class="hero-container">
+    <video autoplay muted loop playsinline id="heroVideo" class="hero-bg-video">
       <source src="https://alsayegh.com/assets/img/uae.mp4" type="video/mp4">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-crowd-at-a-music-and-lights-festival-42589-large.mp4" type="video/mp4">
     </video>
+    <div class="hero-overlay-dark"></div>
 
-    <div class="hero-content">
-      <div class="hero-tag">
-        <span class="dot-pulse"></span>
-        <span>FOUNDED BY ISMAIL KAZIA • BANGALORE & WORLDWIDE</span>
-      </div>
-      <h1 class="hero-main-title">
-        The Imperial Standard of <br><span class="text-gold">Events & Global Scale</span>
-      </h1>
-      <p class="hero-subtext">
-        Delivering excellence in high-impact corporate conferences, tech summits & luxury event production across Bangalore (expanding Pan-India) — backed by performance marketing across USA, UK, UAE & Saudi Arabia.
-      </p>
+    <!-- Mute/Unmute Icon -->
+    <button id="muteToggleBtn" class="mute-btn" onclick="toggleMute()">
+      <i data-lucide="volume-x" id="muteIcon"></i>
+    </button>
 
-      <div class="hero-buttons">
-        <a href="#services" class="btn btn-gold">
-          <span>explore services</span>
-          <i data-lucide="arrow-down-right"></i>
-        </a>
-        <a href="#contact" class="btn btn-outline-light">
-          <span>connect with founder</span>
-          <i data-lucide="phone"></i>
-        </a>
-      </div>
-    </div>
-
-    <a href="#services" class="scroll-down-arrow">
+    <!-- Scroll Down Link -->
+    <a href="#services" class="explore-services-btn">
       <span>explore services</span>
       <i data-lucide="chevron-down"></i>
     </a>
   </header>
 
-  <!-- 8 Visual Services Grid (Alsayegh Box Grid Style) -->
-  <section id="services" class="services-section">
-    <div class="section-title-wrapper">
-      <span class="sub-label">OUR EXPERTISE</span>
-      <h2 class="main-heading">services & activations</h2>
-    </div>
-
-    <div class="container-fluid px-lg-4">
-      <div class="row g-3">
-        <!-- Service 1: Events & Activations -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('events')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">Bangalore 🇮🇳 ➔ India</span>
-                <h3 class="service-box-title">events<br>& activations</h3>
-                <p class="service-box-desc">Tech summits, product launches & VIP galas.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+  <!-- 8 Full-Width Visual Services Grid (Exact Alsayegh Layout) -->
+  <section id="services" class="services-wrapper">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <!-- Box 1: Events & Activations -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('events')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">Bangalore & India</span>
+              events<br>& activations
             </div>
           </a>
         </div>
 
-        <!-- Service 2: Conferences & Exhibitions -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('events')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">Corporate & MICE</span>
-                <h3 class="service-box-title">conferences<br>& exhibitions</h3>
-                <p class="service-box-desc">Stage engineering, 3D LED walls & AV.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 2: Conferences & Exhibitions -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('events')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">Corporate & Tech</span>
+              conferences<br>& exhibitions
             </div>
           </a>
         </div>
 
-        <!-- Service 3: Branding & Creative Design -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('business')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">Worldwide 🌍</span>
-                <h3 class="service-box-title">branding,<br>creative & design</h3>
-                <p class="service-box-desc">Identity, positioning & executive decks.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 3: Branding, Creative & Design -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('business')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">Global</span>
+              branding,<br>creative & design
             </div>
           </a>
         </div>
 
-        <!-- Service 4: Video, 3D & 4K Production -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('events')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">Media Studio</span>
-                <h3 class="service-box-title">video, animation<br>& 4k broadcast</h3>
-                <p class="service-box-desc">Multi-cam coverage, commercials & recap films.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 4: Video, Animation & Audio -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('events')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">4K Broadcast</span>
+              video, animation<br>& audio
             </div>
           </a>
         </div>
 
-        <!-- Service 5: Social Media & Performance Marketing -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('marketing')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">High ROI Ads</span>
-                <h3 class="service-box-title">social media<br>& performance</h3>
-                <p class="service-box-desc">Meta & Google funnels scaling client revenue.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 5: Social Media Marketing -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('marketing')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">Performance</span>
+              social media<br>marketing
             </div>
           </a>
         </div>
 
-        <!-- Service 6: Influencer & Celebrity Management -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('marketing')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">VIP Talent</span>
-                <h3 class="service-box-title">influencer<br>& celebrity talent</h3>
-                <p class="service-box-desc">Keynote speakers, VIP hosts & ambassadors.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 6: Influencer Marketing -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('marketing')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">VIP Talent</span>
+              influencer<br>marketing
             </div>
           </a>
         </div>
 
-        <!-- Service 7: Media Planning & Global Buying -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('marketing')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">Global Scale</span>
-                <h3 class="service-box-title">media planning<br>& acquisition</h3>
-                <p class="service-box-desc">Strategic omni-channel buyer funnels.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 7: Media Planning & Buying -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('marketing')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">Ad Funnels</span>
+              media planning<br>& buying
             </div>
           </a>
         </div>
 
-        <!-- Service 8: AI & Digital Automation Systems -->
-        <div class="col-6 col-md-3">
-          <a href="#estimator" onclick="selectEstimatorService('business')" class="service-box-link">
-            <div class="service-card-box" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');">
-              <div class="service-box-overlay"></div>
-              <div class="service-box-content">
-                <span class="service-badge-pill">AI Automation</span>
-                <h3 class="service-box-title">digital<br>& ai systems</h3>
-                <p class="service-box-desc">CRM automation, WhatsApp bots & pipelines.</p>
-                <div class="service-box-arrow"><i data-lucide="arrow-up-right"></i></div>
-              </div>
+        <!-- Box 8: Digital & AI Development -->
+        <div class="col-6 col-md-3 service-col">
+          <a href="#estimator" onclick="selectEstimatorService('business')" class="service-box-item" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');">
+            <div class="service-title-text">
+              <span class="service-sub-tag">Tech & Systems</span>
+              digital<br>development
             </div>
           </a>
         </div>
@@ -226,87 +674,76 @@
     </div>
   </section>
 
-  <!-- Marquee Client & Target Showcase -->
-  <section class="marquee-section">
-    <div class="container-fluid text-center mb-4">
-      <span class="sub-label">TRUSTED CLIENTS & REGIONAL PARTNERS</span>
-    </div>
-    <div class="marquee-wrapper">
-      <div class="marquee-track">
-        <div class="marquee-logo">INFOSYS BANGALORE</div>
-        <div class="marquee-logo">WIPRO TECHNOLOGIES</div>
-        <div class="marquee-logo">RAZORPAY UNICORN</div>
-        <div class="marquee-logo">SWIGGY HQ</div>
-        <div class="marquee-logo">THE LEELA PALACE</div>
-        <div class="marquee-logo">ITC GARDENIA</div>
-        <div class="marquee-logo">EMAAR DUBAI</div>
-        <div class="marquee-logo">DAMAC PROPERTIES</div>
-        <div class="marquee-logo">WEWORK GALAXY</div>
-        <div class="marquee-logo">HARLEY STREET LONDON</div>
-        <!-- Duplicate for infinite loop -->
-        <div class="marquee-logo">INFOSYS BANGALORE</div>
-        <div class="marquee-logo">WIPRO TECHNOLOGIES</div>
-        <div class="marquee-logo">RAZORPAY UNICORN</div>
-        <div class="marquee-logo">SWIGGY HQ</div>
-        <div class="marquee-logo">THE LEELA PALACE</div>
-        <div class="marquee-logo">ITC GARDENIA</div>
+  <!-- Clients Marquee -->
+  <section class="clients-section">
+    <div class="container-fluid">
+      <div class="section-headline">clients & regional partners</div>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <div class="client-logo-item">INFOSYS</div>
+          <div class="client-logo-item">WIPRO</div>
+          <div class="client-logo-item">RAZORPAY</div>
+          <div class="client-logo-item">SWIGGY</div>
+          <div class="client-logo-item">THE LEELA PALACE</div>
+          <div class="client-logo-item">ITC GARDENIA</div>
+          <div class="client-logo-item">EMAAR DUBAI</div>
+          <div class="client-logo-item">DAMAC</div>
+          <div class="client-logo-item">WEWORK</div>
+          <!-- Duplicate for infinite scroll -->
+          <div class="client-logo-item">INFOSYS</div>
+          <div class="client-logo-item">WIPRO</div>
+          <div class="client-logo-item">RAZORPAY</div>
+          <div class="client-logo-item">SWIGGY</div>
+          <div class="client-logo-item">THE LEELA PALACE</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Work & Projects Section (Alsayegh Grid Showcase) -->
+  <!-- Projects / Work Section -->
   <section id="projects" class="projects-section">
-    <div class="section-title-wrapper">
-      <span class="sub-label">FEATURED WORK</span>
-      <h2 class="main-heading">signature projects</h2>
-    </div>
-
     <div class="container-fluid px-lg-5">
-      <div class="row g-4">
+      <div class="text-center mb-5">
+        <div class="section-headline">featured work</div>
+      </div>
+
+      <div class="row">
         <!-- Project 1 -->
         <div class="col-12 col-md-6">
-          <div class="project-box-large" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80');">
-            <div class="project-overlay"></div>
-            <div class="project-info">
-              <span class="project-tag">BANGALORE TECH SUMMIT</span>
-              <h3 class="project-title">500+ FOUNDER AI SUMMIT & HACKATHON</h3>
-              <p class="project-place">Whitefield Tech Corridor • 3D Stage & 4K Multi-Cam Broadcast</p>
+          <div class="project-grid-card" style="background-image:url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80');">
+            <div class="project-content-text">
+              <h3 class="project-header-title">BANGALORE TECH SUMMIT</h3>
+              <p class="project-sub-place">500+ Attendees • 3D Stage & 4K Live Broadcast</p>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
         <div class="col-12 col-md-6">
-          <div class="project-box-large" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80');">
-            <div class="project-overlay"></div>
-            <div class="project-info">
-              <span class="project-tag">LUXURY 5-STAR EVENT</span>
-              <h3 class="project-title">CORPORATE VIP GALA & BANQUET</h3>
-              <p class="project-place">The Leela Palace Bengaluru • Executive Hospitality & Protocol</p>
+          <div class="project-grid-card" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80');">
+            <div class="project-content-text">
+              <h3 class="project-header-title">LUXURY 5-STAR GALA</h3>
+              <p class="project-sub-place">The Leela Palace Bengaluru • VIP Hospitality</p>
             </div>
           </div>
         </div>
 
         <!-- Project 3 -->
         <div class="col-12 col-md-6">
-          <div class="project-box-large" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80');">
-            <div class="project-overlay"></div>
-            <div class="project-info">
-              <span class="project-tag">GLOBAL GROWTH FUNNEL</span>
-              <h3 class="project-title">DUBAI & SAUDI LUXURY INVESTOR CAMPAIGN</h3>
-              <p class="project-place">High-Net-Worth Property Lead Acquisition • 4.8x Return on Ad Spend</p>
+          <div class="project-grid-card" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80');">
+            <div class="project-content-text">
+              <h3 class="project-header-title">DUBAI & SAUDI CAMPAIGN</h3>
+              <p class="project-sub-place">High-Net-Worth Property Lead Acquisition • 4.8x ROAS</p>
             </div>
           </div>
         </div>
 
         <!-- Project 4 -->
         <div class="col-12 col-md-6">
-          <div class="project-box-large" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80');">
-            <div class="project-overlay"></div>
-            <div class="project-info">
-              <span class="project-tag">NATIONWIDE EXPANSION</span>
-              <h3 class="project-title">PAN-INDIA CORPORATE ROLLOUT</h3>
-              <p class="project-place">Multi-City Product Launches across Bangalore, Mumbai & Delhi-NCR</p>
+          <div class="project-grid-card" style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80');">
+            <div class="project-content-text">
+              <h3 class="project-header-title">PAN-INDIA CORPORATE LAUNCH</h3>
+              <p class="project-sub-place">Multi-City Rollout • Bangalore, Mumbai & Delhi-NCR</p>
             </div>
           </div>
         </div>
@@ -314,76 +751,49 @@
     </div>
   </section>
 
-  <!-- Interactive ROI & Price Estimator -->
-  <section id="estimator" class="estimator-section">
+  <!-- Interactive Calculator -->
+  <section id="estimator" class="calc-section">
     <div class="container">
-      <div class="section-title-wrapper text-center">
-        <span class="sub-label">INSTANT QUOTE ENGINE</span>
-        <h2 class="main-heading">calculate your scope</h2>
+      <div class="text-center mb-5">
+        <div class="section-headline">instant quote estimator</div>
       </div>
 
-      <div class="estimator-wrapper">
+      <div class="calc-box-card">
         <div class="row g-4 align-items-center">
           <div class="col-lg-7">
-            <!-- Service Selector -->
-            <div class="calc-group mb-4">
-              <label class="calc-label">1. Select Division</label>
-              <div class="calc-pills" id="service-pills">
-                <button class="calc-pill active" data-service="events" onclick="selectEstimatorService('events')">
-                  <i data-lucide="crown"></i> Bangalore & India Events
-                </button>
-                <button class="calc-pill" data-service="marketing" onclick="selectEstimatorService('marketing')">
-                  <i data-lucide="trending-up"></i> Digital Marketing
-                </button>
-                <button class="calc-pill" data-service="business" onclick="selectEstimatorService('business')">
-                  <i data-lucide="briefcase"></i> Business Advisory
-                </button>
-              </div>
+            <label class="d-block text-white fw-bold mb-2">1. SELECT DIVISION</label>
+            <div class="mb-4" id="service-pills">
+              <button class="calc-pill-btn active" data-service="events" onclick="selectEstimatorService('events')">Bangalore & India Events</button>
+              <button class="calc-pill-btn" data-service="marketing" onclick="selectEstimatorService('marketing')">Digital Marketing</button>
+              <button class="calc-pill-btn" data-service="business" onclick="selectEstimatorService('business')">Corporate Advisory</button>
             </div>
 
-            <!-- Dynamic Slider -->
-            <div class="calc-group mb-4">
-              <div class="d-flex justify-content-between mb-2">
-                <label class="calc-label" id="slider-label">2. Expected Event Attendees (Bangalore / India)</label>
-                <span class="calc-highlight" id="slider-val-display">250 Attendees</span>
-              </div>
-              <input type="range" id="scale-slider" min="50" max="2000" step="50" value="250" oninput="calculateEstimate()">
+            <div class="d-flex justify-content-between text-white fw-bold">
+              <span id="slider-label">2. Expected Event Attendees (Bangalore / India)</span>
+              <span class="text-warning" id="slider-val-display">250 Attendees</span>
             </div>
+            <input type="range" class="calc-slider-input" id="scale-slider" min="50" max="2000" step="50" value="250" oninput="calculateEstimate()">
 
-            <!-- Tier Selector -->
-            <div class="calc-group">
-              <label class="calc-label">3. Service Package Tier</label>
-              <div class="row g-3">
-                <div class="col-6">
-                  <div class="calc-tier-box active" data-tier="standard" onclick="selectTier('standard')">
-                    <h4>Imperial Standard</h4>
-                    <p>Core essential high-tier production & execution</p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="calc-tier-box" data-tier="premium" onclick="selectTier('premium')">
-                    <h4>SAMRAT VIP Sovereign</h4>
-                    <p>Full luxury, 3D stage, celebrity VIP protocol</p>
-                  </div>
-                </div>
-              </div>
+            <label class="d-block text-white fw-bold mt-4 mb-2">3. PACKAGE TIER</label>
+            <div class="d-flex gap-2">
+              <button class="calc-pill-btn active flex-fill" data-tier="standard" onclick="selectTier('standard')">Standard Production</button>
+              <button class="calc-pill-btn flex-fill" data-tier="premium" onclick="selectTier('premium')">VIP Sovereign</button>
             </div>
           </div>
 
-          <!-- Result Display -->
           <div class="col-lg-5">
-            <div class="calc-result-box">
-              <span class="calc-tag">ESTIMATED INVESTMENT</span>
-              <div class="calc-price-display" id="result-price-display">₹1,50,000</div>
-              <div class="calc-timeline" id="result-timeline-display">⏱ Estimated Setup: 1-2 Weeks</div>
+            <div class="result-display-panel">
+              <div style="font-size:0.75rem; letter-spacing:2px; color:#888; text-transform:uppercase;">Estimated Investment</div>
+              <div class="result-price-val" id="result-price-display">₹1,50,000</div>
+              <div style="font-size:0.85rem; color:#888; margin-bottom:15px;" id="result-timeline-display">⏱ Estimated Setup: 1-2 Weeks</div>
 
-              <div class="calc-deliverables-list" id="result-deliverables-list">
+              <div id="result-deliverables-list" style="text-align:left; border-top:1px solid #333; padding-top:15px; font-size:0.82rem;">
                 <!-- Populated dynamically -->
               </div>
 
-              <button class="btn btn-whatsapp-royal" onclick="sendEstimateViaWhatsApp()">
+              <button class="btn-lock-quote" onclick="sendEstimateViaWhatsApp()">
                 <i data-lucide="message-circle"></i>
-                <span>Lock Quote with Ismail Kazia</span>
+                <span>Lock Quote on WhatsApp</span>
               </button>
             </div>
           </div>
@@ -392,89 +802,81 @@
     </div>
   </section>
 
-  <!-- "let's talk." Contact & Connect Section (Alsayegh Inspired) -->
-  <section id="contact" class="contact-section">
+  <!-- "let’s talk." CONTACT SECTION (Exact Alsayegh Format) -->
+  <section id="contact" class="contact-section-alsayegh">
     <div class="container-fluid px-lg-5">
       <div class="row align-items-center mb-5">
-        <div class="col-md-5">
-          <div class="d-flex align-items-center gap-2">
-            <span class="brand-crown fs-2">👑</span>
-            <span class="brand-title fs-2">SAMRAT</span>
-            <span class="brand-badge">GLOBAL</span>
-          </div>
-          <p class="text-muted mt-2">Founded by Ismail Kazia. Imperial Events in Bangalore & Pan-India • Global Growth in UAE & Saudi Arabia.</p>
+        <div class="col-md-6">
+          <a class="brand-logo-text" href="#" style="font-size:2rem;">
+            SAMRAT
+            <span style="font-size:1.2rem;">WORLDWIDE</span>
+          </a>
+          <p style="color:#777; margin-top:8px; font-size:0.9rem;">Founded by Ismail Kazia • Events in Bangalore & Pan-India • Worldwide Growth.</p>
         </div>
-        <div class="col-md-7 text-md-end">
-          <h2 class="lets-talk-heading">let’s talk.</h2>
+        <div class="col-md-6 text-md-end">
+          <h2 class="letstalk-title">let’s talk.</h2>
         </div>
       </div>
 
-      <div class="contact-card-bordered">
+      <div style="border: 1px solid var(--border-gray); padding: 50px 30px; background:#050505;">
         <div class="row g-5">
-          <!-- Contact Details -->
-          <div class="col-lg-5">
-            <div class="contact-info-block">
-              <h4 class="info-title">INDIA & BANGALORE OFFICE</h4>
-              <p class="info-text">
-                <a href="mailto:ismail@samratglobal.com">ismail@samratglobal.com</a><br><br>
-                <a href="https://wa.me/916363962640">+91 63639 62640</a> (WhatsApp & Primary)<br>
-                <a href="tel:+916363962640">+91 63639 62640</a> (Bangalore & Pan-India)
-              </p>
-              
-              <div class="divider-line my-4"></div>
+          <!-- Left: Contact Information -->
+          <div class="col-lg-5 contact-block-info">
+            <h4>INDIA & BANGALORE</h4>
+            <p>
+              <a href="mailto:ismail@samratglobal.com">ismail@samratglobal.com</a><br><br>
+              <a href="https://wa.me/916363962640">+91 63639 62640</a> (WhatsApp & Primary)<br>
+              <a href="tel:+916363962640">+91 63639 62640</a> (Bangalore & Pan-India)
+            </p>
 
-              <h4 class="info-title">SAUDI ARABIA & GCC REGION</h4>
-              <p class="info-text">
-                <a href="https://wa.me/966548905688">+966 54 890 5688</a> (Riyadh & Middle East)
-              </p>
-              
-              <div class="d-flex gap-3 mt-4">
-                <a href="https://wa.me/916363962640" class="social-circle" target="_blank"><i data-lucide="message-circle"></i></a>
-                <a href="mailto:ismail@samratglobal.com" class="social-circle"><i data-lucide="mail"></i></a>
-                <a href="https://ismailkazia302-bot.github.io/samrat-global/outreach.html" class="social-circle" title="1-Click Outreach Hub"><i data-lucide="send"></i></a>
-              </div>
+            <div style="height:1px; background:rgba(255,255,255,0.1); margin:30px 0;"></div>
+
+            <h4>SAUDI ARABIA & GCC</h4>
+            <p>
+              <a href="https://wa.me/966548905688">+966 54 890 5688</a> (Riyadh & Middle East)
+            </p>
+
+            <div class="d-flex gap-3 mt-4">
+              <a href="https://wa.me/916363962640" target="_blank" style="color:#FFF; font-size:1.2rem;"><i data-lucide="message-circle"></i></a>
+              <a href="mailto:ismail@samratglobal.com" style="color:#FFF; font-size:1.2rem;"><i data-lucide="mail"></i></a>
+              <a href="outreach.html" style="color:#FFF; font-size:1.2rem;" title="Outreach Hub"><i data-lucide="send"></i></a>
             </div>
           </div>
 
-          <!-- Direct Form -->
+          <!-- Right: Contact Form -->
           <div class="col-lg-7">
-            <form id="lead-form" class="alsayegh-form" onsubmit="handleLeadSubmit(event)">
-              <div class="form-floating-custom mb-4">
-                <input type="text" id="lead-name" class="input-underline" placeholder="NAME *" required>
-              </div>
-
-              <div class="row g-4 mb-4">
+            <form id="lead-form" onsubmit="handleLeadSubmit(event)">
+              <input type="text" id="lead-name" class="alsayegh-input" placeholder="NAME *" required>
+              
+              <div class="row">
                 <div class="col-md-6">
-                  <input type="email" id="lead-email" class="input-underline" placeholder="EMAIL ADDRESS *" required>
+                  <input type="email" id="lead-email" class="alsayegh-input" placeholder="EMAIL ADDRESS *" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="tel" id="lead-phone" class="input-underline" placeholder="PHONE NUMBER / WHATSAPP *" required>
+                  <input type="tel" id="lead-phone" class="alsayegh-input" placeholder="PHONE NUMBER / WHATSAPP *" required>
                 </div>
               </div>
 
-              <div class="row g-4 mb-4">
+              <div class="row">
                 <div class="col-md-6">
-                  <select id="lead-service" class="input-underline select-custom" required>
-                    <option value="Event Management (Bangalore & Pan-India)">Events & Activations (Bangalore & Pan-India)</option>
+                  <select id="lead-service" class="alsayegh-select" required>
+                    <option value="Event Management (Bangalore & Pan-India)">Events & Activations</option>
                     <option value="Conferences & Exhibitions">Conferences & Exhibitions</option>
-                    <option value="Digital Marketing (Global)">Digital Marketing & Performance</option>
-                    <option value="Branding & Business Advisory">Branding & Corporate Advisory</option>
+                    <option value="Digital Marketing">Social Media & Performance</option>
+                    <option value="Branding & Design">Branding & Corporate Advisory</option>
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" id="lead-location" class="input-underline" placeholder="YOUR CITY / LOCATION *" required>
+                  <input type="text" id="lead-location" class="alsayegh-input" placeholder="CITY / LOCATION *" required>
                 </div>
               </div>
 
-              <div class="form-floating-custom mb-4">
-                <textarea id="lead-details" class="input-underline" rows="3" placeholder="PROJECT BRIEF / EVENT ATTENDEES / GOALS"></textarea>
-              </div>
+              <textarea id="lead-details" class="alsayegh-input" rows="3" placeholder="PROJECT BRIEF / EVENT SCALE"></textarea>
 
-              <button type="submit" class="btn btn-send-inquiry">
-                <span>SUBMIT INQUIRY TO ISMAIL KAZIA</span>
-                <i data-lucide="arrow-right"></i>
+              <button type="submit" class="btn-submit-talk">
+                SUBMIT INQUIRY
               </button>
-              <div id="form-feedback" class="form-feedback mt-3"></div>
+              <div id="form-feedback" style="display:none; margin-top:15px; color:#25D366; font-weight:700;"></div>
             </form>
           </div>
         </div>
@@ -483,22 +885,29 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer-bottom-bar">
-    <div class="container-fluid px-lg-5 d-flex justify-content-between align-items-center flex-wrap gap-3">
-      <p class="m-0 text-muted">&copy; 2026 SAMRAT Global Enterprises. All rights reserved. • Founded by Ismail Kazia</p>
-      <div class="d-flex gap-4">
-        <a href="#home" class="footer-link">Back to Top ↑</a>
-        <a href="https://ismailkazia302-bot.github.io/samrat-global/outreach.html" class="footer-link">Outreach Hub</a>
-        <a href="https://wa.me/916363962640" class="footer-link text-whatsapp">Direct WhatsApp</a>
-      </div>
+  <footer class="footer-bar text-center">
+    <div class="container">
+      <p class="m-0">&copy; 2026 SAMRAT WORLDWIDE. All rights reserved. • Founded by Ismail Kazia</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
   <script>
     lucide.createIcons();
+
+    function toggleMute() {
+      const video = document.getElementById('heroVideo');
+      const icon = document.getElementById('muteIcon');
+      if (video.muted) {
+        video.muted = false;
+        icon.setAttribute('data-lucide', 'volume-2');
+      } else {
+        video.muted = true;
+        icon.setAttribute('data-lucide', 'volume-x');
+      }
+      lucide.createIcons();
+    }
   </script>
 </body>
 </html>
