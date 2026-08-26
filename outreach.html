@@ -221,19 +221,22 @@
       <!-- Filter Tabs -->
       <div class="dash-filters">
         <button class="pill-btn active" data-filter="all" onclick="setFilter('all')">
-          <i data-lucide="layers"></i> All Leads (18)
+          <i data-lucide="layers"></i> All Leads (<span id="count-all">116</span>)
+        </button>
+        <button class="pill-btn" data-filter="saudi" onclick="setFilter('saudi')">
+          <i data-lucide="shield-check"></i> Saudi Arabia 🇸🇦 (<span id="count-saudi">20</span>)
         </button>
         <button class="pill-btn" data-filter="bangalore" onclick="setFilter('bangalore')">
-          <i data-lucide="map-pin"></i> Bangalore Events 🇮🇳 (10)
+          <i data-lucide="map-pin"></i> Bangalore Events 🇮🇳 (<span id="count-blr">36</span>)
         </button>
         <button class="pill-btn" data-filter="dubai" onclick="setFilter('dubai')">
-          <i data-lucide="building-2"></i> Dubai Real Estate 🇦🇪 (3)
+          <i data-lucide="building-2"></i> Dubai Real Estate 🇦🇪 (<span id="count-dubai">22</span>)
         </button>
         <button class="pill-btn" data-filter="london" onclick="setFilter('london')">
-          <i data-lucide="stethoscope"></i> London Clinics 🇬🇧 (2)
+          <i data-lucide="stethoscope"></i> London Clinics 🇬🇧 (<span id="count-london">15</span>)
         </button>
         <button class="pill-btn" data-filter="global" onclick="setFilter('global')">
-          <i data-lucide="globe"></i> US & India Growth 🌍 (3)
+          <i data-lucide="globe"></i> Mumbai & Global 🌍 (<span id="count-global">23</span>)
         </button>
       </div>
     </div>
@@ -527,21 +530,33 @@
       const filtered = leadsData.filter(l => {
         // City / Category Filter
         let matchesCategory = true;
-        if (currentFilter === 'bangalore') matchesCategory = l.city === 'Bangalore';
+        if (currentFilter === 'saudi') matchesCategory = l.country === 'Saudi Arabia';
+        else if (currentFilter === 'bangalore') matchesCategory = l.city === 'Bangalore';
         else if (currentFilter === 'dubai') matchesCategory = l.city === 'Dubai';
         else if (currentFilter === 'london') matchesCategory = l.city === 'London';
-        else if (currentFilter === 'global') matchesCategory = l.city !== 'Bangalore' && l.city !== 'Dubai' && l.city !== 'London';
+        else if (currentFilter === 'global') matchesCategory = l.country !== 'Saudi Arabia' && l.city !== 'Bangalore' && l.city !== 'Dubai' && l.city !== 'London';
 
         // Search Filter
         const matchesSearch = !search || 
-          l.businessName.toLowerCase().includes(search) ||
-          l.city.toLowerCase().includes(search) ||
-          l.category.toLowerCase().includes(search);
+          (l.businessName && l.businessName.toLowerCase().includes(search)) ||
+          (l.city && l.city.toLowerCase().includes(search)) ||
+          (l.country && l.country.toLowerCase().includes(search)) ||
+          (l.category && l.category.toLowerCase().includes(search));
 
         return matchesCategory && matchesSearch;
       });
 
       renderLeads(filtered);
+    }
+
+    function updateTabCounts() {
+      if (!leadsData) return;
+      document.getElementById('count-all').textContent = leadsData.length;
+      document.getElementById('count-saudi').textContent = leadsData.filter(l => l.country === 'Saudi Arabia').length;
+      document.getElementById('count-blr').textContent = leadsData.filter(l => l.city === 'Bangalore').length;
+      document.getElementById('count-dubai').textContent = leadsData.filter(l => l.city === 'Dubai').length;
+      document.getElementById('count-london').textContent = leadsData.filter(l => l.city === 'London').length;
+      document.getElementById('count-global').textContent = leadsData.filter(l => l.country !== 'Saudi Arabia' && l.city !== 'Bangalore' && l.city !== 'Dubai' && l.city !== 'London').length;
     }
 
     function copyEmailPitch(leadId) {
@@ -556,8 +571,20 @@
       });
     }
 
-    // Initial Render
-    document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Initialization
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('leads_with_pitches.json');
+        if (res.ok) {
+          const freshData = await res.json();
+          if (Array.isArray(freshData) && freshData.length > 0) {
+            leadsData = freshData;
+          }
+        }
+      } catch (e) {
+        console.log('Using pre-bundled leads dataset');
+      }
+      updateTabCounts();
       renderLeads(leadsData);
     });
   </script>

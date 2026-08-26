@@ -148,14 +148,53 @@
       renderLeads(filtered);
     }
 
-    function setFilter(f) {
-      currentFilter = f;
-      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-      event.target.classList.add('active');
+    const FLAG_MAP = {
+      'India': '🇮🇳',
+      'Saudi Arabia': '🇸🇦',
+      'UAE': '🇦🇪',
+      'UK': '🇬🇧',
+      'USA': '🇺🇸',
+      'Singapore': '🇸🇬'
+    };
+
+    let ALL_LEADS = [];
+    let currentFilter = 'All';
+
+    async function initCrmDashboard() {
+      try {
+        const res = await fetch('leads_database.json');
+        if (res.ok) {
+          const raw = await res.json();
+          ALL_LEADS = raw.map(l => ({
+            id: l.id,
+            name: l.businessName,
+            city: l.city,
+            country: l.country,
+            flag: FLAG_MAP[l.country] || '🌍',
+            service: l.targetService,
+            phone: l.phone,
+            email: l.email,
+            score: parseInt(l.leadScore) || 90,
+            status: l.leadScore >= 98 ? 'Contacted' : 'Not Contacted'
+          }));
+        }
+      } catch (err) {
+        console.warn('Using local fallback leads');
+      }
+
+      if (!ALL_LEADS.length) {
+        ALL_LEADS = [
+          {id:"APX-0001",name:"Infosys Bangalore",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918028520261",email:"events@infosys.com",score:98,status:"Contacted"},
+          {id:"APX-0006",name:"The Leela Palace Bengaluru",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918025211234",email:"banquets.tlpb@theleela.com",score:99,status:"Contacted"},
+          {id:"APX-0011",name:"Emaar Properties Dubai",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143661688",email:"enquiry@emaar.ae",score:99,status:"Contacted"},
+          {id:"APX-0023",name:"NEOM Project Saudi",city:"Riyadh",country:"Saudi Arabia",flag:"🇸🇦",service:"Digital Marketing",phone:"+966114769080",email:"marketing@neom.com",score:99,status:"Contacted"}
+        ];
+      }
+
       filterLeads();
     }
 
-    filterLeads();
+    initCrmDashboard();
   </script>
 </body>
 </html>
