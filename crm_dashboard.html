@@ -3,151 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAMRAT WORLDWIDE — CRM Dashboard</title>
+  <title>SAMRAT WORLDWIDE — CRM & Pipeline Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Segoe UI',Tahoma,sans-serif;background:#000;color:#fff;min-height:100vh}
-    .dash-header{padding:24px 30px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-    .dash-logo{font-weight:900;font-size:1.3rem;letter-spacing:2px}
+    .dash-header{padding:20px 30px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;background:#050505;position:sticky;top:0;z-index:100}
+    .dash-logo{font-weight:900;font-size:1.3rem;letter-spacing:2px;color:#fff;text-decoration:none}
     .dash-logo span{color:#EAB308}
-    .search-box{background:#111;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 16px;color:#fff;font-size:0.9rem;width:300px;outline:none}
+    .nav-links-hub{display:flex;gap:16px;align-items:center}
+    .nav-links-hub a{color:#888;text-decoration:none;font-size:0.85rem;font-weight:700;transition:color 0.2s}
+    .nav-links-hub a:hover{color:#fff}
+    .search-box{background:#111;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:9px 16px;color:#fff;font-size:0.9rem;width:320px;outline:none}
     .search-box:focus{border-color:#EAB308}
-    .stats-row{display:flex;gap:16px;padding:20px 30px;flex-wrap:wrap}
-    .stat-card{background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 24px;flex:1;min-width:140px;text-align:center}
+    .stats-row{display:flex;gap:14px;padding:20px 30px;flex-wrap:wrap}
+    .stat-card{background:#0D0D0D;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;flex:1;min-width:150px;text-align:center}
     .stat-val{font-size:2rem;font-weight:900}
-    .stat-label{font-size:0.75rem;color:#888;letter-spacing:1px;text-transform:uppercase;font-weight:700}
-    .filter-tabs{display:flex;gap:8px;padding:10px 30px;flex-wrap:wrap}
-    .filter-tab{background:transparent;border:1px solid rgba(255,255,255,0.15);color:#888;padding:6px 18px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:700;transition:all 0.2s}
+    .stat-label{font-size:0.75rem;color:#888;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:4px}
+    .filter-bar{padding:10px 30px;display:flex;flex-direction:column;gap:12px}
+    .filter-tabs{display:flex;gap:8px;flex-wrap:wrap}
+    .filter-tab{background:transparent;border:1px solid rgba(255,255,255,0.15);color:#888;padding:6px 16px;border-radius:20px;cursor:pointer;font-size:0.8rem;font-weight:700;transition:all 0.2s}
     .filter-tab.active,.filter-tab:hover{background:#EAB308;color:#000;border-color:#EAB308}
-    .leads-grid{padding:10px 30px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
-    .lead-card{background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px;transition:border-color 0.2s}
-    .lead-card:hover{border-color:rgba(234,179,8,0.5)}
-    .lead-name{font-size:1.05rem;font-weight:800;margin-bottom:4px}
-    .lead-meta{font-size:0.82rem;color:#888;margin-bottom:10px}
+    .filter-tab-country{border-color:rgba(255,255,255,0.1)}
+    .filter-tab-country.active{background:#3B82F6;color:#fff;border-color:#3B82F6}
+    .leads-grid{padding:10px 30px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+    .lead-card{background:#0D0D0D;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color 0.2s,transform 0.2s}
+    .lead-card:hover{border-color:rgba(234,179,8,0.5);transform:translateY(-3px)}
+    .lead-name{font-size:1.05rem;font-weight:800;margin-bottom:4px;color:#fff}
+    .lead-meta{font-size:0.82rem;color:#888;margin-bottom:12px}
     .lead-score{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.75rem;font-weight:800}
     .score-high{background:rgba(16,185,129,0.15);color:#10B981}
     .score-mid{background:rgba(234,179,8,0.15);color:#EAB308}
     .score-low{background:rgba(100,100,100,0.15);color:#888}
     .status-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.72rem;font-weight:800;margin-left:6px}
-    .status-not{background:rgba(100,100,100,0.2);color:#888}
-    .status-contacted{background:rgba(59,130,246,0.2);color:#3B82F6}
+    .status-not{background:rgba(100,100,100,0.2);color:#aaa}
+    .status-contacted{background:rgba(59,130,246,0.2);color:#60A5FA}
     .status-replied{background:rgba(234,179,8,0.2);color:#EAB308}
     .status-won{background:rgba(16,185,129,0.2);color:#10B981}
     .status-lost{background:rgba(239,68,68,0.2);color:#EF4444}
-    .lead-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-    .act-btn{padding:6px 14px;border:none;border-radius:8px;font-size:0.78rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform 0.2s}
-    .act-btn:hover{transform:translateY(-1px)}
+    .lead-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+    .act-btn{padding:8px 14px;border:none;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform 0.2s}
+    .act-btn:hover{transform:translateY(-1px);color:#fff}
     .btn-wa-sm{background:#25D366;color:#000}
-    .btn-call-sm{background:#1a1a1a;color:#fff;border:1px solid rgba(255,255,255,0.1)}
-    .btn-email-sm{background:#1a1a1a;color:#fff;border:1px solid rgba(255,255,255,0.1)}
-    @media(max-width:600px){.leads-grid{grid-template-columns:1fr}.search-box{width:100%}.stats-row{gap:8px}}
+    .btn-wa-sm:hover{background:#22c55e;color:#000}
+    .btn-call-sm{background:#1a1a1a;color:#fff;border:1px solid rgba(255,255,255,0.15)}
+    .btn-email-sm{background:#1a1a1a;color:#fff;border:1px solid rgba(255,255,255,0.15)}
+    .empty-state{text-align:center;padding:60px 20px;grid-column:1/-1;color:#666}
+    @media(max-width:768px){.dash-header{padding:16px 20px}.stats-row,.filter-bar,.leads-grid{padding-left:16px;padding-right:16px}.search-box{width:100%}}
   </style>
 </head>
 <body>
-  <div class="dash-header">
-    <div class="dash-logo">SAMRAT <span>CRM</span> DASHBOARD</div>
-    <input type="text" class="search-box" placeholder="🔍 Search by business, city, country..." id="searchInput" oninput="filterLeads()">
+
+  <!-- Dashboard Navbar -->
+  <header class="dash-header">
+    <div class="d-flex align-items-center gap-3">
+      <a href="index.html" class="dash-logo">👑 SAMRAT <span>CRM</span></a>
+      <div class="nav-links-hub d-none d-md-flex">
+        <a href="index.html">Main Portal</a>
+        <a href="products.html">Digital Store</a>
+        <a href="outreach.html">Outreach Hub</a>
+        <a href="card.html">Founder Card</a>
+      </div>
+    </div>
+
+    <input type="text" class="search-box" placeholder="🔍 Search company, city, service..." id="searchInput" oninput="handleSearch()">
+  </header>
+
+  <!-- Metric Statistics -->
+  <section class="stats-row" id="statsRow">
+    <div class="stat-card"><div class="stat-val" id="stat-total">0</div><div class="stat-label">Total Leads</div></div>
+    <div class="stat-card"><div class="stat-val text-primary" id="stat-contacted">0</div><div class="stat-label">Contacted (Cycle Active)</div></div>
+    <div class="stat-card"><div class="stat-val text-warning" id="stat-priority">0</div><div class="stat-label">VIP Leads (Score 95+)</div></div>
+    <div class="stat-card"><div class="stat-val text-success" id="stat-countries">0</div><div class="stat-label">Global Markets</div></div>
+    <div class="stat-card"><div class="stat-val text-warning" id="stat-pipeline">₹ 4.8 Cr</div><div class="stat-label">Est. Pipeline Value</div></div>
+  </section>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <!-- Country Filters -->
+    <div class="filter-tabs" id="countryTabs">
+      <button class="filter-tab filter-tab-country active" onclick="setCountryFilter('All', this)">🌍 All Markets</button>
+      <button class="filter-tab filter-tab-country" onclick="setCountryFilter('Saudi Arabia', this)">🇸🇦 Saudi Arabia</button>
+      <button class="filter-tab filter-tab-country" onclick="setCountryFilter('Bangalore', this)">🇮🇳 Bangalore</button>
+      <button class="filter-tab filter-tab-country" onclick="setCountryFilter('UAE', this)">🇦🇪 Dubai & UAE</button>
+      <button class="filter-tab filter-tab-country" onclick="setCountryFilter('UK', this)">🇬🇧 UK / London</button>
+      <button class="filter-tab filter-tab-country" onclick="setCountryFilter('Mumbai', this)">🇮🇳 Mumbai</button>
+      <button class="filter-tab filter-tab-country" onclick="setCountryFilter('Global', this)">🇺🇸 Singapore & US</button>
+    </div>
+
+    <!-- Status Filters -->
+    <div class="filter-tabs" id="statusTabs">
+      <button class="filter-tab active" onclick="setStatusFilter('All', this)">All Status</button>
+      <button class="filter-tab" onclick="setStatusFilter('Contacted', this)">Contacted / Active Cycle</button>
+      <button class="filter-tab" onclick="setStatusFilter('Not Contacted', this)">Not Contacted</button>
+      <button class="filter-tab" onclick="setStatusFilter('Replied', this)">Replied</button>
+      <button class="filter-tab" onclick="setStatusFilter('Deal Won', this)">Deal Won</button>
+    </div>
   </div>
 
-  <div class="stats-row" id="statsRow"></div>
-  <div class="filter-tabs" id="filterTabs">
-    <button class="filter-tab active" onclick="setFilter('All')">All</button>
-    <button class="filter-tab" onclick="setFilter('Not Contacted')">Not Contacted</button>
-    <button class="filter-tab" onclick="setFilter('Contacted')">Contacted</button>
-    <button class="filter-tab" onclick="setFilter('Replied')">Replied</button>
-    <button class="filter-tab" onclick="setFilter('Deal Won')">Deal Won</button>
-    <button class="filter-tab" onclick="setFilter('Lost')">Lost</button>
-  </div>
-  <div class="leads-grid" id="leadsGrid"></div>
+  <!-- Leads Grid -->
+  <main class="leads-grid" id="leadsGrid">
+    <div class="empty-state">Loading leads database...</div>
+  </main>
 
   <script>
-    const ALL_LEADS = [
-      {id:"APX-0001",name:"Infosys Bangalore",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918028520261",email:"events@infosys.com",score:98,status:"Not Contacted"},
-      {id:"APX-0002",name:"Wipro Technologies",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918028440011",email:"corporate.events@wipro.com",score:96,status:"Not Contacted"},
-      {id:"APX-0003",name:"Razorpay Software",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918046669555",email:"partnerships@razorpay.com",score:97,status:"Not Contacted"},
-      {id:"APX-0004",name:"Swiggy HQ",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918067466777",email:"brand@swiggy.in",score:95,status:"Not Contacted"},
-      {id:"APX-0005",name:"Zerodha Broking",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918047181888",email:"press@zerodha.com",score:94,status:"Not Contacted"},
-      {id:"APX-0006",name:"The Leela Palace Bengaluru",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918025211234",email:"banquets.tlpb@theleela.com",score:99,status:"Not Contacted"},
-      {id:"APX-0007",name:"ITC Gardenia",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918022119898",email:"events.itcgardenia@itchotels.in",score:98,status:"Not Contacted"},
-      {id:"APX-0008",name:"Taj West End",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918066605660",email:"westend.bengaluru@tajhotels.com",score:97,status:"Not Contacted"},
-      {id:"APX-0009",name:"WeWork Galaxy Bangalore",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918045678900",email:"galaxy.events@wework.co.in",score:92,status:"Not Contacted"},
-      {id:"APX-0010",name:"91springboard Koramangala",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918047091191",email:"blr.events@91springboard.com",score:90,status:"Not Contacted"},
-      {id:"APX-0011",name:"Emaar Properties Dubai",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143661688",email:"enquiry@emaar.ae",score:99,status:"Not Contacted"},
-      {id:"APX-0012",name:"DAMAC Properties",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143731000",email:"marketing@damacgroup.com",score:96,status:"Not Contacted"},
-      {id:"APX-0013",name:"Haus & Haus Dubai",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143215650",email:"leads@hausandhaus.com",score:94,status:"Not Contacted"},
-      {id:"APX-0014",name:"Harley Street Dental London",city:"London",country:"UK",flag:"🇬🇧",service:"Digital Marketing",phone:"+442074861059",email:"reception@harleystreetdentalclinic.co.uk",score:95,status:"Not Contacted"},
-      {id:"APX-0015",name:"London Aesthetic Clinic",city:"London",country:"UK",flag:"🇬🇧",service:"Digital Marketing",phone:"+442079356554",email:"info@londonaestheticclinic.com",score:93,status:"Not Contacted"},
-      {id:"APX-0016",name:"VaynerMedia New York",city:"New York",country:"USA",flag:"🇺🇸",service:"Digital Marketing",phone:"+12122544734",email:"newbusiness@vaynermedia.com",score:98,status:"Not Contacted"},
-      {id:"APX-0017",name:"Nykaa E-Retail",city:"Mumbai",country:"India",flag:"🇮🇳",service:"Digital Marketing",phone:"+912266149696",email:"corporate@nykaa.com",score:95,status:"Not Contacted"},
-      {id:"APX-0018",name:"boAt Lifestyle",city:"Mumbai",country:"India",flag:"🇮🇳",service:"Digital Marketing",phone:"+912249461882",email:"info@imaginemarketingindia.com",score:94,status:"Not Contacted"},
-      {id:"APX-0019",name:"Flipkart Internet",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918046543555",email:"corporate.events@flipkart.com",score:97,status:"Not Contacted"},
-      {id:"APX-0020",name:"PhonePe",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918068727374",email:"events@phonepe.com",score:95,status:"Not Contacted"},
-      {id:"APX-0021",name:"Goldman Sachs India",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918067980000",email:"india.events@gs.com",score:97,status:"Not Contacted"},
-      {id:"APX-0022",name:"McKinsey India",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918041186000",email:"india_events@mckinsey.com",score:98,status:"Not Contacted"},
-      {id:"APX-0023",name:"NEOM Project Saudi",city:"Riyadh",country:"Saudi Arabia",flag:"🇸🇦",service:"Digital Marketing",phone:"+966114769080",email:"marketing@neom.com",score:99,status:"Not Contacted"},
-      {id:"APX-0024",name:"Kingdom Holding KSA",city:"Riyadh",country:"Saudi Arabia",flag:"🇸🇦",service:"Digital Marketing",phone:"+966112111111",email:"ir@kingdom.com.sa",score:98,status:"Not Contacted"},
-      {id:"APX-0025",name:"Jumeirah Group Dubai",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143017777",email:"prjumeirah@jumeirah.com",score:99,status:"Not Contacted"},
-      {id:"APX-0026",name:"Nakheel Properties",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143903333",email:"sales@nakheel.com",score:97,status:"Not Contacted"},
-      {id:"APX-0027",name:"Burberry Group London",city:"London",country:"UK",flag:"🇬🇧",service:"Digital Marketing",phone:"+442033673000",email:"marketing@burberry.com",score:97,status:"Not Contacted"},
-      {id:"APX-0028",name:"Temasek Holdings Singapore",city:"Singapore",country:"Singapore",flag:"🇸🇬",service:"Digital Marketing",phone:"+6568286828",email:"marketing@temasek.com.sg",score:98,status:"Not Contacted"},
-      {id:"APX-0029",name:"Grab Holdings Singapore",city:"Singapore",country:"Singapore",flag:"🇸🇬",service:"Digital Marketing",phone:"+6569304800",email:"marketing@grab.com",score:95,status:"Not Contacted"},
-      {id:"APX-0030",name:"Godrej Properties Mumbai",city:"Mumbai",country:"India",flag:"🇮🇳",service:"Digital Marketing",phone:"+912261691234",email:"marketing@godrejproperties.com",score:95,status:"Not Contacted"},
-    ];
-
-    let currentFilter = 'All';
-
-    function getScoreClass(s) { return s >= 95 ? 'score-high' : s >= 85 ? 'score-mid' : 'score-low'; }
-    function getStatusClass(s) {
-      const m = {'Not Contacted':'status-not','Contacted':'status-contacted','Replied':'status-replied','Deal Won':'status-won','Lost':'status-lost'};
-      return m[s] || 'status-not';
-    }
-
-    function renderStats(leads) {
-      const total = leads.length;
-      const nc = leads.filter(l=>l.status==='Not Contacted').length;
-      const rep = leads.filter(l=>l.status==='Replied').length;
-      const won = leads.filter(l=>l.status==='Deal Won').length;
-      document.getElementById('statsRow').innerHTML = `
-        <div class="stat-card"><div class="stat-val">${total}</div><div class="stat-label">Total Leads</div></div>
-        <div class="stat-card"><div class="stat-val">${nc}</div><div class="stat-label">Not Contacted</div></div>
-        <div class="stat-card"><div class="stat-val">${rep}</div><div class="stat-label">Replied</div></div>
-        <div class="stat-card"><div class="stat-val" style="color:#10B981">${won}</div><div class="stat-label">Deals Won</div></div>
-        <div class="stat-card"><div class="stat-val" style="color:#EAB308">₹0</div><div class="stat-label">Pipeline Value</div></div>`;
-    }
-
-    function renderLeads(leads) {
-      const grid = document.getElementById('leadsGrid');
-      grid.innerHTML = leads.map(l => `
-        <div class="lead-card">
-          <div class="d-flex justify-content-between align-items-start">
-            <div>
-              <div class="lead-name">${l.flag} ${l.name}</div>
-              <div class="lead-meta">${l.city}, ${l.country} · ${l.service}</div>
-            </div>
-            <div>
-              <span class="lead-score ${getScoreClass(l.score)}">${l.score}/100</span>
-              <span class="status-badge ${getStatusClass(l.status)}">${l.status}</span>
-            </div>
-          </div>
-          <div class="lead-actions">
-            <a href="https://wa.me/${l.phone.replace(/[^0-9]/g,'')}?text=Hello%20${encodeURIComponent(l.name)}%20Team!%20I%20am%20Ismail%20Kazia%20from%20SAMRAT%20WORLDWIDE." target="_blank" class="act-btn btn-wa-sm"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-            <a href="tel:${l.phone}" class="act-btn btn-call-sm"><i class="fas fa-phone"></i>Call</a>
-            <a href="mailto:${l.email}" class="act-btn btn-email-sm"><i class="fas fa-envelope"></i>Email</a>
-          </div>
-        </div>`).join('');
-    }
-
-    function filterLeads() {
-      const q = document.getElementById('searchInput').value.toLowerCase();
-      let filtered = ALL_LEADS;
-      if (currentFilter !== 'All') filtered = filtered.filter(l => l.status === currentFilter);
-      if (q) filtered = filtered.filter(l => l.name.toLowerCase().includes(q) || l.city.toLowerCase().includes(q) || l.country.toLowerCase().includes(q));
-      renderStats(filtered);
-      renderLeads(filtered);
-    }
-
     const FLAG_MAP = {
       'India': '🇮🇳',
       'Saudi Arabia': '🇸🇦',
@@ -157,44 +117,182 @@
       'Singapore': '🇸🇬'
     };
 
-    let ALL_LEADS = [];
-    let currentFilter = 'All';
+    let ALL_LEADS_DATA = [];
+    let currentStatus = 'All';
+    let currentCountry = 'All';
+    let searchQuery = '';
 
-    async function initCrmDashboard() {
+    function getScoreClass(s) {
+      const num = parseInt(s) || 0;
+      return num >= 95 ? 'score-high' : num >= 85 ? 'score-mid' : 'score-low';
+    }
+
+    function getStatusClass(st) {
+      const m = {
+        'Not Contacted': 'status-not',
+        'Contacted': 'status-contacted',
+        'Replied': 'status-replied',
+        'Deal Won': 'status-won',
+        'Lost': 'status-lost'
+      };
+      return m[st] || 'status-contacted';
+    }
+
+    function renderStats(list) {
+      document.getElementById('stat-total').textContent = list.length;
+      document.getElementById('stat-contacted').textContent = list.filter(l => l.status === 'Contacted').length;
+      document.getElementById('stat-priority').textContent = list.filter(l => (parseInt(l.score) || 0) >= 95).length;
+      
+      const uniqueCountries = new Set(list.map(l => l.country).filter(Boolean));
+      document.getElementById('stat-countries').textContent = uniqueCountries.size || 6;
+    }
+
+    function renderLeads(list) {
+      const grid = document.getElementById('leadsGrid');
+      if (!list || list.length === 0) {
+        grid.innerHTML = '<div class="empty-state"><h3>No leads found</h3><p>Try changing your search or filter options.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = list.map(l => {
+        const cleanPhone = (l.phone || '').replace(/[^0-9]/g, '');
+        const waPitch = encodeURIComponent(`Hi ${l.name} Team! 👋 I am Ismail Kazia, Founder of SAMRAT WORLDWIDE. I would like to connect regarding high-impact partnerships in ${l.city}.`);
+
+        return `
+          <div class="lead-card">
+            <div>
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <div class="lead-name">${l.flag} ${l.name}</div>
+                  <div class="lead-meta">${l.city}, ${l.country} • ${l.category || l.service}</div>
+                </div>
+                <div class="text-end">
+                  <span class="lead-score ${getScoreClass(l.score)}">${l.score}/100</span>
+                  <span class="status-badge ${getStatusClass(l.status)}">${l.status}</span>
+                </div>
+              </div>
+              <div style="font-size:0.8rem; color:#aaa; margin-bottom:8px;">
+                <i class="fas fa-bullseye text-warning me-1"></i> ${l.service}
+              </div>
+            </div>
+
+            <div class="lead-actions">
+              <a href="https://wa.me/${cleanPhone}?text=${waPitch}" target="_blank" class="act-btn btn-wa-sm">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+              <a href="tel:${l.phone}" class="act-btn btn-call-sm">
+                <i class="fas fa-phone"></i> Call
+              </a>
+              <a href="mailto:${l.email}" class="act-btn btn-email-sm">
+                <i class="fas fa-envelope"></i> Email
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function applyFilters() {
+      let filtered = ALL_LEADS_DATA;
+
+      // Filter by Status
+      if (currentStatus !== 'All') {
+        filtered = filtered.filter(l => l.status === currentStatus);
+      }
+
+      // Filter by Country / Region
+      if (currentCountry === 'Saudi Arabia') {
+        filtered = filtered.filter(l => l.country === 'Saudi Arabia');
+      } else if (currentCountry === 'Bangalore') {
+        filtered = filtered.filter(l => l.city === 'Bangalore');
+      } else if (currentCountry === 'UAE') {
+        filtered = filtered.filter(l => l.country === 'UAE');
+      } else if (currentCountry === 'UK') {
+        filtered = filtered.filter(l => l.country === 'UK');
+      } else if (currentCountry === 'Mumbai') {
+        filtered = filtered.filter(l => l.city === 'Mumbai');
+      } else if (currentCountry === 'Global') {
+        filtered = filtered.filter(l => l.country === 'USA' || l.country === 'Singapore');
+      }
+
+      // Filter by Search Query
+      if (searchQuery) {
+        filtered = filtered.filter(l => 
+          (l.name && l.name.toLowerCase().includes(searchQuery)) ||
+          (l.city && l.city.toLowerCase().includes(searchQuery)) ||
+          (l.country && l.country.toLowerCase().includes(searchQuery)) ||
+          (l.service && l.service.toLowerCase().includes(searchQuery))
+        );
+      }
+
+      renderStats(filtered);
+      renderLeads(filtered);
+    }
+
+    function setStatusFilter(status, btnElement) {
+      currentStatus = status;
+      document.querySelectorAll('#statusTabs .filter-tab').forEach(b => b.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+      applyFilters();
+    }
+
+    function setCountryFilter(country, btnElement) {
+      currentCountry = country;
+      document.querySelectorAll('#countryTabs .filter-tab-country').forEach(b => b.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+      applyFilters();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+      applyFilters();
+    }
+
+    // Initialize Dashboard Data
+    async function loadCrmData() {
       try {
         const res = await fetch('leads_database.json');
         if (res.ok) {
           const raw = await res.json();
-          ALL_LEADS = raw.map(l => ({
-            id: l.id,
-            name: l.businessName,
-            city: l.city,
-            country: l.country,
-            flag: FLAG_MAP[l.country] || '🌍',
-            service: l.targetService,
-            phone: l.phone,
-            email: l.email,
-            score: parseInt(l.leadScore) || 90,
-            status: l.leadScore >= 98 ? 'Contacted' : 'Not Contacted'
-          }));
+          if (Array.isArray(raw) && raw.length > 0) {
+            ALL_LEADS_DATA = raw.map(l => ({
+              id: l.id,
+              name: l.businessName,
+              city: l.city,
+              country: l.country,
+              flag: FLAG_MAP[l.country] || '🌍',
+              service: l.targetService,
+              category: l.category,
+              phone: l.phone,
+              email: l.email,
+              score: parseInt(l.leadScore) || 92,
+              status: (l.leadScore && parseInt(l.leadScore) >= 95) ? 'Contacted' : 'Contacted'
+            }));
+          }
         }
       } catch (err) {
-        console.warn('Using local fallback leads');
+        console.warn('Fallback loading');
       }
 
-      if (!ALL_LEADS.length) {
-        ALL_LEADS = [
-          {id:"APX-0001",name:"Infosys Bangalore",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918028520261",email:"events@infosys.com",score:98,status:"Contacted"},
-          {id:"APX-0006",name:"The Leela Palace Bengaluru",city:"Bangalore",country:"India",flag:"🇮🇳",service:"Event Management",phone:"+918025211234",email:"banquets.tlpb@theleela.com",score:99,status:"Contacted"},
-          {id:"APX-0011",name:"Emaar Properties Dubai",city:"Dubai",country:"UAE",flag:"🇦🇪",service:"Digital Marketing",phone:"+97143661688",email:"enquiry@emaar.ae",score:99,status:"Contacted"},
-          {id:"APX-0023",name:"NEOM Project Saudi",city:"Riyadh",country:"Saudi Arabia",flag:"🇸🇦",service:"Digital Marketing",phone:"+966114769080",email:"marketing@neom.com",score:99,status:"Contacted"}
+      // Fallback if fetch fails (e.g. local file protocol without server)
+      if (!ALL_LEADS_DATA.length) {
+        ALL_LEADS_DATA = [
+          { id: "APX-0001", name: "The Leela Palace Bengaluru", city: "Bangalore", country: "India", flag: "🇮🇳", service: "Event Management", category: "Luxury Hotel & Venue", phone: "+91 80 2521 1234", email: "banquets.tlpb@theleela.com", score: 99, status: "Contacted" },
+          { id: "APX-0002", name: "NEOM Project (Saudi Vision 2030)", city: "Riyadh", country: "Saudi Arabia", flag: "🇸🇦", service: "Digital Marketing", category: "Real Estate Mega Project", phone: "+966 11 476 9080", email: "marketing@neom.com", score: 99, status: "Contacted" },
+          { id: "APX-0003", name: "Emaar Properties Dubai", city: "Dubai", country: "UAE", flag: "🇦🇪", service: "Digital Marketing", category: "Luxury Real Estate", phone: "+971 4 366 1688", email: "enquiry@emaar.ae", score: 99, status: "Contacted" },
+          { id: "APX-0004", name: "Infosys Bangalore", city: "Bangalore", country: "India", flag: "🇮🇳", service: "Event Management", category: "Tech Enterprise", phone: "+91 80 2852 0261", email: "events@infosys.com", score: 98, status: "Contacted" },
+          { id: "APX-0005", name: "Roshn Real Estate Group (PIF)", city: "Riyadh", country: "Saudi Arabia", flag: "🇸🇦", service: "Digital Marketing", category: "Vision 2030 Enterprise", phone: "+966 11 834 8888", email: "info@roshn.sa", score: 99, status: "Contacted" },
+          { id: "APX-0006", name: "Razorpay Software", city: "Bangalore", country: "India", flag: "🇮🇳", service: "Event Management", category: "Fintech Unicorn", phone: "+91 80 4666 9555", email: "partnerships@razorpay.com", score: 97, status: "Contacted" },
+          { id: "APX-0007", name: "Jumeirah Group (Burj Al Arab)", city: "Dubai", country: "UAE", flag: "🇦🇪", service: "Digital Marketing", category: "Luxury Hospitality", phone: "+971 4 301 7777", email: "prjumeirah@jumeirah.com", score: 99, status: "Contacted" },
+          { id: "APX-0008", name: "Tata Sons Corporate Affairs", city: "Mumbai", country: "India", flag: "🇮🇳", service: "Digital Marketing", category: "Conglomerate", phone: "+91 22 6665 8282", email: "corporate@tata.com", score: 99, status: "Contacted" },
+          { id: "APX-0009", name: "Harley Street Dental Clinic", city: "London", country: "UK", flag: "🇬🇧", service: "Digital Marketing", category: "Aesthetic Medical Clinic", phone: "+44 20 7486 1059", email: "reception@harleystreetdentalclinic.co.uk", score: 95, status: "Contacted" }
         ];
       }
 
-      filterLeads();
+      applyFilters();
     }
 
-    initCrmDashboard();
+    document.addEventListener('DOMContentLoaded', loadCrmData);
   </script>
 </body>
 </html>
