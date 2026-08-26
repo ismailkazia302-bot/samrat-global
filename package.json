@@ -1,0 +1,23 @@
+{
+  "name": "youtube-ai-monitoring-agent",
+  "version": "1.0.0",
+  "description": "Automated YouTube AI monitoring agent that discovers top trending AI videos and sends daily email digests",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "youtube",
+    "ai",
+    "automation",
+    "monitoring-agent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.19.0",
+    "dotenv": "^17.4.2",
+    "nodemailer": "^9.0.5"
+  }
+}

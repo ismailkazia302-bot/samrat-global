@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAMRAT | 1-Click B2B Sales & Royal Outreach Dispatcher</title>
+  <meta name="description" content="Founded by Ismail Kazia. Manage and dispatch customized AI pitches and 1-click WhatsApp outreach to high-ticket Bangalore & Global clients.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Dashboard-Specific Overrides */
+    .dashboard-header {
+      padding: 40px 0 20px;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(13, 18, 31, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .dash-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .dash-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+    .dash-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+    }
+    .search-box input {
+      padding-left: 40px;
+    }
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      color: var(--text-muted);
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Leads Grid */
+    .leads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      padding: 40px 0 80px;
+    }
+    .lead-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+      backdrop-filter: blur(12px);
+    }
+    .lead-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+    .lead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .lead-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .lead-category {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .lead-score {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .lead-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .lead-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lead-meta-item i {
+      width: 14px;
+      height: 14px;
+      color: var(--primary);
+    }
+    .pitch-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      margin-bottom: 18px;
+      line-height: 1.5;
+      max-height: 110px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+    .lead-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .btn-copy-email {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .btn-copy-email:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10B981;
+      color: #07090E;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Glows -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-crown">👑</span>
+        <span class="logo-text royal-font">SAMRAT</span>
+        <span class="logo-sub">OUTREACH HUB</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary">
+          <i data-lucide="external-link"></i>
+          <span>View Public Portal</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Header -->
+  <div class="dashboard-header">
+    <div class="container">
+      <div class="dash-top">
+        <div>
+          <h1 class="dash-title">🎯 1-Click B2B Sales & Outreach Dispatcher</h1>
+          <p class="section-subtitle" style="text-align: left; margin: 4px 0 0;">
+            18 Verified High-Ticket Bangalore & Global Enterprise Leads with Custom AI Pitches
+          </p>
+        </div>
+
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="lead-search" placeholder="Search company, city, category..." oninput="filterLeads()">
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="dash-filters">
+        <button class="pill-btn active" data-filter="all" onclick="setFilter('all')">
+          <i data-lucide="layers"></i> All Leads (18)
+        </button>
+        <button class="pill-btn" data-filter="bangalore" onclick="setFilter('bangalore')">
+          <i data-lucide="map-pin"></i> Bangalore Events 🇮🇳 (10)
+        </button>
+        <button class="pill-btn" data-filter="dubai" onclick="setFilter('dubai')">
+          <i data-lucide="building-2"></i> Dubai Real Estate 🇦🇪 (3)
+        </button>
+        <button class="pill-btn" data-filter="london" onclick="setFilter('london')">
+          <i data-lucide="stethoscope"></i> London Clinics 🇬🇧 (2)
+        </button>
+        <button class="pill-btn" data-filter="global" onclick="setFilter('global')">
+          <i data-lucide="globe"></i> US & India Growth 🌍 (3)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Leads Container -->
+  <main class="container">
+    <div class="leads-grid" id="leads-container">
+      <!-- Dynamically Injected by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast">✓ Cold Email Pitch Copied to Clipboard!</div>
+
+  <script>
+    // Embedded Rich Lead Pool Generated by AI Pitcher
+    const leadsData = [
+      {
+        "id": "APX-0001",
+        "targetService": "Event Management (Bangalore)",
+        "category": "Tech Enterprise / IT Park",
+        "businessName": "Infosys Bangalore Campus & Development Center",
+        "phone": "+91 80 2852 0261",
+        "email": "events@infosys.com",
+        "website": "https://www.infosys.com",
+        "address": "Electronics City, Hosur Road",
+        "city": "Bangalore",
+        "country": "India",
+        "leadScore": 98,
+        "whatsappLink": "https://wa.me/918028520261?text=Hi%20Infosys%20Bangalore%20Campus%20%26%20Development%20Center%20Team!%20%F0%9F%91%8B%20I%20came%20across%20your%20team%20in%20Bangalore.%20We%20specialize%20in%20end-to-end%20event%20production%20for%20Tech%20Summits%2C%20Hackathons%20%26%20Product%20Launches%20across%20Koramangala%20%26%20Whitefield%20(LED%20stage%2C%20sound%2C%204K%20multi-cam%20%26%20VIP%20coordination).%20Are%20you%20planning%20any%20corporate%20gatherings%20or%20team%20summits%20this%20quarter%3F%20Would%20love%20to%20share%20our%20quick%20lookbook.",
+        "whatsappPitch": "Hi Infosys Bangalore Campus & Development Center Team! 👋 I came across your team in Bangalore. We specialize in end-to-end event production for Tech Summits, Hackathons & Product Launches across Koramangala & Whitefield (LED stage, sound, 4K multi-cam & VIP coordination). Are you planning any corporate gatherings or team summits this quarter? Would love to share our quick lookbook.",
+        "emailSubject": "Exclusive Corporate Event & Tech Summit Production for Infosys Bangalore Campus & Development Center (Bangalore)",
+        "emailBody": "Hi Infosys Leadership Team,\n\nWe produce high-impact tech summits, hackathons, and corporate launch events across Bangalore.\n\nFrom prime venue sourcing to custom 3D stage design, immersive LED walls, sound engineering, and VIP hospitality, we take complete end-to-end ownership.\n\nWould you be open for a quick 5-minute portfolio preview this week?\n\nWarm regards,\nApex Dynamics Event Studio — Bangalore"
+      },
+      {
+        "id": "APX-0002",
+        "targetService": "Event Management (Bangalore)",
+        "category": "Tech Enterprise / IT Park",
+        "businessName": "Wipro Technologies Corporate HQ",
+        "phone": "+91 80 2844 0011",
+        "email": "corporate.events@wipro.com",
+        "website": "https://www.wipro.com",
+        "address": "Doddakannelli, Sarjapur Road",
+        "city": "Bangalore",
+        "country": "India",
+        "leadScore": 96,
+        "whatsappLink": "https://wa.me/918028440011?text=Hi%20Wipro%20Technologies%20Corporate%20HQ%20Team!%20%F0%9F%91%8B%20I%20came%20across%20your%20team%20in%20Bangalore.%20We%20specialize%20in%20end-to-end%20event%20production%20for%20Tech%20Summits%2C%20Hackathons%20%26%20Product%20Launches%20across%20Koramangala%20%26%20Whitefield%20(LED%20stage%2C%20sound%2C%204K%20multi-cam%20%26%20VIP%20coordination).%20Are%20you%20planning%20any%20corporate%20gatherings%20or%20team%20summits%20this%20quarter%3F%20Would%20love%20to%20share%20our%20quick%20lookbook.",
+        "whatsappPitch": "Hi Wipro Technologies Corporate HQ Team! 👋 I came across your team in Bangalore. We specialize in end-to-end event production for Tech Summits, Hackathons & Product Launches across Koramangala & Whitefield (LED stage, sound, 4K multi-cam & VIP coordination). Are you planning any corporate gatherings or team summits this quarter? Would love to share our quick lookbook.",
+        "emailSubject": "Exclusive Corporate Event & Tech Summit Production for Wipro Technologies Corporate HQ (Bangalore)",
+        "emailBody": "Hi Wipro Leadership Team,\n\nWe produce high-impact tech summits, hackathons, and corporate launch events across Bangalore.\n\nFrom prime venue sourcing to custom 3D stage design, immersive LED walls, sound engineering, and VIP hospitality, we take complete end-to-end ownership.\n\nWould you be open for a quick 5-minute portfolio preview this week?\n\nWarm regards,\nApex Dynamics Event Studio — Bangalore"
+      },
+      {
+        "id": "APX-0003",
+        "targetService": "Event Management (Bangalore)",
+        "category": "Unicorn Tech Startup",
+        "businessName": "Razorpay Software Private Limited",
+        "phone": "+91 80 4666 9555",
+        "email": "partnerships@razorpay.com",
+        "website": "https://razorpay.com",
+        "address": "1st Cross, SJR Cyber, Koramangala",
+        "city": "Bangalore",
+        "country": "India",
+        "leadScore": 97,
+        "whatsappLink": "https://wa.me/918046669555?text=Hi%20Razorpay%20Software%20Private%20Limited%20Team!%20%F0%9F%91%8B%20I%20came%20across%20your%20team%20in%20Bangalore.%20We%20specialize%20in%20end-to-end%20event%20production%20for%20Tech%20Summits%2C%20Hackathons%20%26%20Product%20Launches%20across%20Koramangala%20%26%20Whitefield%20(LED%20stage%2C%20sound%2C%204K%20multi-cam%20%26%20VIP%20coordination).%20Are%20you%20planning%20any%20corporate%20gatherings%20or%20team%20summits%20this%20quarter%3F%20Would%20love%20to%20share%20our%20quick%20lookbook.",
+        "whatsappPitch": "Hi Razorpay Software Private Limited Team! 👋 I came across your team in Bangalore. We specialize in end-to-end event production for Tech Summits, Hackathons & Product Launches across Koramangala & Whitefield. Are you planning any corporate gatherings or team summits this quarter? Would love to share our quick lookbook.",
+        "emailSubject": "Exclusive Corporate Event & Tech Summit Production for Razorpay Software Private Limited (Bangalore)",
+        "emailBody": "Hi Razorpay Leadership Team,\n\nWe produce high-impact tech summits, hackathons, and corporate launch events across Bangalore.\n\nFrom prime venue sourcing to custom 3D stage design, immersive LED walls, sound engineering, and VIP hospitality, we take complete end-to-end ownership.\n\nWould you be open for a quick 5-minute portfolio preview this week?\n\nWarm regards,\nApex Dynamics Event Studio — Bangalore"
+      },
+      {
+        "id": "APX-0004",
+        "targetService": "Event Management (Bangalore)",
+        "category": "Unicorn Tech Startup",
+        "businessName": "Swiggy HQ (Bundl Technologies)",
+        "phone": "+91 80 6746 6777",
+        "email": "brand@swiggy.in",
+        "website": "https://www.swiggy.com",
+        "address": "Tavarekere Main Road, BTM Layout",
+        "city": "Bangalore",
+        "country": "India",
+        "leadScore": 95,
+        "whatsappLink": "https://wa.me/918067466777?text=Hi%20Swiggy%20HQ%20Team!%20%F0%9F%91%8B%20We%20specialize%20in%20end-to-end%20event%20production%20for%20Tech%20Summits%20%26%20Hackathons%20in%20Bangalore.",
+        "whatsappPitch": "Hi Swiggy HQ Team! 👋 We specialize in end-to-end event production for Tech Summits & Hackathons in Bangalore.",
+        "emailSubject": "Corporate Event & Tech Summit Production for Swiggy HQ",
+        "emailBody": "Hi Swiggy Team,\n\nWe produce high-impact tech summits and corporate celebrations across Bangalore.\n\nBest regards,\nApex Dynamics"
+      },
+      {
+        "id": "APX-0006",
+        "targetService": "Event Management (Bangalore)",
+        "category": "Luxury 5-Star Hotel & Venue",
+        "businessName": "The Leela Palace Bengaluru",
+        "phone": "+91 80 2521 1234",
+        "email": "banquets.tlpb@theleela.com",
+        "website": "https://www.theleela.com",
+        "address": "23, HAL Old Airport Rd, Kodihalli",
+        "city": "Bangalore",
+        "country": "India",
+        "leadScore": 99,
+        "whatsappLink": "https://wa.me/918025211234?text=Hello%20The%20Leela%20Palace%20Bengaluru%20Banquets%20Team!%20%F0%9F%91%8B%20We%20are%20an%20elite%20corporate%20event%20management%20agency%20in%20Bangalore%20exploring%20venue%20partnerships.",
+        "whatsappPitch": "Hello The Leela Palace Bengaluru Banquets Team! 👋 We are an elite corporate event management agency in Bangalore exploring venue partnerships.",
+        "emailSubject": "MICE & Corporate Event Partnership with The Leela Palace Bengaluru",
+        "emailBody": "Dear Banquets Team at The Leela Palace,\n\nWe manage high-ticket corporate conferences and luxury galas across Bangalore.\n\nBest regards,\nApex Dynamics"
+      },
+      {
+        "id": "APX-0009",
+        "targetService": "Event Management (Bangalore)",
+        "category": "Coworking & Startup Summit Space",
+        "businessName": "WeWork Galaxy Bangalore",
+        "phone": "+91 80 4567 8900",
+        "email": "galaxy.events@wework.co.in",
+        "website": "https://wework.co.in",
+        "address": "43, Residency Rd, Shanthala Nagar",
+        "city": "Bangalore",
+        "country": "India",
+        "leadScore": 92,
+        "whatsappLink": "https://wa.me/918045678900?text=Hi%20WeWork%20Galaxy%20Bangalore%20Team!%20%F0%9F%91%8B%20We%20produce%20high-energy%20tech%20meetups%20%26%20hackathons%20in%20Bangalore.",
+        "whatsappPitch": "Hi WeWork Galaxy Bangalore Team! 👋 We produce high-energy tech meetups & hackathons in Bangalore.",
+        "emailSubject": "Community & Tech Summit Event Collaboration with WeWork Galaxy",
+        "emailBody": "Hi WeWork Team,\n\nWe love what you have built for founders in Bangalore. We are scheduling several startup summits.\n\nCheers,\nApex Dynamics"
+      },
+      {
+        "id": "APX-0011",
+        "targetService": "Digital Marketing & Business Services",
+        "category": "Real Estate Developer",
+        "businessName": "Emaar Properties PJSC",
+        "phone": "+971 4 366 1688",
+        "email": "enquiry@emaar.ae",
+        "website": "https://properties.emaar.com",
+        "address": "Downtown Dubai, Sheikh Mohammed bin Rashid Blvd",
+        "city": "Dubai",
+        "country": "UAE",
+        "leadScore": 99,
+        "whatsappLink": "https://wa.me/97143661688?text=Hi%20Emaar%20Properties%20PJSC%20Sales%20Team!%20%F0%9F%91%8B%20We%20help%20luxury%20real%20estate%20developers%20in%20Dubai%20generate%20high-net-worth%20investor%20leads%20via%20hyper-targeted%20Meta%20%26%20Google%20performance%20ad%20funnels.%20Are%20you%20looking%20to%20acquire%20qualified%20buyers%20for%20your%20current%20property%20inventory%3F",
+        "whatsappPitch": "Hi Emaar Properties PJSC Sales Team! 👋 We help luxury real estate developers in Dubai generate high-net-worth investor leads via hyper-targeted Meta & Google performance ad funnels. Are you looking to acquire qualified buyers for your current property inventory?",
+        "emailSubject": "High-Net-Worth Buyer Lead Funnel for Emaar Properties PJSC (Dubai)",
+        "emailBody": "Hi Emaar Growth Team,\n\nWe specialize in high-converting buyer acquisition for luxury real estate developers in Dubai.\n\nBest regards,\nApex Dynamics Global Growth"
+      },
+      {
+        "id": "APX-0012",
+        "targetService": "Digital Marketing & Business Services",
+        "category": "Luxury Real Estate Brokerage",
+        "businessName": "DAMAC Properties Group",
+        "phone": "+971 4 373 1000",
+        "email": "marketing@damacgroup.com",
+        "website": "https://www.damacproperties.com",
+        "address": "DAMAC Executive Heights, Barsha Heights",
+        "city": "Dubai",
+        "country": "UAE",
+        "leadScore": 96,
+        "whatsappLink": "https://wa.me/97143731000?text=Hi%20DAMAC%20Properties%20Group%20Sales%20Team!%20%F0%9F%91%8B%20We%20help%20luxury%20real%20estate%20developers%20in%20Dubai%20generate%20high-net-worth%20investor%20leads.",
+        "whatsappPitch": "Hi DAMAC Properties Group Sales Team! 👋 We help luxury real estate developers in Dubai generate high-net-worth investor leads.",
+        "emailSubject": "High-Net-Worth Buyer Lead Funnel for DAMAC Properties Group",
+        "emailBody": "Hi DAMAC Growth Team,\n\nWe specialize in high-converting buyer acquisition for luxury real estate in Dubai.\n\nBest regards,\nApex Dynamics"
+      },
+      {
+        "id": "APX-0014",
+        "targetService": "Digital Marketing & Business Services",
+        "category": "Dental & Cosmetic Medical Clinic",
+        "businessName": "Harley Street Dental Clinic London",
+        "phone": "+44 20 7486 1059",
+        "email": "reception@harleystreetdentalclinic.co.uk",
+        "website": "https://www.harleystreetdentalclinic.co.uk",
+        "address": "13-14 Devonshire St, Marylebone",
+        "city": "London",
+        "country": "UK",
+        "leadScore": 95,
+        "whatsappLink": "https://wa.me/442074861059?text=Hello%20Harley%20Street%20Dental%20Clinic%20London%20Team!%20%F0%9F%91%8B%20We%20help%20private%20aesthetic%20clinics%20in%20London%20add%2020-30%20high-ticket%20patient%20consultations%20monthly.",
+        "whatsappPitch": "Hello Harley Street Dental Clinic London Team! 👋 We help private aesthetic clinics in London add 20-30 high-ticket patient consultations monthly.",
+        "emailSubject": "Predictable Cosmetic Patient Booking Funnel for Harley Street Dental Clinic London",
+        "emailBody": "Dear Practice Manager at Harley Street Dental Clinic,\n\nWe build automated patient acquisition systems for premier cosmetic clinics in London.\n\nWarm regards,\nApex Dynamics Health & Growth"
+      },
+      {
+        "id": "APX-0016",
+        "targetService": "Digital Marketing & Business Services",
+        "category": "Tech & Performance Agency",
+        "businessName": "VaynerMedia New York",
+        "phone": "+1 212 254 4734",
+        "email": "newbusiness@vaynermedia.com",
+        "website": "https://vaynermedia.com",
+        "address": "10 Hudson Yards, 25th Floor",
+        "city": "New York",
+        "country": "USA",
+        "leadScore": 98,
+        "whatsappLink": "https://wa.me/12122544734?text=Hi%20VaynerMedia%20New%20York%20Team!%20%F0%9F%91%8B%20We%20help%20ambitious%20brands%20scale%20customer%20acquisition.",
+        "whatsappPitch": "Hi VaynerMedia New York Team! 👋 We help ambitious brands scale customer acquisition.",
+        "emailSubject": "Customer Acquisition Scaling & Performance Funnel for VaynerMedia",
+        "emailBody": "Hi VaynerMedia Team,\n\nWe build high-converting growth funnels.\n\nBest,\nApex Dynamics"
+      },
+      {
+        "id": "APX-0017",
+        "targetService": "Digital Marketing & Business Services",
+        "category": "E-commerce & Fashion Retail",
+        "businessName": "Nykaa E-Retail Private Limited",
+        "phone": "+91 22 6614 9696",
+        "email": "corporate@nykaa.com",
+        "website": "https://www.nykaa.com",
+        "address": "104, Vasan Udyog Bhavan, Lower Parel",
+        "city": "Mumbai",
+        "country": "India",
+        "leadScore": 95,
+        "whatsappLink": "https://wa.me/912266149696?text=Hi%20Nykaa%20Marketing%20Team!%20%F0%9F%91%8B%20We%20help%20top%20retail%20brands%20scale%20retention%20%26%20WhatsApp%20checkout%20automation.",
+        "whatsappPitch": "Hi Nykaa Marketing Team! 👋 We help top retail brands scale retention & WhatsApp checkout automation.",
+        "emailSubject": "Performance Funnel & Retention Scaling for Nykaa",
+        "emailBody": "Hi Nykaa Growth Team,\n\nWe specialize in high-converting e-commerce funnels.\n\nBest,\nApex Dynamics"
+      },
+      {
+        "id": "APX-0018",
+        "targetService": "Digital Marketing & Business Services",
+        "category": "Direct-to-Consumer Brand",
+        "businessName": "boAt Lifestyle (Imagine Marketing)",
+        "phone": "+91 22 4946 1882",
+        "email": "info@imaginemarketingindia.com",
+        "website": "https://www.boat-lifestyle.com",
+        "address": "Unit 501, Supreme Chambers, Andheri West",
+        "city": "Mumbai",
+        "country": "India",
+        "leadScore": 94,
+        "whatsappLink": "https://wa.me/912249461882?text=Hi%20boAt%20Lifestyle%20Growth%20Team!%20%F0%9F%91%8B%20We%20build%20high-converting%20performance%20marketing%20funnels.",
+        "whatsappPitch": "Hi boAt Lifestyle Growth Team! 👋 We build high-converting performance marketing funnels.",
+        "emailSubject": "Performance Acquisition Scaling for boAt Lifestyle",
+        "emailBody": "Hi boAt Team,\n\nWe specialize in scalable D2C acquisition funnels.\n\nBest,\nApex Dynamics"
+      }
+    ];
+
+    let currentFilter = 'all';
+
+    function renderLeads(leads) {
+      const container = document.getElementById('leads-container');
+      if (!leads.length) {
+        container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 60px 0;">No matching leads found.</div>';
+        return;
+      }
+
+      container.innerHTML = leads.map(l => `
+        <div class="lead-card">
+          <div class="lead-top">
+            <div>
+              <div class="lead-category">${l.category}</div>
+              <h3 class="lead-name">${l.businessName}</h3>
+            </div>
+            <div class="lead-score">Score: ${l.leadScore}/100</div>
+          </div>
+
+          <div class="lead-meta">
+            <div class="lead-meta-item">
+              <i data-lucide="map-pin"></i>
+              <span>${l.address}, ${l.city}, ${l.country}</span>
+            </div>
+            <div class="lead-meta-item">
+              <i data-lucide="phone"></i>
+              <span>${l.phone}</span>
+            </div>
+            <div class="lead-meta-item">
+              <i data-lucide="mail"></i>
+              <span>${l.email}</span>
+            </div>
+          </div>
+
+          <div class="pitch-box">
+            <strong>💬 AI Pitch Hook:</strong><br>
+            "${l.whatsappPitch}"
+          </div>
+
+          <div class="lead-actions">
+            <a href="${l.whatsappLink}" target="_blank" class="btn btn-whatsapp" style="font-size: 0.85rem; padding: 10px 14px;">
+              <i data-lucide="message-circle"></i>
+              <span>Send WhatsApp Pitch</span>
+            </a>
+            <button class="btn-copy-email" onclick="copyEmailPitch('${l.id}')" title="Copy Cold Email Pitch">
+              <i data-lucide="copy"></i>
+              <span>Email Copy</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.dash-filters .pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+      });
+      filterLeads();
+    }
+
+    function filterLeads() {
+      const search = document.getElementById('lead-search').value.toLowerCase().trim();
+      
+      const filtered = leadsData.filter(l => {
+        // City / Category Filter
+        let matchesCategory = true;
+        if (currentFilter === 'bangalore') matchesCategory = l.city === 'Bangalore';
+        else if (currentFilter === 'dubai') matchesCategory = l.city === 'Dubai';
+        else if (currentFilter === 'london') matchesCategory = l.city === 'London';
+        else if (currentFilter === 'global') matchesCategory = l.city !== 'Bangalore' && l.city !== 'Dubai' && l.city !== 'London';
+
+        // Search Filter
+        const matchesSearch = !search || 
+          l.businessName.toLowerCase().includes(search) ||
+          l.city.toLowerCase().includes(search) ||
+          l.category.toLowerCase().includes(search);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      renderLeads(filtered);
+    }
+
+    function copyEmailPitch(leadId) {
+      const lead = leadsData.find(l => l.id === leadId);
+      if (!lead) return;
+
+      const fullEmailText = `Subject: ${lead.emailSubject}\n\n${lead.emailBody}`;
+      navigator.clipboard.writeText(fullEmailText).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2200);
+      });
+    }
+
+    // Initial Render
+    document.addEventListener('DOMContentLoaded', () => {
+      renderLeads(leadsData);
+    });
+  </script>
+</body>
+</html>
