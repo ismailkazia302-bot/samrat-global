@@ -12,6 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
@@ -21,6 +22,42 @@ const REPORTS_DIR = path.join(__dirname, 'daily_reports');
 
 if (!fs.existsSync(REPORTS_DIR)) {
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
+}
+
+/**
+ * Brevo REST API Dispatcher (300 free emails/day)
+ */
+async function sendEmailViaBrevo({ toEmail, toName, subject, textBody, replyToEmail }) {
+  const apiKey = process.env.BREVO_API_KEY;
+  const senderEmail = process.env.BREVO_SENDER_EMAIL;
+  const senderName = process.env.BREVO_SENDER_NAME || 'Ismail Kazia | SAMRAT WORLDWIDE';
+  const replyTo = replyToEmail || process.env.REPLY_TO_EMAIL || senderEmail;
+
+  if (!apiKey || apiKey.includes('your_api_key_here')) {
+    // Staging / Simulation mode (creates real logs and reports)
+    return { status: 'staged', messageId: 'simulated-' + Date.now() };
+  }
+
+  try {
+    const response = await axios.post('https://api.brevo.com/v3/smtp/email', {
+      sender: { name: senderName, email: senderEmail },
+      to: [{ email: toEmail, name: toName || toEmail }],
+      replyTo: { email: replyTo, name: senderName },
+      subject: subject,
+      htmlContent: textBody.replace(/\n/g, '<br>')
+    }, {
+      headers: {
+        'api-key': apiKey,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    return { status: 'sent', messageId: response.data.messageId };
+  } catch (err) {
+    const errMsg = err.response && err.response.data ? JSON.stringify(err.response.data) : err.message;
+    console.error(`⚠️ Brevo dispatch error for ${toEmail}:`, errMsg);
+    return { status: 'failed', error: errMsg };
+  }
 }
 
 // 3-Month Followup Cadence Rules (in days)
@@ -310,6 +347,14 @@ async function runDailyOutreachEngine(maxBatch = 300) {
       targetService: record.service
     }, nextStep);
 
+    // Send via Brevo (or Staging mode if API key not set)
+    const sendResult = await sendEmailViaBrevo({
+      toEmail: record.email,
+      toName: record.name,
+      subject: content.subject,
+      textBody: content.body
+    });
+
     // Calculate next followup date
     const cadenceRule = FOLLOWUP_CADENCE[nextStep] || FOLLOWUP_CADENCE[0];
     const nextCadenceRule = FOLLOWUP_CADENCE[nextStep + 1];
@@ -326,7 +371,7 @@ async function runDailyOutreachEngine(maxBatch = 300) {
     record.contactedDate = record.contactedDate || todayStr;
     record.step = nextStep;
     record.followUpDate = nextFollowupDateStr;
-    record.notes = `${cadenceRule.label} sent on ${todayStr}`;
+    record.notes = `${cadenceRule.label} [${sendResult.status.toUpperCase()}] on ${todayStr}`;
 
     crmMap.set(record.id, record);
 
@@ -340,6 +385,8 @@ async function runDailyOutreachEngine(maxBatch = 300) {
       step: nextStep,
       stepLabel: cadenceRule.label,
       subject: content.subject,
+      sendStatus: sendResult.status,
+      messageId: sendResult.messageId || null,
       nextFollowup: nextFollowupDateStr
     });
   }
