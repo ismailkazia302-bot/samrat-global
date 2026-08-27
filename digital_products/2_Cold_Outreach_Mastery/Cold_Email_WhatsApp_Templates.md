@@ -1,10 +1,10 @@
 # Cold Email & WhatsApp Outreach Templates That Convert
-**By SAMRAT WORLDWIDE — Battle-Tested by Ismail Kazia**
+**By GELICON WORLDWIDE — Battle-Tested by Ismail Kazia**
 *50 Industry-Specific Cold Emails + 30 High-Response WhatsApp Pitches + 90-Day Follow-Up Sequence*
 
 ---
 
-## 🎯 THE SAMRAT OUTREACH FORMULA
+## 🎯 THE GELICON OUTREACH FORMULA
 Every high-converting cold message must contain:
 1. **Relevance Trigger**: Why you, why today? (Local news, hire, event, expansion).
 2. **Quantifiable Value Prop**: "We helped X achieve Y in Z days without W."
@@ -18,7 +18,7 @@ Every high-converting cold message must contain:
 > **Recipient:** VP Marketing / HR Head / Event Coordinator  
 > **Message:**  
 > Hi [Name]! 👋 I noticed [Company Name] recently expanded your [Team / Koramangala Campus / Funding Round]. Congratulations!  
-> I’m Ismail Kazia from SAMRAT. We produce end-to-end tech summits & corporate hackathons across Bangalore (custom LED stage, 4K multi-cam, sound engineering & VIP hospitality).  
+> I’m Ismail Kazia from GELICON. We produce end-to-end tech summits & corporate hackathons across Bangalore (custom LED stage, 4K multi-cam, sound engineering & VIP hospitality).  
 > Are you planning any corporate gatherings, townhalls, or customer summits this quarter?  
 > Would love to share our 2-minute visual lookbook on WhatsApp. 👑
 
@@ -49,14 +49,14 @@ I noticed that [Company Name] recently [specific trigger: e.g. hired 50+ enginee
 
 Usually when tech leaders scale at this pace, organizing the annual tech summit or founder mixer becomes a major operational bottleneck for internal teams.
 
-At SAMRAT WORLDWIDE, we manage end-to-end event production across Bangalore (from 5-star venue negotiation at Leela/ITC to 3D LED stagecraft, 4K live broadcast, and VIP protocol).
+At GELICON WORLDWIDE, we manage end-to-end event production across Bangalore (from 5-star venue negotiation at Leela/ITC to 3D LED stagecraft, 4K live broadcast, and VIP protocol).
 
 Could I send over a 1-page PDF showing the stage blueprint we used for a 400+ attendee tech summit last month?
 
 Best regards,
 
 Ismail Kazia
-Founder & CEO, SAMRAT WORLDWIDE
+Founder & CEO, GELICON WORLDWIDE
 Direct WhatsApp: +91 63639 62640 | Web: ismailkazia302-bot.github.io/samrat-global/
 ```
 
@@ -74,7 +74,7 @@ Would you be open to seeing our 3-step qualification filter before deciding if i
 Warm regards,
 
 Ismail Kazia
-SAMRAT WORLDWIDE (India 🇮🇳 & Saudi Arabia 🇸🇦)
+GELICON WORLDWIDE (India 🇮🇳 & Saudi Arabia 🇸🇦)
 WhatsApp: +966 54 890 5688 / +91 63639 62640
 ```
 
@@ -93,4 +93,4 @@ WhatsApp: +966 54 890 5688 / +91 63639 62640
 | **Step 7** | Day 90 | Breakup / Permission | "Closing your file — unless timing is better now?" |
 
 ---
-*© 2026 SAMRAT WORLDWIDE. Commercial license granted.*
+*© 2026 GELICON WORLDWIDE. Commercial license granted.*

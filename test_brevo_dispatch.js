@@ -12,13 +12,13 @@ async function testBrevo() {
     const res = await axios.post('https://api.brevo.com/v3/smtp/email', {
       sender: { name: name, email: email },
       to: [{ email: email, name: 'Ismail Kazia (Founder)' }],
-      subject: '👑 SAMRAT WORLDWIDE — AI Outreach Engine Connected Successfully!',
+      subject: '👑 GELICON WORLDWIDE — AI Outreach Engine Connected Successfully!',
       htmlContent: `
         <div style="font-family: Arial, sans-serif; background: #000; color: #fff; padding: 30px; border-radius: 12px; max-width: 600px;">
-          <h2 style="color: #EAB308; margin-bottom: 10px;">👑 SAMRAT WORLDWIDE</h2>
+          <h2 style="color: #EAB308; margin-bottom: 10px;">👑 GELICON WORLDWIDE</h2>
           <p style="font-size: 1.1rem; color: #fff;">Mubarak ho Ismail bhai! 🎉</p>
           <p style="color: #ccc; line-height: 1.6;">
-            Aapka Brevo Email Engine ab <strong>SAMRAT Autonomous AI System</strong> ke saath 100% connect ho chuka hai.
+            Aapka Brevo Email Engine ab <strong>GELICON Autonomous AI System</strong> ke saath 100% connect ho chuka hai.
           </p>
           <div style="background: #111; border: 1px solid #333; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #10B981; font-weight: bold;">✓ Brevo API Key: Verified & Active</p>
@@ -29,7 +29,7 @@ async function testBrevo() {
             Ab se har subah 8:30 AM par Bangalore, Saudi Arabia, Dubai aur UK ke clients ko high-ticket pitches dispatch honge.
           </p>
           <hr style="border: 0; border-top: 1px solid #222; margin: 20px 0;">
-          <p style="color: #666; font-size: 0.8rem; margin: 0;">SAMRAT WORLDWIDE • Bangalore & Saudi Arabia</p>
+          <p style="color: #666; font-size: 0.8rem; margin: 0;">GELICON WORLDWIDE • Bangalore & Saudi Arabia</p>
         </div>
       `
     }, {

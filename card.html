@@ -1,222 +1,291 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ismail Kazia | SAMRAT WORLDWIDE</title>
-  <meta name="description" content="Digital Business Card — Ismail Kazia, Founder & CEO of SAMRAT WORLDWIDE. Events, Digital Marketing & Business Advisory.">
-  <meta property="og:title" content="Ismail Kazia | SAMRAT WORLDWIDE">
-  <meta property="og:description" content="Founder & CEO — Elite Events in Bangalore & Pan-India. Global Digital Marketing.">
-  <meta property="og:type" content="profile">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Ismail Kazia — GELICON WORLDWIDE</title>
+  <meta name="description" content="Ismail Kazia | Founder &amp; CEO of GELICON WORLDWIDE. Events &amp; Activations, Digital Marketing, Business Advisory, 4K Production." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Ismail Kazia — GELICON WORLDWIDE" />
+  <meta property="og:description" content="Founder &amp; CEO | Events &amp; Activations · Digital Marketing · Business Advisory · 4K Production" />
+  <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/card.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ismail Kazia — GELICON WORLDWIDE" />
+  <meta name="twitter:description" content="Founder &amp; CEO | Events · Digital Marketing · Business Advisory · 4K Production" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #EAB308; --gold-light: #FDE68A; --gold-dim: rgba(234,179,8,0.15);
+      --gold-border: rgba(234,179,8,0.3); --bg: #000; --surface-3: #1A1A1A;
+      --text: #fff; --text-muted: rgba(255,255,255,0.55);
+      --radius: 16px; --radius-lg: 24px;
+    }
+    html, body { height: 100%; background: var(--bg); font-family: 'Poppins', sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
     body {
-      font-family:'Poppins',sans-serif;
-      background:#000;
-      color:#fff;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:20px;
+      min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 20px 16px 40px;
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(234,179,8,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 30% at 50% 100%, rgba(234,179,8,0.04) 0%, transparent 60%), #000;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes borderRotate { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    @keyframes pulseRing { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:.2;transform:scale(1.05)} }
+    /* Animated gradient border wrapper */
+    .card-outer {
+      width: 100%; max-width: 420px;
+      border-radius: calc(var(--radius-lg) + 2px); padding: 2px;
+      background: linear-gradient(270deg, #EAB308, #78350F, #EAB308, #CA8A04, #FDE68A, #EAB308);
+      background-size: 400% 400%; animation: borderRotate 6s ease infinite;
+      box-shadow: 0 0 60px rgba(234,179,8,0.2), 0 20px 60px rgba(0,0,0,0.85);
     }
     .card {
-      width:100%;
-      max-width:420px;
-      background:#0A0A0A;
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:24px;
-      padding:40px 28px;
-      text-align:center;
-      animation:fadeUp 0.8s ease;
+      width: 100%; background: linear-gradient(160deg, #0F0F0F 0%, #080808 100%);
+      border-radius: var(--radius-lg); padding: 36px 28px 32px;
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(24px);
+      animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
     }
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(30px); }
-      to { opacity:1; transform:translateY(0); }
-    }
+    .card::before { content:''; position:absolute; top:-60px; right:-60px; width:180px; height:180px; background:radial-gradient(circle,rgba(234,179,8,0.12) 0%,transparent 70%); pointer-events:none; }
+    .card::after  { content:''; position:absolute; bottom:-40px; left:-40px; width:140px; height:140px; background:radial-gradient(circle,rgba(234,179,8,0.07) 0%,transparent 70%); pointer-events:none; }
+
+    .brand-label { text-align:center; font-size:10px; font-weight:700; letter-spacing:3.5px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; opacity:.85; }
+
+    .avatar-wrap { display:flex; justify-content:center; margin-bottom:20px; }
     .avatar {
-      width:100px; height:100px;
-      border-radius:50%;
-      background:linear-gradient(135deg,#EAB308,#CA8A04);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin:0 auto 20px;
-      font-size:2.2rem;
-      font-weight:900;
-      color:#000;
-      border:3px solid rgba(234,179,8,0.4);
+      width:96px; height:96px; border-radius:50%;
+      background:radial-gradient(135deg,#1C1C1C 0%,#0A0A0A 100%);
+      border:2px solid var(--gold-border);
+      display:flex; align-items:center; justify-content:center;
+      font-size:32px; font-weight:800; color:var(--gold); letter-spacing:2px; position:relative;
+      box-shadow:0 0 0 6px rgba(234,179,8,0.06),0 0 30px rgba(234,179,8,0.12),inset 0 1px 0 rgba(255,255,255,0.04);
     }
-    .brand-label {
-      font-size:0.7rem;
-      font-weight:800;
-      letter-spacing:3px;
-      color:#EAB308;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    }
+    .avatar::after { content:''; position:absolute; inset:-6px; border-radius:50%; border:1px solid rgba(234,179,8,0.15); animation:pulseRing 3s ease-in-out infinite; }
+
+    .profile { text-align:center; margin-bottom:24px; }
     .name {
-      font-size:1.8rem;
-      font-weight:900;
-      letter-spacing:1px;
-      margin-bottom:4px;
+      font-size:26px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; line-height:1.15;
+      background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.85) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:6px;
     }
-    .title {
-      font-size:0.9rem;
-      font-weight:500;
-      color:#888;
-      margin-bottom:20px;
-    }
-    .divider {
-      height:1px;
-      background:rgba(255,255,255,0.1);
-      margin:20px 0;
-    }
-    .services-tags {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:8px;
-      margin-bottom:4px;
-    }
-    .tag {
-      background:rgba(234,179,8,0.1);
-      border:1px solid rgba(234,179,8,0.3);
-      color:#EAB308;
-      padding:5px 14px;
-      border-radius:20px;
-      font-size:0.72rem;
-      font-weight:700;
-    }
-    .action-btn {
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      width:100%;
-      padding:14px;
-      border:none;
-      border-radius:12px;
-      font-family:inherit;
-      font-size:0.9rem;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-      margin-bottom:10px;
-      transition:transform 0.2s, box-shadow 0.2s;
-    }
-    .action-btn:hover {
-      transform:translateY(-2px);
-      box-shadow:0 4px 15px rgba(0,0,0,0.5);
-    }
-    .btn-wa { background:#25D366; color:#000; }
-    .btn-wa-sa { background:#128C7E; color:#fff; }
-    .btn-email { background:#1a1a1a; color:#fff; border:1px solid rgba(255,255,255,0.15); }
-    .btn-web { background:#1a1a1a; color:#EAB308; border:1px solid rgba(234,179,8,0.3); }
-    .btn-save { background:#EAB308; color:#000; font-weight:800; font-size:1rem; margin-top:10px; }
-    .locations {
-      display:flex;
-      justify-content:center;
-      gap:16px;
-      margin-bottom:4px;
-    }
-    .loc-chip {
-      font-size:0.8rem;
-      color:#999;
-      font-weight:600;
-    }
-    .footer-text {
-      font-size:0.7rem;
-      color:#444;
-      margin-top:20px;
-      letter-spacing:1px;
+    .title { font-size:13px; font-weight:400; color:var(--gold); letter-spacing:1px; opacity:.9; }
+
+    .divider { height:1px; background:linear-gradient(90deg,transparent 0%,var(--gold-border) 30%,rgba(234,179,8,0.5) 50%,var(--gold-border) 70%,transparent 100%); margin:22px 0; }
+
+    .section-label { text-align:center; font-size:9px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px; }
+
+    .pills { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:4px; }
+    .pill { padding:6px 14px; border-radius:100px; border:1px solid var(--gold-border); background:var(--gold-dim); font-size:11px; font-weight:500; color:var(--gold-light); letter-spacing:.3px; white-space:nowrap; }
+
+    /* Stats */
+    .stats-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    .stat-box { flex:1; min-width:120px; background:rgba(234,179,8,0.06); border:1px solid rgba(234,179,8,0.2); border-radius:12px; padding:12px 10px; text-align:center; }
+    .stat-num { font-size:20px; font-weight:800; color:var(--gold); line-height:1; margin-bottom:4px; }
+    .stat-label { font-size:10px; font-weight:500; color:var(--text-muted); line-height:1.3; }
+
+    /* Countries */
+    .countries-row { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:10px; }
+    .country-chip { font-size:12px; padding:5px 11px; border-radius:100px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:rgba(255,255,255,0.75); }
+
+    /* Buttons */
+    .contacts { display:flex; flex-direction:column; gap:10px; }
+    .btn { display:flex; align-items:center; gap:13px; width:100%; padding:14px 18px; border-radius:var(--radius); background:var(--surface-3); border:1px solid rgba(255,255,255,0.06); text-decoration:none; color:var(--text); font-family:'Poppins',sans-serif; cursor:pointer; transition:background .2s,transform .15s; -webkit-tap-highlight-color:transparent; position:relative; overflow:hidden; }
+    .btn:active { transform:scale(0.98); }
+    .btn::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,0.03) 0%,transparent 60%); pointer-events:none; }
+    .btn:hover { background:#222; border-color:rgba(255,255,255,0.1); }
+    .btn-icon { flex-shrink:0; width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:19px; line-height:1; }
+    .btn-icon.whatsapp { background:rgba(37,211,102,0.15); border:1px solid rgba(37,211,102,0.2); }
+    .btn-icon.email    { background:rgba(234,179,8,0.12);  border:1px solid rgba(234,179,8,0.2); }
+    .btn-icon.web      { background:rgba(99,179,237,0.12);  border:1px solid rgba(99,179,237,0.2); }
+    .btn-text { flex:1; min-width:0; }
+    .btn-label { font-size:11px; font-weight:500; color:var(--text-muted); letter-spacing:.3px; line-height:1; margin-bottom:3px; }
+    .btn-value { font-size:13.5px; font-weight:600; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.2; }
+    .btn-arrow { flex-shrink:0; color:var(--text-muted); font-size:14px; }
+
+    /* Locations */
+    .locations { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+    .location-chip { display:flex; align-items:center; gap:5px; padding:8px 14px; border-radius:100px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); font-size:12px; font-weight:500; color:rgba(255,255,255,0.75); }
+
+    /* Save Button */
+    .save-wrap { margin-top:28px; }
+    .btn-save { width:100%; padding:16px; border-radius:var(--radius); background:linear-gradient(135deg,#EAB308 0%,#CA9A04 100%); border:none; font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#000; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 4px 20px rgba(234,179,8,0.35),0 1px 0 rgba(255,255,255,0.2) inset; transition:transform .15s,filter .15s; -webkit-tap-highlight-color:transparent; }
+    .btn-save:hover { filter:brightness(1.08); }
+    .btn-save:active { transform:scale(0.97); }
+
+    .footer { text-align:center; margin-top:24px; font-size:10px; font-weight:400; letter-spacing:1.5px; color:rgba(255,255,255,0.2); text-transform:uppercase; }
+
+    /* Toast */
+    .toast { position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(80px); background:#1A1A1A; border:1px solid var(--gold-border); color:var(--gold); font-family:'Poppins',sans-serif; font-size:13px; font-weight:500; padding:12px 24px; border-radius:100px; white-space:nowrap; opacity:0; transition:all .35s cubic-bezier(0.22,1,0.36,1); z-index:9999; pointer-events:none; }
+    .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+    @media (min-width:480px) {
+      body { padding:40px 24px 60px; align-items:center; }
+      .card { padding:44px 36px 38px; }
+      .name { font-size:30px; }
+      .avatar { width:108px; height:108px; font-size:36px; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="brand-label">&#x1F451; SAMRAT WORLDWIDE</div>
-    <div class="avatar">IK</div>
-    <div class="name">ISMAIL KAZIA</div>
-    <div class="title">Founder & CEO</div>
 
-    <div class="divider"></div>
+  <div class="card-outer">
+    <div class="card">
 
-    <div class="services-tags">
-      <span class="tag">Events & Activations</span>
-      <span class="tag">Digital Marketing</span>
-      <span class="tag">Business Advisory</span>
-      <span class="tag">4K Production</span>
+      <!-- Brand -->
+      <div class="brand-label">&#128081; &nbsp;GELICON WORLDWIDE</div>
+
+      <!-- Avatar -->
+      <div class="avatar-wrap">
+        <div class="avatar">IK</div>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile">
+        <div class="name">Ismail Kazia</div>
+        <div class="title">Founder &amp; CEO</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Services -->
+      <div class="section-label">What We Do</div>
+      <div class="pills">
+        <span class="pill">Events &amp; Activations</span>
+        <span class="pill">Digital Marketing</span>
+        <span class="pill">Business Advisory</span>
+        <span class="pill">4K Production</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Live Stats -->
+      <div class="section-label">By the Numbers</div>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Events Managed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">274</div>
+          <div class="stat-label">Enterprise Clients in Pipeline</div>
+        </div>
+      </div>
+      <div class="countries-row">
+        <span class="country-chip">&#127470;&#127475; India</span>
+        <span class="country-chip">&#127462;&#127466; Saudi Arabia</span>
+        <span class="country-chip">&#127462;&#127466; UAE</span>
+        <span class="country-chip">&#127468;&#127463; UK</span>
+        <span class="country-chip">&#127482;&#127480; USA</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Contacts -->
+      <div class="section-label">Get In Touch</div>
+      <div class="contacts">
+
+        <a class="btn" href="https://wa.me/916363962640" target="_blank" rel="noopener">
+          <div class="btn-icon whatsapp">&#128994;</div>
+          <div class="btn-text">
+            <div class="btn-label">WhatsApp &mdash; India</div>
+            <div class="btn-value">+91 63639 62640</div>
+          </div>
+          <div class="btn-arrow">&#8250;</div>
+        </a>
+
+        <a class="btn" href="https://wa.me/966548905688" target="_blank" rel="noopener">
+          <div class="btn-icon whatsapp">&#128994;</div>
+          <div class="btn-text">
+            <div class="btn-label">WhatsApp &mdash; Saudi Arabia</div>
+            <div class="btn-value">+966 54 890 5688</div>
+          </div>
+          <div class="btn-arrow">&#8250;</div>
+        </a>
+
+        <a class="btn" href="mailto:ismailkazia302@gmail.com">
+          <div class="btn-icon email">&#128231;</div>
+          <div class="btn-text">
+            <div class="btn-label">Email</div>
+            <div class="btn-value">ismailkazia302@gmail.com</div>
+          </div>
+          <div class="btn-arrow">&#8250;</div>
+        </a>
+
+        <a class="btn" href="https://ismailkazia302-bot.github.io/samrat-global/" target="_blank" rel="noopener">
+          <div class="btn-icon web">&#127760;</div>
+          <div class="btn-text">
+            <div class="btn-label">Website</div>
+            <div class="btn-value">gelicon.com</div>
+          </div>
+          <div class="btn-arrow">&#8250;</div>
+        </a>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Locations -->
+      <div class="section-label">Locations</div>
+      <div class="locations">
+        <div class="location-chip">&#128205; Bangalore, India</div>
+        <div class="location-chip">&#128205; Riyadh, Saudi Arabia</div>
+      </div>
+
+      <!-- Save Contact -->
+      <div class="save-wrap">
+        <button class="btn-save" onclick="downloadVCard()">
+          <span>&#11015;</span> Save Contact
+        </button>
+      </div>
+
+      <div class="footer">&copy; 2026 GELICON WORLDWIDE</div>
+
     </div>
-
-    <div class="divider"></div>
-
-    <a href="https://wa.me/916363962640?text=Hello%20Ismail%20Kazia%20%7C%20SAMRAT!%20I%20would%20like%20to%20discuss%20a%20priority%20project." target="_blank" class="action-btn btn-wa">
-      &#x1F1EE;&#x1F1F3; WhatsApp India: +91 63639 62640
-    </a>
-    <a href="https://wa.me/966548905688?text=Hello%20Ismail%20Kazia%20%7C%20SAMRAT!%20I%20would%20like%20to%20discuss%20a%20priority%20project." target="_blank" class="action-btn btn-wa-sa">
-      &#x1F1F8;&#x1F1E6; WhatsApp Saudi: +966 54 890 5688
-    </a>
-    <a href="mailto:ismail@samratglobal.com" class="action-btn btn-email">
-      &#x2709;&#xFE0F; ismail@samratglobal.com
-    </a>
-    <a href="products.html" class="action-btn btn-web" style="background:#EAB308; color:#000; font-weight:800;">
-      🛍️ Digital Products Store
-    </a>
-    <a href="meet.html" class="action-btn btn-web" style="background:#10B981; color:#000; font-weight:800;">
-      📅 Book a 1-on-1 Video Call
-    </a>
-    <a href="https://ismailkazia302-bot.github.io/samrat-global/" target="_blank" class="action-btn btn-web">
-      &#x1F310; samratglobal.com
-    </a>
-
-    <div class="divider"></div>
-
-    <div class="locations">
-      <span class="loc-chip">&#x1F4CD; Bangalore, India</span>
-      <span class="loc-chip">&#x1F4CD; Riyadh, Saudi Arabia</span>
-    </div>
-
-    <button onclick="copyIban()" class="action-btn" style="background:#111; color:#EAB308; border:1px solid rgba(234,179,8,0.4); font-weight:700; cursor:pointer; margin-bottom:10px;">
-      🇸🇦 Copy Saudi IBAN (ANB Bank)
-    </button>
-    <button onclick="downloadVCard()" class="action-btn btn-save">
-      &#x1F4BE; Save Contact
-    </button>
-
-    <div class="footer-text">&copy; 2026 SAMRAT WORLDWIDE</div>
   </div>
+
+  <div class="toast" id="toast">&#10003; Contact saved!</div>
 
   <script>
     function downloadVCard() {
-      const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Ismail Kazia
-ORG:SAMRAT WORLDWIDE
-TITLE:Founder & CEO
-TEL;TYPE=CELL:+916363962640
-TEL;TYPE=WORK:+966548905688
-EMAIL:ismail@samratglobal.com
-URL:https://ismailkazia302-bot.github.io/samrat-global/
-ADR;TYPE=WORK:;;Bangalore;Karnataka;;India
-NOTE:Founder of SAMRAT WORLDWIDE - Elite Events in Bangalore & Pan-India. Global Digital Marketing for UAE, Saudi Arabia, UK & USA.
-END:VCARD`;
-      const blob = new Blob([vcard], { type: 'text/vcard' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
+      var vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Ismail Kazia',
+        'N:Kazia;Ismail;;;',
+        'ORG:GELICON WORLDWIDE',
+        'TITLE:Founder & CEO',
+        'TEL;TYPE=CELL,PREF:+916363962640',
+        'TEL;TYPE=CELL:+966548905688',
+        'EMAIL;TYPE=WORK:ismailkazia302@gmail.com',
+        'URL:https://ismailkazia302-bot.github.io/samrat-global/',
+        'ADR;TYPE=WORK:;;Bangalore;Karnataka;;India',
+        'ADR;TYPE=WORK:;;Riyadh;;;;Saudi Arabia',
+        'NOTE:Events & Activations | Digital Marketing | Business Advisory | 4K Production | Operating in 5 Countries',
+        'END:VCARD'
+      ].join('\r\n');
+
+      var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
       a.href = url;
-      a.download = 'Ismail_Kazia_SAMRAT.vcf';
+      a.download = 'Ismail_Kazia_GELICON.vcf';
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      showToast('Contact saved to your device!');
     }
 
-    function copyIban() {
-      navigator.clipboard.writeText('SA1730400108039658540010');
-      alert('✅ Arab National Bank (ANB) IBAN Copied:\nSA1730400108039658540010\nBeneficiary: Ismail Kazia');
+    function showToast(msg) {
+      var toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(function(){ toast.classList.remove('show'); }, 3000);
     }
   </script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 /**
- * SAMRAT WORLDWIDE — DAILY AUTONOMOUS SEO PUBLISHER & LINK BUILDER
+ * GELICON WORLDWIDE — DAILY AUTONOMOUS SEO PUBLISHER & LINK BUILDER
  * Founder & CEO: Ismail Kazia
  * 
  * Features:
@@ -22,7 +22,7 @@ if (!fs.existsSync(BLOG_DIR)) {
 const DAILY_BLOG_POSTS = [
   {
     slug: 'corporate-event-production-checklist-bangalore-2026',
-    title: 'The Ultimate Bangalore Corporate Event Planning Checklist 2026 | SAMRAT',
+    title: 'The Ultimate Bangalore Corporate Event Planning Checklist 2026 | GELICON',
     metaDesc: 'Planning a high-ticket tech summit or corporate conference in Bangalore? Discover venue procurement at Leela & ITC, curved 4K LED specs, and vendor management tips.',
     datePublished: '2026-08-27',
     readTime: '8 min read',
@@ -48,7 +48,7 @@ const DAILY_BLOG_POSTS = [
       </ul>
 
       <h3>3. Turnkey Vendor & Stage Management</h3>
-      <p>To avoid multi-vendor coordination failures, leading enterprises partner with turnkey production firms. Under the leadership of <strong>Founder Ismail Kazia</strong>, SAMRAT WORLDWIDE manages the complete lifecycle—from 3D stage CAD rendering to celebrity keynote protocol and VIP security escorts.</p>
+      <p>To avoid multi-vendor coordination failures, leading enterprises partner with turnkey production firms. Under the leadership of <strong>Founder Ismail Kazia</strong>, GELICON WORLDWIDE manages the complete lifecycle—from 3D stage CAD rendering to celebrity keynote protocol and VIP security escorts.</p>
 
       <div class="cta-box my-4 p-4 text-center" style="background:#0d0d0d; border:1px solid #EAB308; border-radius:12px;">
         <h4 style="color:#EAB308; font-weight:900;">Looking to Host an Flawless Tech Summit in Bangalore?</h4>
@@ -61,7 +61,7 @@ const DAILY_BLOG_POSTS = [
     `,
     faq: [
       { q: 'How far in advance should we book a 5-star banquet hall in Bangalore?', a: 'For peak corporate season (September to February), booking 3 to 5 months in advance is recommended to secure preferred dates at Leela Palace or ITC.' },
-      { q: 'Do you provide on-site event recording and live streaming?', a: 'Yes, SAMRAT provides multi-cam 4K cinema broadcast suites with zero latency live streaming to YouTube, Zoom, or private corporate intranets.' }
+      { q: 'Do you provide on-site event recording and live streaming?', a: 'Yes, GELICON provides multi-cam 4K cinema broadcast suites with zero latency live streaming to YouTube, Zoom, or private corporate intranets.' }
     ]
   }
 ];
@@ -79,13 +79,13 @@ function buildBlogPostHtml(post) {
       "jobTitle": "Founder & CEO",
       "worksFor": {
         "@type": "Organization",
-        "name": "SAMRAT WORLDWIDE",
+        "name": "GELICON WORLDWIDE",
         "url": "https://ismailkazia302-bot.github.io/samrat-global/"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "SAMRAT WORLDWIDE",
+      "name": "GELICON WORLDWIDE",
       "url": "https://ismailkazia302-bot.github.io/samrat-global/"
     }
   };
@@ -138,7 +138,7 @@ function buildBlogPostHtml(post) {
 <body>
   <nav class="nav-bar">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="../index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;">👑 SAMRAT <span style="color:#EAB308;">WORLDWIDE</span></a>
+      <a href="../index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;">👑 GELICON <span style="color:#EAB308;">WORLDWIDE</span></a>
       <div class="d-flex gap-3">
         <a href="../products.html" style="color:#EAB308; text-decoration:none; font-weight:700; font-size:0.85rem;">Store 🛍️</a>
         <a href="../meet.html" style="color:#10B981; text-decoration:none; font-weight:700; font-size:0.85rem;">Book Call 🎥</a>
@@ -173,7 +173,7 @@ function buildBlogPostHtml(post) {
   </article>
 
   <footer class="text-center py-5 border-top border-dark mt-5 text-secondary" style="font-size:0.8rem;">
-    &copy; 2026 SAMRAT WORLDWIDE • Premier B2B Events & Global Growth Platform
+    &copy; 2026 GELICON WORLDWIDE • Premier B2B Events & Global Growth Platform
   </footer>
 </body>
 </html>`;
@@ -181,7 +181,7 @@ function buildBlogPostHtml(post) {
 
 function runPublisher() {
   console.log(`=============================================================`);
-  console.log(`✍️ SAMRAT AUTONOMOUS DAILY SEO BLOG PUBLISHER`);
+  console.log(`✍️ GELICON AUTONOMOUS DAILY SEO BLOG PUBLISHER`);
   console.log(`Founder: Ismail Kazia | Date: ${new Date().toISOString().split('T')[0]}`);
   console.log(`=============================================================`);
 

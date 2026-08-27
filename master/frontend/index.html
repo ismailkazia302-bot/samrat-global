@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex AI Sales Closer | Autonomous Business Salesman Agent</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 9999px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-gray-100 min-h-screen flex flex-col">
+
+  <!-- Top Navbar -->
+  <header class="border-b border-gray-800 bg-[#0f172a]/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20">
+          <i data-lucide="bot" class="w-6 h-6 text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="font-bold text-lg text-white">Apex AI Sales Closer</h1>
+            <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Autonomous v2.0</span>
+          </div>
+          <p class="text-xs text-gray-400">High-Converting AI Sales & Closing Agent</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex space-x-1 bg-gray-900/90 p-1 rounded-xl border border-gray-800">
+        <button onclick="switchTab('simulator')" id="tab-simulator" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all flex items-center space-x-2 bg-blue-600 text-white shadow">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          <span>Sales Sandbox</span>
+        </button>
+        <button onclick="switchTab('crm')" id="tab-crm" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all flex items-center space-x-2 text-gray-400 hover:text-white">
+          <i data-lucide="kanban" class="w-4 h-4"></i>
+          <span>CRM Pipeline</span>
+        </button>
+        <button onclick="switchTab('products')" id="tab-products" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all flex items-center space-x-2 text-gray-400 hover:text-white">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Catalog & Offers</span>
+        </button>
+        <button onclick="switchTab('objections')" id="tab-objections" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all flex items-center space-x-2 text-gray-400 hover:text-white">
+          <i data-lucide="shield-alert" class="w-4 h-4"></i>
+          <span>Objection Matrix</span>
+        </button>
+        <button onclick="switchTab('embed')" id="tab-embed" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all flex items-center space-x-2 text-gray-400 hover:text-white">
+          <i data-lucide="code" class="w-4 h-4"></i>
+          <span>Embed Widget</span>
+        </button>
+        <button onclick="switchTab('settings')" id="tab-settings" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all flex items-center space-x-2 text-gray-400 hover:text-white">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span>Settings</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Live Stats Strip -->
+  <div class="border-b border-gray-800/80 bg-gray-950/40 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
+        <div class="glass-card rounded-xl p-3 flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-blue-500/10 text-blue-400"><i data-lucide="users" class="w-5 h-5"></i></div>
+          <div>
+            <div class="text-xs text-gray-400 font-medium">Total Leads</div>
+            <div id="stat-total-leads" class="text-base font-bold text-white">--</div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-3 flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+          <div>
+            <div class="text-xs text-gray-400 font-medium">Deals Won</div>
+            <div id="stat-deals-won" class="text-base font-bold text-emerald-400">--</div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-3 flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-purple-500/10 text-purple-400"><i data-lucide="calendar" class="w-5 h-5"></i></div>
+          <div>
+            <div class="text-xs text-gray-400 font-medium">Demos Booked</div>
+            <div id="stat-bookings" class="text-base font-bold text-purple-400">--</div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-3 flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+          <div>
+            <div class="text-xs text-gray-400 font-medium">Quotes Sent</div>
+            <div id="stat-quotes" class="text-base font-bold text-amber-400">--</div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-3 flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
+          <div>
+            <div class="text-xs text-gray-400 font-medium">Conversion</div>
+            <div id="stat-conversion" class="text-base font-bold text-cyan-400">--</div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl p-3 flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400"><i data-lucide="dollar-sign" class="w-5 h-5"></i></div>
+          <div>
+            <div class="text-xs text-gray-400 font-medium">Est. Pipeline</div>
+            <div id="stat-pipeline" class="text-base font-bold text-indigo-300">--</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
+
+    <!-- 1. SALES SIMULATOR TAB -->
+    <section id="view-simulator" class="tab-view block space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Chat Sandbox -->
+        <div class="lg:col-span-2 glass-card rounded-2xl flex flex-col h-[650px] overflow-hidden shadow-2xl border border-gray-800">
+          
+          <!-- Chat Header -->
+          <div class="px-6 py-4 bg-gray-900/80 border-b border-gray-800 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="relative">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold">
+                  AX
+                </div>
+                <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-gray-900 rounded-full"></span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white text-sm" id="chat-agent-title">Alex (AI Sales Closer)</h3>
+                <p class="text-xs text-emerald-400 flex items-center space-x-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Active & Ready to Qualify/Close</span>
+                </p>
+              </div>
+            </div>
+            <button onclick="resetChat()" class="text-xs px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 transition flex items-center space-x-1">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Reset Session</span>
+            </button>
+          </div>
+
+          <!-- Messages Area -->
+          <div id="chat-messages" class="flex-1 p-6 overflow-y-auto space-y-4 custom-scrollbar bg-gray-950/40">
+            <!-- Messages inserted dynamically -->
+          </div>
+
+          <!-- Interactive Quick Objection Prompts -->
+          <div class="px-4 py-2 bg-gray-900/60 border-t border-gray-800/80 flex items-center space-x-2 overflow-x-auto text-xs">
+            <span class="text-gray-400 flex-shrink-0 font-medium">⚡ Quick Test:</span>
+            <button onclick="sendQuickMessage('Salam! Mujhe AI sales bot chahiye apne business ke liye')" class="px-3 py-1 bg-gray-800 hover:bg-blue-600 hover:text-white rounded-full text-gray-300 transition flex-shrink-0">
+              👋 Initial Inquiry
+            </button>
+            <button onclick="sendQuickMessage('Price bohot zyada hai, discount milega? (Price Objection)')" class="px-3 py-1 bg-gray-800 hover:bg-amber-600 hover:text-white rounded-full text-gray-300 transition flex-shrink-0">
+              💰 Price Objection
+            </button>
+            <button onclick="sendQuickMessage('Doosri agency sasti de rahi hai, aapka kya advantage hai?')" class="px-3 py-1 bg-gray-800 hover:bg-indigo-600 hover:text-white rounded-full text-gray-300 transition flex-shrink-0">
+              ⚔️ Competitor Comparison
+            </button>
+            <button onclick="sendQuickMessage('Kal 3 baje demo call schedule kardo: ali.ceo@techcorp.com')" class="px-3 py-1 bg-gray-800 hover:bg-emerald-600 hover:text-white rounded-full text-gray-300 transition flex-shrink-0">
+              📅 Book Demo Slot
+            </button>
+            <button onclick="sendQuickMessage('Official Quotation and Proposal send karein with terms')" class="px-3 py-1 bg-gray-800 hover:bg-purple-600 hover:text-white rounded-full text-gray-300 transition flex-shrink-0">
+              📄 Request Quote
+            </button>
+          </div>
+
+          <!-- Chat Input -->
+          <form onsubmit="handleChatSubmit(event)" class="p-4 bg-gray-900 border-t border-gray-800 flex items-center space-x-3">
+            <input type="text" id="chat-input" placeholder="Type customer message or objection (English, Hinglish, Urdu)..." class="flex-1 bg-gray-950 text-white px-4 py-3 rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 text-sm">
+            <button type="submit" id="chat-send-btn" class="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium transition flex items-center space-x-2 shadow-lg shadow-blue-600/30">
+              <span>Send</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Real-Time Lead Scoring & Agent Actions Panel -->
+        <div class="space-y-6">
+          
+          <!-- Live Lead Intel Box -->
+          <div class="glass-card rounded-2xl p-5 border border-gray-800">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-semibold text-sm text-white flex items-center space-x-2">
+                <i data-lucide="target" class="w-4 h-4 text-blue-400"></i>
+                <span>Live Lead Qualification (BANT)</span>
+              </h3>
+              <span id="live-lead-score" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">Score: 40/100</span>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-gray-900/70 border border-gray-800">
+                <span class="text-gray-400 font-medium">👤 Contact Info</span>
+                <span id="live-lead-contact" class="text-gray-200 font-semibold">Detecting in chat...</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-gray-900/70 border border-gray-800">
+                <span class="text-gray-400 font-medium">💰 Budget (B)</span>
+                <span id="live-lead-budget" class="text-amber-400 font-semibold">Under negotiation</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-gray-900/70 border border-gray-800">
+                <span class="text-gray-400 font-medium">👑 Authority (A)</span>
+                <span id="live-lead-auth" class="text-indigo-400 font-semibold">Identified / Decision Maker</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-gray-900/70 border border-gray-800">
+                <span class="text-gray-400 font-medium">🎯 Need (N)</span>
+                <span id="live-lead-need" class="text-emerald-400 font-semibold">24/7 Sales Automation</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-lg bg-gray-900/70 border border-gray-800">
+                <span class="text-gray-400 font-medium">⏱️ Timeline (T)</span>
+                <span id="live-lead-timeline" class="text-cyan-400 font-semibold">Immediate / Next 7 Days</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Executed Tools & Actions Log -->
+          <div class="glass-card rounded-2xl p-5 border border-gray-800">
+            <h3 class="font-semibold text-sm text-white flex items-center space-x-2 mb-3">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+              <span>Autonomous Tools Triggered</span>
+            </h3>
+            <div id="live-tools-log" class="space-y-2 text-xs text-gray-300 max-h-48 overflow-y-auto custom-scrollbar">
+              <div class="p-2.5 rounded-lg bg-gray-900/80 border border-gray-800 flex items-start space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-0.5"></i>
+                <div>
+                  <span class="font-semibold text-white">Autonomous Agent Ready</span>
+                  <p class="text-gray-400">Listening to incoming inquiries & psychological objections.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. CRM PIPELINE TAB (KANBAN) -->
+    <section id="view-crm" class="tab-view hidden space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-white">Leads & Sales CRM Pipeline</h2>
+          <p class="text-xs text-gray-400">Real-time status of all leads qualified by your AI Salesman</p>
+        </div>
+        <button onclick="openAddLeadModal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-semibold flex items-center space-x-2 transition shadow">
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          <span>Add New Lead</span>
+        </button>
+      </div>
+
+      <!-- Kanban Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4" id="kanban-board">
+        <!-- New Lead -->
+        <div class="bg-gray-900/70 border border-gray-800 rounded-xl p-3 flex flex-col min-h-[500px]">
+          <div class="flex items-center justify-between pb-2 border-b border-gray-800 mb-3">
+            <span class="text-xs font-bold text-gray-300 uppercase tracking-wider">New Lead</span>
+            <span class="count-badge px-2 py-0.5 rounded-full text-xs bg-gray-800 text-gray-400 font-bold" id="count-New Lead">0</span>
+          </div>
+          <div class="space-y-3 flex-1 overflow-y-auto custom-scrollbar column-cards" data-stage="New Lead"></div>
+        </div>
+
+        <!-- Qualified -->
+        <div class="bg-gray-900/70 border border-gray-800 rounded-xl p-3 flex flex-col min-h-[500px]">
+          <div class="flex items-center justify-between pb-2 border-b border-gray-800 mb-3">
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Qualified (BANT)</span>
+            <span class="count-badge px-2 py-0.5 rounded-full text-xs bg-blue-500/20 text-blue-400 font-bold" id="count-Qualified">0</span>
+          </div>
+          <div class="space-y-3 flex-1 overflow-y-auto custom-scrollbar column-cards" data-stage="Qualified"></div>
+        </div>
+
+        <!-- Demo Booked -->
+        <div class="bg-gray-900/70 border border-gray-800 rounded-xl p-3 flex flex-col min-h-[500px]">
+          <div class="flex items-center justify-between pb-2 border-b border-gray-800 mb-3">
+            <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Demo Booked</span>
+            <span class="count-badge px-2 py-0.5 rounded-full text-xs bg-purple-500/20 text-purple-400 font-bold" id="count-Demo Booked">0</span>
+          </div>
+          <div class="space-y-3 flex-1 overflow-y-auto custom-scrollbar column-cards" data-stage="Demo Booked"></div>
+        </div>
+
+        <!-- Proposal Sent -->
+        <div class="bg-gray-900/70 border border-gray-800 rounded-xl p-3 flex flex-col min-h-[500px]">
+          <div class="flex items-center justify-between pb-2 border-b border-gray-800 mb-3">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Proposal Sent</span>
+            <span class="count-badge px-2 py-0.5 rounded-full text-xs bg-amber-500/20 text-amber-400 font-bold" id="count-Proposal Sent">0</span>
+          </div>
+          <div class="space-y-3 flex-1 overflow-y-auto custom-scrollbar column-cards" data-stage="Proposal Sent"></div>
+        </div>
+
+        <!-- Won -->
+        <div class="bg-gray-900/70 border border-emerald-900/50 rounded-xl p-3 flex flex-col min-h-[500px] bg-emerald-950/10">
+          <div class="flex items-center justify-between pb-2 border-b border-emerald-800/50 mb-3">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Closed Won 🎉</span>
+            <span class="count-badge px-2 py-0.5 rounded-full text-xs bg-emerald-500/20 text-emerald-400 font-bold" id="count-Won">0</span>
+          </div>
+          <div class="space-y-3 flex-1 overflow-y-auto custom-scrollbar column-cards" data-stage="Won"></div>
+        </div>
+
+        <!-- Lost -->
+        <div class="bg-gray-900/70 border border-gray-800 rounded-xl p-3 flex flex-col min-h-[500px]">
+          <div class="flex items-center justify-between pb-2 border-b border-gray-800 mb-3">
+            <span class="text-xs font-bold text-rose-400 uppercase tracking-wider">Lost / Cold</span>
+            <span class="count-badge px-2 py-0.5 rounded-full text-xs bg-rose-500/20 text-rose-400 font-bold" id="count-Lost">0</span>
+          </div>
+          <div class="space-y-3 flex-1 overflow-y-auto custom-scrollbar column-cards" data-stage="Lost"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PRODUCTS & OFFERS CATALOG TAB -->
+    <section id="view-products" class="tab-view hidden space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-white">Product & Service Catalog</h2>
+          <p class="text-xs text-gray-400">The AI Salesman uses this knowledge base to pitch solutions and issue quotes</p>
+        </div>
+        <button onclick="openAddProductModal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-semibold flex items-center space-x-2 transition">
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          <span>Add New Product/Service</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="products-list-container">
+        <!-- Products populated dynamically -->
+      </div>
+    </section>
+
+    <!-- 4. OBJECTION MATRIX & SCRIPTS -->
+    <section id="view-objections" class="tab-view hidden space-y-6">
+      <div>
+        <h2 class="text-xl font-bold text-white">Master Objection Handling Matrix</h2>
+        <p class="text-xs text-gray-400">High-converting psychological negotiation frameworks pre-trained in your agent</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Price Objection -->
+        <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400"><i data-lucide="dollar-sign" class="w-6 h-6"></i></div>
+            <div>
+              <h3 class="font-bold text-white text-base">1. Price Resistance ("Bohat Mehnga Hai")</h3>
+              <p class="text-xs text-gray-400">Customer feels price is too high or asks for huge discount</p>
+            </div>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl text-xs text-gray-300 border border-gray-800">
+            <span class="font-bold text-amber-400 block mb-1">AI Strategy & Script:</span>
+            "I completely understand that budget is top of mind. But let's look at the ROI: our clients recover this cost in 14 days because the AI works 24/7. Since you're serious, I can authorize a special 15% fast-action closing discount (Code: CLOSENOW)."
+          </div>
+        </div>
+
+        <!-- Competitor Comparison -->
+        <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-400"><i data-lucide="swords" class="w-6 h-6"></i></div>
+            <div>
+              <h3 class="font-bold text-white text-base">2. Competitor Comparison ("XYZ Sasta De Raha Hai")</h3>
+              <p class="text-xs text-gray-400">Customer mentions other cheap options or market alternatives</p>
+            </div>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl text-xs text-gray-300 border border-gray-800">
+            <span class="font-bold text-blue-400 block mb-1">AI Strategy & Script:</span>
+            "Standard market tools only offer basic robotic FAQs. Our solution is a true Autonomous Sales Closer that understands Urdu/Hinglish psychology, qualifies via BANT, books meetings into your CRM, and comes with a 30-Day Money-Back Guarantee."
+          </div>
+        </div>
+
+        <!-- Procrastination / Delay -->
+        <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400"><i data-lucide="clock" class="w-6 h-6"></i></div>
+            <div>
+              <h3 class="font-bold text-white text-base">3. Procrastination ("Baad Mein Sochenge")</h3>
+              <p class="text-xs text-gray-400">Customer wants to delay or says they will think about it</p>
+            </div>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl text-xs text-gray-300 border border-gray-800">
+            <span class="font-bold text-purple-400 block mb-1">AI Strategy & Script:</span>
+            "Totally fair! To help you evaluate with zero pressure, let's do a quick 15-minute interactive walkthrough on your specific workflow. No commitment required. What time works best for you tomorrow?"
+          </div>
+        </div>
+
+        <!-- Trust & Proof -->
+        <div class="glass-card rounded-2xl p-6 border border-gray-800 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+            <div>
+              <h3 class="font-bold text-white text-base">4. Trust & Proof ("Sample / Guarantee")</h3>
+              <p class="text-xs text-gray-400">Customer seeks proof, past case studies, or security</p>
+            </div>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl text-xs text-gray-300 border border-gray-800">
+            <span class="font-bold text-emerald-400 block mb-1">AI Strategy & Script:</span>
+            "We stand 100% behind our performance with a 30-Day Risk-Free Guarantee. Our clients average a 3.4x conversion boost. Let me send over our verified case studies and setup a live trial for you."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EMBED WIDGET CODE -->
+    <section id="view-embed" class="tab-view hidden space-y-6">
+      <div class="glass-card rounded-2xl p-8 border border-gray-800 max-w-3xl mx-auto space-y-6">
+        <div>
+          <h2 class="text-2xl font-bold text-white">Embed AI Salesman on Any Website</h2>
+          <p class="text-sm text-gray-400">Paste this 1-line script right before the closing <code>&lt;/body&gt;</code> tag of your website, WordPress, Shopify, or Webflow site.</p>
+        </div>
+
+        <div class="relative">
+          <pre class="bg-gray-950 p-4 rounded-xl text-xs text-blue-300 font-mono overflow-x-auto border border-gray-800" id="embed-code-snippet">&lt;!-- Apex AI Autonomous Salesman Widget --&gt;
+&lt;script src="http://localhost:8000/widget.js" data-agent-id="alex_closer" defer&gt;&lt;/script&gt;</pre>
+          <button onclick="copyEmbedCode()" class="absolute top-3 right-3 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold flex items-center space-x-1 transition shadow">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span id="copy-btn-label">Copy Code</span>
+          </button>
+        </div>
+
+        <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 space-y-2">
+          <span class="font-bold block">✨ Features Included in Embed Widget:</span>
+          <ul class="list-disc list-inside space-y-1 text-gray-300">
+            <li>Floating 24/7 interactive chat icon with customizable branding</li>
+            <li>Automatic lead capture into your CRM Pipeline</li>
+            <li>Autonomous meeting scheduler & quotation delivery directly in chat</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SETTINGS TAB -->
+    <section id="view-settings" class="tab-view hidden space-y-6">
+      <div class="glass-card rounded-2xl p-8 border border-gray-800 max-w-3xl mx-auto space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-white">AI Sales Closer Configuration</h2>
+          <p class="text-xs text-gray-400">Customize your agent's identity, company details, tone, and external LLM keys</p>
+        </div>
+
+        <form onsubmit="saveSettingsForm(event)" class="space-y-4 text-xs">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-400 mb-1 font-medium">Sales Agent Name</label>
+              <input type="text" id="setting_agent_name" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-gray-400 mb-1 font-medium">Business / Company Name</label>
+              <input type="text" id="setting_business_name" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-gray-400 mb-1 font-medium">Calendar / Demo Booking Link</label>
+              <input type="text" id="setting_calendar_link" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-gray-400 mb-1 font-medium">Max Fast-Action Discount (%)</label>
+              <input type="number" id="setting_max_discount_allowed" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            </div>
+          </div>
+
+          <div class="border-t border-gray-800 pt-4 space-y-4">
+            <h4 class="font-bold text-white text-sm">Optional External LLM Integration (Gemini / OpenAI)</h4>
+            <p class="text-gray-400">The agent works 100% autonomously out of the box. You can optionally link your Gemini or OpenAI API key for advanced conversational variations.</p>
+            
+            <div>
+              <label class="block text-gray-400 mb-1 font-medium">Google Gemini API Key</label>
+              <input type="password" id="setting_gemini_api_key" placeholder="AIzaSy..." class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-gray-400 mb-1 font-medium">OpenAI API Key</label>
+              <input type="password" id="setting_openai_api_key" placeholder="sk-..." class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500">
+            </div>
+          </div>
+
+          <div class="pt-4 flex justify-end">
+            <button type="submit" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition shadow flex items-center space-x-2">
+              <i data-lucide="save" class="w-4 h-4"></i>
+              <span>Save Configuration</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

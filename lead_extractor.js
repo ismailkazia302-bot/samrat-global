@@ -1,5 +1,5 @@
 /**
- * SAMRAT WORLDWIDE — AUTOMATED B2B & GOOGLE MAPS LEAD EXTRACTOR
+ * GELICON WORLDWIDE — AUTOMATED B2B & GOOGLE MAPS LEAD EXTRACTOR
  * Founder: Ismail Kazia
  * 
  * Target Major Cities:
@@ -151,7 +151,7 @@ function extractAndMergeLeads() {
   fs.writeFileSync(LEADS_CSV, [csvHeader, ...csvRows].join('\n'));
 
   console.log(`====================================================`);
-  console.log(`👑 SAMRAT WORLDWIDE — Lead Extractor Executed`);
+  console.log(`👑 GELICON WORLDWIDE — Lead Extractor Executed`);
   console.log(`📅 Date: ${new Date().toLocaleString()}`);
   console.log(`✨ New Leads Added: ${addedCount}`);
   console.log(`📊 Total Database Leads: ${currentLeads.length}`);

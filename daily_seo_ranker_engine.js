@@ -1,5 +1,5 @@
 /**
- * SAMRAT WORLDWIDE — AUTONOMOUS DAILY SEO & BUSINESS DEVELOPMENT RANKER
+ * GELICON WORLDWIDE — AUTONOMOUS DAILY SEO & BUSINESS DEVELOPMENT RANKER
  * Founder & CEO: Ismail Kazia
  * 
  * Objectives:
@@ -25,8 +25,8 @@ if (!fs.existsSync(SEO_PAGES_DIR)) {
 const HIGH_VALUE_SEO_TARGETS = [
   {
     slug: 'corporate-event-management-whitefield-bangalore',
-    title: 'Top Corporate Event Management in Whitefield Bangalore | SAMRAT WORLDWIDE',
-    metaDesc: 'Looking for luxury corporate event organizers in Whitefield Bangalore? SAMRAT produces world-class tech summits, curved 4K LED staging, and executive galas at Leela Palace & ITC.',
+    title: 'Top Corporate Event Management in Whitefield Bangalore | GELICON WORLDWIDE',
+    metaDesc: 'Looking for luxury corporate event organizers in Whitefield Bangalore? GELICON produces world-class tech summits, curved 4K LED staging, and executive galas at Leela Palace & ITC.',
     city: 'Bangalore (Whitefield & ITPL)',
     country: 'India',
     h1: 'Corporate Event Management & Tech Summit Production in Whitefield, Bangalore',
@@ -39,12 +39,12 @@ const HIGH_VALUE_SEO_TARGETS = [
   },
   {
     slug: 'saudi-arabia-corporate-summit-production-riyadh',
-    title: 'Corporate Summit & Event Production in Riyadh, Saudi Arabia | SAMRAT WORLDWIDE',
+    title: 'Corporate Summit & Event Production in Riyadh, Saudi Arabia | GELICON WORLDWIDE',
     metaDesc: 'Premier executive event management in Riyadh & Jeddah for Vision 2030 enterprises. Turnkey staging, translation booths, 4K production led by Founder Ismail Kazia.',
     city: 'Riyadh & Jeddah',
     country: 'Saudi Arabia',
     h1: 'Turnkey Corporate Conclaves & Vision 2030 Event Production in Riyadh',
-    keywords: 'event management Riyadh, corporate conference organizers Saudi Arabia, Vision 2030 event companies, summit production Jeddah, Ismail Kazia SAMRAT',
+    keywords: 'event management Riyadh, corporate conference organizers Saudi Arabia, Vision 2030 event companies, summit production Jeddah, Ismail Kazia GELICON',
     service: 'Enterprise Event & Summit Production (KSA)',
     faq: [
       { q: 'Can you handle government protocol and bilingual KSA events?', a: 'Yes, our team handles bilingual Arabic/English simultaneous interpretation booths, VIP diplomatic protocol, and full 4K live broadcast.' },
@@ -53,12 +53,12 @@ const HIGH_VALUE_SEO_TARGETS = [
   },
   {
     slug: 'dubai-luxury-real-estate-buyer-acquisition-agency',
-    title: 'Dubai Luxury Real Estate Lead Generation & Buyer Funnels | SAMRAT WORLDWIDE',
+    title: 'Dubai Luxury Real Estate Lead Generation & Buyer Funnels | GELICON WORLDWIDE',
     metaDesc: 'Scale AED 5M+ villa and penthouse sales in Dubai. Hyper-targeted HNWI investor funnels delivering pre-qualified buyers directly to your WhatsApp CRM. 4.8x ROAS.',
     city: 'Dubai & Abu Dhabi',
     country: 'UAE',
     h1: 'High-Net-Worth Buyer Acquisition for Dubai Luxury Real Estate Developers',
-    keywords: 'Dubai real estate digital marketing, property buyer leads Dubai, off-plan marketing UAE, Emaar luxury leads, SAMRAT WORLDWIDE',
+    keywords: 'Dubai real estate digital marketing, property buyer leads Dubai, off-plan marketing UAE, Emaar luxury leads, GELICON WORLDWIDE',
     service: 'Digital Marketing & HNWI Acquisition',
     faq: [
       { q: 'What is your average ROAS for Dubai real estate campaigns?', a: 'Our recent property campaigns achieved a verified 4.8x ROAS with pre-qualified investor inquiries directly routed to brokers within 90 seconds.' },
@@ -74,7 +74,7 @@ function generateSeoHtml(target) {
     "serviceType": target.service,
     "provider": {
       "@type": "Organization",
-      "name": "SAMRAT WORLDWIDE",
+      "name": "GELICON WORLDWIDE",
       "founder": {
         "@type": "Person",
         "name": "Ismail Kazia"
@@ -138,7 +138,7 @@ function generateSeoHtml(target) {
 <body>
   <nav class="nav-bar">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="../index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;">👑 SAMRAT <span style="color:#EAB308;">WORLDWIDE</span></a>
+      <a href="../index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;">👑 GELICON <span style="color:#EAB308;">WORLDWIDE</span></a>
       <div class="d-flex gap-3">
         <a href="../products.html" style="color:#EAB308; text-decoration:none; font-weight:700; font-size:0.85rem;">Digital Store 🛍️</a>
         <a href="../meet.html" style="color:#10B981; text-decoration:none; font-weight:700; font-size:0.85rem;">Book Call 🎥</a>
@@ -187,7 +187,7 @@ function generateSeoHtml(target) {
     `).join('')}
 
     <div class="cta-box">
-      <h3 style="font-weight:900;">Ready to Partner with SAMRAT WORLDWIDE?</h3>
+      <h3 style="font-weight:900;">Ready to Partner with GELICON WORLDWIDE?</h3>
       <p style="color:#888; max-width:500px; margin:10px auto 25px;">
         Connect directly with Founder Ismail Kazia for Bangalore tech events or Saudi & UAE performance retainers.
       </p>
@@ -208,7 +208,7 @@ function generateSeoHtml(target) {
 async function runDailySeoRanker() {
   const dateStr = new Date().toISOString().split('T')[0];
   console.log(`=============================================================`);
-  console.log(`👑 SAMRAT AUTONOMOUS DAILY SEO & BD RANKER ENGINE`);
+  console.log(`👑 GELICON AUTONOMOUS DAILY SEO & BD RANKER ENGINE`);
   console.log(`Founder: Ismail Kazia`);
   console.log(`Run Date: ${dateStr}`);
   console.log(`=============================================================`);

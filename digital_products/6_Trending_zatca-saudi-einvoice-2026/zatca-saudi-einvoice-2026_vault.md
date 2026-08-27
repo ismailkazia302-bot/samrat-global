@@ -1,5 +1,5 @@
 # Saudi Arabia ZATCA Phase 2 E-Invoicing & Tax Compliance Master Kit 2026
-**Published by:** SAMRAT WORLDWIDE • Founder: Ismail Kazia
+**Published by:** GELICON WORLDWIDE • Founder: Ismail Kazia
 **Target Market:** Saudi Arabia 🇸🇦
 **Commercial Value:** $49 • 185 SAR • ₹ 3999
 
@@ -18,4 +18,4 @@ Complete step-by-step Arabic & English implementation checklist, XML invoice str
 4. **Legal & Compliance FAQ:** Direct answers to common audit concerns.
 
 ---
-© 2026 SAMRAT WORLDWIDE. All Rights Reserved.
+© 2026 GELICON WORLDWIDE. All Rights Reserved.

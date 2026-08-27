@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAMRAT WORLDWIDE — Executive Event & Growth Proposal Lookbook</title>
+  <title>GELICON WORLDWIDE — Executive Event & Growth Proposal Lookbook</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -22,6 +22,23 @@
     .tier-features li::before { content:'✓'; color:#10B981; font-weight:900; margin-right:8px; }
     .btn-book { background:#EAB308; color:#000; font-weight:800; font-size:0.9rem; padding:12px; border-radius:8px; text-decoration:none; display:block; }
     .btn-book:hover { background:#fde047; color:#000; }
+    /* ── WHY CHOOSE US cards ── */
+    .why-card { background:#0d0d0d; border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:28px 24px; height:100%; transition:border-color 0.25s,transform 0.25s; }
+    .why-card:hover { border-color:rgba(234,179,8,0.5); transform:translateY(-4px); }
+    .why-icon { font-size:2rem; margin-bottom:14px; }
+    .why-title { font-size:1rem; font-weight:800; color:#EAB308; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px; }
+    .why-desc { font-size:0.85rem; color:#888; margin:0; line-height:1.7; }
+    /* ── Pricing card fade-in animation ── */
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .tier-box {
+      animation: fadeInUp 0.55s ease both;
+    }
+    .pricing-col:nth-child(1) .tier-box { animation-delay: 0.10s; }
+    .pricing-col:nth-child(2) .tier-box { animation-delay: 0.25s; }
+    .pricing-col:nth-child(3) .tier-box { animation-delay: 0.40s; }
   </style>
 </head>
 <body>
@@ -29,7 +46,7 @@
   <!-- Header -->
   <header class="prop-header">
     <div class="container">
-      <span class="brand-badge">👑 SAMRAT WORLDWIDE • CONFIDENTIAL CLIENT LOOKBOOK</span>
+      <span class="brand-badge">👑 GELICON WORLDWIDE • CONFIDENTIAL CLIENT LOOKBOOK</span>
       <h1 class="prop-title">Turnkey Event Production & Stage Engineering</h1>
       <p class="prop-subtitle">
         Tailored for Executive Tech Summits, Global Product Launches, and Annual Conclaves across Bangalore, Riyadh & Dubai.
@@ -75,11 +92,45 @@
       </div>
     </div>
 
-    <!-- Section 2: Transparent Pricing Tiers -->
-    <h3 style="font-weight:900; color:#fff; margin-bottom:24px;">2. Production Packages & Investment Tiers</h3>
+    <!-- Section 2: Why Choose Us -->
+    <h3 style="font-weight:900; color:#fff; margin-bottom:8px;">2. Why GELICON WORLDWIDE</h3>
+    <p style="color:#888; font-size:0.9rem; margin-bottom:28px;">Four reasons our clients never look elsewhere.</p>
+    <div class="row g-4 mb-5">
+      <div class="col-md-3 col-sm-6">
+        <div class="why-card">
+          <div class="why-icon">👑</div>
+          <div class="why-title">Direct Founder Governance</div>
+          <p class="why-desc">Every project is personally managed by Ismail Kazia — you deal with the decision-maker, not an account manager.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <div class="why-title">48-Hour Stage Blueprint</div>
+          <p class="why-desc">While competitors take 3 weeks to send a quote, we deliver a full production blueprint within 48 hours of your brief.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="why-card">
+          <div class="why-icon">🌏</div>
+          <div class="why-title">Two-Nation Power Axis</div>
+          <p class="why-desc">Dual operational offices in Bangalore (India) & Riyadh (Saudi Arabia) — seamless execution across South Asia and the Gulf.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <div class="why-title">Zero Middlemen</div>
+          <p class="why-desc">No junior interns, no outsourcing. 100% in-house execution means tighter timelines, lower risk, and no broken telephone.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Transparent Pricing Tiers -->
+    <h3 style="font-weight:900; color:#fff; margin-bottom:24px;">3. Production Packages & Investment Tiers</h3>
     <div class="row g-4 mb-5">
       <!-- Tier 1: Silver -->
-      <div class="col-md-4">
+      <div class="col-md-4 pricing-col">
         <div class="tier-box">
           <div>
             <div class="tier-name">Executive Launchpad</div>
@@ -186,7 +237,7 @@
       </div>
     </div>
   </main>
-  <!-- SAMRAT Luxury Sales & Customer Service AI Concierge Bot -->
+  <!-- GELICON Luxury Sales & Customer Service AI Concierge Bot -->
   <script src="chatbot.js" defer></script>
 </body>
 </html>

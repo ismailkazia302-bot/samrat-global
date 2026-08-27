@@ -1,5 +1,5 @@
 /**
- * SAMRAT WORLDWIDE — FULL-STACK TECHNICAL SEO AUDIT ENGINE
+ * GELICON WORLDWIDE — FULL-STACK TECHNICAL SEO AUDIT ENGINE
  * Founder & CEO: Ismail Kazia
  * 
  * Performs 10-Point Technical SEO Inspection:
@@ -37,7 +37,7 @@ function findHtmlFiles(dir) {
 findHtmlFiles(ROOT_DIR);
 
 console.log(`=============================================================`);
-console.log(`🔍 SAMRAT FULL-STACK TECHNICAL SEO AUDIT`);
+console.log(`🔍 GELICON FULL-STACK TECHNICAL SEO AUDIT`);
 console.log(`Founder: Ismail Kazia | Audit Date: ${new Date().toISOString().split('T')[0]}`);
 console.log(`Total HTML Pages Scanned: ${HTML_FILES.length}`);
 console.log(`=============================================================\n`);
