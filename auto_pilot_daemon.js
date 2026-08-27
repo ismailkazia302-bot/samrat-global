@@ -53,9 +53,18 @@ function runDailyPipeline() {
           log(`✅ Outreach Engine completed 300 batch dispatch.`);
         }
 
-        // Record successful run for today
-        fs.writeFileSync(LAST_RUN_FILE, today, 'utf8');
-        log(`🎉 Daily Pipeline Complete! Next scheduled trigger tomorrow at 08:30 AM.`);
+        // Step 3: Run Daily SEO & Business Development Ranker Engine
+        exec('node daily_seo_ranker_engine.js', { cwd: __dirname }, (err3, stdout3) => {
+          if (err3) {
+            log(`⚠️ SEO Ranker error: ${err3.message}`);
+          } else {
+            log(`✅ Daily Google Page SEO & Schema Markup Generated & Sitemap Pinged.`);
+          }
+
+          // Record successful run for today
+          fs.writeFileSync(LAST_RUN_FILE, today, 'utf8');
+          log(`🎉 Daily Pipeline Complete! Next scheduled trigger tomorrow at 08:30 AM.`);
+        });
       });
     });
   });
