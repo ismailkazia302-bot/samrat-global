@@ -1,0 +1,239 @@
+{
+  "timestamp": "2026-08-27T10:23:47.807Z",
+  "totalLeads": 274,
+  "countryBreakdown": {
+    "India": 120,
+    "UAE": 47,
+    "UK": 25,
+    "USA": 6,
+    "Saudi Arabia": 71,
+    "Singapore": 5
+  },
+  "pipelineValuation": {
+    "totalINR": "₹30.44 Crore (₹30,44,30,000)",
+    "totalUSD": "$3.65 Million ($3,651,850)",
+    "totalSAR": "13.71 Million SAR (13,713,800 SAR)"
+  },
+  "top20VIPLeads": [
+    {
+      "id": "APX-0006",
+      "businessName": "The Leela Palace Bengaluru",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0011",
+      "businessName": "Emaar Properties PJSC",
+      "city": "Dubai",
+      "country": "UAE",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1020000,
+      "estDealUSD": 12250,
+      "estDealSAR": 46000
+    },
+    {
+      "id": "APX-0042",
+      "businessName": "Jumeirah Group (Burj Al Arab)",
+      "city": "Dubai",
+      "country": "UAE",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1020000,
+      "estDealUSD": 12250,
+      "estDealSAR": 46000
+    },
+    {
+      "id": "APX-0054",
+      "businessName": "NEOM Project (Saudi Vision 2030)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0091",
+      "businessName": "Roshn Real Estate Group (PIF)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0092",
+      "businessName": "Diriyah Gate Development Authority (DGDA)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0114",
+      "businessName": "Tata Sons Corporate Affairs",
+      "city": "Mumbai",
+      "country": "India",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 290000,
+      "estDealUSD": 3500,
+      "estDealSAR": 13100
+    },
+    {
+      "id": "APX-0117",
+      "businessName": "Qiddiya Investment Company (PIF)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0133",
+      "businessName": "Four Seasons Hotel Bengaluru at Embassy ONE",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0134",
+      "businessName": "The Oberoi Bengaluru",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0141",
+      "businessName": "Red Sea Global (RSG)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0142",
+      "businessName": "Diriyah Gate Development Authority (DGDA)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0150",
+      "businessName": "Riyadh Air (New Flagship Carrier)",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 1220000,
+      "estDealUSD": 14600,
+      "estDealSAR": 55000
+    },
+    {
+      "id": "APX-0171",
+      "businessName": "ITC Windsor, a Luxury Collection Hotel",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0172",
+      "businessName": "Conrad Bengaluru (Hilton Luxury)",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0175",
+      "businessName": "The Ritz-Carlton Bangalore",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0178",
+      "businessName": "NVIDIA India Graphics Pvt Ltd",
+      "city": "Bangalore",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0187",
+      "businessName": "Reliance Jio Infocomm Ltd",
+      "city": "Mumbai",
+      "country": "India",
+      "service": "Digital Marketing & Business Services",
+      "score": 99,
+      "estDealINR": 290000,
+      "estDealUSD": 3500,
+      "estDealSAR": 13100
+    },
+    {
+      "id": "APX-0191",
+      "businessName": "Microsoft India (R&D) Hyderabad Campus",
+      "city": "Hyderabad",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    },
+    {
+      "id": "APX-0192",
+      "businessName": "Taj Falaknuma Palace Hyderabad",
+      "city": "Hyderabad",
+      "country": "India",
+      "service": "Event Management (Bangalore & Pan-India)",
+      "score": 99,
+      "estDealINR": 1500000,
+      "estDealUSD": 18000,
+      "estDealSAR": 67500
+    }
+  ]
+}
