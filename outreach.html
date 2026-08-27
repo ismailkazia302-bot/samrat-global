@@ -8,8 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const pin = sessionStorage.getItem('samrat_crm_auth');
+      if (pin !== '2030') {
+        const entered = prompt('🔒 SAMRAT EXECUTIVE OUTREACH — Enter Founder Security PIN:');
+        if (entered === '2030') {
+          sessionStorage.setItem('samrat_crm_auth', '2030');
+        } else {
+          alert('⛔ Access Denied: Authorized Founder Access Only.');
+          window.location.href = 'index.html';
+        }
+      }
+    })();
+  </script>
   <style>
     /* Dashboard-Specific Overrides */
     .dashboard-header {

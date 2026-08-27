@@ -141,7 +141,7 @@ function generateSeoHtml(target) {
       <a href="../index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;">👑 SAMRAT <span style="color:#EAB308;">WORLDWIDE</span></a>
       <div class="d-flex gap-3">
         <a href="../products.html" style="color:#EAB308; text-decoration:none; font-weight:700; font-size:0.85rem;">Digital Store 🛍️</a>
-        <a href="../crm_dashboard.html" style="color:#aaa; text-decoration:none; font-weight:700; font-size:0.85rem;">CRM 📊</a>
+        <a href="../meet.html" style="color:#10B981; text-decoration:none; font-weight:700; font-size:0.85rem;">Book Call 🎥</a>
       </div>
     </div>
   </nav>
