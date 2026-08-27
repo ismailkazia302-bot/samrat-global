@@ -90,7 +90,7 @@ Ismail Kazia
 Founder & CEO | GELICON GLOBAL
 Riyadh WhatsApp: +966 54 890 5688
 India WhatsApp: +91 63639 62640
-Email: ismail@gelicon.com`
+Email: ismail@geliconglobal.com`
     };
   } else {
     return {
@@ -110,7 +110,7 @@ Best regards,
 Ismail Kazia
 Founder & CEO | GELICON GLOBAL
 WhatsApp: +966 54 890 5688 / +91 63639 62640
-Email: ismail@gelicon.com`
+Email: ismail@geliconglobal.com`
     };
   }
 }

@@ -33,9 +33,9 @@ allFiles.forEach(filePath => {
     let content = fs.readFileSync(filePath, 'utf8');
     let original = content;
 
-    content = content.replace(/GELICON WORLDWIDE/g, 'GELICON GLOBAL');
-    content = content.replace(/Gelicon Worldwide/g, 'Gelicon Global');
-    content = content.replace(/gelicon worldwide/g, 'gelicon global');
+    content = content.replace(/GELICON GLOBAL/g, 'GELICON GLOBAL');
+    content = content.replace(/Gelicon Global/g, 'Gelicon Global');
+    content = content.replace(/gelicon global/g, 'gelicon global');
     content = content.replace(/gelicon-worldwide/g, 'gelicon-global');
     content = content.replace(/GELICON_WORLDWIDE/g, 'GELICON_GLOBAL');
 

@@ -23,8 +23,8 @@ Would a 10-min call this week work?
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -43,8 +43,8 @@ Shall I drop it here or on email?
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -63,8 +63,8 @@ Free for a quick call?
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -83,8 +83,8 @@ Could we schedule a brief call this week? أتطلع للتواصل معكم
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +966-XXXXX XXXXX / +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -103,8 +103,8 @@ I'd love to share a confidential lookbook of relevant work. Would it be easier t
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +966-XXXXX XXXXX / +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -123,8 +123,8 @@ Reply here and I'll set it up 🤝
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +966-XXXXX XXXXX / +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -143,8 +143,8 @@ Shall I share it here or schedule a 15-min call?
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +971-XXXXX XXXXX / +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -163,8 +163,8 @@ Quick call this week?
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +971-XXXXX XXXXX / +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -183,8 +183,8 @@ I'd love to share a short case study relevant to [Company]. Can I send it over, 
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +44-XXXXX XXXXX / +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 
@@ -205,8 +205,8 @@ Just reply "interested" and I'll send over times 🙌
 **Ismail Kazia**
 Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
-✉️ ismail@samratworldwide.com
-🌐 samratworldwide.com
+✉️ ismail@geliconglobal.com
+🌐 geliconglobal.com
 
 ---
 

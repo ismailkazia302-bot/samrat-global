@@ -444,7 +444,7 @@
           <strong>Direct Contact to Founder & CEO Ismail Kazia:</strong><br>
           • 🇸🇦 Saudi WhatsApp/Call: <strong>+966 54 890 5688</strong><br>
           • 🇮🇳 India WhatsApp/Call: <strong>+91 63639 62640</strong><br>
-          • 📧 Email: <strong>ismail@gelicon.com</strong><br><br>
+          • 📧 Email: <strong>ismail@geliconglobal.com</strong><br><br>
           <a href="https://wa.me/966548905688" target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:5px 12px; border-radius:6px; text-decoration:none;">WhatsApp Direct Kholein →</a>
         `, 'bot');
       } else if (text.includes('bank') || text.includes('iban') || text.includes('anb') || text.includes('pay') || text.includes('account')) {

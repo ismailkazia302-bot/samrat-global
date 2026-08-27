@@ -35,14 +35,14 @@ allFiles.forEach(filePath => {
     let original = content;
 
     // Direct Replacements (order matters)
-    content = content.replace(/SAMRAT WORLDWIDE/g, 'GELICON WORLDWIDE');
-    content = content.replace(/Samrat Worldwide/g, 'Gelicon Worldwide');
-    content = content.replace(/samrat worldwide/g, 'gelicon worldwide');
+    content = content.replace(/GELICON GLOBAL/g, 'GELICON GLOBAL');
+    content = content.replace(/Gelicon Global/g, 'Gelicon Global');
+    content = content.replace(/samrat worldwide/g, 'gelicon global');
     content = content.replace(/SAMRAT GLOBAL/g, 'GELICON GLOBAL');
     content = content.replace(/Samrat Global/g, 'Gelicon Global');
     content = content.replace(/samrat-worldwide/g, 'gelicon-worldwide');
-    content = content.replace(/samratglobal\.com/g, 'gelicon.com');
-    content = content.replace(/ismail@samratglobal\.com/g, 'ismail@gelicon.com');
+    content = content.replace(/samratglobal\.com/g, 'geliconglobal.com');
+    content = content.replace(/ismail@samratglobal\.com/g, 'ismail@geliconglobal.com');
     content = content.replace(/SAMRAT/g, 'GELICON');
     content = content.replace(/Samrat/g, 'Gelicon');
 
