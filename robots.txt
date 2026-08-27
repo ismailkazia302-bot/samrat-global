@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ismailkazia302-bot.github.io/samrat-global/sitemap.xml
