@@ -450,17 +450,30 @@
             <span class="text-warning fw-bold">Pay Now →</span>
           </a>
 
-          <!-- Option 2: Saudi Arabia Mada / STC Pay -->
-          <a href="#" id="modalSaudiBtn" target="_blank" class="d-flex align-items-center justify-content-between p-3 mb-2 rounded text-decoration-none" style="background:#1A1A1A; border:1px solid rgba(18,140,126,0.3); color:#fff; transition:all 0.2s;">
-            <div class="d-flex align-items-center gap-3">
-              <span style="font-size:1.5rem;">🇸🇦</span>
-              <div>
-                <div class="fw-bold">Saudi Arabia (Mada / STC Pay / Al-Rajhi)</div>
-                <div class="small text-secondary">Direct Saudi Riyal transfer via WhatsApp</div>
+          <!-- Option 2: Saudi ANB Bank Transfer & Mada / STC Pay -->
+          <div class="p-3 mb-2 rounded" style="background:#141414; border:1px solid rgba(234,179,8,0.3);">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <span style="font-size:1.4rem;">🇸🇦</span>
+                <span class="fw-bold" style="color:#EAB308;">Saudi Direct Bank Transfer (ANB)</span>
+              </div>
+              <span class="badge" style="background:rgba(234,179,8,0.2); color:#EAB308;">Arab National Bank</span>
+            </div>
+            <div style="font-size:0.8rem; color:#bbb; line-height:1.6; background:#0a0a0a; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+              <div><strong>Beneficiary:</strong> Ismail Kazia</div>
+              <div><strong>Bank:</strong> Arab National Bank (ANB)</div>
+              <div><strong>Account No:</strong> <code style="color:#fff; font-weight:bold;">0108039658540010</code></div>
+              <div class="d-flex align-items-center justify-content-between mt-1">
+                <div><strong>IBAN:</strong> <code id="anbIbanCode" style="color:#10B981; font-weight:bold;">SA1730400108039658540010</code></div>
+                <button type="button" class="btn btn-sm btn-outline-warning py-0 px-2" style="font-size:0.75rem;" onclick="copyIban()">Copy IBAN</button>
               </div>
             </div>
-            <span class="fw-bold" style="color:#10B981;">Pay SAR →</span>
-          </a>
+            <div class="mt-2">
+              <a href="#" id="modalSaudiBtn" target="_blank" class="btn btn-sm w-100 fw-bold text-dark" style="background:#10B981;">
+                Send ANB Transfer Receipt via WhatsApp (+966 54 890 5688) →
+              </a>
+            </div>
+          </div>
 
           <!-- Option 3: India UPI -->
           <a href="#" id="modalIndiaBtn" target="_blank" class="d-flex align-items-center justify-content-between p-3 mb-2 rounded text-decoration-none" style="background:#1A1A1A; border:1px solid rgba(37,211,102,0.3); color:#fff; transition:all 0.2s;">
@@ -611,6 +624,11 @@
         document.getElementById('ent-subtext').textContent = '1,120 SAR • ₹ 24,999 / mo';
         document.getElementById('ent-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to book the Agency Retainer Monthly Plan ($299 / 1,120 SAR per month).');
       }
+    }
+
+    function copyIban() {
+      navigator.clipboard.writeText('SA1730400108039658540010');
+      alert('✅ Arab National Bank (ANB) IBAN Copied:\nSA1730400108039658540010');
     }
   </script>
 </body>

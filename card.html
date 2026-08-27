@@ -177,8 +177,9 @@
       <span class="loc-chip">&#x1F4CD; Riyadh, Saudi Arabia</span>
     </div>
 
-    <div class="divider"></div>
-
+    <button onclick="copyIban()" class="action-btn" style="background:#111; color:#EAB308; border:1px solid rgba(234,179,8,0.4); font-weight:700; cursor:pointer; margin-bottom:10px;">
+      🇸🇦 Copy Saudi IBAN (ANB Bank)
+    </button>
     <button onclick="downloadVCard()" class="action-btn btn-save">
       &#x1F4BE; Save Contact
     </button>
@@ -207,6 +208,11 @@ END:VCARD`;
       a.download = 'Ismail_Kazia_SAMRAT.vcf';
       a.click();
       URL.revokeObjectURL(url);
+    }
+
+    function copyIban() {
+      navigator.clipboard.writeText('SA1730400108039658540010');
+      alert('✅ Arab National Bank (ANB) IBAN Copied:\nSA1730400108039658540010\nBeneficiary: Ismail Kazia');
     }
   </script>
 </body>
