@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const leads = JSON.parse(fs.readFileSync(path.join(__dirname, 'leads_embedded.json'), 'utf8'));
+const leads = JSON.parse(fs.readFileSync(path.join(__dirname, 'leads_database.json'), 'utf8'));
 
 const template = `<!DOCTYPE html>
 <html lang="en">
