@@ -51,15 +51,59 @@
 
     <!-- Direct Button & Calendly Embed -->
     <div class="my-3 text-center">
-      <a href="https://calendly.com/ismailkazia302/30min" target="_blank" class="btn" style="background:#EAB308; color:#000; font-weight:800; padding:15px 32px; border-radius:10px; font-size:1.1rem; box-shadow:0 6px 25px rgba(234,179,8,0.4); text-decoration:none; display:inline-block;">
-        📅 Click Here to Open 30-Min Booking Calendar (Direct Fullscreen) ↗
+      <a href="https://calendly.com/ismailkazia302" target="_blank" class="btn" style="background:#EAB308; color:#000; font-weight:800; padding:15px 32px; border-radius:10px; font-size:1.1rem; box-shadow:0 6px 25px rgba(234,179,8,0.4); text-decoration:none; display:inline-block;">
+        📅 Open Calendly Scheduling Page (Direct) ↗
       </a>
       <div style="color:#888; font-size:0.85rem; margin-top:8px;">(Or select your time slot directly in the calendar below)</div>
     </div>
 
-    <!-- Official Calendly Inline Embed Container -->
+    <!-- Official Calendly Inline Embed Container (Profile) -->
     <div class="calendly-card my-4" style="background:#ffffff; border-radius:16px; overflow:hidden;">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302/30min" style="min-width:320px;height:750px;width:100%;"></div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302" style="min-width:320px;height:750px;width:100%;"></div>
+    </div>
+
+    <!-- Native VIP 1-Click Meeting Request Form (Instant WhatsApp & Calendar Sync) -->
+    <div class="calendly-card my-5 p-4 text-start" style="background:#0a0a0a; border:1px solid rgba(234,179,8,0.4);">
+      <div class="text-center mb-4">
+        <span class="badge-tag">⚡ INSTANT CONFIRMATION</span>
+        <h3 style="font-weight:900; color:#EAB308;">Quick Meeting Request (Direct to Founder)</h3>
+        <p style="color:#888; font-size:0.9rem;">Fill in your details below for instant WhatsApp & Google Meet confirmation within 15 minutes.</p>
+      </div>
+      <form id="quickMeetingForm" onsubmit="handleQuickMeeting(event)">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label small text-secondary fw-bold">YOUR NAME</label>
+            <input type="text" id="meetName" class="form-control bg-dark text-white border-secondary" placeholder="e.g. Arjun Mehta" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small text-secondary fw-bold">COMPANY / BRAND</label>
+            <input type="text" id="meetCompany" class="form-control bg-dark text-white border-secondary" placeholder="e.g. Infosys / Emaar Properties" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small text-secondary fw-bold">PREFERRED DATE</label>
+            <input type="date" id="meetDate" class="form-control bg-dark text-white border-secondary" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small text-secondary fw-bold">PREFERRED TIME & TIMEZONE</label>
+            <input type="text" id="meetTime" class="form-control bg-dark text-white border-secondary" placeholder="e.g. 04:00 PM KSA / 06:30 PM IST" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label small text-secondary fw-bold">PROJECT TOPIC</label>
+            <select id="meetTopic" class="form-select bg-dark text-white border-secondary">
+              <option value="Bangalore Corporate Event / Tech Summit (₹15L - ₹45L)">Bangalore Corporate Event / Tech Summit (₹15L - ₹45L)</option>
+              <option value="Saudi Vision 2030 Conclave / Event Staging">Saudi Vision 2030 Conclave / Event Staging</option>
+              <option value="Dubai / GCC Performance Marketing Retainer ($2,500/mo)">Dubai / GCC Performance Marketing Retainer ($2,500/mo)</option>
+              <option value="SAMRAT VIP Club & Digital Products">SAMRAT VIP Club & Digital Products</option>
+              <option value="Other High-Priority Partnership">Other High-Priority Partnership</option>
+            </select>
+          </div>
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn w-100 py-3 fw-bold text-dark" style="background:#10B981; font-size:1.05rem; letter-spacing:1px;">
+              CONFIRM MEETING WITH ISMAIL KAZIA ON WHATSAPP →
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <!-- Alternative Instant WhatsApp Booking -->
@@ -84,5 +128,21 @@
     &copy; 2026 SAMRAT WORLDWIDE • Direct Founder Operations by Ismail Kazia
   </footer>
 
+  <script>
+    function handleQuickMeeting(e) {
+      e.preventDefault();
+      const name = document.getElementById('meetName').value.trim();
+      const company = document.getElementById('meetCompany').value.trim();
+      const date = document.getElementById('meetDate').value;
+      const time = document.getElementById('meetTime').value.trim();
+      const topic = document.getElementById('meetTopic').value;
+
+      const message = `Hello Founder Ismail Kazia! 👋\n\nI would like to confirm an Executive Strategy Call:\n\n👤 Name: ${name}\n🏢 Company: ${company}\n📅 Date: ${date}\n⏰ Time: ${time}\n🎯 Topic: ${topic}\n\nPlease confirm availability and share Google Meet invite link!`;
+
+      // Open WhatsApp directly
+      const waUrl = `https://wa.me/966548905688?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+    }
+  </script>
 </body>
 </html>
