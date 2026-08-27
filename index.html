@@ -128,9 +128,78 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.45);
       z-index: 2;
     }
+
+    /* Centered Hero Branding Overlay */
+    .hero-content-center {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 5;
+      width: 90%;
+      max-width: 850px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: heroFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+
+    .hero-logo-img {
+      height: 140px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 0 40px rgba(234, 179, 8, 0.35));
+      animation: pulseLogo 3s ease-in-out infinite;
+    }
+
+    .hero-brand-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin: 0;
+      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
+    }
+
+    .hero-brand-title span {
+      color: #EAB308;
+    }
+
+    .hero-brand-subtitle {
+      font-size: 0.95rem;
+      letter-spacing: 6px;
+      color: rgba(255, 255, 255, 0.75);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 14px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    @keyframes heroFadeIn {
+      to { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 35px rgba(234, 179, 8, 0.3)); }
+      50% { transform: scale(1.04); filter: drop-shadow(0 0 50px rgba(234, 179, 8, 0.55)); }
+    }
+
+    @media (min-width: 768px) {
+      .hero-logo-img { height: 180px; }
+      .hero-brand-title { font-size: 4.8rem; letter-spacing: 6px; }
+      .hero-brand-subtitle { font-size: 1.3rem; letter-spacing: 10px; margin-top: 18px; }
+    }
+
 
     .mute-btn {
       position: absolute;
@@ -570,8 +639,12 @@
   <!-- Top Navbar (Exact Alsayegh Format) -->
   <nav class="navbar navbar-expand-lg navbar-dark nav-alsayegh">
     <div class="container-fluid px-lg-5">
-      <a href="#" style="text-decoration:none; display:flex; align-items:center;">
-        <img src="galicon_logo.png" alt="GALICON GLOBAL" style="height:52px; width:auto; object-fit:contain;">
+      <a href="#" style="text-decoration:none; display:flex; align-items:center; gap:12px;">
+        <img src="galicon_logo.png" alt="GALICON GLOBAL" style="height:65px; width:auto; object-fit:contain;">
+        <span style="font-family:'Poppins', sans-serif; font-weight:900; font-size:1.45rem; letter-spacing:2px; color:#FFFFFF; line-height:1; display:flex; flex-direction:column; text-transform:uppercase;">
+          GALICON
+          <span style="font-size:0.9rem; letter-spacing:3px; font-weight:800; color:#EAB308; margin-top:2px;">GLOBAL</span>
+        </span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -604,6 +677,13 @@
       <source src="https://assets.mixkit.co/videos/preview/mixkit-crowd-at-a-music-and-lights-festival-42589-large.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay-dark"></div>
+
+    <!-- Centered Brand Overlay -->
+    <div class="hero-content-center">
+      <img src="galicon_logo.png" alt="GALICON GLOBAL" class="hero-logo-img">
+      <h2 class="hero-brand-title">GALICON <span>GLOBAL</span></h2>
+      <div class="hero-brand-subtitle">GLOBAL INNOVATIONS</div>
+    </div>
 
     <!-- Mute/Unmute Icon -->
     <button id="muteToggleBtn" class="mute-btn" onclick="toggleMute()">
@@ -896,8 +976,12 @@
     <div class="container-fluid px-lg-5">
       <div class="row align-items-center mb-5">
         <div class="col-md-6">
-          <a href="#" style="text-decoration:none; display:inline-flex; align-items:center;">
-            <img src="galicon_logo.png" alt="GALICON GLOBAL" style="height:70px; width:auto; object-fit:contain;">
+          <a href="#" style="text-decoration:none; display:inline-flex; align-items:center; gap:12px; margin-bottom:15px;">
+            <img src="galicon_logo.png" alt="GALICON GLOBAL" style="height:80px; width:auto; object-fit:contain;">
+            <span style="font-family:'Poppins', sans-serif; font-weight:900; font-size:1.8rem; letter-spacing:2px; color:#FFFFFF; line-height:1; display:flex; flex-direction:column; text-transform:uppercase; text-align:left;">
+              GALICON
+              <span style="font-size:1rem; letter-spacing:3px; font-weight:800; color:#EAB308; margin-top:4px;">GLOBAL</span>
+            </span>
           </a>
           <p style="color:#777; margin-top:8px; font-size:0.9rem;">Founded by Ismail Kazia • Events in Bangalore & Pan-India • Worldwide Growth.</p>
         </div>
