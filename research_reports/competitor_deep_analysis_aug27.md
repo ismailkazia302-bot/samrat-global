@@ -1,4 +1,4 @@
-# 👑 GELICON GLOBAL — COMPETITOR DEEP ANALYSIS & STRATEGIC POSITIONING REPORT
+# 👑 GALICON GLOBAL — COMPETITOR DEEP ANALYSIS & STRATEGIC POSITIONING REPORT
 **Document ID:** `COMP-INTEL-2026-08-27`  
 **Date:** August 27, 2026  
 **Founder:** Ismail Kazia  
@@ -80,9 +80,9 @@
 
 ---
 
-## ⚡ PART 3: GELICON GLOBAL ATTACK VECTORS & POSITIONING
+## ⚡ PART 3: GALICON GLOBAL ATTACK VECTORS & POSITIONING
 
-| Area | Competitor Flaw | GELICON Advantage |
+| Area | Competitor Flaw | GALICON Advantage |
 |---|---|---|
 | **Speed to Blueprint** | 2-3 week CAD delay | **48-Hour 3D Stage Blueprint** |
 | **Account Ownership** | Handed off to interns | **Direct Founder (Ismail Kazia) Ownership** |

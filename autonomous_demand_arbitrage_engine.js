@@ -1,5 +1,5 @@
 /**
- * GELICON GLOBAL — AUTONOMOUS TREND-TO-CASH DEMAND ARBITRAGE ENGINE
+ * GALICON GLOBAL — AUTONOMOUS TREND-TO-CASH DEMAND ARBITRAGE ENGINE
  * Founder & CEO: Ismail Kazia
  * 
  * OUT-OF-THE-BOX PASSIVE INCOME ARCHITECTURE:
@@ -85,7 +85,7 @@ async function runDemandArbitrage() {
   const dateStr = timestamp.split('T')[0];
 
   console.log(`=============================================================`);
-  console.log(`👑 GELICON AUTONOMOUS TREND-TO-CASH ARBITRAGE ENGINE`);
+  console.log(`👑 GALICON AUTONOMOUS TREND-TO-CASH ARBITRAGE ENGINE`);
   console.log(`Founder: Ismail Kazia`);
   console.log(`Scan Date: ${dateStr}`);
   console.log(`=============================================================`);
@@ -105,7 +105,7 @@ async function runDemandArbitrage() {
 
   const solutionFilePath = path.join(productFolderName, `${topDemand.id}_vault.md`);
   const solutionContent = `# ${topDemand.productTitle}
-**Published by:** GELICON GLOBAL • Founder: Ismail Kazia
+**Published by:** GALICON GLOBAL • Founder: Ismail Kazia
 **Target Market:** ${topDemand.market}
 **Commercial Value:** $${topDemand.priceUSD} • ${topDemand.priceSAR} SAR • ₹ ${topDemand.priceINR}
 
@@ -124,7 +124,7 @@ ${topDemand.solutionSummary}
 4. **Legal & Compliance FAQ:** Direct answers to common audit concerns.
 
 ---
-© 2026 GELICON GLOBAL. All Rights Reserved.
+© 2026 GALICON GLOBAL. All Rights Reserved.
 `;
 
   fs.writeFileSync(solutionFilePath, solutionContent, 'utf8');

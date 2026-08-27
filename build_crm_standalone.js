@@ -8,14 +8,14 @@ const template = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GELICON GLOBAL — B2B CRM Pipeline</title>
+  <title>GALICON GLOBAL — B2B CRM Pipeline</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <script>
     (function() {
       const pin = sessionStorage.getItem('samrat_crm_auth');
       if (pin !== '2030') {
-        const entered = prompt('🔒 GELICON EXECUTIVE CRM — Enter Founder Security PIN:');
+        const entered = prompt('🔒 GALICON EXECUTIVE CRM — Enter Founder Security PIN:');
         if (entered === '2030') {
           sessionStorage.setItem('samrat_crm_auth', '2030');
         } else {
@@ -69,7 +69,7 @@ const template = `<!DOCTYPE html>
   <!-- Top Navbar -->
   <header class="crm-header">
     <div class="d-flex align-items-center gap-3">
-      <a href="index.html" class="brand-title">👑 GELICON <span>CRM</span></a>
+      <a href="index.html" class="brand-title">👑 GALICON <span>CRM</span></a>
       <div class="nav-bar-links d-none d-md-flex">
         <a href="index.html">Main Portal</a>
         <a href="products.html">Digital Store</a>
@@ -136,7 +136,7 @@ const template = `<!DOCTYPE html>
 
       grid.innerHTML = list.map(l => {
         const cleanPhone = (l.phone || '').replace(/[^0-9]/g, '');
-        const pitchText = encodeURIComponent('Hi ' + l.name + ' Team! 👋 I am Ismail Kazia, Founder of GELICON GLOBAL. Reaching out regarding corporate event production & digital growth funnels in ' + l.city + '.');
+        const pitchText = encodeURIComponent('Hi ' + l.name + ' Team! 👋 I am Ismail Kazia, Founder of GALICON GLOBAL. Reaching out regarding corporate event production & digital growth funnels in ' + l.city + '.');
 
         return \`
           <div class="crm-card">

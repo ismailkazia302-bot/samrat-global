@@ -1,5 +1,5 @@
 /**
- * GELICON GLOBAL — AUTONOMOUS MARKET INTELLIGENCE & BD RESEARCHER AGENT
+ * GALICON GLOBAL — AUTONOMOUS MARKET INTELLIGENCE & BD RESEARCHER AGENT
  * Founder & CEO: Ismail Kazia
  * 
  * Schedule: Autonomous 5x Daily (08:00, 11:30, 14:30, 17:30, 20:30)
@@ -24,8 +24,8 @@ const RESEARCH_DOMAINS = [
     competitors: ['Wizcraft International', 'DNA Networks', 'Phase 1 Events', 'Toast Events'],
     insights: [
       'Bangalore Series-A & Series-B funded AI/SaaS startups are moving away from traditional hotel ballrooms toward hybrid experiential 4K LED multi-track summits.',
-      'Key pain point of corporate tech clients: Legacy agencies take 3 to 4 weeks for stage 3D CAD rendering; GELICON direct founder turnaround (48 hours) is a massive competitive moat.',
-      'Average budget for 1-day executive summit (200-300 pax) at Leela Palace or ITC: ₹8 Lakh to ₹15 Lakh. GELICON ₹8.5L Executive Launchpad is priced with aggressive closing advantage.'
+      'Key pain point of corporate tech clients: Legacy agencies take 3 to 4 weeks for stage 3D CAD rendering; GALICON direct founder turnaround (48 hours) is a massive competitive moat.',
+      'Average budget for 1-day executive summit (200-300 pax) at Leela Palace or ITC: ₹8 Lakh to ₹15 Lakh. GALICON ₹8.5L Executive Launchpad is priced with aggressive closing advantage.'
     ],
     recommendedBDAction: 'Target newly funded Whitefield & Koramangala tech unicorn heads of people and marketing with 4K curved LED keynote packages.'
   },
@@ -35,7 +35,7 @@ const RESEARCH_DOMAINS = [
     insights: [
       'Vision 2030 initiatives are accelerating procurement for Q3/Q4 mega conclaves (Diriyah Gate, Red Sea Global, Riyadh Air, Qiddiya).',
       'Massive demand for bilingual English/Arabic technical production with certified simultaneous translation booths and local ANB banking compliance.',
-      'Competitor retainers for corporate marketing in Riyadh range from 25,000 to 45,000 SAR/month ($6,700 - $12,000/mo). GELICON Executive Retainer at 11,000 SAR ($2,950/mo) provides high value.'
+      'Competitor retainers for corporate marketing in Riyadh range from 25,000 to 45,000 SAR/month ($6,700 - $12,000/mo). GALICON Executive Retainer at 11,000 SAR ($2,950/mo) provides high value.'
     ],
     recommendedBDAction: 'Dispatch personalized Vision 2030 stage production pitches to Riyadh procurement officers highlighting bilingual capabilities and local ANB wire ease.'
   },
@@ -45,7 +45,7 @@ const RESEARCH_DOMAINS = [
     insights: [
       'Dubai luxury property developers (Sobha, DAMAC, Binghatti) are experiencing high ad fatigue on standard Facebook/Instagram lead forms.',
       'Highest conversion channel in 2026: Pre-qualified WhatsApp VIP video qualification funnels targeting Indian and European investors.',
-      'Competitors charge AED 20,000 - 35,000/mo without lead replacement guarantees. GELICON offers verified lead delivery directly into CRM.'
+      'Competitors charge AED 20,000 - 35,000/mo without lead replacement guarantees. GALICON offers verified lead delivery directly into CRM.'
     ],
     recommendedBDAction: 'Offer Dubai luxury developers a 30-day "Pre-Qualified HNWI Buyer Sprint" ($1,450/mo) to acquire high-net-worth real estate buyers.'
   }
@@ -58,13 +58,13 @@ function runMarketResearch() {
   const hour = timestamp.getHours();
 
   console.log(`=============================================================`);
-  console.log(`🕵️‍♂️ GELICON AUTONOMOUS BD & COMPETITOR RESEARCHER AGENT`);
+  console.log(`🕵️‍♂️ GALICON AUTONOMOUS BD & COMPETITOR RESEARCHER AGENT`);
   console.log(`Founder & CEO: Ismail Kazia`);
   console.log(`Research Cycle: ${timestamp.toLocaleTimeString()} | Date: ${dateStr}`);
   console.log(`=============================================================\n`);
 
   const reportId = `INTEL-${dateStr}-${timeStr}`;
-  let reportMarkdown = `# 👑 GELICON GLOBAL — EXECUTIVE BD & MARKET RESEARCH REPORT
+  let reportMarkdown = `# 👑 GALICON GLOBAL — EXECUTIVE BD & MARKET RESEARCH REPORT
 **Report ID:** \`${reportId}\`  
 **Generated At:** ${timestamp.toLocaleString()}  
 **Lead Strategist:** Autonomous BD Researcher Agent for Founder Ismail Kazia  
@@ -95,7 +95,7 @@ ${domain.insights.map(i => `  • ${i}`).join('\n')}
 
 ## 💡 3. COMPETITOR PRICING & COUNTER-STRATEGY PLAYBOOK
 
-| Market Sector | Competitor Average Rate | GELICON Strategic Price | Our Competitive Moat |
+| Market Sector | Competitor Average Rate | GALICON Strategic Price | Our Competitive Moat |
 |---|---|---|---|
 | **Bangalore Tech Summit (1-Day)** | ₹12 Lakh – ₹16 Lakh | **₹ 8.5 Lakh ($10,500)** | 48h 3D CAD rendering + Direct Founder Access |
 | **Bangalore Flagship Conclave** | ₹28 Lakh – ₹35 Lakh | **₹ 18.5 Lakh ($22,000)** | P2.6 Curved LED Wall + 4K Multi-Cam Broadcast |
@@ -131,7 +131,7 @@ ${domain.insights.map(i => `  • ${i}`).join('\n')}
 
   console.log(`✅ Intelligence Report Saved: research_reports/${reportId}.md`);
   console.log(`📁 Latest Intel JSON Updated: latest_market_intel.json`);
-  console.log(`🎯 Key Finding: Competitor CAD delays give GELICON a 48-hour closing advantage in Bangalore.`);
+  console.log(`🎯 Key Finding: Competitor CAD delays give GALICON a 48-hour closing advantage in Bangalore.`);
   console.log(`💰 GCC Retainer Counter-Positioning: 11,000 SAR vs Competitor 30,000 SAR.`);
   console.log(`\n🎉 Autonomous Researcher Agent Completed Cycle Successfully!\n`);
 }

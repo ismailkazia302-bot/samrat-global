@@ -28,23 +28,23 @@ let modifiedCount = 0;
 
 allFiles.forEach(filePath => {
   // Skip this script itself
-  if (filePath.endsWith('rebrand_to_gelicon.js')) return;
+  if (filePath.endsWith('rebrand_to_galicon.js')) return;
 
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let original = content;
 
     // Direct Replacements (order matters)
-    content = content.replace(/GELICON GLOBAL/g, 'GELICON GLOBAL');
-    content = content.replace(/Gelicon Global/g, 'Gelicon Global');
-    content = content.replace(/samrat worldwide/g, 'gelicon global');
-    content = content.replace(/SAMRAT GLOBAL/g, 'GELICON GLOBAL');
-    content = content.replace(/Samrat Global/g, 'Gelicon Global');
-    content = content.replace(/samrat-worldwide/g, 'gelicon-worldwide');
-    content = content.replace(/samratglobal\.com/g, 'geliconglobal.com');
-    content = content.replace(/ismail@samratglobal\.com/g, 'ismail@geliconglobal.com');
-    content = content.replace(/SAMRAT/g, 'GELICON');
-    content = content.replace(/Samrat/g, 'Gelicon');
+    content = content.replace(/GALICON GLOBAL/g, 'GALICON GLOBAL');
+    content = content.replace(/Galicon Global/g, 'Galicon Global');
+    content = content.replace(/samrat worldwide/g, 'galicon global');
+    content = content.replace(/SAMRAT GLOBAL/g, 'GALICON GLOBAL');
+    content = content.replace(/Samrat Global/g, 'Galicon Global');
+    content = content.replace(/samrat-worldwide/g, 'galicon-worldwide');
+    content = content.replace(/samratglobal\.com/g, 'galiconglobal.com');
+    content = content.replace(/ismail@samratglobal\.com/g, 'ismail@galiconglobal.com');
+    content = content.replace(/SAMRAT/g, 'GALICON');
+    content = content.replace(/Samrat/g, 'Galicon');
 
     if (content !== original) {
       fs.writeFileSync(filePath, content, 'utf8');
@@ -56,4 +56,4 @@ allFiles.forEach(filePath => {
   }
 });
 
-console.log(`\n🎉 Rebranding Complete! Successfully updated ${modifiedCount} files to GELICON!`);
+console.log(`\n🎉 Rebranding Complete! Successfully updated ${modifiedCount} files to GALICON!`);

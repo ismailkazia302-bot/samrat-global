@@ -1,5 +1,5 @@
 /**
- * GELICON GLOBAL — LUXURY SALES & CUSTOMER SERVICE AI CONCIERGE CHATBOT
+ * GALICON GLOBAL — LUXURY SALES & CUSTOMER SERVICE AI CONCIERGE CHATBOT
  * Founder & CEO: Ismail Kazia
  * Fully self-contained with embedded CSS and bilingual intelligence (English + Roman Urdu)
  */
@@ -242,7 +242,7 @@
           <div class="chat-online-dot"></div>
         </div>
         <div class="d-none d-sm-block">
-          <div class="chat-launcher-text">GELICON Concierge</div>
+          <div class="chat-launcher-text">GALICON Concierge</div>
           <div style="font-size:0.68rem; color:#10B981; font-weight:700;">● Online • Live Sales & Support</div>
         </div>
         <span class="chat-launcher-badge">VIP</span>
@@ -254,7 +254,7 @@
           <div class="chat-header-info">
             <div class="chat-launcher-avatar" style="width:34px;height:34px;font-size:1rem;">👑</div>
             <div>
-              <div class="chat-header-name">GELICON Executive Concierge</div>
+              <div class="chat-header-name">GALICON Executive Concierge</div>
               <div class="chat-header-sub">Direct Line to Founder Ismail Kazia</div>
             </div>
           </div>
@@ -263,7 +263,7 @@
 
         <div class="chat-body" id="samratChatBody">
           <div class="chat-msg bot">
-            <strong>Marhaba & Welcome to GELICON GLOBAL! 👑</strong><br>
+            <strong>Marhaba & Welcome to GALICON GLOBAL! 👑</strong><br>
             I am your executive sales concierge. Main aapki kya madad kar sakta hoon?
           </div>
 
@@ -392,7 +392,7 @@
         `, "bot");
       }, 400);
     } else if (type === 'wa') {
-      window.open("https://wa.me/966548905688?text=Hello%20Founder%20Ismail%20Kazia!%20Connecting%20from%20GELICON%20website.", "_blank");
+      window.open("https://wa.me/966548905688?text=Hello%20Founder%20Ismail%20Kazia!%20Connecting%20from%20GALICON%20website.", "_blank");
     }
   }
 
@@ -411,7 +411,7 @@
       if (text.match(/^(hi|hello|hey|salam|marhaba|assalam|kem cho|namaste)/)) {
         appendMsg(`
           <strong>Walekum Assalam / Hello! 👋</strong><br>
-          Welcome to GELICON GLOBAL! Main Founder Ismail Kazia ka AI sales executive hoon. 
+          Welcome to GALICON GLOBAL! Main Founder Ismail Kazia ka AI sales executive hoon. 
           Aapko Bangalore corporate event organize karna hai, ya Saudi/Dubai business expansion ke liye baat karni hai?
         `, 'bot');
       } else if (text.includes('event') || text.includes('conference') || text.includes('summit') || text.includes('stage') || text.includes('bangalore') || text.includes('wedding') || text.includes('conclave')) {
@@ -433,7 +433,7 @@
         `, 'bot');
       } else if (text.includes('price') || text.includes('cost') || text.includes('kitna') || text.includes('rate') || text.includes('package') || text.includes('fees')) {
         appendMsg(`
-          <strong>💰 GELICON Pricing Overview:</strong><br>
+          <strong>💰 GALICON Pricing Overview:</strong><br>
           • <strong>Corporate Events:</strong> ₹8.5 Lakh to ₹38 Lakh ($10,500 - $45,000)<br>
           • <strong>Growth Retainers (KSA/UAE):</strong> $1,450 to $2,950 / month (5,450 SAR - 11,000 SAR)<br>
           • <strong>Digital Products:</strong> $29 to $97 (ZATCA Kit)<br><br>
@@ -444,7 +444,7 @@
           <strong>Direct Contact to Founder & CEO Ismail Kazia:</strong><br>
           • 🇸🇦 Saudi WhatsApp/Call: <strong>+966 54 890 5688</strong><br>
           • 🇮🇳 India WhatsApp/Call: <strong>+91 63639 62640</strong><br>
-          • 📧 Email: <strong>ismail@geliconglobal.com</strong><br><br>
+          • 📧 Email: <strong>ismail@galiconglobal.com</strong><br><br>
           <a href="https://wa.me/966548905688" target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:5px 12px; border-radius:6px; text-decoration:none;">WhatsApp Direct Kholein →</a>
         `, 'bot');
       } else if (text.includes('bank') || text.includes('iban') || text.includes('anb') || text.includes('pay') || text.includes('account')) {
@@ -460,7 +460,7 @@
         appendMsg(`
           Shukriya! Maine aapka message note kar liya hai: <em>"${raw}"</em>.<br><br>
           Immediate quote aur discussion ke liye Founder Ismail Kazia ke WhatsApp par forward karein:<br>
-          <a href="https://wa.me/966548905688?text=${encodeURIComponent('Hello Ismail! Connecting from GELICON website: ' + raw)}" target="_blank" style="display:inline-block; margin-top:6px; background:#10B981; color:#000; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Forward to Ismail Kazia's WhatsApp →</a>
+          <a href="https://wa.me/966548905688?text=${encodeURIComponent('Hello Ismail! Connecting from GALICON website: ' + raw)}" target="_blank" style="display:inline-block; margin-top:6px; background:#10B981; color:#000; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Forward to Ismail Kazia's WhatsApp →</a>
         `, 'bot');
       }
     }, 350);
@@ -474,5 +474,5 @@
   }
 
   // Expose globally
-  window.toggleGeliconChat = toggleChat;
+  window.toggleGaliconChat = toggleChat;
 })();

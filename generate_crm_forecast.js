@@ -77,7 +77,7 @@ const forecastData = {
 fs.writeFileSync(path.join(__dirname, 'crm_revenue_forecast.json'), JSON.stringify(forecastData, null, 2), 'utf8');
 
 const txtSummary = `=============================================================
-👑 GELICON GLOBAL — STRATEGIC CRM REVENUE FORECAST
+👑 GALICON GLOBAL — STRATEGIC CRM REVENUE FORECAST
 Founder & CEO: Ismail Kazia
 Date: ${new Date().toLocaleDateString()}
 =============================================================

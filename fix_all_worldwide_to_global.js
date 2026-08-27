@@ -40,20 +40,20 @@ allFiles.forEach(filePath => {
     content = content.replace(/<span style="color:#EAB308;">WORLDWIDE<\/span>/g, '<span style="color:#EAB308;">GLOBAL</span>');
     
     // Brand names
-    content = content.replace(/GELICON WORLDWIDE/g, 'GELICON GLOBAL');
-    content = content.replace(/Gelicon Worldwide/g, 'Gelicon Global');
-    content = content.replace(/gelicon worldwide/g, 'gelicon global');
-    content = content.replace(/SAMRAT WORLDWIDE/g, 'GELICON GLOBAL');
-    content = content.replace(/Samrat Worldwide/g, 'Gelicon Global');
+    content = content.replace(/GALICON WORLDWIDE/g, 'GALICON GLOBAL');
+    content = content.replace(/Galicon Worldwide/g, 'Galicon Global');
+    content = content.replace(/galicon worldwide/g, 'galicon global');
+    content = content.replace(/SAMRAT WORLDWIDE/g, 'GALICON GLOBAL');
+    content = content.replace(/Samrat Worldwide/g, 'Galicon Global');
     
     // Emails & domains
-    content = content.replace(/samratworldwide\.com/g, 'geliconglobal.com');
-    content = content.replace(/ismail@samratworldwide\.com/g, 'ismail@geliconglobal.com');
-    content = content.replace(/gelicon\.com/g, 'geliconglobal.com');
-    content = content.replace(/ismail@gelicon\.com/g, 'ismail@geliconglobal.com');
+    content = content.replace(/samratworldwide\.com/g, 'galiconglobal.com');
+    content = content.replace(/ismail@samratworldwide\.com/g, 'ismail@galiconglobal.com');
+    content = content.replace(/galicon\.com/g, 'galiconglobal.com');
+    content = content.replace(/ismail@galicon\.com/g, 'ismail@galiconglobal.com');
     
     // Catch-all remaining uppercase
-    content = content.replace(/GELICON\s+WORLDWIDE/g, 'GELICON GLOBAL');
+    content = content.replace(/GALICON\s+WORLDWIDE/g, 'GALICON GLOBAL');
 
     if (content !== original) {
       fs.writeFileSync(filePath, content, 'utf8');
@@ -65,4 +65,4 @@ allFiles.forEach(filePath => {
   }
 });
 
-console.log(`\n🎉 Deep Clean Complete! Successfully updated ${modifiedCount} files to 100% "GELICON GLOBAL"!`);
+console.log(`\n🎉 Deep Clean Complete! Successfully updated ${modifiedCount} files to 100% "GALICON GLOBAL"!`);

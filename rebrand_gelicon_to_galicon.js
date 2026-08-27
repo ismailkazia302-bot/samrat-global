@@ -13,7 +13,7 @@ function getAllFiles(dir, fileList = []) {
       getAllFiles(filePath, fileList);
     } else {
       const ext = path.extname(file).toLowerCase();
-      if (['.html', '.js', '.json', '.md', '.css', '.txt', '.xml'].includes(ext)) {
+      if (['.html', '.js', '.json', '.md', '.css', '.txt', '.xml', '.bat', '.ps1'].includes(ext)) {
         fileList.push(filePath);
       }
     }
@@ -22,22 +22,24 @@ function getAllFiles(dir, fileList = []) {
 }
 
 const allFiles = getAllFiles(ROOT_DIR);
-console.log(`Scanning ${allFiles.length} files to update WORLDWIDE to GLOBAL...`);
+console.log(`Scanning ${allFiles.length} files: GELICON → GALICON...`);
 
 let modifiedCount = 0;
 
 allFiles.forEach(filePath => {
-  if (filePath.endsWith('update_to_galicon_global.js') || filePath.endsWith('rebrand_to_galicon.js')) return;
+  if (filePath.endsWith('rebrand_gelicon_to_galicon.js')) return;
 
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let original = content;
 
-    content = content.replace(/GALICON GLOBAL/g, 'GALICON GLOBAL');
-    content = content.replace(/Galicon Global/g, 'Galicon Global');
-    content = content.replace(/galicon global/g, 'galicon global');
-    content = content.replace(/galicon-worldwide/g, 'galicon-global');
-    content = content.replace(/GALICON_WORLDWIDE/g, 'GALICON_GLOBAL');
+    content = content.replace(/GELICON GLOBAL/g, 'GALICON GLOBAL');
+    content = content.replace(/Gelicon Global/g, 'Galicon Global');
+    content = content.replace(/gelicon global/g, 'galicon global');
+    content = content.replace(/GELICON/g, 'GALICON');
+    content = content.replace(/Gelicon/g, 'Galicon');
+    content = content.replace(/gelicon/g, 'galicon');
+    content = content.replace(/geliconglobal\.com/g, 'galiconglobal.com');
 
     if (content !== original) {
       fs.writeFileSync(filePath, content, 'utf8');
@@ -45,8 +47,8 @@ allFiles.forEach(filePath => {
       modifiedCount++;
     }
   } catch (err) {
-    console.error(`❌ Error reading/writing ${filePath}:`, err.message);
+    console.error(`❌ Error in ${filePath}:`, err.message);
   }
 });
 
-console.log(`\n🎉 Complete! Successfully updated ${modifiedCount} files to "GALICON GLOBAL"!`);
+console.log(`\n🎉 Complete! Updated ${modifiedCount} files from GELICON → GALICON!`);

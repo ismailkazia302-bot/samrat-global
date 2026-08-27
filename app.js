@@ -1,5 +1,5 @@
 /**
- * GELICON GLOBAL — CLIENT INTERACTIVE LOGIC
+ * GALICON GLOBAL — CLIENT INTERACTIVE LOGIC
  * Founder: Ismail Kazia
  * Features: Currency Switching, Dynamic ROI/Price Estimator, WhatsApp Lead Formatting, Lead Form Handling
  */
@@ -204,10 +204,10 @@ function openServiceInquiry(serviceName) {
 function sendEstimateViaWhatsApp() {
   const conf = configs[state.service];
   const currentPrice = document.getElementById('result-price-display').innerText;
-  const serviceTitle = state.service === 'events' ? 'GELICON Event Production (Bangalore & India)' : (state.service === 'marketing' ? 'GELICON Digital Growth' : 'GELICON Corporate Advisory');
+  const serviceTitle = state.service === 'events' ? 'GALICON Event Production (Bangalore & India)' : (state.service === 'marketing' ? 'GALICON Digital Growth' : 'GALICON Corporate Advisory');
   const tierTitle = state.tier === 'standard' ? 'Growth / Imperial' : 'VIP Sovereign';
 
-  const message = `Hello Ismail Kazia | GELICON Team! 👑%0A%0AI customized an instant quote on your portal and would like to lock this custom package:%0A%0A📌 *Division:* ${encodeURIComponent(serviceTitle)}%0A🎯 *Tier:* ${encodeURIComponent(tierTitle)}%0A📊 *Scale/Scope:* ${encodeURIComponent(state.scaleValue)} ${encodeURIComponent(conf.unit)}%0A💰 *Estimated Quote:* ${encodeURIComponent(currentPrice)}%0A%0APlease share the next steps and consultation schedule!`;
+  const message = `Hello Ismail Kazia | GALICON Team! 👑%0A%0AI customized an instant quote on your portal and would like to lock this custom package:%0A%0A📌 *Division:* ${encodeURIComponent(serviceTitle)}%0A🎯 *Tier:* ${encodeURIComponent(tierTitle)}%0A📊 *Scale/Scope:* ${encodeURIComponent(state.scaleValue)} ${encodeURIComponent(conf.unit)}%0A💰 *Estimated Quote:* ${encodeURIComponent(currentPrice)}%0A%0APlease share the next steps and consultation schedule!`;
 
   window.open(`https://wa.me/916363962640?text=${message}`, '_blank');
 }
@@ -268,7 +268,7 @@ function handleLeadSubmit(event) {
   feedback.style.display = 'block';
 
   // Format WhatsApp Message for immediate direct connection to Ismail Kazia
-  const waMsg = `Hello Ismail Kazia | GELICON! 👑%0A%0A*New Royal Consultation Request:*%0A👤 *Client Name:* ${encodeURIComponent(name)}%0A📧 *Email:* ${encodeURIComponent(email)}%0A📱 *Phone:* ${encodeURIComponent(phone)}%0A📍 *Location:* ${encodeURIComponent(location)}%0A💼 *Division:* ${encodeURIComponent(service)}%0A📝 *Project Brief:* ${encodeURIComponent(details || 'N/A')}`;
+  const waMsg = `Hello Ismail Kazia | GALICON! 👑%0A%0A*New Royal Consultation Request:*%0A👤 *Client Name:* ${encodeURIComponent(name)}%0A📧 *Email:* ${encodeURIComponent(email)}%0A📱 *Phone:* ${encodeURIComponent(phone)}%0A📍 *Location:* ${encodeURIComponent(location)}%0A💼 *Division:* ${encodeURIComponent(service)}%0A📝 *Project Brief:* ${encodeURIComponent(details || 'N/A')}`;
 
   setTimeout(() => {
     window.open(`https://wa.me/916363962640?text=${waMsg}`, '_blank');

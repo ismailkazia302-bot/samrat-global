@@ -1,5 +1,5 @@
 /**
- * GELICON GLOBAL - Expanded Lead Database Generator
+ * GALICON GLOBAL - Expanded Lead Database Generator
  * Expands from 18 to 100+ verified B2B leads
  */
 const fs = require('fs');
@@ -114,7 +114,7 @@ const csvRows = allLeads.map(l =>
 );
 fs.writeFileSync(path.join(__dirname, 'leads_database.csv'), [csvHeader, ...csvRows].join('\n'));
 
-console.log(`\n✅ GELICON Lead Database Expanded!`);
+console.log(`\n✅ GALICON Lead Database Expanded!`);
 console.log(`📊 Total leads: ${allLeads.length}`);
 console.log(`🇮🇳 Bangalore: ${allLeads.filter(l => l.city === 'Bangalore').length}`);
 console.log(`🇦🇪 UAE: ${allLeads.filter(l => l.country === 'UAE').length}`);
