@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Event Budget & 3D Staging Cost Estimator | SAMRAT WORLDWIDE</title>
+  <meta name="description" content="Calculate your turnkey corporate event production investment for Bangalore, Riyadh, and Dubai. Instant itemized pricing for 4K curved LED walls, line-array acoustics, and luxury venues.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Poppins', sans-serif; background:#050505; color:#fff; min-height:100vh; line-height:1.6; }
+    .nav-bar { padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.08); background:#000; position:sticky; top:0; z-index:100; }
+    .container-calc { max-width:960px; margin:40px auto 60px; padding:0 20px; }
+    .calc-card { background:#0d0d0d; border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:36px; box-shadow:0 20px 50px rgba(0,0,0,0.8); }
+    .step-title { font-size:1.1rem; font-weight:800; color:#EAB308; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+    .option-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:28px; }
+    .calc-btn { background:#141414; border:1px solid rgba(255,255,255,0.12); color:#bbb; padding:16px; border-radius:12px; font-size:0.9rem; font-weight:600; cursor:pointer; text-align:center; transition:all 0.2s ease; user-select:none; }
+    .calc-btn:hover { border-color:#EAB308; color:#fff; }
+    .calc-btn.active { background:rgba(234,179,8,0.15); border-color:#EAB308; color:#EAB308; font-weight:800; }
+    .addon-item { display:flex; justify-content:space-between; align-items:center; background:#141414; border:1px solid rgba(255,255,255,0.08); padding:14px 18px; border-radius:10px; margin-bottom:10px; cursor:pointer; transition:border-color 0.2s; }
+    .addon-item:hover { border-color:rgba(234,179,8,0.4); }
+    .addon-item.selected { border-color:#10B981; background:rgba(16,185,129,0.08); }
+    .addon-checkbox { width:20px; height:20px; accent-color:#10B981; }
+    .result-box { background:linear-gradient(145deg, #111 0%, #080808 100%); border:2px solid #EAB308; border-radius:16px; padding:30px; text-align:center; margin-top:35px; }
+    .price-display { font-size:2.8rem; font-weight:900; color:#fff; margin:10px 0; }
+    .price-display span { color:#EAB308; }
+    .currency-switch { display:flex; justify-content:center; gap:8px; margin-bottom:20px; }
+    .curr-btn { background:#1a1a1a; border:1px solid rgba(255,255,255,0.1); color:#888; padding:6px 16px; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer; }
+    .curr-btn.active { background:#EAB308; color:#000; border-color:#EAB308; }
+    .btn-submit-quote { background:linear-gradient(135deg, #25D366 0%, #128C7E 100%); color:#fff; font-size:1.05rem; font-weight:800; padding:16px 36px; border-radius:12px; border:none; text-decoration:none; display:inline-flex; align-items:center; gap:10px; box-shadow:0 8px 25px rgba(37,211,102,0.3); transition:transform 0.2s; }
+    .btn-submit-quote:hover { transform:scale(1.03); color:#fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;">👑 SAMRAT <span style="color:#EAB308;">WORLDWIDE</span></a>
+      <div class="d-flex gap-3">
+        <a href="proposal_template.html" style="color:#FFF; text-decoration:none; font-weight:700; font-size:0.85rem;">Lookbook 📑</a>
+        <a href="products.html" style="color:#EAB308; text-decoration:none; font-weight:700; font-size:0.85rem;">Store 🛍️</a>
+        <a href="meet.html" style="color:#10B981; text-decoration:none; font-weight:700; font-size:0.85rem;">Book Call 🎥</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container container-calc">
+    <div class="text-center mb-5">
+      <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">Interactive Production Calculator</span>
+      <h1 style="font-weight:900; font-size:2.2rem; margin-top:8px;">Instant Corporate Event Budget & 3D Staging Estimator</h1>
+      <p style="color:#888; font-size:0.95rem; max-width:650px; margin:0 auto;">
+        Calculate itemized production investments for Bangalore, Riyadh, and Dubai summits. Fixed turnkey rates with direct founder governance under Ismail Kazia.
+      </p>
+    </div>
+
+    <div class="calc-card">
+      <!-- Step 1: Location -->
+      <div class="step-title"><span>1.</span> Select Event Location</div>
+      <div class="option-grid">
+        <div class="calc-btn active" onclick="setLocation('Bangalore', this, 1.0)">🇮🇳 Bangalore (India)</div>
+        <div class="calc-btn" onclick="setLocation('Riyadh', this, 1.15)">🇸🇦 Riyadh (Saudi Arabia)</div>
+        <div class="calc-btn" onclick="setLocation('Dubai', this, 1.12)">🇦🇪 Dubai (UAE)</div>
+      </div>
+
+      <!-- Step 2: Event Type -->
+      <div class="step-title"><span>2.</span> Select Production Scale</div>
+      <div class="option-grid">
+        <div class="calc-btn active" onclick="setScale('Launchpad', this, 850000, 'Executive Launchpad (250 pax)')">
+          <div style="font-weight:800;">Executive Launchpad</div>
+          <div style="font-size:0.75rem; color:#888; margin-top:4px;">Up to 250 Attendees</div>
+        </div>
+        <div class="calc-btn" onclick="setScale('Flagship', this, 1850000, 'Flagship Tech Summit (500 pax)')">
+          <div style="font-weight:800;">Flagship Tech Summit</div>
+          <div style="font-size:0.75rem; color:#888; margin-top:4px;">Most Popular • 500 Attendees</div>
+        </div>
+        <div class="calc-btn" onclick="setScale('Mega', this, 3800000, 'Imperial Mega Conclave (1000+ pax)')">
+          <div style="font-weight:800;">Imperial Mega Conclave</div>
+          <div style="font-size:0.75rem; color:#888; margin-top:4px;">1,000+ Multi-Day Arena</div>
+        </div>
+      </div>
+
+      <!-- Step 3: Technical Upgrades -->
+      <div class="step-title"><span>3.</span> Audio-Visual & Production Upgrades</div>
+      <div id="addons-list">
+        <div class="addon-item selected" onclick="toggleAddon(this, 150000, 'Curved P2.6 UHD LED Wall')">
+          <div>
+            <div style="font-weight:700; color:#fff;">Curved P2.6 Ultra-HD LED Wall (36ft x 12ft)</div>
+            <div style="font-size:0.8rem; color:#888;">7680Hz refresh rate for 4K video recording with zero moiré effect</div>
+          </div>
+          <input type="checkbox" class="addon-checkbox" checked onclick="event.stopPropagation();">
+        </div>
+        <div class="addon-item selected" onclick="toggleAddon(this, 90000, 'Line-Array Audio & Sound Engineer')">
+          <div>
+            <div style="font-weight:700; color:#fff;">Concert-Grade Line-Array Audio & Acoustic Tuning</div>
+            <div style="font-size:0.8rem; color:#888;">Complete delegate ballroom coverage with dedicated sound engineer</div>
+          </div>
+          <input type="checkbox" class="addon-checkbox" checked onclick="event.stopPropagation();">
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this, 120000, '4K Multi-Cam Cinema Live Stream')">
+          <div>
+            <div style="font-weight:700; color:#fff;">4K Cinema Multi-Cam Live Broadcast & Highlight Reel</div>
+            <div style="font-size:0.8rem; color:#888;">3x cinema cameras + crane with same-day executive LinkedIn video edits</div>
+          </div>
+          <input type="checkbox" class="addon-checkbox" onclick="event.stopPropagation();">
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this, 85000, 'Bilingual Interpretation Booths')">
+          <div>
+            <div style="font-weight:700; color:#fff;">Certified Arabic/English Simultaneous Interpretation</div>
+            <div style="font-size:0.8rem; color:#888;">ISO dual-channel booths + wireless multichannel delegate headsets</div>
+          </div>
+          <input type="checkbox" class="addon-checkbox" onclick="event.stopPropagation();">
+        </div>
+      </div>
+
+      <!-- Result Box -->
+      <div class="result-box">
+        <div class="currency-switch">
+          <div class="curr-btn active" onclick="setCurrency('INR', this)">₹ INR</div>
+          <div class="curr-btn" onclick="setCurrency('SAR', this)">🇸🇦 SAR</div>
+          <div class="curr-btn" onclick="setCurrency('USD', this)">$ USD</div>
+        </div>
+
+        <div style="font-size:0.85rem; color:#aaa; text-transform:uppercase; letter-spacing:2px; font-weight:700;">Estimated Turnkey Production Investment</div>
+        <div class="price-display" id="total-price-display">₹ <span>10,90,000</span></div>
+        <div style="font-size:0.85rem; color:#888; margin-bottom:24px;" id="breakdown-text">Includes base production + selected technical upgrades for Bangalore</div>
+
+        <a href="#" id="whatsapp-quote-btn" target="_blank" class="btn-submit-quote">
+          <span>📲 Lock In 48-Hour 3D Blueprint on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentLocation = 'Bangalore';
+    let locationMultiplier = 1.0;
+    let basePriceINR = 850000;
+    let packageName = 'Executive Launchpad (250 pax)';
+    let addonsTotalINR = 240000;
+    let activeCurrency = 'INR';
+
+    const FX_RATES = {
+      INR: 1,
+      SAR: 0.045, // 1 INR ~ 0.045 SAR
+      USD: 0.012  // 1 INR ~ 0.012 USD
+    };
+
+    function setLocation(loc, elem, mult) {
+      document.querySelectorAll('.calc-btn').forEach(b => {
+        if (b.innerText.includes('Bangalore') || b.innerText.includes('Riyadh') || b.innerText.includes('Dubai')) {
+          b.classList.remove('active');
+        }
+      });
+      elem.classList.add('active');
+      currentLocation = loc;
+      locationMultiplier = mult;
+      updateTotal();
+    }
+
+    function setScale(scale, elem, basePrice, name) {
+      document.querySelectorAll('.calc-btn').forEach(b => {
+        if (b.innerText.includes('Launchpad') || b.innerText.includes('Flagship') || b.innerText.includes('Mega')) {
+          b.classList.remove('active');
+        }
+      });
+      elem.classList.add('active');
+      basePriceINR = basePrice;
+      packageName = name;
+      updateTotal();
+    }
+
+    function toggleAddon(elem, price, addonName) {
+      const cb = elem.querySelector('.addon-checkbox');
+      elem.classList.toggle('selected');
+      cb.checked = elem.classList.contains('selected');
+      recalculateAddons();
+    }
+
+    function recalculateAddons() {
+      let total = 0;
+      const items = document.querySelectorAll('.addon-item');
+      if (items[0].classList.contains('selected')) total += 150000;
+      if (items[1].classList.contains('selected')) total += 90000;
+      if (items[2].classList.contains('selected')) total += 120000;
+      if (items[3].classList.contains('selected')) total += 85000;
+      addonsTotalINR = total;
+      updateTotal();
+    }
+
+    function setCurrency(curr, elem) {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
+      activeCurrency = curr;
+      updateTotal();
+    }
+
+    function updateTotal() {
+      const grossINR = Math.round((basePriceINR + addonsTotalINR) * locationMultiplier);
+      const displayElem = document.getElementById('total-price-display');
+      
+      let formattedPrice = '';
+      if (activeCurrency === 'INR') {
+        formattedPrice = `₹ <span>${grossINR.toLocaleString('en-IN')}</span>`;
+      } else if (activeCurrency === 'SAR') {
+        const sar = Math.round(grossINR * FX_RATES.SAR);
+        formattedPrice = `<span>${sar.toLocaleString('en-US')}</span> SAR`;
+      } else if (activeCurrency === 'USD') {
+        const usd = Math.round(grossINR * FX_RATES.USD);
+        formattedPrice = `$ <span>${usd.toLocaleString('en-US')}</span>`;
+      }
+
+      displayElem.innerHTML = formattedPrice;
+
+      // Update WhatsApp Link
+      const msg = encodeURIComponent(`Hi Ismail! I used the SAMRAT Production Estimator.\n\n📍 Location: ${currentLocation}\n🎯 Package: ${packageName}\n💰 Estimated Budget: ${grossINR.toLocaleString('en-IN')} INR (~$${Math.round(grossINR * FX_RATES.USD).toLocaleString()})\n\nPlease send over the 48-hour 3D stage blueprint!`);
+      const targetNumber = currentLocation === 'Bangalore' ? '916363962640' : '966548905688';
+      document.getElementById('whatsapp-quote-btn').href = `https://wa.me/${targetNumber}?text=${msg}`;
+    }
+
+    // Initialize
+    updateTotal();
+  </script>
+
+  <!-- Footer -->
+  <footer class="text-center py-5 border-top border-dark mt-5 text-secondary" style="font-size:0.8rem;">
+    &copy; 2026 SAMRAT WORLDWIDE • Direct Founder Event Management & Global Growth Platform
+  </footer>
+
+</body>
+</html>
