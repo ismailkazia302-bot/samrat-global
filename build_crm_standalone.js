@@ -8,7 +8,7 @@ const template = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GELICON WORLDWIDE — B2B CRM Pipeline</title>
+  <title>GELICON GLOBAL — B2B CRM Pipeline</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <script>
@@ -136,7 +136,7 @@ const template = `<!DOCTYPE html>
 
       grid.innerHTML = list.map(l => {
         const cleanPhone = (l.phone || '').replace(/[^0-9]/g, '');
-        const pitchText = encodeURIComponent('Hi ' + l.name + ' Team! 👋 I am Ismail Kazia, Founder of GELICON WORLDWIDE. Reaching out regarding corporate event production & digital growth funnels in ' + l.city + '.');
+        const pitchText = encodeURIComponent('Hi ' + l.name + ' Team! 👋 I am Ismail Kazia, Founder of GELICON GLOBAL. Reaching out regarding corporate event production & digital growth funnels in ' + l.city + '.');
 
         return \`
           <div class="crm-card">

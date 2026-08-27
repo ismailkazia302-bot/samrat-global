@@ -1,4 +1,4 @@
-# GELICON WORLDWIDE — WhatsApp Sales Scripts & LinkedIn Messages
+# GELICON GLOBAL — WhatsApp Sales Scripts & LinkedIn Messages
 
 **Founder:** Ismail Kazia | **Last Updated:** August 2026
 
@@ -12,7 +12,7 @@
 
 Hi [Name] 👋
 
-This is Ismail Kazia, Founder of GELICON WORLDWIDE — we help Bangalore's top tech companies turn internal events into employer-brand moments.
+This is Ismail Kazia, Founder of GELICON GLOBAL — we help Bangalore's top tech companies turn internal events into employer-brand moments.
 
 We recently produced a 2,000-pax tech summit with stage-to-stream delivery in just 48 hours — and the client saw a 3x jump in inbound talent applications the following quarter.
 
@@ -21,7 +21,7 @@ If [Company] has any offsites, town halls, or annual days coming up, I'd love to
 Would a 10-min call this week work?
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -32,7 +32,7 @@ Founder, GELICON WORLDWIDE
 
 Hi [Name] 👋
 
-Ismail here from GELICON WORLDWIDE. We specialise in producing tech summits and developer conferences that actually convert — attendees into leads, speakers into partners.
+Ismail here from GELICON GLOBAL. We specialise in producing tech summits and developer conferences that actually convert — attendees into leads, speakers into partners.
 
 One of our recent Bangalore summits delivered **4.8x ROAS** for the title sponsor through curated networking lounges and live demo arenas.
 
@@ -41,7 +41,7 @@ If [Company] is planning a conference, product showcase, or community event, I'd
 Shall I drop it here or on email?
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -52,7 +52,7 @@ Founder, GELICON WORLDWIDE
 
 Hi [Name] 👋
 
-This is Ismail from GELICON WORLDWIDE. We design and run hackathons that go beyond pizza-and-code nights — think branded stages, live leaderboards, streaming-ready production, and PR-worthy moments.
+This is Ismail from GELICON GLOBAL. We design and run hackathons that go beyond pizza-and-code nights — think branded stages, live leaderboards, streaming-ready production, and PR-worthy moments.
 
 We've executed hackathons for 500+ developers with end-to-end logistics sorted in **under 48 hours** using our rapid-deploy framework.
 
@@ -61,7 +61,7 @@ If [Company]'s engineering or DevRel team is thinking about a hackathon or innov
 Free for a quick call?
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -72,7 +72,7 @@ Founder, GELICON WORLDWIDE
 
 مرحباً [Name] 👋
 
-This is Ismail Kazia, Founder of GELICON WORLDWIDE. We produce large-scale conclaves and summits aligned with **Saudi Vision 2030** — spanning sectors like tourism, fintech, renewable energy, and entertainment.
+This is Ismail Kazia, Founder of GELICON GLOBAL. We produce large-scale conclaves and summits aligned with **Saudi Vision 2030** — spanning sectors like tourism, fintech, renewable energy, and entertainment.
 
 Our bilingual (Arabic + English) production teams ensure every keynote, panel, and breakout session resonates with both local and international delegates.
 
@@ -81,7 +81,7 @@ We've delivered events with **48-hour stage blueprints** across the GCC, and I'd
 Could we schedule a brief call this week? أتطلع للتواصل معكم
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +966-XXXXX XXXXX / +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -92,7 +92,7 @@ Founder, GELICON WORLDWIDE
 
 مرحباً [Name] 👋
 
-Ismail Kazia here, Founder of GELICON WORLDWIDE. We specialise in **launch events for mega-projects** — the kind that need cinematic staging, VIP protocol management, and flawless bilingual (AR+EN) execution.
+Ismail Kazia here, Founder of GELICON GLOBAL. We specialise in **launch events for mega-projects** — the kind that need cinematic staging, VIP protocol management, and flawless bilingual (AR+EN) execution.
 
 Whether it's a NEOM milestone reveal, a PIF portfolio announcement, or a giga-project investor briefing, our team delivers concept-to-curtain-call under the tightest timelines.
 
@@ -101,7 +101,7 @@ I'd love to share a confidential lookbook of relevant work. Would it be easier t
 نتطلع لخدمتكم
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +966-XXXXX XXXXX / +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -112,7 +112,7 @@ Founder, GELICON WORLDWIDE
 
 مرحباً [Name] 👋
 
-This is Ismail from GELICON WORLDWIDE. We help Saudi enterprises run **bilingual corporate events** — from Riyadh gala dinners to Jeddah product launches — with seamless Arabic and English experiences for every guest.
+This is Ismail from GELICON GLOBAL. We help Saudi enterprises run **bilingual corporate events** — from Riyadh gala dinners to Jeddah product launches — with seamless Arabic and English experiences for every guest.
 
 Our edge: **direct founder involvement** on every project, a 48-hour rapid-deploy capability, and deep GCC vendor networks so nothing gets lost in translation — literally.
 
@@ -121,7 +121,7 @@ If [Company] has anything on the calendar, I'd be happy to share ideas over a sh
 Reply here and I'll set it up 🤝
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +966-XXXXX XXXXX / +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -132,7 +132,7 @@ Founder, GELICON WORLDWIDE
 
 Hi [Name] 👋
 
-Ismail Kazia here, Founder of GELICON WORLDWIDE. We build **end-to-end marketing funnels for luxury real estate** — from cinematic social content to targeted HNWI buyer acquisition across the GCC, UK, and India.
+Ismail Kazia here, Founder of GELICON GLOBAL. We build **end-to-end marketing funnels for luxury real estate** — from cinematic social content to targeted HNWI buyer acquisition across the GCC, UK, and India.
 
 One of our recent Dubai developer campaigns achieved **4.8x ROAS** by combining drone-shot reels, geo-targeted WhatsApp outreach, and exclusive preview events.
 
@@ -141,7 +141,7 @@ If [Company] is launching a new tower, villa community, or branded residence, I'
 Shall I share it here or schedule a 15-min call?
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +971-XXXXX XXXXX / +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -152,7 +152,7 @@ Founder, GELICON WORLDWIDE
 
 Hi [Name] 👋
 
-This is Ismail from GELICON WORLDWIDE. We produce **property launch events** designed to convert — exclusive preview nights, investor brunches, and broker roadshows with white-glove production.
+This is Ismail from GELICON GLOBAL. We produce **property launch events** designed to convert — exclusive preview nights, investor brunches, and broker roadshows with white-glove production.
 
 What sets us apart: we don't just run the event, we build the **full acquisition funnel** — HNWI targeting via digital + WhatsApp, RSVP-to-close tracking, and post-event nurture sequences that have driven **4.8x ROAS** for our clients.
 
@@ -161,7 +161,7 @@ If you have a launch coming up, I'd love to explore how we can fill the room wit
 Quick call this week?
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +971-XXXXX XXXXX / +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -172,7 +172,7 @@ Founder, GELICON WORLDWIDE
 
 Hi [Name] 👋
 
-This is Ismail Kazia, Founder of GELICON WORLDWIDE. We run **digital marketing retainers** for premium London clinics and luxury brands — covering paid media, content production, CRM automation, and conversion-optimised funnels.
+This is Ismail Kazia, Founder of GELICON GLOBAL. We run **digital marketing retainers** for premium London clinics and luxury brands — covering paid media, content production, CRM automation, and conversion-optimised funnels.
 
 Our clients typically see **4.8x ROAS** within the first 90 days because we obsess over unit economics, not just impressions.
 
@@ -181,7 +181,7 @@ You get **direct founder access** — no junior account exec learning on your bu
 I'd love to share a short case study relevant to [Company]. Can I send it over, or would a 15-min call work better?
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +44-XXXXX XXXXX / +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -192,7 +192,7 @@ Founder, GELICON WORLDWIDE
 
 Hi [Name] 👋
 
-Ismail here from GELICON WORLDWIDE — I sent over an email a few days ago about how we could help [Company] with [event management / digital marketing / property launches].
+Ismail here from GELICON GLOBAL — I sent over an email a few days ago about how we could help [Company] with [event management / digital marketing / property launches].
 
 Totally understand inboxes are brutal, so thought I'd reach out here instead.
 
@@ -203,7 +203,7 @@ If the timing's right, I'd love a 10-min chat. If not, no worries at all — hap
 Just reply "interested" and I'll send over times 🙌
 
 **Ismail Kazia**
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 📞 +91-XXXXX XXXXX
 ✉️ ismail@samratworldwide.com
 🌐 samratworldwide.com
@@ -218,31 +218,31 @@ Founder, GELICON WORLDWIDE
 
 ### LI MESSAGE 1 — Tech / Events
 
-Hi [Name], I'm Ismail — Founder of GELICON WORLDWIDE. We produce tech summits & corporate events with 48-hr stage blueprints. Would love to connect and share ideas if [Company] has events on the horizon. 🤝
+Hi [Name], I'm Ismail — Founder of GELICON GLOBAL. We produce tech summits & corporate events with 48-hr stage blueprints. Would love to connect and share ideas if [Company] has events on the horizon. 🤝
 
 ---
 
 ### LI MESSAGE 2 — Saudi / GCC
 
-Hi [Name], Ismail here from GELICON WORLDWIDE. We deliver bilingual (AR+EN) events across KSA aligned with Vision 2030. Connecting to explore if there's a fit for upcoming projects. أتطلع للتواصل
+Hi [Name], Ismail here from GELICON GLOBAL. We deliver bilingual (AR+EN) events across KSA aligned with Vision 2030. Connecting to explore if there's a fit for upcoming projects. أتطلع للتواصل
 
 ---
 
 ### LI MESSAGE 3 — Dubai Real Estate
 
-Hi [Name], I'm Ismail, Founder of GELICON WORLDWIDE. We build HNWI acquisition funnels & property launch events for Dubai developers — 4.8x ROAS track record. Would love to connect!
+Hi [Name], I'm Ismail, Founder of GELICON GLOBAL. We build HNWI acquisition funnels & property launch events for Dubai developers — 4.8x ROAS track record. Would love to connect!
 
 ---
 
 ### LI MESSAGE 4 — London Luxury / Clinics
 
-Hi [Name], Ismail from GELICON WORLDWIDE. We run digital marketing retainers for premium London brands & clinics — founder-led, 4.8x ROAS. Let's connect — happy to share a relevant case study.
+Hi [Name], Ismail from GELICON GLOBAL. We run digital marketing retainers for premium London brands & clinics — founder-led, 4.8x ROAS. Let's connect — happy to share a relevant case study.
 
 ---
 
 ### LI MESSAGE 5 — General / Multi-Market
 
-Hi [Name], I'm Ismail Kazia — Founder of GELICON WORLDWIDE. We help businesses across India, GCC, UAE & UK with events + digital marketing. Always great to connect with leaders in [Industry]. 🤝
+Hi [Name], I'm Ismail Kazia — Founder of GELICON GLOBAL. We help businesses across India, GCC, UAE & UK with events + digital marketing. Always great to connect with leaders in [Industry]. 🤝
 
 ---
 

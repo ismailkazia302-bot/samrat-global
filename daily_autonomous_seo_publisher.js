@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — DAILY AUTONOMOUS SEO PUBLISHER & LINK BUILDER
+ * GELICON GLOBAL — DAILY AUTONOMOUS SEO PUBLISHER & LINK BUILDER
  * Founder & CEO: Ismail Kazia
  * 
  * Features:
@@ -48,7 +48,7 @@ const DAILY_BLOG_POSTS = [
       </ul>
 
       <h3>3. Turnkey Vendor & Stage Management</h3>
-      <p>To avoid multi-vendor coordination failures, leading enterprises partner with turnkey production firms. Under the leadership of <strong>Founder Ismail Kazia</strong>, GELICON WORLDWIDE manages the complete lifecycle—from 3D stage CAD rendering to celebrity keynote protocol and VIP security escorts.</p>
+      <p>To avoid multi-vendor coordination failures, leading enterprises partner with turnkey production firms. Under the leadership of <strong>Founder Ismail Kazia</strong>, GELICON GLOBAL manages the complete lifecycle—from 3D stage CAD rendering to celebrity keynote protocol and VIP security escorts.</p>
 
       <div class="cta-box my-4 p-4 text-center" style="background:#0d0d0d; border:1px solid #EAB308; border-radius:12px;">
         <h4 style="color:#EAB308; font-weight:900;">Looking to Host an Flawless Tech Summit in Bangalore?</h4>
@@ -79,13 +79,13 @@ function buildBlogPostHtml(post) {
       "jobTitle": "Founder & CEO",
       "worksFor": {
         "@type": "Organization",
-        "name": "GELICON WORLDWIDE",
+        "name": "GELICON GLOBAL",
         "url": "https://ismailkazia302-bot.github.io/samrat-global/"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "GELICON WORLDWIDE",
+      "name": "GELICON GLOBAL",
       "url": "https://ismailkazia302-bot.github.io/samrat-global/"
     }
   };
@@ -173,7 +173,7 @@ function buildBlogPostHtml(post) {
   </article>
 
   <footer class="text-center py-5 border-top border-dark mt-5 text-secondary" style="font-size:0.8rem;">
-    &copy; 2026 GELICON WORLDWIDE • Premier B2B Events & Global Growth Platform
+    &copy; 2026 GELICON GLOBAL • Premier B2B Events & Global Growth Platform
   </footer>
 </body>
 </html>`;

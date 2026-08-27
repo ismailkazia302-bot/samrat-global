@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — FULL-STACK TECHNICAL SEO AUDIT ENGINE
+ * GELICON GLOBAL — FULL-STACK TECHNICAL SEO AUDIT ENGINE
  * Founder & CEO: Ismail Kazia
  * 
  * Performs 10-Point Technical SEO Inspection:

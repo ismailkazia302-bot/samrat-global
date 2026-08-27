@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — LUXURY SALES & CUSTOMER SERVICE AI CONCIERGE CHATBOT
+ * GELICON GLOBAL — LUXURY SALES & CUSTOMER SERVICE AI CONCIERGE CHATBOT
  * Founder & CEO: Ismail Kazia
  * Fully self-contained with embedded CSS and bilingual intelligence (English + Roman Urdu)
  */
@@ -263,7 +263,7 @@
 
         <div class="chat-body" id="samratChatBody">
           <div class="chat-msg bot">
-            <strong>Marhaba & Welcome to GELICON WORLDWIDE! 👑</strong><br>
+            <strong>Marhaba & Welcome to GELICON GLOBAL! 👑</strong><br>
             I am your executive sales concierge. Main aapki kya madad kar sakta hoon?
           </div>
 
@@ -411,7 +411,7 @@
       if (text.match(/^(hi|hello|hey|salam|marhaba|assalam|kem cho|namaste)/)) {
         appendMsg(`
           <strong>Walekum Assalam / Hello! 👋</strong><br>
-          Welcome to GELICON WORLDWIDE! Main Founder Ismail Kazia ka AI sales executive hoon. 
+          Welcome to GELICON GLOBAL! Main Founder Ismail Kazia ka AI sales executive hoon. 
           Aapko Bangalore corporate event organize karna hai, ya Saudi/Dubai business expansion ke liye baat karni hai?
         `, 'bot');
       } else if (text.includes('event') || text.includes('conference') || text.includes('summit') || text.includes('stage') || text.includes('bangalore') || text.includes('wedding') || text.includes('conclave')) {

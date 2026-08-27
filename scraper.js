@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE - B2B LEAD FINDER & SCRAPER AGENT (PRODUCTION GRADE)
+ * GELICON GLOBAL - B2B LEAD FINDER & SCRAPER AGENT (PRODUCTION GRADE)
  * 
  * Target Architecture:
  * 1. Bangalore 🇮🇳 Events: Tech Giants, Startups, Coworking, Luxury 5-Star Venues.
@@ -297,7 +297,7 @@ async function fetchOverpassNodes() {
  */
 async function runScraper() {
   console.log('\n=============================================================');
-  console.log('🚀 GELICON WORLDWIDE — B2B LEAD EXTRACTION & QUALIFICATION ENGINE');
+  console.log('🚀 GELICON GLOBAL — B2B LEAD EXTRACTION & QUALIFICATION ENGINE');
   console.log('   Target 1: Bangalore 🇮🇳 (Corporate IT Parks, 5-Star Venues, Unicorns)');
   console.log('   Target 2: Worldwide 🌍 (Dubai Real Estate, London Clinics, NY/Mumbai)');
   console.log('=============================================================\n');

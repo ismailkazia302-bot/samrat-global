@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — AI SMART PITCH & OUTREACH GENERATOR
+ * GELICON GLOBAL — AI SMART PITCH & OUTREACH GENERATOR
  * 
  * Features:
  * 1. Reads leads from `leads_database.json`
@@ -44,11 +44,11 @@ function generatePitchesForLead(lead) {
     } else if (lead.category.includes('Hotel') || lead.category.includes('Venue')) {
       whatsappPitch = `Hello ${lead.businessName} Banquets & Events Team! 👋 We are an elite corporate event management agency in Bangalore. We frequently produce corporate conferences and luxury galas and would love to explore venue partnership and banquet collaboration with your prime property. Who is the best person to connect with regarding MICE partnerships?`;
       emailSubject = `MICE & Corporate Event Partnership with ${lead.businessName} Bangalore`;
-      emailBody = `Dear Banquets & Events Team at ${lead.businessName},\n\nWe manage high-ticket corporate conferences, tech launches, and luxury galas across Bangalore.\n\nWe are looking to expand our preferred luxury venue roster for upcoming corporate summits and private executive dinners in 2026.\n\nCould we connect with your banquet sales head to discuss corporate client routing?\n\nBest regards,\nGELICON WORLDWIDE Event Production\nBangalore, India`;
+      emailBody = `Dear Banquets & Events Team at ${lead.businessName},\n\nWe manage high-ticket corporate conferences, tech launches, and luxury galas across Bangalore.\n\nWe are looking to expand our preferred luxury venue roster for upcoming corporate summits and private executive dinners in 2026.\n\nCould we connect with your banquet sales head to discuss corporate client routing?\n\nBest regards,\nGELICON GLOBAL Event Production\nBangalore, India`;
     } else {
       whatsappPitch = `Hi ${lead.businessName} Community Team! 👋 We produce high-energy tech meetups, hackathons & founder summits across Bangalore coworking hubs. We'd love to collaborate on organizing or sponsoring upcoming events at your space. Let's connect!`;
       emailSubject = `Community & Tech Summit Event Collaboration with ${lead.businessName}`;
-      emailBody = `Hi ${lead.businessName} Team,\n\nWe love what you have built for founders in Bangalore. We are scheduling several startup summits and tech networking mixers and would love to explore hosting partnerships.\n\nLet us know a good time to connect this week.\n\nCheers,\nGELICON WORLDWIDE`;
+      emailBody = `Hi ${lead.businessName} Team,\n\nWe love what you have built for founders in Bangalore. We are scheduling several startup summits and tech networking mixers and would love to explore hosting partnerships.\n\nLet us know a good time to connect this week.\n\nCheers,\nGELICON GLOBAL`;
     }
   } else {
     // Global Marketing & Business Clients
@@ -59,11 +59,11 @@ function generatePitchesForLead(lead) {
     } else if (lead.category.includes('Clinic') || lead.category.includes('Dental')) {
       whatsappPitch = `Hello ${lead.businessName} Team! 👋 We help private aesthetic & cosmetic clinics in ${lead.city} add 20-30 high-ticket patient consultations every month through automated Google search & social appointment booking funnels. Would you be open to seeing a 2-minute breakdown of how we do this?`;
       emailSubject = `Predictable Cosmetic Patient Booking Funnel for ${lead.businessName}`;
-      emailBody = `Dear Practice Manager at ${lead.businessName},\n\nWe build automated patient acquisition systems for premier cosmetic and dental clinics across the UK and worldwide.\n\nOur system attracts high-ticket treatment seekers and automatically books them into your consultation calendar with zero manual follow-up required.\n\nCould we share a 2-minute case study with your marketing team?\n\nWarm regards,\nGELICON WORLDWIDE Health & Growth`;
+      emailBody = `Dear Practice Manager at ${lead.businessName},\n\nWe build automated patient acquisition systems for premier cosmetic and dental clinics across the UK and worldwide.\n\nOur system attracts high-ticket treatment seekers and automatically books them into your consultation calendar with zero manual follow-up required.\n\nCould we share a 2-minute case study with your marketing team?\n\nWarm regards,\nGELICON GLOBAL Health & Growth`;
     } else {
       whatsappPitch = `Hi ${lead.businessName} Marketing Team! 👋 We noticed your strong brand presence in ${lead.city}. We help ambitious brands scale customer acquisition with high-converting landing pages, paid ads & retention automation. Are you planning any major marketing pushes this quarter?`;
       emailSubject = `Customer Acquisition Scaling & Performance Funnel for ${lead.businessName}`;
-      emailBody = `Hi ${lead.businessName} Leadership,\n\nWe build high-converting growth funnels and performance marketing campaigns that predictably drive revenue for top brands in ${lead.city}.\n\nWould you be open to a complimentary 10-minute growth audit of your current acquisition channels?\n\nBest,\nGELICON WORLDWIDE`;
+      emailBody = `Hi ${lead.businessName} Leadership,\n\nWe build high-converting growth funnels and performance marketing campaigns that predictably drive revenue for top brands in ${lead.city}.\n\nWould you be open to a complimentary 10-minute growth audit of your current acquisition channels?\n\nBest,\nGELICON GLOBAL`;
     }
   }
 
@@ -84,7 +84,7 @@ function generatePitchesForLead(lead) {
  */
 function runPitchGenerator() {
   console.log('\n=============================================================');
-  console.log('🤖 GELICON WORLDWIDE — AI SMART PITCH & OUTREACH GENERATOR');
+  console.log('🤖 GELICON GLOBAL — AI SMART PITCH & OUTREACH GENERATOR');
   console.log('=============================================================\n');
 
   const jsonPath = path.join(__dirname, 'leads_database.json');

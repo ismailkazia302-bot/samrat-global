@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — AUTONOMOUS MARKET INTELLIGENCE & BD RESEARCHER AGENT
+ * GELICON GLOBAL — AUTONOMOUS MARKET INTELLIGENCE & BD RESEARCHER AGENT
  * Founder & CEO: Ismail Kazia
  * 
  * Schedule: Autonomous 5x Daily (08:00, 11:30, 14:30, 17:30, 20:30)
@@ -64,7 +64,7 @@ function runMarketResearch() {
   console.log(`=============================================================\n`);
 
   const reportId = `INTEL-${dateStr}-${timeStr}`;
-  let reportMarkdown = `# 👑 GELICON WORLDWIDE — EXECUTIVE BD & MARKET RESEARCH REPORT
+  let reportMarkdown = `# 👑 GELICON GLOBAL — EXECUTIVE BD & MARKET RESEARCH REPORT
 **Report ID:** \`${reportId}\`  
 **Generated At:** ${timestamp.toLocaleString()}  
 **Lead Strategist:** Autonomous BD Researcher Agent for Founder Ismail Kazia  

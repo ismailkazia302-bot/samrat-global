@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — AUTONOMOUS DAILY SEO & BUSINESS DEVELOPMENT RANKER
+ * GELICON GLOBAL — AUTONOMOUS DAILY SEO & BUSINESS DEVELOPMENT RANKER
  * Founder & CEO: Ismail Kazia
  * 
  * Objectives:
@@ -25,7 +25,7 @@ if (!fs.existsSync(SEO_PAGES_DIR)) {
 const HIGH_VALUE_SEO_TARGETS = [
   {
     slug: 'corporate-event-management-whitefield-bangalore',
-    title: 'Top Corporate Event Management in Whitefield Bangalore | GELICON WORLDWIDE',
+    title: 'Top Corporate Event Management in Whitefield Bangalore | GELICON GLOBAL',
     metaDesc: 'Looking for luxury corporate event organizers in Whitefield Bangalore? GELICON produces world-class tech summits, curved 4K LED staging, and executive galas at Leela Palace & ITC.',
     city: 'Bangalore (Whitefield & ITPL)',
     country: 'India',
@@ -39,7 +39,7 @@ const HIGH_VALUE_SEO_TARGETS = [
   },
   {
     slug: 'saudi-arabia-corporate-summit-production-riyadh',
-    title: 'Corporate Summit & Event Production in Riyadh, Saudi Arabia | GELICON WORLDWIDE',
+    title: 'Corporate Summit & Event Production in Riyadh, Saudi Arabia | GELICON GLOBAL',
     metaDesc: 'Premier executive event management in Riyadh & Jeddah for Vision 2030 enterprises. Turnkey staging, translation booths, 4K production led by Founder Ismail Kazia.',
     city: 'Riyadh & Jeddah',
     country: 'Saudi Arabia',
@@ -53,12 +53,12 @@ const HIGH_VALUE_SEO_TARGETS = [
   },
   {
     slug: 'dubai-luxury-real-estate-buyer-acquisition-agency',
-    title: 'Dubai Luxury Real Estate Lead Generation & Buyer Funnels | GELICON WORLDWIDE',
+    title: 'Dubai Luxury Real Estate Lead Generation & Buyer Funnels | GELICON GLOBAL',
     metaDesc: 'Scale AED 5M+ villa and penthouse sales in Dubai. Hyper-targeted HNWI investor funnels delivering pre-qualified buyers directly to your WhatsApp CRM. 4.8x ROAS.',
     city: 'Dubai & Abu Dhabi',
     country: 'UAE',
     h1: 'High-Net-Worth Buyer Acquisition for Dubai Luxury Real Estate Developers',
-    keywords: 'Dubai real estate digital marketing, property buyer leads Dubai, off-plan marketing UAE, Emaar luxury leads, GELICON WORLDWIDE',
+    keywords: 'Dubai real estate digital marketing, property buyer leads Dubai, off-plan marketing UAE, Emaar luxury leads, GELICON GLOBAL',
     service: 'Digital Marketing & HNWI Acquisition',
     faq: [
       { q: 'What is your average ROAS for Dubai real estate campaigns?', a: 'Our recent property campaigns achieved a verified 4.8x ROAS with pre-qualified investor inquiries directly routed to brokers within 90 seconds.' },
@@ -74,7 +74,7 @@ function generateSeoHtml(target) {
     "serviceType": target.service,
     "provider": {
       "@type": "Organization",
-      "name": "GELICON WORLDWIDE",
+      "name": "GELICON GLOBAL",
       "founder": {
         "@type": "Person",
         "name": "Ismail Kazia"
@@ -187,7 +187,7 @@ function generateSeoHtml(target) {
     `).join('')}
 
     <div class="cta-box">
-      <h3 style="font-weight:900;">Ready to Partner with GELICON WORLDWIDE?</h3>
+      <h3 style="font-weight:900;">Ready to Partner with GELICON GLOBAL?</h3>
       <p style="color:#888; max-width:500px; margin:10px auto 25px;">
         Connect directly with Founder Ismail Kazia for Bangalore tech events or Saudi & UAE performance retainers.
       </p>

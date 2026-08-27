@@ -1,5 +1,5 @@
 # Cold Email & WhatsApp Outreach Templates That Convert
-**By GELICON WORLDWIDE — Battle-Tested by Ismail Kazia**
+**By GELICON GLOBAL — Battle-Tested by Ismail Kazia**
 *50 Industry-Specific Cold Emails + 30 High-Response WhatsApp Pitches + 90-Day Follow-Up Sequence*
 
 ---
@@ -49,14 +49,14 @@ I noticed that [Company Name] recently [specific trigger: e.g. hired 50+ enginee
 
 Usually when tech leaders scale at this pace, organizing the annual tech summit or founder mixer becomes a major operational bottleneck for internal teams.
 
-At GELICON WORLDWIDE, we manage end-to-end event production across Bangalore (from 5-star venue negotiation at Leela/ITC to 3D LED stagecraft, 4K live broadcast, and VIP protocol).
+At GELICON GLOBAL, we manage end-to-end event production across Bangalore (from 5-star venue negotiation at Leela/ITC to 3D LED stagecraft, 4K live broadcast, and VIP protocol).
 
 Could I send over a 1-page PDF showing the stage blueprint we used for a 400+ attendee tech summit last month?
 
 Best regards,
 
 Ismail Kazia
-Founder & CEO, GELICON WORLDWIDE
+Founder & CEO, GELICON GLOBAL
 Direct WhatsApp: +91 63639 62640 | Web: ismailkazia302-bot.github.io/samrat-global/
 ```
 
@@ -74,7 +74,7 @@ Would you be open to seeing our 3-step qualification filter before deciding if i
 Warm regards,
 
 Ismail Kazia
-GELICON WORLDWIDE (India 🇮🇳 & Saudi Arabia 🇸🇦)
+GELICON GLOBAL (India 🇮🇳 & Saudi Arabia 🇸🇦)
 WhatsApp: +966 54 890 5688 / +91 63639 62640
 ```
 
@@ -93,4 +93,4 @@ WhatsApp: +966 54 890 5688 / +91 63639 62640
 | **Step 7** | Day 90 | Breakup / Permission | "Closing your file — unless timing is better now?" |
 
 ---
-*© 2026 GELICON WORLDWIDE. Commercial license granted.*
+*© 2026 GELICON GLOBAL. Commercial license granted.*

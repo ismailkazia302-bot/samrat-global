@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE - Expanded Lead Database Generator
+ * GELICON GLOBAL - Expanded Lead Database Generator
  * Expands from 18 to 100+ verified B2B leads
  */
 const fs = require('fs');

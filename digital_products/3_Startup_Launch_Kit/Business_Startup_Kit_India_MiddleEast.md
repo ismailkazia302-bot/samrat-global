@@ -1,5 +1,5 @@
 # Complete Business Startup Kit (India 🇮🇳 & Middle East 🇸🇦🇦🇪)
-**By GELICON WORLDWIDE — Founder: Ismail Kazia**
+**By GELICON GLOBAL — Founder: Ismail Kazia**
 *Legal Checklists, Investor Business Plan, Financial Model, Pitch Deck Blueprint & Contracts*
 
 ---
@@ -74,4 +74,4 @@
 ### Template 4: Independent Contractor & Vendor Agreement
 
 ---
-*© 2026 GELICON WORLDWIDE. Legal templates provided for business execution.*
+*© 2026 GELICON GLOBAL. Legal templates provided for business execution.*

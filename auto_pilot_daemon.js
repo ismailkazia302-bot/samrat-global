@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — AUTONOMOUS 24/7 AUTO-PILOT DAEMON
+ * GELICON GLOBAL — AUTONOMOUS 24/7 AUTO-PILOT DAEMON
  * Founder: Ismail Kazia
  * 
  * Functions:
@@ -98,7 +98,7 @@ function checkSchedule() {
 
 // Start Daemon
 log(`=======================================================`);
-log(`👑 GELICON WORLDWIDE AUTO-PILOT DAEMON STARTED`);
+log(`👑 GELICON GLOBAL AUTO-PILOT DAEMON STARTED`);
 log(`Founder: Ismail Kazia`);
 log(`Schedule: Daily at 08:30 AM automatically`);
 log(`Status: Active and monitoring...`);

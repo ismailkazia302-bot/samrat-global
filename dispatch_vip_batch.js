@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — VIP BATCH 1 LIVE OUTREACH DISPATCHER
+ * GELICON GLOBAL — VIP BATCH 1 LIVE OUTREACH DISPATCHER
  * Founder & CEO: Ismail Kazia
  * 
  * Dispatches Top 35 High-Score (96+) Enterprise Leads via Brevo API
@@ -21,7 +21,7 @@ if (!fs.existsSync(REPORTS_DIR)) {
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || 'ismailkazia302@gmail.com';
-const SENDER_NAME = process.env.BREVO_SENDER_NAME || 'Ismail Kazia | GELICON WORLDWIDE';
+const SENDER_NAME = process.env.BREVO_SENDER_NAME || 'Ismail Kazia | GELICON GLOBAL';
 
 if (!BREVO_API_KEY) {
   console.error('❌ Error: BREVO_API_KEY not found in .env!');
@@ -36,7 +36,7 @@ const vipLeads = allLeads
   .slice(0, 35);
 
 console.log(`=============================================================`);
-console.log(`🚀 GELICON WORLDWIDE — VIP BATCH 1 OUTREACH DISPATCH`);
+console.log(`🚀 GELICON GLOBAL — VIP BATCH 1 OUTREACH DISPATCH`);
 console.log(`Founder & CEO: Ismail Kazia | Brevo Sender: ${SENDER_EMAIL}`);
 console.log(`Target: Top ${vipLeads.length} High-Ticket Enterprise Leads (Score 96-99)`);
 console.log(`=============================================================\n`);
@@ -52,7 +52,7 @@ function composeVipEmail(lead) {
       subject: `Exclusive Event & Tech Summit Production for ${company} (Bangalore)`,
       body: `Hi ${company} Leadership Team,
 
-I am Ismail Kazia, Founder of GELICON WORLDWIDE. We produce end-to-end corporate tech summits, hackathons, and executive conclaves across Bangalore.
+I am Ismail Kazia, Founder of GELICON GLOBAL. We produce end-to-end corporate tech summits, hackathons, and executive conclaves across Bangalore.
 
 From prime 5-star venue procurement (The Leela Palace, ITC Gardenia, Taj West End) to curved P2.6 4K LED stage design, concert-grade line-array audio, and VIP speaker concierges, we eliminate the traditional 3-week agency delays with a 48-hour stage blueprint turnaround.
 
@@ -64,7 +64,7 @@ https://ismailkazia302-bot.github.io/samrat-global/proposal_template.html
 Warm regards,
 
 Ismail Kazia
-Founder & CEO | GELICON WORLDWIDE
+Founder & CEO | GELICON GLOBAL
 WhatsApp: +91 63639 62640 / +966 54 890 5688
 Web: https://ismailkazia302-bot.github.io/samrat-global/`
     };
@@ -73,7 +73,7 @@ Web: https://ismailkazia302-bot.github.io/samrat-global/`
       subject: `Turnkey Conclave & Staging Production for ${company} (Riyadh / Vision 2030)`,
       body: `Dear ${company} Executive Team,
 
-I hope this email finds you well. I am Ismail Kazia, Founder of GELICON WORLDWIDE, managing executive event staging and growth operations across Saudi Arabia and India.
+I hope this email finds you well. I am Ismail Kazia, Founder of GELICON GLOBAL, managing executive event staging and growth operations across Saudi Arabia and India.
 
 We deliver turnkey corporate conclaves, brand activations, and summits in Riyadh & Jeddah for Vision 2030 initiatives:
 • Complete P2.6 curved 4K LED staging & lighting rigs
@@ -87,7 +87,7 @@ Lookbook: https://ismailkazia302-bot.github.io/samrat-global/proposal_template.h
 Best regards,
 
 Ismail Kazia
-Founder & CEO | GELICON WORLDWIDE
+Founder & CEO | GELICON GLOBAL
 Riyadh WhatsApp: +966 54 890 5688
 India WhatsApp: +91 63639 62640
 Email: ismail@gelicon.com`
@@ -97,7 +97,7 @@ Email: ismail@gelicon.com`
       subject: `High-Net-Worth Buyer Acquisition & Growth Funnels for ${company} (${lead.city || 'Dubai'})`,
       body: `Dear ${company} Leadership Team,
 
-I am Ismail Kazia, Founder of GELICON WORLDWIDE. We construct pre-qualified buyer acquisition funnels for luxury developers and enterprise brands across Dubai and the GCC.
+I am Ismail Kazia, Founder of GELICON GLOBAL. We construct pre-qualified buyer acquisition funnels for luxury developers and enterprise brands across Dubai and the GCC.
 
 Our recent property campaigns delivered a 4.8x ROAS by eliminating unqualified form leads and routing pre-verified HNWI buyers directly to sales teams via automated WhatsApp qualification.
 
@@ -108,7 +108,7 @@ Executive Overview: https://ismailkazia302-bot.github.io/samrat-global/
 Best regards,
 
 Ismail Kazia
-Founder & CEO | GELICON WORLDWIDE
+Founder & CEO | GELICON GLOBAL
 WhatsApp: +966 54 890 5688 / +91 63639 62640
 Email: ismail@gelicon.com`
     };

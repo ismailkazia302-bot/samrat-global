@@ -1,5 +1,5 @@
 /**
- * GELICON WORLDWIDE — DAILY 8:30 AM OUTREACH & 3-MONTH FOLLOW-UP ENGINE
+ * GELICON GLOBAL — DAILY 8:30 AM OUTREACH & 3-MONTH FOLLOW-UP ENGINE
  * Founder & CEO: Ismail Kazia
  * 
  * Capabilities:
@@ -30,7 +30,7 @@ if (!fs.existsSync(REPORTS_DIR)) {
 async function sendEmailViaBrevo({ toEmail, toName, subject, textBody, replyToEmail }) {
   const apiKey = process.env.BREVO_API_KEY;
   const senderEmail = process.env.BREVO_SENDER_EMAIL;
-  const senderName = process.env.BREVO_SENDER_NAME || 'Ismail Kazia | GELICON WORLDWIDE';
+  const senderName = process.env.BREVO_SENDER_NAME || 'Ismail Kazia | GELICON GLOBAL';
   const replyTo = replyToEmail || process.env.REPLY_TO_EMAIL || senderEmail;
 
   if (!apiKey || apiKey.includes('your_api_key_here')) {
@@ -86,7 +86,7 @@ function composeEmail(lead, step) {
         subject: `Exclusive Event & Tech Summit Production for ${company} (Bangalore)`,
         body: `Hi ${company} Leadership Team,
 
-I am Ismail Kazia, Founder of GELICON WORLDWIDE. We produce end-to-end corporate tech summits, hackathons, and product launches across Bangalore.
+I am Ismail Kazia, Founder of GELICON GLOBAL. We produce end-to-end corporate tech summits, hackathons, and product launches across Bangalore.
 
 From prime 5-star venue negotiation (The Leela Palace, ITC Gardenia, Taj West End) to curved 4K LED stage design, line-array audio engineering, and VIP hospitality, we take 100% direct founder ownership.
 
@@ -95,7 +95,7 @@ Could I send over a 1-page visual lookbook showing the stage setup we used for a
 Warm regards,
 
 Ismail Kazia
-Founder & CEO | GELICON WORLDWIDE
+Founder & CEO | GELICON GLOBAL
 WhatsApp: +91 63639 62640 / +966 54 890 5688
 Web: https://ismailkazia302-bot.github.io/samrat-global/`
       };
@@ -104,7 +104,7 @@ Web: https://ismailkazia302-bot.github.io/samrat-global/`
         subject: `Strategic Growth & Digital Performance Acquisition for ${company} (${lead.city})`,
         body: `Dear ${company} Executive Team,
 
-I hope this email finds you well. I am Ismail Kazia, Founder of GELICON WORLDWIDE, operating across Saudi Arabia and India.
+I hope this email finds you well. I am Ismail Kazia, Founder of GELICON GLOBAL, operating across Saudi Arabia and India.
 
 We partner with leading real estate developers and enterprise brands in ${lead.city} to construct hyper-targeted buyer acquisition funnels and digital brand authority systems.
 
@@ -115,7 +115,7 @@ Would you be open for a brief 5-minute conversation or WhatsApp introduction thi
 Best regards,
 
 Ismail Kazia
-Founder & CEO | GELICON WORLDWIDE
+Founder & CEO | GELICON GLOBAL
 Riyadh WhatsApp: +966 54 890 5688
 India WhatsApp: +91 63639 62640`
       };
@@ -124,7 +124,7 @@ India WhatsApp: +91 63639 62640`
         subject: `High-Net-Worth Client Acquisition Funnel for ${company} (${lead.city})`,
         body: `Hi ${company} Growth Team,
 
-I am Ismail Kazia, Founder of GELICON WORLDWIDE. We specialize in high-converting buyer and patient acquisition funnels for premier businesses in ${lead.city}.
+I am Ismail Kazia, Founder of GELICON GLOBAL. We specialize in high-converting buyer and patient acquisition funnels for premier businesses in ${lead.city}.
 
 Our performance systems deliver pre-qualified inquiries with verified budgets directly into your WhatsApp and CRM.
 
@@ -133,7 +133,7 @@ Would you be open to a 2-minute breakdown of how we filter inquiries for maximum
 Warm regards,
 
 Ismail Kazia
-Founder, GELICON WORLDWIDE
+Founder, GELICON GLOBAL
 WhatsApp: +966 54 890 5688 / +91 63639 62640`
       };
     }
@@ -147,7 +147,7 @@ Just floating this back to the top of your inbox. I know executive schedules in 
 Did you have a moment to review my note regarding our ${isBangalore ? 'tech event production lookbook' : 'performance acquisition model'}?
 
 Warm regards,
-Ismail Kazia | GELICON WORLDWIDE`
+Ismail Kazia | GELICON GLOBAL`
     };
   } else if (step === 2) {
     return {
@@ -163,7 +163,7 @@ Last month, we delivered:
 We would welcome the chance to deliver the exact same standard of excellence for ${company}.
 
 Best,
-Ismail Kazia | GELICON WORLDWIDE
+Ismail Kazia | GELICON GLOBAL
 WhatsApp: +966 54 890 5688 / +91 63639 62640`
     };
   } else if (step === 3) {
@@ -192,7 +192,7 @@ Sharing our monthly regional industry snapshot for ${lead.city}:
 If you are planning any corporate initiatives in the next 60 days, our calendar has 2 open production slots.
 
 Best,
-Ismail Kazia | GELICON WORLDWIDE`
+Ismail Kazia | GELICON GLOBAL`
     };
   } else if (step === 5) {
     return {
@@ -301,7 +301,7 @@ function saveCrmState(crmMap) {
  */
 async function runDailyOutreachEngine(maxBatch = 300) {
   console.log(`\n======================================================`);
-  console.log(`👑 GELICON WORLDWIDE — DAILY 8:30 AM OUTREACH ENGINE`);
+  console.log(`👑 GELICON GLOBAL — DAILY 8:30 AM OUTREACH ENGINE`);
   console.log(`Founder: Ismail Kazia | Cadence: 3-Month Automated Cycle`);
   console.log(`Timestamp: ${new Date().toLocaleString()}`);
   console.log(`======================================================`);
@@ -415,7 +415,7 @@ async function runDailyOutreachEngine(maxBatch = 300) {
   // Also write human-readable TXT report
   const txtLines = [
     `======================================================`,
-    `GELICON WORLDWIDE — DAILY 8:30 AM OUTREACH REPORT`,
+    `GELICON GLOBAL — DAILY 8:30 AM OUTREACH REPORT`,
     `Founder: Ismail Kazia`,
     `Date: ${todayStr} | Generated At: ${new Date().toLocaleTimeString()}`,
     `Total Leads In Engine: ${allLeads.length}`,

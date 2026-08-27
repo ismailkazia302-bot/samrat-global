@@ -1,7 +1,7 @@
 {
-  "name": "gelicon-worldwide",
+  "name": "gelicon-global",
   "version": "2.0.0",
-  "description": "GELICON WORLDWIDE - B2B Events & Global Growth Platform by Founder Ismail Kazia",
+  "description": "GELICON GLOBAL - B2B Events & Global Growth Platform by Founder Ismail Kazia",
   "main": "app.js",
   "type": "commonjs",
   "scripts": {

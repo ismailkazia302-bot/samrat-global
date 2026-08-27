@@ -12,10 +12,10 @@ async function testBrevo() {
     const res = await axios.post('https://api.brevo.com/v3/smtp/email', {
       sender: { name: name, email: email },
       to: [{ email: email, name: 'Ismail Kazia (Founder)' }],
-      subject: '👑 GELICON WORLDWIDE — AI Outreach Engine Connected Successfully!',
+      subject: '👑 GELICON GLOBAL — AI Outreach Engine Connected Successfully!',
       htmlContent: `
         <div style="font-family: Arial, sans-serif; background: #000; color: #fff; padding: 30px; border-radius: 12px; max-width: 600px;">
-          <h2 style="color: #EAB308; margin-bottom: 10px;">👑 GELICON WORLDWIDE</h2>
+          <h2 style="color: #EAB308; margin-bottom: 10px;">👑 GELICON GLOBAL</h2>
           <p style="font-size: 1.1rem; color: #fff;">Mubarak ho Ismail bhai! 🎉</p>
           <p style="color: #ccc; line-height: 1.6;">
             Aapka Brevo Email Engine ab <strong>GELICON Autonomous AI System</strong> ke saath 100% connect ho chuka hai.
@@ -29,7 +29,7 @@ async function testBrevo() {
             Ab se har subah 8:30 AM par Bangalore, Saudi Arabia, Dubai aur UK ke clients ko high-ticket pitches dispatch honge.
           </p>
           <hr style="border: 0; border-top: 1px solid #222; margin: 20px 0;">
-          <p style="color: #666; font-size: 0.8rem; margin: 0;">GELICON WORLDWIDE • Bangalore & Saudi Arabia</p>
+          <p style="color: #666; font-size: 0.8rem; margin: 0;">GELICON GLOBAL • Bangalore & Saudi Arabia</p>
         </div>
       `
     }, {

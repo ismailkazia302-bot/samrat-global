@@ -1,5 +1,5 @@
 # 500+ AI Prompts for Business & Marketing (2026 Edition)
-**By GELICON WORLDWIDE — Founder: Ismail Kazia**
+**By GELICON GLOBAL — Founder: Ismail Kazia**
 *Instant Execution Toolkit for Entrepreneurs, Agencies, and Growth Teams*
 
 ---
@@ -19,7 +19,7 @@ Rules:
 - No generic buzzwords ("synergy", "paradigm shift").
 - Mention a specific insight about their market.
 - Soft CTA proposing a 3-minute Loom video or a 5-minute WhatsApp call.
-- Sign off as Ismail Kazia, Founder of GELICON WORLDWIDE.
+- Sign off as Ismail Kazia, Founder of GELICON GLOBAL.
 ```
 
 ### 2. WhatsApp Direct Outreach Script
@@ -128,4 +128,4 @@ Calculate:
 ```
 
 ---
-*© 2026 GELICON WORLDWIDE. Commercial license granted to purchaser.*
+*© 2026 GELICON GLOBAL. Commercial license granted to purchaser.*
