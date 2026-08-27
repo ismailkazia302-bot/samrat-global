@@ -1,0 +1,94 @@
+{
+  "date": "2026-08-27",
+  "timestamp": "2026-08-27T00:22:57.320Z",
+  "analyzedTrendsCount": 4,
+  "selectedTrend": {
+    "id": "zatca-saudi-einvoice-2026",
+    "market": "Saudi Arabia 🇸🇦",
+    "trendKeyword": "Saudi ZATCA Phase 2 E-Invoicing Compliance Kit",
+    "searchVolumeSignal": "EXPLODING (+340% YoY)",
+    "urgencyLevel": "CRITICAL / LEGAL MANDATE",
+    "problem": "Saudi businesses face heavy fines if their ERP/invoicing fails ZATCA Phase 2 integration.",
+    "productTitle": "Saudi Arabia ZATCA Phase 2 E-Invoicing & Tax Compliance Master Kit 2026",
+    "priceUSD": 49,
+    "priceSAR": 185,
+    "priceINR": 3999,
+    "targetCategories": [
+      "Retail & FMCG",
+      "Automotive Saudi",
+      "Commercial Conglomerate",
+      "Private Healthcare KSA"
+    ],
+    "solutionSummary": "Complete step-by-step Arabic & English implementation checklist, XML invoice structure templates, QR code verification specs, and approved vendor selection matrix."
+  },
+  "synthesizedAssetPath": "C:\\Users\\Administrator\\Documents\\ai agent\\digital_products\\6_Trending_zatca-saudi-einvoice-2026\\zatca-saudi-einvoice-2026_vault.md",
+  "matchedLeadsCount": 31,
+  "matchedLeadsSample": [
+    {
+      "name": "NEOM Project (Saudi Vision 2030)",
+      "city": "Riyadh",
+      "email": "marketing@neom.com",
+      "phone": "+966 11 476 9080"
+    },
+    {
+      "name": "Saudi Binladin Group",
+      "city": "Jeddah",
+      "email": "marketing@sbg.com.sa",
+      "phone": "+966 12 698 0555"
+    },
+    {
+      "name": "STC (Saudi Telecom Company)",
+      "city": "Riyadh",
+      "email": "marketing@stc.com.sa",
+      "phone": "+966 11 201 4000"
+    },
+    {
+      "name": "Dar Al Arkan Real Estate",
+      "city": "Riyadh",
+      "email": "marketing@daralarkan.com",
+      "phone": "+966 11 418 0888"
+    },
+    {
+      "name": "Kingdom Holding Company (KHC)",
+      "city": "Riyadh",
+      "email": "ir@kingdom.com.sa",
+      "phone": "+966 11 211 1111"
+    },
+    {
+      "name": "Rosewood Jeddah",
+      "city": "Jeddah",
+      "email": "marketing.jeddah@rosewoodhotels.com",
+      "phone": "+966 12 200 0000"
+    },
+    {
+      "name": "Al Othaim Markets KSA",
+      "city": "Riyadh",
+      "email": "marketing@othaim.com.sa",
+      "phone": "+966 11 462 0000"
+    },
+    {
+      "name": "Saudi German Hospitals Group",
+      "city": "Jeddah",
+      "email": "marketing@saudihospital.com",
+      "phone": "+966 12 682 1022"
+    },
+    {
+      "name": "Abdul Latif Jameel Co. Ltd",
+      "city": "Jeddah",
+      "email": "marketing@alj.com",
+      "phone": "+966 12 660 0000"
+    },
+    {
+      "name": "Roshn Real Estate Group (PIF)",
+      "city": "Riyadh",
+      "email": "info@roshn.sa",
+      "phone": "+966 11 834 8888"
+    }
+  ],
+  "revenueProjection": {
+    "unitPriceUSD": 49,
+    "targetVolumePerDay": 5,
+    "projectedDailyRevenue": "$245 (~925 SAR)",
+    "projectedMonthlyRevenue": "$7350 (~27750 SAR)"
+  }
+}

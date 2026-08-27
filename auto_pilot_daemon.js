@@ -29,25 +29,34 @@ function runDailyPipeline() {
   const today = new Date().toISOString().split('T')[0];
   log(`🚀 AUTOPILOT TRIGGERED: Starting Daily 8:30 AM Autonomous Pipeline for ${today}...`);
 
-  // Step 1: Run Lead Extractor
-  exec('node lead_extractor.js', { cwd: __dirname }, (err1, stdout1) => {
-    if (err1) {
-      log(`⚠️ Lead Extractor error: ${err1.message}`);
+  // Step 0: Scan Google Search Trends & Synthesize Trending Solution
+  exec('node autonomous_demand_arbitrage_engine.js', { cwd: __dirname }, (err0, stdout0) => {
+    if (err0) {
+      log(`⚠️ Demand Arbitrage error: ${err0.message}`);
     } else {
-      log(`✅ Lead Extractor finished successfully.`);
+      log(`✅ Google Trend Demand Analyzed & Solution Asset Synthesized.`);
     }
 
-    // Step 2: Run Daily Outreach Engine via Brevo
-    exec('node daily_outreach_engine.js', { cwd: __dirname }, (err2, stdout2) => {
-      if (err2) {
-        log(`⚠️ Outreach Engine error: ${err2.message}`);
+    // Step 1: Run Lead Extractor
+    exec('node lead_extractor.js', { cwd: __dirname }, (err1, stdout1) => {
+      if (err1) {
+        log(`⚠️ Lead Extractor error: ${err1.message}`);
       } else {
-        log(`✅ Outreach Engine completed 300 batch dispatch.`);
+        log(`✅ Lead Extractor finished successfully.`);
       }
 
-      // Record successful run for today
-      fs.writeFileSync(LAST_RUN_FILE, today, 'utf8');
-      log(`🎉 Daily Pipeline Complete! Next scheduled trigger tomorrow at 08:30 AM.`);
+      // Step 2: Run Daily Outreach Engine via Brevo
+      exec('node daily_outreach_engine.js', { cwd: __dirname }, (err2, stdout2) => {
+        if (err2) {
+          log(`⚠️ Outreach Engine error: ${err2.message}`);
+        } else {
+          log(`✅ Outreach Engine completed 300 batch dispatch.`);
+        }
+
+        // Record successful run for today
+        fs.writeFileSync(LAST_RUN_FILE, today, 'utf8');
+        log(`🎉 Daily Pipeline Complete! Next scheduled trigger tomorrow at 08:30 AM.`);
+      });
     });
   });
 }
