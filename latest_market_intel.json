@@ -1,0 +1,52 @@
+{
+  "reportId": "INTEL-2026-08-27-04-51-49",
+  "timestamp": "2026-08-27T01:51:49.374Z",
+  "domains": [
+    {
+      "market": "Bangalore & Pan-India Corporate Tech Summits",
+      "competitors": [
+        "Wizcraft International",
+        "DNA Networks",
+        "Phase 1 Events",
+        "Toast Events"
+      ],
+      "insights": [
+        "Bangalore Series-A & Series-B funded AI/SaaS startups are moving away from traditional hotel ballrooms toward hybrid experiential 4K LED multi-track summits.",
+        "Key pain point of corporate tech clients: Legacy agencies take 3 to 4 weeks for stage 3D CAD rendering; SAMRAT direct founder turnaround (48 hours) is a massive competitive moat.",
+        "Average budget for 1-day executive summit (200-300 pax) at Leela Palace or ITC: ₹8 Lakh to ₹15 Lakh. SAMRAT ₹8.5L Executive Launchpad is priced with aggressive closing advantage."
+      ],
+      "recommendedBDAction": "Target newly funded Whitefield & Koramangala tech unicorn heads of people and marketing with 4K curved LED keynote packages."
+    },
+    {
+      "market": "Saudi Arabia Vision 2030 (Riyadh & Jeddah)",
+      "competitors": [
+        "Alsayegh Media KSA",
+        "Benchmark Events",
+        "Sela Company",
+        "Flash Entertainment"
+      ],
+      "insights": [
+        "Vision 2030 initiatives are accelerating procurement for Q3/Q4 mega conclaves (Diriyah Gate, Red Sea Global, Riyadh Air, Qiddiya).",
+        "Massive demand for bilingual English/Arabic technical production with certified simultaneous translation booths and local ANB banking compliance.",
+        "Competitor retainers for corporate marketing in Riyadh range from 25,000 to 45,000 SAR/month ($6,700 - $12,000/mo). SAMRAT Executive Retainer at 11,000 SAR ($2,950/mo) provides high value."
+      ],
+      "recommendedBDAction": "Dispatch personalized Vision 2030 stage production pitches to Riyadh procurement officers highlighting bilingual capabilities and local ANB wire ease."
+    },
+    {
+      "market": "Dubai & UAE Luxury Real Estate & HNWI Buyer Funnels",
+      "competitors": [
+        "Merkle MENA",
+        "House of Comms Dubai",
+        "GrowthRocks UAE",
+        "Digital Gravity"
+      ],
+      "insights": [
+        "Dubai luxury property developers (Sobha, DAMAC, Binghatti) are experiencing high ad fatigue on standard Facebook/Instagram lead forms.",
+        "Highest conversion channel in 2026: Pre-qualified WhatsApp VIP video qualification funnels targeting Indian and European investors.",
+        "Competitors charge AED 20,000 - 35,000/mo without lead replacement guarantees. SAMRAT offers verified lead delivery directly into CRM."
+      ],
+      "recommendedBDAction": "Offer Dubai luxury developers a 30-day \"Pre-Qualified HNWI Buyer Sprint\" ($1,450/mo) to acquire high-net-worth real estate buyers."
+    }
+  ],
+  "summary": "Identified 3 key competitor vulnerabilities in Bangalore stage CAD turnaround and GCC retainer overpricing. Recommended aggressive positioning at ₹8.5L and $2,950/mo."
+}

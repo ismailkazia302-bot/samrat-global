@@ -130,3 +130,55 @@ setInterval(checkSchedule, 30 * 1000);
 // Run 30-Minute Continuous Lead Harvester
 setInterval(run30MinLeadHarvester, 30 * 60 * 1000);
 
+// ==========================================
+// 5X DAILY AUTONOMOUS BD & COMPETITOR RESEARCHER
+// Schedule: 08:00, 11:30, 14:30, 17:30, 20:30
+// ==========================================
+const RESEARCH_RUNS_LOG = path.join(__dirname, 'last_research_runs.json');
+
+function runAutonomousResearcher() {
+  log('🕵️‍♂️ AUTONOMOUS BD RESEARCHER: Launching market intelligence & competitor audit...');
+  exec('node autonomous_researcher_agent.js', { cwd: __dirname }, (err, stdout) => {
+    if (err) {
+      log(`⚠️ Researcher Agent notice: ${err.message}`);
+    } else {
+      log(`🏆 Researcher Agent: Completed market intelligence report & saved in research_reports/!`);
+    }
+  });
+}
+
+function checkResearcherSchedule() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const today = now.toISOString().split('T')[0];
+
+  // Target slots: 08:00, 11:30, 14:30, 17:30, 20:30
+  const slots = [
+    { h: 8, m: 0, tag: '08-00' },
+    { h: 11, m: 30, tag: '11-30' },
+    { h: 14, m: 30, tag: '14-30' },
+    { h: 17, m: 30, tag: '17-30' },
+    { h: 20, m: 30, tag: '20-30' }
+  ];
+
+  let runLog = {};
+  if (fs.existsSync(RESEARCH_RUNS_LOG)) {
+    try { runLog = JSON.parse(fs.readFileSync(RESEARCH_RUNS_LOG, 'utf8')); } catch(e) {}
+  }
+
+  slots.forEach(slot => {
+    if (hours === slot.h && minutes === slot.m) {
+      const runKey = `${today}_${slot.tag}`;
+      if (!runLog[runKey]) {
+        runLog[runKey] = true;
+        fs.writeFileSync(RESEARCH_RUNS_LOG, JSON.stringify(runLog, null, 2), 'utf8');
+        runAutonomousResearcher();
+      }
+    }
+  });
+}
+
+setInterval(checkResearcherSchedule, 30 * 1000);
+
+
