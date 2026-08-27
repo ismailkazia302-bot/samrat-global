@@ -61,9 +61,18 @@ function runDailyPipeline() {
             log(`✅ Daily Google Page SEO & Schema Markup Generated & Sitemap Pinged.`);
           }
 
-          // Record successful run for today
-          fs.writeFileSync(LAST_RUN_FILE, today, 'utf8');
-          log(`🎉 Daily Pipeline Complete! Next scheduled trigger tomorrow at 08:30 AM.`);
+          // Step 4: Run Daily Autonomous SEO Blog Publisher & Link Builder
+          exec('node daily_autonomous_seo_publisher.js', { cwd: __dirname }, (err4, stdout4) => {
+            if (err4) {
+              log(`⚠️ SEO Blog Publisher notice: ${err4.message}`);
+            } else {
+              log(`✅ Daily SEO Cornerstone Blog & Schema Article Published.`);
+            }
+
+            // Record successful run for today
+            fs.writeFileSync(LAST_RUN_FILE, today, 'utf8');
+            log(`🎉 Daily Pipeline Complete! Next scheduled trigger tomorrow at 08:30 AM.`);
+          });
         });
       });
     });
