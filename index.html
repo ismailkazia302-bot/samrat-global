@@ -1028,7 +1028,330 @@
       lucide.createIcons();
     }
   </script>
-  <!-- SAMRAT Luxury Sales & Customer Service AI Concierge Bot -->
-  <script src="chatbot.js" defer></script>
+
+  <!-- ============================================================ -->
+  <!-- 👑 SAMRAT LUXURY SALES & CUSTOMER SERVICE AI CONCIERGE CHATBOT -->
+  <!-- ============================================================ -->
+  <style>
+    #samrat-chat-launcher {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0d0d0d;
+      border: 2px solid #EAB308;
+      padding: 10px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 25px rgba(234,179,8,0.35);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'Poppins', system-ui, sans-serif;
+    }
+    #samrat-chat-launcher:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(234,179,8,0.5);
+    }
+    .chat-avatar-icon {
+      width: 36px;
+      height: 36px;
+      background: #EAB308;
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      position: relative;
+      font-weight: 900;
+    }
+    .chat-pulse-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      background: #10B981;
+      border: 2px solid #000;
+      border-radius: 50%;
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+    }
+    .chat-bubble-popup {
+      position: fixed;
+      bottom: 85px;
+      right: 24px;
+      background: #141414;
+      border: 1px solid #EAB308;
+      color: #FFF;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+      z-index: 999998;
+      cursor: pointer;
+      max-width: 280px;
+      animation: bubbleBounce 0.5s ease;
+      display: none;
+    }
+    @keyframes bubbleBounce {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    #samrat-chat-window {
+      position: fixed;
+      bottom: 85px;
+      right: 24px;
+      width: 380px;
+      max-width: calc(100vw - 32px);
+      height: 540px;
+      max-height: calc(100vh - 110px);
+      background: #0A0A0A;
+      border: 1px solid rgba(234,179,8,0.4);
+      border-radius: 18px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.95), 0 0 30px rgba(234,179,8,0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999999;
+      font-family: 'Poppins', system-ui, sans-serif;
+    }
+    #samrat-chat-window.open {
+      display: flex !important;
+    }
+    .chat-header-bar {
+      background: linear-gradient(135deg, #1A1400, #0D0D0D);
+      border-bottom: 1px solid rgba(234,179,8,0.25);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .chat-body-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #050505;
+    }
+    .chat-msg-item {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+    .chat-msg-item.bot {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #DDD;
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+    .chat-msg-item.bot strong { color: #EAB308; }
+    .chat-msg-item.user {
+      background: #EAB308;
+      color: #000;
+      font-weight: 600;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .chat-chip-btn {
+      background: #111;
+      border: 1px solid rgba(234,179,8,0.3);
+      color: #EEE;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      margin-bottom: 6px;
+      display: block;
+      width: 100%;
+      transition: all 0.2s;
+    }
+    .chat-chip-btn:hover {
+      background: #EAB308;
+      color: #000;
+      border-color: #EAB308;
+      transform: translateX(3px);
+    }
+  </style>
+
+  <!-- Proactive Speech Bubble -->
+  <div id="samratChatBubble" class="chat-bubble-popup" onclick="openChatFromBubble()">
+    👑 <strong>Have a question?</strong><br>
+    Chat with our Sales Concierge for event quotes or marketing!
+  </div>
+
+  <!-- Floating Launcher -->
+  <div id="samrat-chat-launcher" onclick="toggleChatWindow()">
+    <div class="chat-avatar-icon">
+      👑
+      <div class="chat-pulse-dot"></div>
+    </div>
+    <div class="d-none d-sm-block">
+      <div style="font-size:0.85rem; font-weight:800; color:#FFF; letter-spacing:0.5px;">SAMRAT Concierge</div>
+      <div style="font-size:0.68rem; color:#10B981; font-weight:700;">● Online • Live Sales & Support</div>
+    </div>
+    <span style="background:#EAB308; color:#000; font-size:0.65rem; font-weight:900; padding:2px 8px; border-radius:10px;">VIP</span>
+  </div>
+
+  <!-- Chat Window -->
+  <div id="samrat-chat-window">
+    <div class="chat-header-bar">
+      <div class="d-flex align-items-center gap-2">
+        <div class="chat-avatar-icon" style="width:32px; height:32px; font-size:0.9rem;">👑</div>
+        <div>
+          <div style="font-weight:800; font-size:0.92rem; color:#FFF;">SAMRAT Executive Concierge</div>
+          <div style="font-size:0.7rem; color:#10B981; font-weight:600;">Direct Line to Founder Ismail Kazia</div>
+        </div>
+      </div>
+      <button onclick="toggleChatWindow()" style="background:none; border:none; color:#888; font-size:1.5rem; cursor:pointer; line-height:1;">&times;</button>
+    </div>
+
+    <div class="chat-body-area" id="chatMessagesArea">
+      <div class="chat-msg-item bot">
+        <strong>Marhaba & Welcome to SAMRAT WORLDWIDE! 👑</strong><br>
+        I am your executive sales concierge. Main aapki kya madad kar sakta hoon?
+      </div>
+
+      <div id="chatQuickOptions" style="margin-top:6px;">
+        <button class="chat-chip-btn" onclick="sendChipChoice('events')">🎪 Book Bangalore Corporate Event (₹8.5L - ₹38L)</button>
+        <button class="chat-chip-btn" onclick="sendChipChoice('saudi')">🇸🇦 Saudi Vision 2030 Conclave / Riyadh Staging</button>
+        <button class="chat-chip-btn" onclick="sendChipChoice('retainer')">📈 Dubai / GCC Growth Retainer ($1,450 - $2,950/mo)</button>
+        <button class="chat-chip-btn" onclick="sendChipChoice('zatca')">🛍️ Buy Saudi ZATCA Phase 2 Kit ($97)</button>
+        <button class="chat-chip-btn" onclick="sendChipChoice('bank')">🏦 Saudi ANB Bank Transfer & IBAN Details</button>
+        <button class="chat-chip-btn" onclick="sendChipChoice('call')">📅 Schedule 30-Min Call with Ismail Kazia</button>
+        <button class="chat-chip-btn" onclick="sendChipChoice('wa')" style="border-color:#10B981; color:#10B981;">💬 Direct WhatsApp with Founder Ismail Kazia →</button>
+      </div>
+    </div>
+
+    <div style="padding:12px; background:#0D0D0D; border-top:1px solid rgba(255,255,255,0.08); display:flex; gap:8px;">
+      <input type="text" id="chatTextInput" style="flex:1; background:#161616; border:1px solid rgba(255,255,255,0.15); color:#FFF; padding:10px 14px; border-radius:8px; font-size:0.85rem; outline:none;" placeholder="Type your message / Sawaal yahan likhein..." onkeydown="checkChatEnter(event)">
+      <button onclick="handleUserChatSend()" style="background:#EAB308; color:#000; border:none; padding:0 18px; border-radius:8px; font-weight:800; cursor:pointer;">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Show speech bubble after 2 seconds
+    setTimeout(function() {
+      const bubble = document.getElementById('samratChatBubble');
+      const win = document.getElementById('samrat-chat-window');
+      if (bubble && win && !win.classList.contains('open')) {
+        bubble.style.display = 'block';
+      }
+    }, 2000);
+
+    function openChatFromBubble() {
+      const bubble = document.getElementById('samratChatBubble');
+      if (bubble) bubble.style.display = 'none';
+      toggleChatWindow();
+    }
+
+    function toggleChatWindow() {
+      const win = document.getElementById('samrat-chat-window');
+      const bubble = document.getElementById('samratChatBubble');
+      if (bubble) bubble.style.display = 'none';
+      win.classList.toggle('open');
+      if (win.classList.contains('open')) {
+        setTimeout(function() {
+          const inp = document.getElementById('chatTextInput');
+          if (inp) inp.focus();
+        }, 200);
+      }
+    }
+
+    function checkChatEnter(e) {
+      if (e.key === 'Enter') {
+        handleUserChatSend();
+      }
+    }
+
+    function addChatMessage(html, sender) {
+      const area = document.getElementById('chatMessagesArea');
+      const div = document.createElement('div');
+      div.className = 'chat-msg-item ' + sender;
+      div.innerHTML = html;
+      area.appendChild(div);
+      area.scrollTop = area.scrollHeight;
+    }
+
+    function sendChipChoice(type) {
+      if (type === 'events') {
+        addChatMessage("Bangalore corporate event packages ki details chahiye.", "user");
+        setTimeout(function() {
+          addChatMessage("<strong>🎪 Bangalore Corporate Event & Tech Summit Packages:</strong><br>• <strong>Executive Launchpad:</strong> ₹8.5 Lakh ($10,500) • 250 pax, 5-Star Stage<br>• <strong>Flagship Tech Summit:</strong> ₹18.5 Lakh ($22,000) • P2.6 Curved LED + 4K Cinema Broadcast<br>• <strong>Imperial Mega Conclave:</strong> ₹38 Lakh ($45,000) • 1,000+ pax arena staging (Leela Palace / ITC)<br><br>👉 <a href='proposal_template.html' target='_blank' style='color:#EAB308; font-weight:bold;'>Proposal Lookbook Kholein</a> ya seedha WhatsApp par baat karein:<br><a href='https://wa.me/916363962640?text=Hi%20Ismail!%20Inquiring%20about%20Bangalore%20Corporate%20Event%20Packages.' target='_blank' style='display:inline-block; margin-top:6px; background:#25D366; color:#000; font-weight:bold; padding:4px 10px; border-radius:6px; text-decoration:none;'>WhatsApp India (+91 63639 62640) →</a>", "bot");
+        }, 350);
+      } else if (type === 'saudi') {
+        addChatMessage("Saudi Vision 2030 Conclave & Riyadh staging details.", "user");
+        setTimeout(function() {
+          addChatMessage("<strong>🇸🇦 Saudi Arabia Turnkey Operations:</strong><br>Hum <strong>Riyadh & Jeddah</strong> me Vision 2030 summits, corporate galas aur government conclaves deliver karte hain:<br>• Bilingual Arabic/English simultaneous interpretation booths<br>• VIP protocol & diplomatic staging<br>• Direct Saudi Arab National Bank (ANB) transfer<br><br><a href='https://wa.me/966548905688?text=Marhaba%20Ismail!%20Inquiring%20about%20Saudi%20Arabia%20event%20staging.' target='_blank' style='display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:4px 10px; border-radius:6px; text-decoration:none;'>Connect Saudi WhatsApp (+966 54 890 5688) →</a>", "bot");
+        }, 350);
+      } else if (type === 'retainer') {
+        addChatMessage("Dubai / GCC Growth Marketing Retainers ki details chahiye.", "user");
+        setTimeout(function() {
+          addChatMessage("<strong>📈 High-Net-Worth Performance Marketing (UAE & KSA):</strong><br>• <strong>Growth Sprint:</strong> $1,450 / month (5,450 SAR • AED 5,300)<br>• <strong>Executive Performance:</strong> $2,950 / month (11,000 SAR • AED 10,800) • 300 Qualified Leads + WhatsApp CRM<br>• <strong>Imperial Authority:</strong> $5,500 / month (20,600 SAR)<br><br>Recent Dubai Real Estate campaign ROAS: <strong>4.8x</strong>.<br><a href='meet.html' target='_blank' style='color:#EAB308; font-weight:bold;'>Ismail Kazia ke saath 30-Min Call Book Karein →</a>", "bot");
+        }, 350);
+      } else if (type === 'zatca') {
+        addChatMessage("Saudi ZATCA Phase 2 Kit ($97) buy karna hai.", "user");
+        setTimeout(function() {
+          addChatMessage("<strong>⚡ Saudi ZATCA Phase 2 Master Kit 2026:</strong><br>Includes XML UBL 2.1 templates, cryptographic stamps, API payload blueprints.<br>• <strong>Price:</strong> $97 (365 SAR • ₹7,999)<br>• Instant download after payment via Mada, STC Pay ya ANB Bank!<br><br>👉 <a href='products.html' target='_blank' style='color:#EAB308; font-weight:bold;'>Digital Store Par Buy Karein →</a>", "bot");
+        }, 350);
+      } else if (type === 'bank') {
+        addChatMessage("Bank details aur IBAN chahiye.", "user");
+        setTimeout(function() {
+          addChatMessage("<strong>🏦 Official Saudi Arab National Bank (ANB):</strong><br>• <strong>Beneficiary:</strong> Ismail Kazia<br>• <strong>Bank Name:</strong> Arab National Bank (ANB)<br>• <strong>Account No:</strong> <code>0108039658540010</code><br>• <strong>IBAN:</strong> <code style='color:#10B981; font-weight:bold;'>SA1730400108039658540010</code><br><br>Transfer receipt WhatsApp: <a href='https://wa.me/966548905688' target='_blank' style='color:#10B981; font-weight:bold;'>+966 54 890 5688</a>.", "bot");
+        }, 350);
+      } else if (type === 'call') {
+        addChatMessage("Founder Ismail Kazia ke saath meeting book karni hai.", "user");
+        setTimeout(function() {
+          addChatMessage("<strong>📅 30-Minute Executive Strategy Call:</strong><br>Aap direct Google Meet slot hamare interactive page se book kar sakte hain:<br><br>👉 <a href='meet.html' target='_blank' style='display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:5px 12px; border-radius:6px; text-decoration:none;'>Booking Page (meet.html) Kholein →</a>", "bot");
+        }, 350);
+      } else if (type === 'wa') {
+        window.open("https://wa.me/966548905688?text=Hello%20Founder%20Ismail%20Kazia!%20Connecting%20from%20SAMRAT%20website.", "_blank");
+      }
+    }
+
+    function handleUserChatSend() {
+      const input = document.getElementById('chatTextInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      addChatMessage(text, 'user');
+      input.value = '';
+
+      const lower = text.toLowerCase();
+
+      // Show typing simulation
+      setTimeout(function() {
+        if (lower.match(/^(hi|hello|hey|salam|marhaba|assalam|kem cho|namaste)/)) {
+          addChatMessage("<strong>Walekum Assalam / Hello! 👋</strong><br>Welcome to SAMRAT WORLDWIDE! Main Founder Ismail Kazia ka AI sales executive hoon. Aapko Bangalore corporate event organize karna hai ya Saudi/Dubai expansion ke liye baat karni hai?", "bot");
+        } else if (lower.includes('event') || lower.includes('summit') || lower.includes('conference') || lower.includes('stage') || lower.includes('bangalore')) {
+          addChatMessage("<strong>🎪 Corporate Events & Tech Summits:</strong><br>Hum Bangalore (The Leela Palace, ITC Gardenia, BIEC) aur Pan-India me 5-star events aur 4K curved LED staging deliver karte hain.<br>• <strong>Packages:</strong> ₹8.5 Lakh | ₹18.5 Lakh (4K LED) | ₹38 Lakh (Imperial)<br>Aapka event kab plan ho raha hai?", "bot");
+        } else if (lower.includes('saudi') || lower.includes('riyadh') || lower.includes('jeddah') || lower.includes('dubai') || lower.includes('uae') || lower.includes('marketing')) {
+          addChatMessage("<strong>🇸🇦 Saudi Arabia & UAE Operations:</strong><br>Hum Riyadh, Jeddah aur Dubai me:<br>1. Vision 2030 Mega Events & Staging deliver karte hain.<br>2. Luxury Real Estate Buyer Funnels ($1,450 - $2,950/mo retainers) manage karte hain.<br>Local Saudi ANB Bank payment available hai!<br><br><a href='https://wa.me/966548905688' target='_blank' style='color:#10B981; font-weight:bold;'>WhatsApp par direct baat karein →</a>", "bot");
+        } else if (lower.includes('price') || lower.includes('cost') || lower.includes('kitna') || lower.includes('rate') || lower.includes('package') || lower.includes('fees')) {
+          addChatMessage("<strong>💰 SAMRAT Pricing Overview:</strong><br>• <strong>Corporate Events:</strong> ₹8.5 Lakh to ₹38 Lakh ($10,500 - $45,000)<br>• <strong>Growth Retainers (KSA/UAE):</strong> $1,450 to $2,950 / month<br>• <strong>Digital Products:</strong> $29 to $97 (ZATCA Kit)<br><br>Aapko kis service ka custom quote chahiye?", "bot");
+        } else if (lower.includes('call') || lower.includes('phone') || lower.includes('number') || lower.includes('contact') || lower.includes('whatsapp') || lower.includes('ismail')) {
+          addChatMessage("<strong>Direct Contact to Founder & CEO Ismail Kazia:</strong><br>• 🇸🇦 Saudi WhatsApp: <strong>+966 54 890 5688</strong><br>• 🇮🇳 India WhatsApp: <strong>+91 63639 62640</strong><br>• 📧 Email: <strong>ismail@samratglobal.com</strong><br><br><a href='https://wa.me/966548905688' target='_blank' style='display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:5px 12px; border-radius:6px; text-decoration:none;'>WhatsApp Direct Kholein →</a>", "bot");
+        } else if (lower.includes('bank') || lower.includes('iban') || lower.includes('anb') || lower.includes('pay') || lower.includes('account')) {
+          addChatMessage("<strong>🏦 Official Saudi Arab National Bank (ANB):</strong><br>• <strong>Beneficiary:</strong> Ismail Kazia<br>• <strong>Bank:</strong> Arab National Bank (ANB)<br>• <strong>Account:</strong> <code>0108039658540010</code><br>• <strong>IBAN:</strong> <code style='color:#10B981; font-weight:bold;'>SA1730400108039658540010</code>", "bot");
+        } else {
+          addChatMessage("Shukriya! Maine aapka message note kar liya hai: <em>\"" + text + "\"</em>.<br><br>Immediate quote aur confirmation ke liye Founder Ismail Kazia ke WhatsApp par forward karein:<br><a href='https://wa.me/966548905688?text=" + encodeURIComponent('Hello Ismail! Connecting from SAMRAT website: ' + text) + "' target='_blank' style='display:inline-block; margin-top:6px; background:#10B981; color:#000; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;'>Forward to Ismail Kazia's WhatsApp →</a>", "bot");
+        }
+      }, 300);
+    }
+  </script>
 </body>
 </html>
