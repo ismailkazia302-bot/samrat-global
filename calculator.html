@@ -35,16 +35,7 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="nav-bar">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a href="index.html" style="color:#fff; font-weight:900; text-decoration:none; font-size:1.2rem;"><img src="galicon_logo.png" alt="GALICON GLOBAL" style="height:44px; width:auto; object-fit:contain;"></a>
-      <div class="d-flex gap-3">
-        <a href="proposal_template.html" style="color:#FFF; text-decoration:none; font-weight:700; font-size:0.85rem;">Lookbook 📑</a>
-        <a href="products.html" style="color:#EAB308; text-decoration:none; font-weight:700; font-size:0.85rem;">Store 🛍️</a>
-        <a href="meet.html" style="color:#10B981; text-decoration:none; font-weight:700; font-size:0.85rem;">Book Call 🎥</a>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
 
   <div class="container container-calc">
     <div class="text-center mb-5">
@@ -133,21 +124,62 @@
     </div>
   </div>
 
-  <script>
     let currentLocation = 'Bangalore';
-    let locationMultiplier = 1.0;
-    let basePriceINR = 850000;
-    let packageName = 'Executive Launchpad (250 pax)';
-    let addonsTotalINR = 240000;
+    let activeScale = 'Launchpad';
     let activeCurrency = 'INR';
 
-    const FX_RATES = {
-      INR: 1,
-      SAR: 0.045, // 1 INR ~ 0.045 SAR
-      USD: 0.012  // 1 INR ~ 0.012 USD
+    const PRICING_MATRIX = {
+      Bangalore: {
+        defaultCurrency: 'INR',
+        scales: {
+          Launchpad: { price: 850000, name: 'Executive Launchpad (250 pax)' },
+          Flagship: { price: 1850000, name: 'Flagship Tech Summit (500 pax)' },
+          Mega: { price: 3800000, name: 'Imperial Mega Conclave (1000+ pax)' }
+        },
+        addons: {
+          led: 150000,
+          audio: 90000,
+          livestream: 120000,
+          interpretation: 85000
+        }
+      },
+      Riyadh: {
+        defaultCurrency: 'SAR',
+        scales: {
+          Launchpad: { price: 38500, name: 'Executive Launchpad (250 pax)' },
+          Flagship: { price: 83500, name: 'Flagship Tech Summit (500 pax)' },
+          Mega: { price: 170000, name: 'Imperial Mega Conclave (1000+ pax)' }
+        },
+        addons: {
+          led: 6800,
+          audio: 4100,
+          livestream: 5400,
+          interpretation: 3800
+        }
+      },
+      Dubai: {
+        defaultCurrency: 'SAR', // Map AED to SAR selector or handle conversion
+        scales: {
+          Launchpad: { price: 37500, name: 'Executive Launchpad (250 pax)' },
+          Flagship: { price: 81500, name: 'Flagship Tech Summit (500 pax)' },
+          Mega: { price: 167000, name: 'Imperial Mega Conclave (1000+ pax)' }
+        },
+        addons: {
+          led: 6600,
+          audio: 4000,
+          livestream: 5300,
+          interpretation: 3700
+        }
+      }
     };
 
-    function setLocation(loc, elem, mult) {
+    const FX_TO_INR = {
+      INR: 1,
+      SAR: 22.5,
+      USD: 84.5
+    };
+
+    function setLocation(loc, elem) {
       document.querySelectorAll('.calc-btn').forEach(b => {
         if (b.innerText.includes('Bangalore') || b.innerText.includes('Riyadh') || b.innerText.includes('Dubai')) {
           b.classList.remove('active');
@@ -155,37 +187,33 @@
       });
       elem.classList.add('active');
       currentLocation = loc;
-      locationMultiplier = mult;
+      
+      // Auto switch active currency to match location default
+      const defaultCurr = PRICING_MATRIX[loc].defaultCurrency;
+      activeCurrency = defaultCurr;
+      
+      document.querySelectorAll('.curr-btn').forEach(b => {
+        b.classList.toggle('active', b.innerText.includes(defaultCurr));
+      });
+
       updateTotal();
     }
 
-    function setScale(scale, elem, basePrice, name) {
+    function setScale(scale, elem) {
       document.querySelectorAll('.calc-btn').forEach(b => {
         if (b.innerText.includes('Launchpad') || b.innerText.includes('Flagship') || b.innerText.includes('Mega')) {
           b.classList.remove('active');
         }
       });
       elem.classList.add('active');
-      basePriceINR = basePrice;
-      packageName = name;
+      activeScale = scale;
       updateTotal();
     }
 
-    function toggleAddon(elem, price, addonName) {
-      const cb = elem.querySelector('.addon-checkbox');
+    function toggleAddon(elem) {
       elem.classList.toggle('selected');
-      cb.checked = elem.classList.contains('selected');
-      recalculateAddons();
-    }
-
-    function recalculateAddons() {
-      let total = 0;
-      const items = document.querySelectorAll('.addon-item');
-      if (items[0].classList.contains('selected')) total += 150000;
-      if (items[1].classList.contains('selected')) total += 90000;
-      if (items[2].classList.contains('selected')) total += 120000;
-      if (items[3].classList.contains('selected')) total += 85000;
-      addonsTotalINR = total;
+      const cb = elem.querySelector('.addon-checkbox');
+      if (cb) cb.checked = elem.classList.contains('selected');
       updateTotal();
     }
 
@@ -197,24 +225,48 @@
     }
 
     function updateTotal() {
-      const grossINR = Math.round((basePriceINR + addonsTotalINR) * locationMultiplier);
-      const displayElem = document.getElementById('total-price-display');
+      const config = PRICING_MATRIX[currentLocation];
+      const scaleInfo = config.scales[activeScale];
       
+      let basePrice = scaleInfo.price;
+      let addonsTotal = 0;
+      
+      const addonItems = document.querySelectorAll('.addon-item');
+      if (addonItems[0] && addonItems[0].classList.contains('selected')) addonsTotal += config.addons.led;
+      if (addonItems[1] && addonItems[1].classList.contains('selected')) addonsTotal += config.addons.audio;
+      if (addonItems[2] && addonItems[2].classList.contains('selected')) addonsTotal += config.addons.livestream;
+      if (addonItems[3] && addonItems[3].classList.contains('selected')) addonsTotal += config.addons.interpretation;
+
+      const totalLocal = basePrice + addonsTotal;
+      const localCurrencyCode = currentLocation === 'Bangalore' ? 'INR' : 'SAR';
+
+      // Convert local total to target activeCurrency display
+      let displayPrice = 0;
+      if (activeCurrency === localCurrencyCode) {
+        displayPrice = totalLocal;
+      } else {
+        // Convert to INR first, then to target currency
+        const totalInINR = totalLocal * FX_TO_INR[localCurrencyCode];
+        displayPrice = Math.round(totalInINR / FX_TO_INR[activeCurrency]);
+      }
+
+      const displayElem = document.getElementById('total-price-display');
       let formattedPrice = '';
       if (activeCurrency === 'INR') {
-        formattedPrice = `₹ <span>${grossINR.toLocaleString('en-IN')}</span>`;
+        formattedPrice = `₹ <span>${displayPrice.toLocaleString('en-IN')}</span>`;
       } else if (activeCurrency === 'SAR') {
-        const sar = Math.round(grossINR * FX_RATES.SAR);
-        formattedPrice = `<span>${sar.toLocaleString('en-US')}</span> SAR`;
+        formattedPrice = `<span>${displayPrice.toLocaleString('en-US')}</span> SAR`;
       } else if (activeCurrency === 'USD') {
-        const usd = Math.round(grossINR * FX_RATES.USD);
-        formattedPrice = `$ <span>${usd.toLocaleString('en-US')}</span>`;
+        formattedPrice = `$ <span>${displayPrice.toLocaleString('en-US')}</span>`;
       }
 
       displayElem.innerHTML = formattedPrice;
 
-      // Update WhatsApp Link
-      const msg = encodeURIComponent(`Hi Ismail! I used the GALICON Production Estimator.\n\n📍 Location: ${currentLocation}\n🎯 Package: ${packageName}\n💰 Estimated Budget: ${grossINR.toLocaleString('en-IN')} INR (~$${Math.round(grossINR * FX_RATES.USD).toLocaleString()})\n\nPlease send over the 48-hour 3D stage blueprint!`);
+      // Update Breakdown Text
+      document.getElementById('breakdown-text').innerText = `Includes base production + selected technical upgrades for ${currentLocation}`;
+
+      // Update WhatsApp Link redirect
+      const msg = encodeURIComponent(`Hi Ismail! I used the GALICON Production Estimator.\n\n📍 Location: ${currentLocation}\n🎯 Package: ${scaleInfo.name}\n💰 Estimated Budget: ${displayPrice.toLocaleString()} ${activeCurrency}\n\nPlease send over the 48-hour 3D stage blueprint!`);
       const targetNumber = currentLocation === 'Bangalore' ? '916363962640' : '966548905688';
       document.getElementById('whatsapp-quote-btn').href = `https://wa.me/${targetNumber}?text=${msg}`;
     }
@@ -223,10 +275,8 @@
     updateTotal();
   </script>
 
-  <!-- Footer -->
-  <footer class="text-center py-5 border-top border-dark mt-5 text-secondary" style="font-size:0.8rem;">
-    &copy; 2026 GALICON GLOBAL • Direct Founder Event Management & Global Growth Platform
-  </footer>
+  <div id="footer-placeholder"></div>
 
+  <script src="nav_loader.js"></script>
 </body>
 </html>

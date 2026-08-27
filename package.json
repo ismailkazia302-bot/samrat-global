@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node app.js",
+    "start": "node auto_pilot_daemon.js",
     "scrape": "node scraper.js",
     "pitch": "node ai_pitcher.js",
     "expand": "node scraper_expanded.js"
