@@ -101,5 +101,23 @@ if (process.argv.includes('--now')) {
   runDailyPipeline();
 }
 
-// Check every 30 seconds
+// ==========================================
+// 30-MINUTE CONTINUOUS LEAD RADAR ENGINE
+// ==========================================
+function run30MinLeadHarvester() {
+  log('🔎 30-MIN LEAD RADAR: Scanning for fresh B2B enterprise leads...');
+  exec('node continuous_lead_harvester.js', { cwd: __dirname }, (err, stdout) => {
+    if (err) {
+      log(`⚠️ 30-Min Lead Harvester notice: ${err.message}`);
+    } else {
+      log(`🎯 30-Min Lead Harvester: Fresh leads extracted & synchronized!`);
+    }
+  });
+}
+
+// Check every 30 seconds for 8:30 AM daily pipeline
 setInterval(checkSchedule, 30 * 1000);
+
+// Run 30-Minute Continuous Lead Harvester
+setInterval(run30MinLeadHarvester, 30 * 60 * 1000);
+
