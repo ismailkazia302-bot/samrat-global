@@ -81,6 +81,101 @@
     </div>
   </section>
 
+  <!-- MEMBERSHIP PLANS (MONTHLY & YEARLY) -->
+  <section class="py-5" style="background:#080808; border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div class="container text-center">
+      <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">👑 RECURRING PASSIVE ACCESS</span>
+      <h2 style="font-weight:900; font-size:2.4rem; margin-top:8px;">SAMRAT All-Access Membership</h2>
+      <p style="color:#888; max-width:600px; margin:0 auto 30px;">
+        Get all current digital products + every new Google-trending kit we build every single month. Choose monthly or save 20% with yearly billing.
+      </p>
+
+      <!-- Toggle Switch -->
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
+        <span id="label-monthly" style="font-weight:800; color:#fff; font-size:0.95rem;">Monthly Billing</span>
+        <div class="form-check form-switch m-0" style="padding-left:3.5em;">
+          <input class="form-check-input" type="checkbox" id="billingToggle" onchange="toggleBillingPlan()" style="cursor:pointer; width:3em; height:1.6em; background-color:#333; border-color:#555;">
+        </div>
+        <span id="label-yearly" style="font-weight:700; color:#888; font-size:0.95rem;">
+          Yearly Billing <span style="background:#10B981; color:#000; font-size:0.75rem; font-weight:900; padding:2px 8px; border-radius:12px; margin-left:4px;">SAVE 20%</span>
+        </span>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="row g-4 text-start justify-content-center">
+        <!-- Plan 1: Pro Creator -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card" style="padding:32px 24px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="color:#888; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">STARTER ALL-ACCESS</div>
+              <h3 style="font-weight:900; font-size:1.5rem; margin:6px 0 16px;">SAMRAT Pro</h3>
+              <div class="mb-4">
+                <span class="plan-price" id="pro-price" style="font-size:2.5rem; font-weight:900; color:#fff;">$29</span>
+                <span class="plan-cycle" id="pro-cycle" style="color:#888; font-size:0.9rem;">/ month</span>
+                <div id="pro-subtext" style="font-size:0.8rem; color:#EAB308; margin-top:4px;">109 SAR • ₹ 2,499 / mo</div>
+              </div>
+              <ul class="product-includes">
+                <li>Instant access to all 6 digital products</li>
+                <li>New monthly AI prompts drop</li>
+                <li>Monthly trending business checklists</li>
+                <li>Standard email support</li>
+                <li>Cancel anytime with 1-click</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/966548905688?text=Hi%20Ismail!%20I%20want%20to%20subscribe%20to%20SAMRAT%20Pro%20Plan." target="_blank" class="btn-buy text-center" id="pro-btn">SUBSCRIBE NOW →</a>
+          </div>
+        </div>
+
+        <!-- Plan 2: VIP Growth (Featured) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card" style="padding:32px 24px; border-color:#EAB308; background:#0f0d02; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 0 35px rgba(234,179,8,0.2);">
+            <div>
+              <span style="background:#EAB308; color:#000; font-size:0.7rem; font-weight:900; padding:2px 10px; border-radius:12px; text-transform:uppercase;">MOST POPULAR</span>
+              <div class="mt-2" style="color:#EAB308; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">GROWTH & AUTOMATION</div>
+              <h3 style="font-weight:900; font-size:1.5rem; margin:6px 0 16px;">SAMRAT VIP Club</h3>
+              <div class="mb-4">
+                <span class="plan-price" id="vip-price" style="font-size:2.5rem; font-weight:900; color:#EAB308;">$79</span>
+                <span class="plan-cycle" id="vip-cycle" style="color:#aaa; font-size:0.9rem;">/ month</span>
+                <div id="vip-subtext" style="font-size:0.8rem; color:#10B981; margin-top:4px;">295 SAR • ₹ 6,499 / mo</div>
+              </div>
+              <ul class="product-includes">
+                <li>Everything in Pro + all future releases</li>
+                <li>Google-trend arbitrage solutions every week</li>
+                <li>WhatsApp AI Bot setup blueprints</li>
+                <li>Direct WhatsApp VIP access to Ismail Kazia</li>
+                <li>Exclusive private mastermind group</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/966548905688?text=Hi%20Ismail!%20I%20want%20to%20subscribe%20to%20SAMRAT%20VIP%20Club." target="_blank" class="btn-buy text-center" style="background:#EAB308;" id="vip-btn">JOIN VIP CLUB →</a>
+          </div>
+        </div>
+
+        <!-- Plan 3: Enterprise Agency Done-For-You -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card" style="padding:32px 24px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="color:#888; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">DONE-FOR-YOU PARTNER</div>
+              <h3 style="font-weight:900; font-size:1.5rem; margin:6px 0 16px;">Agency Retainer</h3>
+              <div class="mb-4">
+                <span class="plan-price" id="ent-price" style="font-size:2.5rem; font-weight:900; color:#fff;">$299</span>
+                <span class="plan-cycle" id="ent-cycle" style="color:#888; font-size:0.9rem;">/ month</span>
+                <div id="ent-subtext" style="font-size:0.8rem; color:#EAB308; margin-top:4px;">1,120 SAR • ₹ 24,999 / mo</div>
+              </div>
+              <ul class="product-includes">
+                <li>Complete Done-For-You Funnel Setup</li>
+                <li>Custom cold outreach campaign management</li>
+                <li>300 targeted B2B leads delivered monthly</li>
+                <li>Weekly 1-on-1 strategy call with Founder</li>
+                <li>Dedicated CRM pipeline configuration</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/966548905688?text=Hi%20Ismail!%20I%20want%20to%20book%20the%20Agency%20Retainer%20Plan." target="_blank" class="btn-buy text-center" id="ent-btn">PARTNER WITH US →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Products Grid -->
   <section class="products-grid">
     <div class="container">
@@ -471,6 +566,52 @@
         checkoutModal.show();
       });
     });
+
+    function toggleBillingPlan() {
+      const isYearly = document.getElementById('billingToggle').checked;
+      const labelMonthly = document.getElementById('label-monthly');
+      const labelYearly = document.getElementById('label-yearly');
+
+      if (isYearly) {
+        labelMonthly.style.color = '#888';
+        labelYearly.style.color = '#fff';
+
+        // Yearly Prices (Save 20% / 2 Months Free)
+        document.getElementById('pro-price').textContent = '$290';
+        document.getElementById('pro-cycle').textContent = '/ year';
+        document.getElementById('pro-subtext').textContent = '1,090 SAR • ₹ 24,999 / year (Save 20%)';
+        document.getElementById('pro-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to subscribe to SAMRAT Pro Annual Plan ($290 / 1,090 SAR per year).');
+
+        document.getElementById('vip-price').textContent = '$790';
+        document.getElementById('vip-cycle').textContent = '/ year';
+        document.getElementById('vip-subtext').textContent = '2,950 SAR • ₹ 64,999 / year (Save 20%)';
+        document.getElementById('vip-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to subscribe to SAMRAT VIP Club Annual Plan ($790 / 2,950 SAR per year).');
+
+        document.getElementById('ent-price').textContent = '$2,990';
+        document.getElementById('ent-cycle').textContent = '/ year';
+        document.getElementById('ent-subtext').textContent = '11,200 SAR • ₹ 2,49,999 / year (Save 20%)';
+        document.getElementById('ent-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to book the Agency Retainer Annual Agreement ($2,990 / 11,200 SAR per year).');
+      } else {
+        labelMonthly.style.color = '#fff';
+        labelYearly.style.color = '#888';
+
+        // Monthly Prices
+        document.getElementById('pro-price').textContent = '$29';
+        document.getElementById('pro-cycle').textContent = '/ month';
+        document.getElementById('pro-subtext').textContent = '109 SAR • ₹ 2,499 / mo';
+        document.getElementById('pro-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to subscribe to SAMRAT Pro Monthly Plan ($29 / 109 SAR per month).');
+
+        document.getElementById('vip-price').textContent = '$79';
+        document.getElementById('vip-cycle').textContent = '/ month';
+        document.getElementById('vip-subtext').textContent = '295 SAR • ₹ 6,499 / mo';
+        document.getElementById('vip-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to subscribe to SAMRAT VIP Club Monthly Plan ($79 / 295 SAR per month).');
+
+        document.getElementById('ent-price').textContent = '$299';
+        document.getElementById('ent-cycle').textContent = '/ month';
+        document.getElementById('ent-subtext').textContent = '1,120 SAR • ₹ 24,999 / mo';
+        document.getElementById('ent-btn').href = 'https://wa.me/966548905688?text=' + encodeURIComponent('Marhaba Ismail! 👋 I want to book the Agency Retainer Monthly Plan ($299 / 1,120 SAR per month).');
+      }
+    }
   </script>
 </body>
 </html>
