@@ -36,11 +36,7 @@
           <li class="nav-item"><a class="nav-link" href="${prefix}products.html" style="color:#FFF200 !important;"><i class="fas fa-shopping-bag me-1"></i>STORE</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}calculator.html"><i class="fas fa-calculator me-1"></i>ESTIMATOR</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}meet.html" style="color:#10B981 !important;"><i class="fas fa-video me-1"></i>BOOK A CALL</a></li>
-          <li class="nav-item ms-lg-3">
-            <a href="https://wa.me/966548905688?text=Hello%20Ismail%20Kazia%20%7C%20GALICON!%20I%20would%20like%20to%20discuss%20a%20priority%20project." target="_blank" style="background:#25D366; color:#000; font-weight:800; font-size:0.8rem; padding:8px 16px; border-radius:4px; text-decoration:none; text-transform:uppercase;">
-              WhatsApp Chat
-            </a>
-          </li>
+
         </ul>
       </div>
     </div>
