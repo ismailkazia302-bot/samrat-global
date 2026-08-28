@@ -90,7 +90,15 @@ app.get('/api/admin/leads', (req, res) => {
   }
 });
 
+let runStartupSeoCheck;
+try {
+  runStartupSeoCheck = require('../autonomous_seo_sentinel').runStartupSeoCheck;
+} catch(e) {}
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`[GALICON SECURITY SERVER] Running securely on port ${PORT}`);
+  if (typeof runStartupSeoCheck === 'function') {
+    runStartupSeoCheck();
+  }
 });
