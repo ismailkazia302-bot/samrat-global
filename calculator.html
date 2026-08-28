@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporate Event Budget & 3D Staging Cost Estimator | GALICON GLOBAL</title>
-  <meta name="description" content="Calculate your turnkey corporate event production investment for Bangalore, Riyadh, and Dubai. Instant itemized pricing for 4K curved LED walls, line-array acoustics, and luxury venues.">
+  <title>Interactive B2B Pricing Estimator | GALICON GLOBAL</title>
+  <meta name="description" content="Calculate custom turnkey pricing packages across GALICON divisions. Dynamic multi-currency projections for India, Saudi Arabia, UAE, and global markets.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Poppins', sans-serif; background:#050505; color:#fff; min-height:100vh; line-height:1.6; }
-    .nav-bar { padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.08); background:#000; position:sticky; top:0; z-index:100; }
     .container-calc { max-width:960px; margin:40px auto 60px; padding:0 20px; }
     .calc-card { background:#0d0d0d; border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:36px; box-shadow:0 20px 50px rgba(0,0,0,0.8); }
     .step-title { font-size:1.1rem; font-weight:800; color:#EAB308; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
-    .option-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:28px; }
+    .option-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:28px; }
     .calc-btn { background:#141414; border:1px solid rgba(255,255,255,0.12); color:#bbb; padding:16px; border-radius:12px; font-size:0.9rem; font-weight:600; cursor:pointer; text-align:center; transition:all 0.2s ease; user-select:none; }
     .calc-btn:hover { border-color:#EAB308; color:#fff; }
     .calc-btn.active { background:rgba(234,179,8,0.15); border-color:#EAB308; color:#EAB308; font-weight:800; }
@@ -39,240 +38,245 @@
 
   <div class="container container-calc">
     <div class="text-center mb-5">
-      <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">Interactive Production Calculator</span>
-      <h1 style="font-weight:900; font-size:2.2rem; margin-top:8px;">Instant Corporate Event Budget & 3D Staging Estimator</h1>
+      <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">GALICON GLOBAL ESTIMATOR</span>
+      <h1 style="font-weight:900; font-size:2.2rem; margin-top:8px;">Interactive Unified Pricing Calculator</h1>
       <p style="color:#888; font-size:0.95rem; max-width:650px; margin:0 auto;">
-        Calculate itemized production investments for Bangalore, Riyadh, and Dubai summits. Fixed turnkey rates with direct founder governance under Ismail Kazia.
+        Estimate project scope, custom software builds, automated workflows, and staging setups across our business lifecycle divisions.
       </p>
     </div>
 
     <div class="calc-card">
-      <!-- Step 1: Location -->
-      <div class="step-title"><span>1.</span> Select Event Location</div>
-      <div class="option-grid">
-        <div class="calc-btn active" onclick="setLocation('Bangalore', this, 1.0)">🇮🇳 Bangalore (India)</div>
-        <div class="calc-btn" onclick="setLocation('Riyadh', this, 1.15)">🇸🇦 Riyadh (Saudi Arabia)</div>
-        <div class="calc-btn" onclick="setLocation('Dubai', this, 1.12)">🇦🇪 Dubai (UAE)</div>
-      </div>
+      <!-- Step 1: Division -->
+      <div class="step-title"><span>1.</span> Select Business Division</div>
+      <div class="option-grid" id="division-selector"></div>
 
-      <!-- Step 2: Event Type -->
-      <div class="step-title"><span>2.</span> Select Production Scale</div>
-      <div class="option-grid">
-        <div class="calc-btn active" onclick="setScale('Launchpad', this, 850000, 'Executive Launchpad (250 pax)')">
-          <div style="font-weight:800;">Executive Launchpad</div>
-          <div style="font-size:0.75rem; color:#888; margin-top:4px;">Up to 250 Attendees</div>
-        </div>
-        <div class="calc-btn" onclick="setScale('Flagship', this, 1850000, 'Flagship Tech Summit (500 pax)')">
-          <div style="font-weight:800;">Flagship Tech Summit</div>
-          <div style="font-size:0.75rem; color:#888; margin-top:4px;">Most Popular • 500 Attendees</div>
-        </div>
-        <div class="calc-btn" onclick="setScale('Mega', this, 3800000, 'Imperial Mega Conclave (1000+ pax)')">
-          <div style="font-weight:800;">Imperial Mega Conclave</div>
-          <div style="font-size:0.75rem; color:#888; margin-top:4px;">1,000+ Multi-Day Arena</div>
-        </div>
-      </div>
+      <!-- Step 2: Tier -->
+      <div class="step-title"><span>2.</span> Select Service Package</div>
+      <div class="option-grid" id="tier-selector"></div>
 
-      <!-- Step 3: Technical Upgrades -->
-      <div class="step-title"><span>3.</span> Audio-Visual & Production Upgrades</div>
-      <div id="addons-list">
-        <div class="addon-item selected" onclick="toggleAddon(this, 150000, 'Curved P2.6 UHD LED Wall')">
-          <div>
-            <div style="font-weight:700; color:#fff;">Curved P2.6 Ultra-HD LED Wall (36ft x 12ft)</div>
-            <div style="font-size:0.8rem; color:#888;">7680Hz refresh rate for 4K video recording with zero moiré effect</div>
-          </div>
-          <input type="checkbox" class="addon-checkbox" checked onclick="event.stopPropagation();">
-        </div>
-        <div class="addon-item selected" onclick="toggleAddon(this, 90000, 'Line-Array Audio & Sound Engineer')">
-          <div>
-            <div style="font-weight:700; color:#fff;">Concert-Grade Line-Array Audio & Acoustic Tuning</div>
-            <div style="font-size:0.8rem; color:#888;">Complete delegate ballroom coverage with dedicated sound engineer</div>
-          </div>
-          <input type="checkbox" class="addon-checkbox" checked onclick="event.stopPropagation();">
-        </div>
-        <div class="addon-item" onclick="toggleAddon(this, 120000, '4K Multi-Cam Cinema Live Stream')">
-          <div>
-            <div style="font-weight:700; color:#fff;">4K Cinema Multi-Cam Live Broadcast & Highlight Reel</div>
-            <div style="font-size:0.8rem; color:#888;">3x cinema cameras + crane with same-day executive LinkedIn video edits</div>
-          </div>
-          <input type="checkbox" class="addon-checkbox" onclick="event.stopPropagation();">
-        </div>
-        <div class="addon-item" onclick="toggleAddon(this, 85000, 'Bilingual Interpretation Booths')">
-          <div>
-            <div style="font-weight:700; color:#fff;">Certified Arabic/English Simultaneous Interpretation</div>
-            <div style="font-size:0.8rem; color:#888;">ISO dual-channel booths + wireless multichannel delegate headsets</div>
-          </div>
-          <input type="checkbox" class="addon-checkbox" onclick="event.stopPropagation();">
-        </div>
-      </div>
+      <!-- Step 3: Add-ons -->
+      <div class="step-title"><span>3.</span> Inquire Add-on Capabilities</div>
+      <div id="addons-list" class="mb-4"></div>
 
       <!-- Result Box -->
       <div class="result-box">
-        <div class="currency-switch">
-          <div class="curr-btn active" onclick="setCurrency('INR', this)">₹ INR</div>
-          <div class="curr-btn" onclick="setCurrency('SAR', this)">🇸🇦 SAR</div>
-          <div class="curr-btn" onclick="setCurrency('USD', this)">$ USD</div>
-        </div>
+        <div class="currency-switch" id="currency-selector"></div>
 
-        <div style="font-size:0.85rem; color:#aaa; text-transform:uppercase; letter-spacing:2px; font-weight:700;">Estimated Turnkey Production Investment</div>
-        <div class="price-display" id="total-price-display">₹ <span>10,90,000</span></div>
-        <div style="font-size:0.85rem; color:#888; margin-bottom:24px;" id="breakdown-text">Includes base production + selected technical upgrades for Bangalore</div>
+        <div style="font-size:0.85rem; color:#aaa; text-transform:uppercase; letter-spacing:2px; font-weight:700;">Estimated Turnkey Investment</div>
+        <div class="price-display" id="estimated-price-display">₹ <span>0</span></div>
+        <div style="font-size:0.85rem; color:#888; margin-bottom:24px;" id="billing-type-label">(Fixed Estimate)</div>
 
-        <a href="#" id="whatsapp-quote-btn" target="_blank" class="btn-submit-quote">
-          <span>📲 Lock In 48-Hour 3D Blueprint on WhatsApp</span>
+        <a href="#" id="whatsapp-export-btn" target="_blank" class="btn-submit-quote">
+          <span>📲 Lock In Project Scope on WhatsApp</span>
         </a>
       </div>
     </div>
   </div>
 
-    let currentLocation = 'Bangalore';
-    let activeScale = 'Launchpad';
-    let activeCurrency = 'INR';
-
-    const PRICING_MATRIX = {
-      Bangalore: {
-        defaultCurrency: 'INR',
-        scales: {
-          Launchpad: { price: 850000, name: 'Executive Launchpad (250 pax)' },
-          Flagship: { price: 1850000, name: 'Flagship Tech Summit (500 pax)' },
-          Mega: { price: 3800000, name: 'Imperial Mega Conclave (1000+ pax)' }
+  <script>
+    const GALICON_PRICING_CONFIG = {
+      currencies: {
+        INR: { symbol: "₹", label: "₹ INR", rate: 1 },
+        SAR: { symbol: "ر.س ", label: "🇸🇦 SAR", rate: 0.045 },
+        USD: { symbol: "$", label: "$ USD", rate: 0.012 },
+        AED: { symbol: "AED ", label: "🇦🇪 AED", rate: 0.044 }
+      },
+      divisions: {
+        consulting: {
+          name: "Business & Consulting",
+          tiers: {
+            diagnostic: { name: "Business Diagnostic", basePriceINR: 22000, type: "one-time", desc: "Audit bottlenecks & unit economics" },
+            blueprint: { name: "Business Blueprint (GTM)", basePriceINR: 75000, type: "one-time", desc: "TAM research & GTM execution plan" },
+            advisory: { name: "Strategic Advisory", basePriceINR: 45000, type: "monthly", desc: "Monthly fractional decision support" }
+          }
         },
-        addons: {
-          led: 150000,
-          audio: 90000,
-          livestream: 120000,
-          interpretation: 85000
+        marketing: {
+          name: "Marketing & Growth",
+          tiers: {
+            funnel: { name: "Funnel Setup", basePriceINR: 45000, type: "one-time", desc: "Landing page & pixel/CAPI setups" },
+            performance: { name: "Performance Engine", basePriceINR: 50000, type: "monthly", desc: "Active Meta & Google ad operations" },
+            fullFunnel: { name: "Full-Funnel Growth", basePriceINR: 125000, type: "monthly", desc: "Paid ads + SEO + email automation" }
+          }
+        },
+        technology: {
+          name: "Technology & AI",
+          tiers: {
+            portal: { name: "Commercial Portal", basePriceINR: 85000, type: "one-time", desc: "Custom web platform with mada/Stripe" },
+            aiAutomation: { name: "AI Automation", basePriceINR: 140000, type: "one-time", desc: "Custom AI bot & automated CRM pipeline" },
+            devops: { name: "Tech & DevOps", basePriceINR: 35000, type: "monthly", desc: "Continuous uptime & system security" }
+          }
+        },
+        events: {
+          name: "Experiences & Productions",
+          tiers: {
+            bangalore: { name: "Bangalore Staging", basePriceINR: 175000, type: "project", desc: "HD LED wall backdrop + audio setup" },
+            dubai: { name: "Dubai Summit", basePriceINR: 500000, type: "project", desc: "Curved LED stage + translation booths" },
+            riyadh: { name: "Riyadh VIP Gala", basePriceINR: 1000000, type: "project", desc: "VVIP protocol + exhibition booths" }
+          }
         }
       },
-      Riyadh: {
-        defaultCurrency: 'SAR',
-        scales: {
-          Launchpad: { price: 38500, name: 'Executive Launchpad (250 pax)' },
-          Flagship: { price: 83500, name: 'Flagship Tech Summit (500 pax)' },
-          Mega: { price: 170000, name: 'Imperial Mega Conclave (1000+ pax)' }
-        },
-        addons: {
-          led: 6800,
-          audio: 4100,
-          livestream: 5400,
-          interpretation: 3800
-        }
-      },
-      Dubai: {
-        defaultCurrency: 'SAR', // Map AED to SAR selector or handle conversion
-        scales: {
-          Launchpad: { price: 37500, name: 'Executive Launchpad (250 pax)' },
-          Flagship: { price: 81500, name: 'Flagship Tech Summit (500 pax)' },
-          Mega: { price: 167000, name: 'Imperial Mega Conclave (1000+ pax)' }
-        },
-        addons: {
-          led: 6600,
-          audio: 4000,
-          livestream: 5300,
-          interpretation: 3700
-        }
+      addOns: {
+        zatcaKit: { name: "ZATCA Phase 2 Kit", basePriceINR: 22000, desc: "E-invoicing compliance solution" },
+        crmSync: { name: "CRM Sync Daemon", basePriceINR: 35000, desc: "Lead rating webhook sync pipeline" },
+        translationBooths: { name: "Translation Booths", basePriceINR: 65000, desc: "ISO simultaneous interpreter cabins" },
+        videoProduction: { name: "Video Production", basePriceINR: 45000, desc: "4K aftermovie & aerial drone coverage" }
       }
     };
 
-    const FX_TO_INR = {
-      INR: 1,
-      SAR: 22.5,
-      USD: 84.5
-    };
-
-    function setLocation(loc, elem) {
-      document.querySelectorAll('.calc-btn').forEach(b => {
-        if (b.innerText.includes('Bangalore') || b.innerText.includes('Riyadh') || b.innerText.includes('Dubai')) {
-          b.classList.remove('active');
-        }
-      });
-      elem.classList.add('active');
-      currentLocation = loc;
-      
-      // Auto switch active currency to match location default
-      const defaultCurr = PRICING_MATRIX[loc].defaultCurrency;
-      activeCurrency = defaultCurr;
-      
-      document.querySelectorAll('.curr-btn').forEach(b => {
-        b.classList.toggle('active', b.innerText.includes(defaultCurr));
-      });
-
-      updateTotal();
-    }
-
-    function setScale(scale, elem) {
-      document.querySelectorAll('.calc-btn').forEach(b => {
-        if (b.innerText.includes('Launchpad') || b.innerText.includes('Flagship') || b.innerText.includes('Mega')) {
-          b.classList.remove('active');
-        }
-      });
-      elem.classList.add('active');
-      activeScale = scale;
-      updateTotal();
-    }
-
-    function toggleAddon(elem) {
-      elem.classList.toggle('selected');
-      const cb = elem.querySelector('.addon-checkbox');
-      if (cb) cb.checked = elem.classList.contains('selected');
-      updateTotal();
-    }
-
-    function setCurrency(curr, elem) {
-      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
-      elem.classList.add('active');
-      activeCurrency = curr;
-      updateTotal();
-    }
-
-    function updateTotal() {
-      const config = PRICING_MATRIX[currentLocation];
-      const scaleInfo = config.scales[activeScale];
-      
-      let basePrice = scaleInfo.price;
-      let addonsTotal = 0;
-      
-      const addonItems = document.querySelectorAll('.addon-item');
-      if (addonItems[0] && addonItems[0].classList.contains('selected')) addonsTotal += config.addons.led;
-      if (addonItems[1] && addonItems[1].classList.contains('selected')) addonsTotal += config.addons.audio;
-      if (addonItems[2] && addonItems[2].classList.contains('selected')) addonsTotal += config.addons.livestream;
-      if (addonItems[3] && addonItems[3].classList.contains('selected')) addonsTotal += config.addons.interpretation;
-
-      const totalLocal = basePrice + addonsTotal;
-      const localCurrencyCode = currentLocation === 'Bangalore' ? 'INR' : 'SAR';
-
-      // Convert local total to target activeCurrency display
-      let displayPrice = 0;
-      if (activeCurrency === localCurrencyCode) {
-        displayPrice = totalLocal;
-      } else {
-        // Convert to INR first, then to target currency
-        const totalInINR = totalLocal * FX_TO_INR[localCurrencyCode];
-        displayPrice = Math.round(totalInINR / FX_TO_INR[activeCurrency]);
+    class GaliconEstimator {
+      constructor() {
+        this.selectedCurrency = "INR";
+        this.selectedDivision = "marketing";
+        this.selectedTier = "performance";
+        this.selectedAddOns = new Set();
       }
 
-      const displayElem = document.getElementById('total-price-display');
-      let formattedPrice = '';
-      if (activeCurrency === 'INR') {
-        formattedPrice = `₹ <span>${displayPrice.toLocaleString('en-IN')}</span>`;
-      } else if (activeCurrency === 'SAR') {
-        formattedPrice = `<span>${displayPrice.toLocaleString('en-US')}</span> SAR`;
-      } else if (activeCurrency === 'USD') {
-        formattedPrice = `$ <span>${displayPrice.toLocaleString('en-US')}</span>`;
+      setCurrency(currencyCode) {
+        if (GALICON_PRICING_CONFIG.currencies[currencyCode]) {
+          this.selectedCurrency = currencyCode;
+          this.render();
+        }
       }
 
-      displayElem.innerHTML = formattedPrice;
+      setDivisionAndTier(divisionKey, tierKey) {
+        this.selectedDivision = divisionKey;
+        this.selectedTier = tierKey;
+        this.render();
+      }
 
-      // Update Breakdown Text
-      document.getElementById('breakdown-text').innerText = `Includes base production + selected technical upgrades for ${currentLocation}`;
+      toggleAddOn(addOnKey) {
+        if (this.selectedAddOns.has(addOnKey)) {
+          this.selectedAddOns.delete(addOnKey);
+        } else {
+          this.selectedAddOns.add(addOnKey);
+        }
+        this.render();
+      }
 
-      // Update WhatsApp Link redirect
-      const msg = encodeURIComponent(`Hi Ismail! I used the GALICON Production Estimator.\n\n📍 Location: ${currentLocation}\n🎯 Package: ${scaleInfo.name}\n💰 Estimated Budget: ${displayPrice.toLocaleString()} ${activeCurrency}\n\nPlease send over the 48-hour 3D stage blueprint!`);
-      const targetNumber = currentLocation === 'Bangalore' ? '916363962640' : '966548905688';
-      document.getElementById('whatsapp-quote-btn').href = `https://wa.me/${targetNumber}?text=${msg}`;
+      calculateTotal() {
+        const curr = GALICON_PRICING_CONFIG.currencies[this.selectedCurrency];
+        const division = GALICON_PRICING_CONFIG.divisions[this.selectedDivision];
+        const tier = division.tiers[this.selectedTier];
+
+        let totalINR = tier.basePriceINR;
+
+        this.selectedAddOns.forEach(addOnKey => {
+          totalINR += GALICON_PRICING_CONFIG.addOns[addOnKey].basePriceINR;
+        });
+
+        const convertedPrice = Math.round(totalINR * curr.rate);
+        return {
+          formatted: `${curr.symbol}${convertedPrice.toLocaleString()}`,
+          numeric: convertedPrice,
+          type: tier.type,
+          tierName: tier.name,
+          divisionName: division.name
+        };
+      }
+
+      generateWhatsAppUrl() {
+        const total = this.calculateTotal();
+        const addOnNames = Array.from(this.selectedAddOns)
+          .map(k => GALICON_PRICING_CONFIG.addOns[k].name)
+          .join(", ") || "None";
+          
+        const targetNumber = this.selectedCurrency === "INR" ? "916363962640" : "966548905688";
+
+        const message = 
+          `*GALICON GLOBAL - Estimate Inquiry*%0A` +
+          `--------------------------------%0A` +
+          `*Division:* ${total.divisionName}%0A` +
+          `*Package:* ${total.tierName} (${total.type})%0A` +
+          `*Selected Add-ons:* ${addOnNames}%0A` +
+          `*Estimated Price:* ${total.formatted}%0A` +
+          `--------------------------------%0A` +
+          `Hello Ismail, I would like to confirm project scope and schedule a strategy onboarding session.`;
+
+        return `https://wa.me/${targetNumber}?text=${message}`;
+      }
+
+      render() {
+        const total = this.calculateTotal();
+        
+        // Render Price and Labels
+        const priceDisplay = document.getElementById("estimated-price-display");
+        const billingTypeDisplay = document.getElementById("billing-type-label");
+        const waButton = document.getElementById("whatsapp-export-btn");
+
+        if (priceDisplay) priceDisplay.innerText = total.formatted;
+        if (billingTypeDisplay) billingTypeDisplay.innerText = total.type === "monthly" ? "/ month" : "(Fixed Estimate)";
+        if (waButton) waButton.href = this.generateWhatsAppUrl();
+
+        // Render Divisions Selector
+        const divSelector = document.getElementById("division-selector");
+        divSelector.innerHTML = "";
+        Object.keys(GALICON_PRICING_CONFIG.divisions).forEach(k => {
+          const divInfo = GALICON_PRICING_CONFIG.divisions[k];
+          const btn = document.createElement("div");
+          btn.className = `calc-btn ${k === this.selectedDivision ? 'active' : ''}`;
+          btn.innerText = divInfo.name;
+          btn.onclick = () => {
+            // Pick first tier of target division
+            const defaultTier = Object.keys(divInfo.tiers)[0];
+            this.setDivisionAndTier(k, defaultTier);
+          };
+          divSelector.appendChild(btn);
+        });
+
+        // Render Tiers Selector
+        const tierSelector = document.getElementById("tier-selector");
+        tierSelector.innerHTML = "";
+        const currentTiers = GALICON_PRICING_CONFIG.divisions[this.selectedDivision].tiers;
+        Object.keys(currentTiers).forEach(tk => {
+          const tierInfo = currentTiers[tk];
+          const btn = document.createElement("div");
+          btn.className = `calc-btn ${tk === this.selectedTier ? 'active' : ''}`;
+          btn.innerHTML = `
+            <div style="font-weight:800;">${tierInfo.name}</div>
+            <div style="font-size:0.75rem; color:#888; margin-top:4px;">${tierInfo.desc}</div>
+          `;
+          btn.onclick = () => this.setDivisionAndTier(this.selectedDivision, tk);
+          tierSelector.appendChild(btn);
+        });
+
+        // Render Addons
+        const addonsList = document.getElementById("addons-list");
+        addonsList.innerHTML = "";
+        Object.keys(GALICON_PRICING_CONFIG.addOns).forEach(ak => {
+          const addonInfo = GALICON_PRICING_CONFIG.addOns[ak];
+          const isSelected = this.selectedAddOns.has(ak);
+          const item = document.createElement("div");
+          item.className = `addon-item ${isSelected ? 'selected' : ''}`;
+          item.innerHTML = `
+            <div>
+              <div style="font-weight:700; color:#fff;">${addonInfo.name}</div>
+              <div style="font-size:0.8rem; color:#888;">${addonInfo.desc}</div>
+            </div>
+            <input type="checkbox" class="addon-checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); window.galiconCalc.toggleAddOn('${ak}')">
+          `;
+          item.onclick = () => this.toggleAddOn(ak);
+          addonsList.appendChild(item);
+        });
+
+        // Render Currencies Switcher
+        const currSelector = document.getElementById("currency-selector");
+        currSelector.innerHTML = "";
+        Object.keys(GALICON_PRICING_CONFIG.currencies).forEach(ck => {
+          const currInfo = GALICON_PRICING_CONFIG.currencies[ck];
+          const btn = document.createElement("div");
+          btn.className = `curr-btn ${ck === this.selectedCurrency ? 'active' : ''}`;
+          btn.innerText = currInfo.label;
+          btn.onclick = () => this.setCurrency(ck);
+          currSelector.appendChild(btn);
+        });
+      }
     }
 
-    // Initialize
-    updateTotal();
+    // Window load initializer
+    document.addEventListener("DOMContentLoaded", () => {
+      window.galiconCalc = new GaliconEstimator();
+      window.galiconCalc.render();
+    });
   </script>
 
   <div id="footer-placeholder"></div>
