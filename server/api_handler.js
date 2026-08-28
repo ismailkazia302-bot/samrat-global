@@ -6,7 +6,14 @@ const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: ['https://galiconglobal.com', 'http://localhost:3000', 'https://ismailkazia302-bot.github.io'] }));
+app.use(cors({ origin: [
+  'https://galiconglobal.com',
+  'https://ismailkazia302-bot.github.io',
+  'http://localhost:3000',
+  'http://localhost:8000',
+  'http://localhost:8080',
+  'http://127.0.0.1:5500'
+] }));
 
 // Environment Variables (Store in .env file)
 const ADMIN_SECRET_KEY = process.env.JWT_SECRET || "galicon_secure_jwt_secret_2026";
