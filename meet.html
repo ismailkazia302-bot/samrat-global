@@ -8,30 +8,138 @@
   <meta property="og:title" content="Schedule an Executive Meeting with Ismail Kazia | GALICON">
   <meta property="og:description" content="Book a 1-on-1 Strategy Consultation for Bangalore corporate events and Saudi & UAE growth retainers.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body { font-family:'Poppins',sans-serif; background:#000000; color:#FFFFFF; line-height:1.6; }
-    .hero-meet { text-align:center; padding:50px 20px 40px; }
-    .hero-meet h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:12px; }
-    .hero-meet p { color:#aaa; max-width:650px; margin:0 auto 24px; font-size:1.02rem; }
-    .badge-tag { background:rgba(234,179,8,0.15); color:#EAB308; font-size:0.75rem; font-weight:800; padding:4px 14px; border-radius:20px; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:12px; }
+    .hero-meet { text-align:center; padding:40px 15px 30px; }
+    .hero-meet h1 { font-size:2.5rem; font-weight:900; line-height:1.2; margin-bottom:12px; }
+    .hero-meet p { color:#cbd5e1; max-width:700px; margin:0 auto 20px; font-size:1.05rem; }
+    .badge-tag { background:rgba(234,179,8,0.15); color:#EAB308; font-size:0.8rem; font-weight:800; padding:6px 16px; border-radius:30px; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:12px; }
     
-    /* Gated Qualification Card & Slot Selector */
-    .booking-card { background:#0f172a; border:2px solid rgba(234,179,8,0.6); border-radius:18px; padding:32px; box-shadow:0 25px 60px rgba(0,0,0,0.9); max-width:700px; margin:0 auto; }
-    .gate-input, .gate-select { background:#060b17 !important; border:1px solid rgba(255,255,255,0.15) !important; color:#fff !important; padding:12px 16px; border-radius:10px; font-size:0.95rem; }
-    .gate-input:focus, .gate-select:focus { border-color:#eab308 !important; box-shadow:0 0 15px rgba(234,179,8,0.25) !important; }
+    /* Expansive Big Screen Card Container (1100px) */
+    .widescreen-booking-card { 
+      background: #0d1322; 
+      border: 2px solid rgba(234,179,8,0.5); 
+      border-radius: 20px; 
+      box-shadow: 0 30px 80px rgba(0,0,0,0.95), 0 0 30px rgba(234,179,8,0.1); 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      overflow: hidden; 
+    }
     
-    /* Slot Picker Controls */
-    .date-pill { background:#060b17; border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; padding:10px 14px; border-radius:12px; cursor:pointer; text-align:center; transition:all 0.2s; min-width:90px; }
-    .date-pill.active { background:#eab308; color:#000; font-weight:800; border-color:#eab308; box-shadow:0 0 15px rgba(234,179,8,0.4); }
-    .date-pill:hover:not(.active) { border-color:#eab308; color:#fff; transform:translateY(-2px); }
+    .sidebar-panel {
+      background: #070b14;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 36px 28px;
+    }
     
-    .time-slot { background:#060b17; border:1px solid rgba(255,255,255,0.12); color:#cbd5e1; padding:12px 14px; border-radius:10px; cursor:pointer; text-align:center; transition:all 0.2s; font-size:0.9rem; font-weight:600; }
-    .time-slot.active { background:#10b981; color:#000; font-weight:800; border-color:#10b981; box-shadow:0 0 15px rgba(16,185,129,0.4); }
-    .time-slot:hover:not(.active) { border-color:#10b981; color:#fff; transform:scale(1.02); }
+    .main-panel {
+      padding: 36px 32px;
+      background: #0d1322;
+    }
     
-    .step-badge { background:#eab308; color:#000; font-weight:900; font-size:0.75rem; padding:3px 8px; border-radius:6px; margin-right:6px; }
+    .avatar-ik {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      color: #000;
+      font-weight: 900;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(234,179,8,0.4);
+    }
+    
+    .gate-input, .gate-select { 
+      background: #050811 !important; 
+      border: 1px solid rgba(255,255,255,0.15) !important; 
+      color: #fff !important; 
+      padding: 14px 18px; 
+      border-radius: 10px; 
+      font-size: 0.95rem; 
+    }
+    .gate-input:focus, .gate-select:focus { 
+      border-color: #eab308 !important; 
+      box-shadow: 0 0 15px rgba(234,179,8,0.3) !important; 
+    }
+    
+    /* Big Screen Slot Picker Controls */
+    .date-pill { 
+      background: #050811; 
+      border: 1px solid rgba(255,255,255,0.15); 
+      color: #cbd5e1; 
+      padding: 14px 18px; 
+      border-radius: 14px; 
+      cursor: pointer; 
+      text-align: center; 
+      transition: all 0.2s; 
+      flex: 1;
+      min-width: 90px;
+    }
+    .date-pill.active { 
+      background: #eab308; 
+      color: #000; 
+      font-weight: 800; 
+      border-color: #eab308; 
+      box-shadow: 0 0 20px rgba(234,179,8,0.45); 
+      transform: translateY(-2px);
+    }
+    .date-pill:hover:not(.active) { 
+      border-color: #eab308; 
+      color: #fff; 
+      transform: translateY(-2px); 
+    }
+    
+    .time-slot { 
+      background: #050811; 
+      border: 1px solid rgba(255,255,255,0.12); 
+      color: #cbd5e1; 
+      padding: 14px 16px; 
+      border-radius: 12px; 
+      cursor: pointer; 
+      text-align: center; 
+      transition: all 0.2s; 
+      font-size: 0.95rem; 
+      font-weight: 600; 
+    }
+    .time-slot.active { 
+      background: #10b981; 
+      color: #000; 
+      font-weight: 800; 
+      border-color: #10b981; 
+      box-shadow: 0 0 20px rgba(16,185,129,0.45); 
+    }
+    .time-slot:hover:not(.active) { 
+      border-color: #10b981; 
+      color: #fff; 
+      transform: scale(1.02); 
+    }
+    
+    .step-badge { 
+      background: #eab308; 
+      color: #000; 
+      font-weight: 900; 
+      font-size: 0.75rem; 
+      padding: 4px 10px; 
+      border-radius: 6px; 
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .feature-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+    .feature-check i {
+      color: #10b981;
+    }
   </style>
 </head>
 <body>
@@ -43,135 +151,192 @@
     <span class="badge-tag">🤝 1-ON-1 EXECUTIVE STRATEGY SESSION (30 MIN)</span>
     <h1>Schedule a Priority Call with<br><span style="color:#EAB308;">Founder & CEO Ismail Kazia</span></h1>
     <p>
-      Discuss high-ticket Bangalore tech events, Saudi Vision 2030 corporate conclaves, or GCC growth marketing retainers under direct founder leadership.
+      Instant booking for high-ticket Bangalore tech events, Saudi Vision 2030 corporate conclaves, or GCC growth marketing retainers under direct founder leadership.
     </p>
 
-    <!-- STEP 1: Qualification Container -->
-    <div id="step-1-qualification" class="booking-card text-start">
-      <div class="text-center mb-4">
-        <h3 class="fw-bold text-white mb-2"><span class="step-badge">STEP 1</span>Executive Strategy Discovery Form</h3>
-        <p class="text-muted small mb-0">Please share a brief snapshot of your requirements to unlock the executive calendar.</p>
-      </div>
-
-      <form id="qualificationForm" onsubmit="handleStep1Submit(event)">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label small text-secondary fw-bold">FULL NAME *</label>
-            <input type="text" id="meet-name" class="form-control gate-input" placeholder="e.g. Arjun Mehta" required>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label small text-secondary fw-bold">WORK EMAIL *</label>
-            <input type="email" id="meet-email" class="form-control gate-input" placeholder="e.g. arjun@infosys.com" required>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label small text-secondary fw-bold">WHATSAPP / PHONE NUMBER *</label>
-            <input type="tel" id="meet-phone" class="form-control gate-input" placeholder="e.g. +91 98765 43210" required>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label small text-secondary fw-bold">TARGET DIVISION *</label>
-            <select id="meet-division" class="form-select gate-select" required>
-              <option value="" disabled selected>Select Division</option>
-              <option value="Consulting">Consulting & Strategy (/start/)</option>
-              <option value="Marketing">Marketing & Growth (/grow/)</option>
-              <option value="Technology">Technology & AI Automation (/technology/)</option>
-              <option value="Events">Staging & Experiences (/events/)</option>
-            </select>
-          </div>
-          <div class="col-12">
-            <label class="form-label small text-secondary fw-bold">ESTIMATED MONTHLY / PROJECT BUDGET *</label>
-            <select id="meet-budget" class="form-select gate-select" required>
-              <option value="" disabled selected>Select Budget Range</option>
-              <option value="<$1,500">&lt; $1,500 (Basic Setup & Audit)</option>
-              <option value="$1,500–$5,000">$1,500 – $5,000 (Growth Scaling)</option>
-              <option value="$5,000+">$5,000+ (Enterprise Overhaul & Staging)</option>
-            </select>
-          </div>
-          <div class="col-12">
-            <label class="form-label small text-secondary fw-bold">PROJECT NOTES / BRIEF REQUIREMENTS (OPTIONAL)</label>
-            <textarea id="meet-notes" class="form-control gate-input" rows="2" placeholder="Briefly describe your goals or event scale..."></textarea>
-          </div>
-          <div class="col-12 mt-4">
-            <button type="submit" class="btn btn-warning w-100 py-3 fw-bold text-dark" style="font-size:1.05rem; letter-spacing:0.5px; border-radius:10px;">
-              Unlock & Select Strategy Slot ➔
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <!-- STEP 2: Native Interactive VIP Slot Picker -->
-    <div id="step-2-scheduler" class="booking-card text-start" style="display:none;">
-      <div class="text-center mb-4">
-        <h3 class="fw-bold text-white mb-2"><span class="step-badge">STEP 2</span>Select Your Executive Strategy Slot</h3>
-        <p class="text-muted small mb-0">Direct 30-Min Discovery with Founder Ismail Kazia • Google Meet / Phone</p>
-      </div>
-
-      <!-- Date Selector -->
-      <div class="mb-4">
-        <label class="form-label small text-secondary fw-bold mb-2">1. CHOOSE A DATE (NEXT WEEK):</label>
-        <div class="d-flex gap-2 overflow-auto pb-2" id="dateTabsContainer">
-          <!-- Injected dynamically -->
-        </div>
-      </div>
-
-      <!-- Time Slots Grid -->
-      <div class="mb-4">
-        <label class="form-label small text-secondary fw-bold mb-2">2. CHOOSE TIME SLOT (IST & KSA PEGGED):</label>
-        <div class="row g-2" id="timeSlotsContainer">
-          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '02:00 PM IST (11:30 AM KSA)')">02:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">11:30 AM KSA</small></div></div>
-          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '03:00 PM IST (12:30 PM KSA)')">03:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">12:30 PM KSA</small></div></div>
-          <div class="col-6 col-md-4"><div class="time-slot active" onclick="selectTimeSlot(this, '04:30 PM IST (02:00 PM KSA)')">04:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">02:00 PM KSA</small></div></div>
-          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '05:30 PM IST (03:00 PM KSA)')">05:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">03:00 PM KSA</small></div></div>
-          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '06:30 PM IST (04:00 PM KSA)')">06:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">04:00 PM KSA</small></div></div>
-          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '08:00 PM IST (05:30 PM KSA)')">08:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">05:30 PM KSA</small></div></div>
-        </div>
-      </div>
-
-      <div class="p-3 mb-4 rounded-3 border border-secondary" style="background:#060b17;">
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <!-- Expansive 2-Column Widescreen Card -->
+    <div class="widescreen-booking-card text-start my-4">
+      <div class="row g-0">
+        
+        <!-- Left Sidebar: Host & Meeting Details -->
+        <div class="col-lg-4 sidebar-panel d-flex flex-column justify-content-between">
           <div>
-            <div class="text-white fw-bold" id="selectedSummaryLabel">Selected: Monday, Sept 1 • 04:30 PM IST</div>
-            <div class="text-muted small">Location: Google Meet / Phone Video Call (30 Mins)</div>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="avatar-ik">IK</div>
+              <div>
+                <h5 class="fw-bold text-white mb-0">Ismail Kazia</h5>
+                <span class="text-warning small fw-bold">Founder & CEO | GALICON GLOBAL</span>
+              </div>
+            </div>
+
+            <h4 class="fw-bold text-white mb-3">1-on-1 Executive Strategy Discovery</h4>
+
+            <div class="d-flex flex-column gap-2 mb-4 text-muted small">
+              <div><i class="fas fa-clock text-warning me-2"></i> <strong>Duration:</strong> 30 Minutes</div>
+              <div><i class="fas fa-video text-warning me-2"></i> <strong>Format:</strong> Google Meet / Direct Video</div>
+              <div><i class="fas fa-globe text-warning me-2"></i> <strong>Timezones:</strong> IST (India) & KSA (Saudi Arabia)</div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.08);">
+
+            <div class="mt-3">
+              <h6 class="text-white fw-bold small text-uppercase mb-3" style="letter-spacing:1px;">What We Will Cover:</h6>
+              <div class="feature-check"><i class="fas fa-check-circle"></i> Project Scope & Objectives Audit</div>
+              <div class="feature-check"><i class="fas fa-check-circle"></i> Budget Allocation & Pricing Framework</div>
+              <div class="feature-check"><i class="fas fa-check-circle"></i> Fast-Track 48-Hr Delivery Roadmap</div>
+              <div class="feature-check"><i class="fas fa-check-circle"></i> Direct Cross-Border Settlement (INR/SAR/AED)</div>
+            </div>
           </div>
-          <span class="badge bg-success text-dark px-3 py-2 fw-bold">CONFIRMED ACCESS</span>
+
+          <div class="mt-4 pt-3" style="border-top:1px solid rgba(255,255,255,0.08);">
+            <div class="text-muted small">
+              <i class="fas fa-shield-alt text-success me-1"></i> Gated Enterprise Confidentiality Guaranteed
+            </div>
+          </div>
         </div>
-      </div>
 
-      <button type="button" class="btn btn-warning w-100 py-3 fw-bold text-dark mb-3" style="font-size:1.05rem; border-radius:10px;" onclick="confirmFinalBooking()">
-        Confirm & Book Strategy Session ➔
-      </button>
+        <!-- Right Main Panel: Step 1 Form OR Step 2 Calendar -->
+        <div class="col-lg-8 main-panel">
+          
+          <!-- STEP 1: Qualification Container -->
+          <div id="step-1-qualification">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+              <div>
+                <span class="step-badge mb-2 d-inline-block">STEP 1 OF 2</span>
+                <h4 class="fw-bold text-white mb-0">Executive Discovery Briefing</h4>
+              </div>
+              <span class="text-muted small">Takes &lt; 30 seconds</span>
+            </div>
 
-      <div class="text-center">
-        <a href="https://calendly.com/ismailkazia302" target="_blank" class="text-muted small text-decoration-none">
-          <i class="fas fa-external-link-alt me-1"></i> Prefer standard Calendly window? Open full page ↗
-        </a>
-      </div>
-    </div>
+            <form id="qualificationForm" onsubmit="handleStep1Submit(event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small text-secondary fw-bold">FULL NAME *</label>
+                  <input type="text" id="meet-name" class="form-control gate-input" placeholder="e.g. Arjun Mehta" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-secondary fw-bold">WORK EMAIL *</label>
+                  <input type="email" id="meet-email" class="form-control gate-input" placeholder="e.g. arjun@infosys.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-secondary fw-bold">WHATSAPP / PHONE NUMBER *</label>
+                  <input type="tel" id="meet-phone" class="form-control gate-input" placeholder="e.g. +91 98765 43210" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-secondary fw-bold">TARGET DIVISION *</label>
+                  <select id="meet-division" class="form-select gate-select" required>
+                    <option value="" disabled selected>Select Division</option>
+                    <option value="Consulting">Business & Consulting (/start/)</option>
+                    <option value="Marketing">Performance Marketing & Growth (/grow/)</option>
+                    <option value="Technology">Technology & AI Automation (/technology/)</option>
+                    <option value="Events">Experiences & Staging (/events/)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small text-secondary fw-bold">ESTIMATED PROJECT / RETAINER BUDGET *</label>
+                  <select id="meet-budget" class="form-select gate-select" required>
+                    <option value="" disabled selected>Select Budget Range</option>
+                    <option value="<$1,500">&lt; $1,500 (Basic Diagnostic & Funnel)</option>
+                    <option value="$1,500–$5,000">$1,500 – $5,000 (Growth Scaling & AI Web Portal)</option>
+                    <option value="$5,000+">$5,000+ (Turnkey Summit Staging & Enterprise Advisory)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small text-secondary fw-bold">PROJECT NOTES / BRIEF DESCRIPTION (OPTIONAL)</label>
+                  <textarea id="meet-notes" class="form-control gate-input" rows="2" placeholder="Briefly describe your objectives or event requirements..."></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-warning w-100 py-3 fw-bold text-dark" style="font-size:1.05rem; border-radius:10px;">
+                    Unlock Executive Calendar ➔
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
 
-    <!-- STEP 3: Booking Confirmed Screen -->
-    <div id="step-3-confirmed" class="booking-card text-center" style="display:none;">
-      <div class="my-3">
-        <i class="fas fa-check-circle text-success" style="font-size:4rem;"></i>
-      </div>
-      <h2 class="text-white fw-bold mb-2">Strategy Discovery Confirmed! 🎉</h2>
-      <p class="text-muted mb-4">Founder Ismail Kazia has received your briefing. A calendar invitation and Google Meet link are ready.</p>
+          <!-- STEP 2: Big Screen Native Interactive Slot Picker -->
+          <div id="step-2-scheduler" style="display:none;">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+              <div>
+                <span class="step-badge mb-2 d-inline-block" style="background:#10b981;">STEP 2 OF 2</span>
+                <h4 class="fw-bold text-white mb-0">Select Date & Time (Next Week)</h4>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary text-white" onclick="backToStep1()">
+                <i class="fas fa-edit me-1"></i> Edit Briefing
+              </button>
+            </div>
 
-      <div class="p-4 rounded-3 text-start mb-4 border border-warning" style="background:#060b17;">
-        <div class="row g-2">
-          <div class="col-sm-6"><span class="text-secondary small">ATTENDEE:</span> <strong class="text-white d-block" id="confirmName"></strong></div>
-          <div class="col-sm-6"><span class="text-secondary small">EMAIL:</span> <strong class="text-white d-block" id="confirmEmail"></strong></div>
-          <div class="col-sm-6"><span class="text-secondary small">DATE & TIME:</span> <strong class="text-warning d-block" id="confirmSlot"></strong></div>
-          <div class="col-sm-6"><span class="text-secondary small">HOST:</span> <strong class="text-white d-block">Ismail Kazia, Founder & CEO</strong></div>
+            <!-- Date Selector (Wide Desktop Tabs) -->
+            <div class="mb-4">
+              <label class="form-label small text-secondary fw-bold mb-2">1. SELECT DATE:</label>
+              <div class="d-flex gap-2 flex-wrap" id="dateTabsContainer">
+                <!-- Dynamically Injected -->
+              </div>
+            </div>
+
+            <!-- Time Slots Grid -->
+            <div class="mb-4">
+              <label class="form-label small text-secondary fw-bold mb-2">2. SELECT TIME SLOT (IST & KSA SYNCHRONIZED):</label>
+              <div class="row g-2" id="timeSlotsContainer">
+                <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '02:00 PM IST (11:30 AM KSA)')">02:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">11:30 AM KSA</small></div></div>
+                <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '03:00 PM IST (12:30 PM KSA)')">03:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">12:30 PM KSA</small></div></div>
+                <div class="col-6 col-sm-4"><div class="time-slot active" onclick="selectTimeSlot(this, '04:30 PM IST (02:00 PM KSA)')">04:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">02:00 PM KSA</small></div></div>
+                <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '05:30 PM IST (03:00 PM KSA)')">05:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">03:00 PM KSA</small></div></div>
+                <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '06:30 PM IST (04:00 PM KSA)')">06:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">04:00 PM KSA</small></div></div>
+                <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '08:00 PM IST (05:30 PM KSA)')">08:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">05:30 PM KSA</small></div></div>
+              </div>
+            </div>
+
+            <!-- Confirmation Strip -->
+            <div class="p-3 mb-4 rounded-3 border border-secondary" style="background:#050811;">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                  <div class="text-white fw-bold" id="selectedSummaryLabel">Selected: Monday, Sept 1 • 04:30 PM IST</div>
+                  <div class="text-muted small">Platform: Google Meet Video Call (30 Mins)</div>
+                </div>
+                <span class="badge bg-success text-dark px-3 py-2 fw-bold">SLOT AVAILABLE</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-warning w-100 py-3 fw-bold text-dark mb-3" style="font-size:1.1rem; border-radius:10px;" onclick="confirmFinalBooking()">
+              Confirm & Book Strategy Session ➔
+            </button>
+
+            <div class="text-center">
+              <a href="https://calendly.com/ismailkazia302" target="_blank" class="text-muted small text-decoration-none">
+                <i class="fas fa-external-link-alt me-1"></i> Prefer standard Calendly window? Open full page ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- STEP 3: Booking Confirmed Screen -->
+          <div id="step-3-confirmed" style="display:none;" class="text-center py-4">
+            <div class="my-3">
+              <i class="fas fa-check-circle text-success" style="font-size:4.5rem;"></i>
+            </div>
+            <h2 class="text-white fw-bold mb-2">Strategy Discovery Confirmed! 🎉</h2>
+            <p class="text-muted mb-4">Founder Ismail Kazia has received your briefing. A calendar invitation and Google Meet link are ready.</p>
+
+            <div class="p-4 rounded-3 text-start mb-4 border border-warning" style="background:#050811;">
+              <div class="row g-3">
+                <div class="col-sm-6"><span class="text-secondary small">ATTENDEE:</span> <strong class="text-white d-block" id="confirmName"></strong></div>
+                <div class="col-sm-6"><span class="text-secondary small">EMAIL:</span> <strong class="text-white d-block" id="confirmEmail"></strong></div>
+                <div class="col-sm-6"><span class="text-secondary small">DATE & TIME:</span> <strong class="text-warning d-block" id="confirmSlot"></strong></div>
+                <div class="col-sm-6"><span class="text-secondary small">HOST:</span> <strong class="text-white d-block">Ismail Kazia, Founder & CEO</strong></div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a href="#" id="gcalBtn" target="_blank" class="btn btn-primary fw-bold py-3 px-4" style="border-radius:10px;">
+                <i class="fab fa-google me-2"></i> Add to Google Calendar
+              </a>
+              <a href="#" id="confirmWaBtn" target="_blank" class="btn btn-success fw-bold py-3 px-4" style="border-radius:10px;">
+                <i class="fab fa-whatsapp me-2"></i> Instant WhatsApp Confirmation
+              </a>
+            </div>
+          </div>
+
         </div>
-      </div>
-
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="#" id="gcalBtn" target="_blank" class="btn btn-primary fw-bold py-3 px-4" style="border-radius:10px;">
-          <i class="fab fa-google me-2"></i> Add to Google Calendar
-        </a>
-        <a href="#" id="confirmWaBtn" target="_blank" class="btn btn-success fw-bold py-3 px-4" style="border-radius:10px;">
-          <i class="fab fa-whatsapp me-2"></i> Instant WhatsApp Confirmation
-        </a>
       </div>
     </div>
 
@@ -230,6 +395,11 @@
       }
     }
 
+    function backToStep1() {
+      document.getElementById('step-2-scheduler').style.display = 'none';
+      document.getElementById('step-1-qualification').style.display = 'block';
+    }
+
     async function handleStep1Submit(event) {
       event.preventDefault();
 
@@ -267,7 +437,6 @@
       document.getElementById('step-2-scheduler').style.display = 'block';
       initDateTabs();
       updateSummary();
-      window.scrollTo({ top: 150, behavior: 'smooth' });
     }
 
     async function confirmFinalBooking() {
@@ -300,15 +469,13 @@
 
       // Google Calendar Direct URL
       const gcalTitle = encodeURIComponent(`Executive Strategy Discovery: ${userLeadData.name} x Ismail Kazia (GALICON)`);
-      const gcalDetails = encodeURIComponent(`1-on-1 Strategy Discovery with Founder Ismail Kazia.\n\nDivision: ${userLeadData.division}\nBudget: ${userLeadData.budget}\nPhone: ${userLeadData.phone}\nNotes: ${userLeadData.notes}\n\nMeeting link will be shared via WhatsApp / Email.`);
+      const gcalDetails = encodeURIComponent(`1-on-1 Strategy Discovery with Founder Ismail Kazia.\n\nDivision: ${userLeadData.division}\nBudget: ${userLeadData.budget}\nPhone: ${userLeadData.phone}\nNotes: ${userLeadData.notes}\n\nGoogle Meet Link will be activated for our call.`);
       const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${gcalTitle}&details=${gcalDetails}&location=Google+Meet`;
       document.getElementById('gcalBtn').href = gcalUrl;
 
       // WhatsApp Direct Confirmation URL
       const waMsg = encodeURIComponent(`Hello Founder Ismail Kazia! 👋\n\nI have confirmed our Strategy Discovery Session:\n👤 Name: ${userLeadData.name}\n📅 Slot: ${slotString}\n🎯 Division: ${userLeadData.division}\n💼 Budget: ${userLeadData.budget}\n\nPlease confirm Google Meet link. Look forward to connecting!`);
       document.getElementById('confirmWaBtn').href = `https://wa.me/966548905688?text=${waMsg}`;
-
-      window.scrollTo({ top: 100, behavior: 'smooth' });
     }
   </script>
 
