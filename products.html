@@ -62,108 +62,372 @@
   <!-- Hero -->
   <section class="hero-store">
     <div class="container">
-      <h1>Premium <em>Business Templates</em><br>& Digital Products</h1>
-      <p>Save 100+ hours with battle-tested templates, AI prompt systems, and ready-to-use business kits. Built for India, Middle East & Global markets.</p>
+      <h1>GALICON <em>Business Divisions</em><br>& Solutions Portal</h1>
+      <p>Explore our 4 core service verticals or access battle-tested digital templates, ZATCA kits, and AI setups under direct founder governance.</p>
       <div class="trust-badges">
-        <span class="trust-badge">⚡ Instant Download</span>
-        <span class="trust-badge">🔒 Secure Payment</span>
-        <span class="trust-badge">♻️ Lifetime Access</span>
-        <span class="trust-badge">💬 WhatsApp Support</span>
+        <span class="trust-badge">🏢 Corporate Grade</span>
+        <span class="trust-badge">📈 Proven ROI</span>
+        <span class="trust-badge">👑 Founder Oversight</span>
+        <span class="trust-badge">💬 24/7 Priority Support</span>
       </div>
     </div>
   </section>
 
-  <!-- MEMBERSHIP PLANS (MONTHLY & YEARLY) -->
+  <!-- BUSINESS DIVISIONS PORTFOLIO (TABS) -->
   <section class="py-5" style="background:#080808; border-bottom:1px solid rgba(255,255,255,0.06);">
-    <div class="container text-center">
-      <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">👑 RECURRING PASSIVE ACCESS</span>
-      <h2 style="font-weight:900; font-size:2.4rem; margin-top:8px;">GALICON All-Access Membership</h2>
-      <p style="color:#888; max-width:600px; margin:0 auto 30px;">
-        Get all current digital products + every new Google-trending kit we build every single month. Choose monthly or save 20% with yearly billing.
-      </p>
+    <div class="container">
+      <!-- Custom CSS Styles for Tabs -->
+      <style>
+        .nav-pills .nav-link {
+          background: #111;
+          border: 1px solid rgba(255,255,255,0.08);
+          color: #aaa;
+          font-weight: 700;
+          font-size: 0.9rem;
+          padding: 12px 24px;
+          border-radius: 30px;
+          transition: all 0.3s;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        .nav-pills .nav-link:hover {
+          border-color: #EAB308;
+          color: #fff;
+        }
+        .nav-pills .nav-link.active {
+          background: #EAB308 !important;
+          color: #000 !important;
+          border-color: #EAB308;
+        }
+        .card.bg-dark {
+          background-color: #0a0a0a !important;
+          border: 1px solid rgba(255,255,255,0.06) !important;
+          transition: all 0.3s;
+        }
+        .card.bg-dark:hover {
+          border-color: #EAB308 !important;
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+        .card.border-warning {
+          border-color: #EAB308 !important;
+          background-color: #0f0d02 !important;
+        }
+        .text-warning {
+          color: #EAB308 !important;
+        }
+        .bg-warning {
+          background-color: #EAB308 !important;
+        }
+        .badge.bg-success {
+          background-color: #10B981 !important;
+          color: #000 !important;
+        }
+        .badge.bg-info {
+          background-color: #3B82F6 !important;
+          color: #fff !important;
+        }
+        .badge.bg-primary {
+          background-color: #8B5CF6 !important;
+          color: #fff !important;
+        }
+        .btn-warning {
+          background-color: #EAB308 !important;
+          border-color: #EAB308 !important;
+        }
+        .btn-warning:hover {
+          background-color: #FDE047 !important;
+          border-color: #FDE047 !important;
+        }
+      </style>
 
-      <!-- Toggle Switch -->
-      <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
-        <span id="label-monthly" style="font-weight:800; color:#fff; font-size:0.95rem;">Monthly Billing</span>
-        <div class="form-check form-switch m-0" style="padding-left:3.5em;">
-          <input class="form-check-input" type="checkbox" id="billingToggle" onchange="toggleBillingPlan()" style="cursor:pointer; width:3em; height:1.6em; background-color:#333; border-color:#555;">
-        </div>
-        <span id="label-yearly" style="font-weight:700; color:#888; font-size:0.95rem;">
-          Yearly Billing <span style="background:#10B981; color:#000; font-size:0.75rem; font-weight:900; padding:2px 8px; border-radius:12px; margin-left:4px;">SAVE 20%</span>
-        </span>
+      <div class="text-center mb-5">
+        <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">👑 Turnkey Solutions</span>
+        <h2 style="font-weight:900; font-size:2.4rem; margin-top:8px;">Lifecycle Service Architecture</h2>
+        <p style="color:#888; max-width:600px; margin:0 auto;">
+          Select a division below to view custom pricing tiers, turnkey inclusions, and direct booking options.
+        </p>
       </div>
 
-      <!-- Pricing Cards -->
-      <div class="row g-4 text-start justify-content-center">
-        <!-- Plan 1: Pro Creator -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card" style="padding:32px 24px; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div style="color:#888; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">STARTER ALL-ACCESS</div>
-              <h3 style="font-weight:900; font-size:1.5rem; margin:6px 0 16px;">GALICON Pro</h3>
-              <div class="mb-4">
-                <span class="plan-price" id="pro-price" style="font-size:2.5rem; font-weight:900; color:#fff;">$29</span>
-                <span class="plan-cycle" id="pro-cycle" style="color:#888; font-size:0.9rem;">/ month</span>
-                <div id="pro-subtext" style="font-size:0.8rem; color:#EAB308; margin-top:4px;">109 SAR • ₹ 2,499 / mo</div>
+      <!-- Navigation Tabs -->
+      <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="divisionTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab-consulting" data-bs-toggle="pill" data-bs-target="#sec-consulting" type="button" role="tab" aria-controls="sec-consulting" aria-selected="true">Advisory & Setup</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-marketing" data-bs-toggle="pill" data-bs-target="#sec-marketing" type="button" role="tab" aria-controls="sec-marketing" aria-selected="false">Performance Marketing</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-tech" data-bs-toggle="pill" data-bs-target="#sec-tech" type="button" role="tab" aria-controls="sec-tech" aria-selected="false">Technology & AI</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-events" data-bs-toggle="pill" data-bs-target="#sec-events" type="button" role="tab" aria-controls="sec-events" aria-selected="false">Experiences & Events</button>
+        </li>
+      </ul>
+
+      <!-- Tabs Content -->
+      <div class="tab-content text-start" id="divisionTabContent">
+        
+        <!-- Tab 1: Consulting & Advisory -->
+        <div class="tab-pane fade show active" id="sec-consulting" role="tabpanel" aria-labelledby="tab-consulting">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-success align-self-start mb-3">Diagnostic Sprint</span>
+                <h4 class="fw-bold">Business Diagnostic</h4>
+                <p class="text-muted small">For founders needing an objective, data-backed audit to eliminate growth bottlenecks.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹22,000</div>
+                  <div class="text-muted small">SAR 1,200 &bull; $450 (One-time)</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ 360° Commercial & Funnel Audit</li>
+                  <li class="mb-2">✔ Unit Economics & Gross Margin Assessment</li>
+                  <li class="mb-2">✔ Competitor Intelligence Snapshot (3 Rivals)</li>
+                  <li class="mb-2">✔ 60-Minute Executive Strategy Session</li>
+                  <li class="mb-2">✔ 30-Day Prioritized Execution Matrix</li>
+                </ul>
+                <a href="meet.html" class="btn btn-outline-light w-100 fw-bold">Book Diagnostic</a>
               </div>
-              <ul class="product-includes">
-                <li>Instant access to all 6 digital products</li>
-                <li>New monthly AI prompts drop</li>
-                <li>Monthly trending business checklists</li>
-                <li>Standard email support</li>
-                <li>Cancel anytime with 1-click</li>
-              </ul>
             </div>
-            <a href="https://wa.me/966548905688?text=Hi%20Ismail!%20I%20want%20to%20subscribe%20to%20GALICON%20Pro%20Plan." target="_blank" class="btn-buy text-center" id="pro-btn">SUBSCRIBE NOW →</a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark border-warning h-100 p-4 text-white rounded-3 shadow-lg">
+                <span class="badge bg-warning text-dark align-self-start mb-3">Most Popular</span>
+                <h4 class="fw-bold">Business Blueprint</h4>
+                <p class="text-muted small">Complete market validation, financial modeling, and go-to-market architecture.</p>
+                <div class="my-3 p-3 bg-black rounded border border-warning" style="background:#000 !important; border-color:#EAB308 !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹75,000</div>
+                  <div class="text-muted small">SAR 4,200 &bull; $1,600 (One-time)</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ TAM / SAM / SOM Market Sizing & Research</li>
+                  <li class="mb-2">✔ ICP Definition & Customer Buyer Personas</li>
+                  <li class="mb-2">✔ Value Proposition & Pricing Architecture</li>
+                  <li class="mb-2">✔ Turnkey Go-To-Market (GTM) Strategy</li>
+                  <li class="mb-2">✔ 90-Day Step-by-Step Execution Plan</li>
+                </ul>
+                <a href="meet.html" class="btn btn-warning w-100 fw-bold text-dark">Get Business Blueprint</a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-info align-self-start mb-3">Monthly Retainer</span>
+                <h4 class="fw-bold">Strategic Advisory</h4>
+                <p class="text-muted small">Fractional leadership and executive decision-support for operating businesses.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹45,000 <span class="small text-muted fs-6">/mo</span></div>
+                  <div class="text-muted small">SAR 2,500 &bull; $950 / month</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ 2 Monthly Strategic Alignment Calls</li>
+                  <li class="mb-2">✔ Margin, CAC, and KPI Performance Monitoring</li>
+                  <li class="mb-2">✔ WhatsApp / Asynchronous Leadership Support</li>
+                  <li class="mb-2">✔ Agency & Vendor Strategic Oversight</li>
+                  <li class="mb-2">✔ Quarterly Business Model Recalibration</li>
+                </ul>
+                <a href="meet.html" class="btn btn-outline-light w-100 fw-bold">Retain Strategic Advisor</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Plan 2: VIP Growth (Featured) -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card" style="padding:32px 24px; border-color:#EAB308; background:#0f0d02; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 0 35px rgba(234,179,8,0.2);">
-            <div>
-              <span style="background:#EAB308; color:#000; font-size:0.7rem; font-weight:900; padding:2px 10px; border-radius:12px; text-transform:uppercase;">MOST POPULAR</span>
-              <div class="mt-2" style="color:#EAB308; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">GROWTH & AUTOMATION</div>
-              <h3 style="font-weight:900; font-size:1.5rem; margin:6px 0 16px;">GALICON VIP Club</h3>
-              <div class="mb-4">
-                <span class="plan-price" id="vip-price" style="font-size:2.5rem; font-weight:900; color:#EAB308;">$79</span>
-                <span class="plan-cycle" id="vip-cycle" style="color:#aaa; font-size:0.9rem;">/ month</span>
-                <div id="vip-subtext" style="font-size:0.8rem; color:#10B981; margin-top:4px;">295 SAR • ₹ 6,499 / mo</div>
+        <!-- Tab 2: Performance Marketing -->
+        <div class="tab-pane fade" id="sec-marketing" role="tabpanel" aria-labelledby="tab-marketing">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-info align-self-start mb-3">Setup Sprint</span>
+                <h4 class="fw-bold">Funnel Architecture</h4>
+                <p class="text-muted small">Turnkey high-converting landing page and multi-channel conversion tracking system.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹45,000</div>
+                  <div class="text-muted small">SAR 2,500 &bull; $900 (One-time)</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Custom High-Converting Landing Page</li>
+                  <li class="mb-2">✔ Meta Pixel, CAPI, and GA4 Event Setup</li>
+                  <li class="mb-2">✔ Direct WhatsApp & CRM Integration</li>
+                  <li class="mb-2">✔ Offer Positioning & High-CTR Ad Copy</li>
+                  <li class="mb-2">✔ A/B Testing & Speed Optimization</li>
+                </ul>
+                <a href="meet.html" class="btn btn-outline-light w-100 fw-bold">Build Funnel</a>
               </div>
-              <ul class="product-includes">
-                <li>Everything in Pro + all future releases</li>
-                <li>Google-trend arbitrage solutions every week</li>
-                <li>WhatsApp AI Bot setup blueprints</li>
-                <li>Direct WhatsApp VIP access to Ismail Kazia</li>
-                <li>Exclusive private mastermind group</li>
-              </ul>
             </div>
-            <a href="https://wa.me/966548905688?text=Hi%20Ismail!%20I%20want%20to%20subscribe%20to%20GALICON%20VIP%20Club." target="_blank" class="btn-buy text-center" style="background:#EAB308;" id="vip-btn">JOIN VIP CLUB →</a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark border-warning h-100 p-4 text-white rounded-3 shadow-lg">
+                <span class="badge bg-warning text-dark align-self-start mb-3">Core Retainer</span>
+                <h4 class="fw-bold">Performance Engine</h4>
+                <p class="text-muted small">Active multi-channel paid acquisition to scale predictable pipeline and orders.</p>
+                <div class="my-3 p-3 bg-black rounded border border-warning" style="background:#000 !important; border-color:#EAB308 !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹50,000 <span class="small text-muted fs-6">/mo</span></div>
+                  <div class="text-muted small">SAR 3,000 &bull; $1,200 / month</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Meta Ads & Google Search Campaign Management</li>
+                  <li class="mb-2">✔ Creative Frameworks (AIDA / PAS Angle Testing)</li>
+                  <li class="mb-2">✔ Daily ROAS Monitoring & Bid Optimization</li>
+                  <li class="mb-2">✔ Real-time Automated Analytics Dashboard</li>
+                  <li class="mb-2">✔ Weekly Strategy Alignment & Reporting</li>
+                </ul>
+                <a href="meet.html" class="btn btn-warning w-100 fw-bold text-dark">Scale Acquisition</a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-primary align-self-start mb-3">Enterprise</span>
+                <h4 class="fw-bold">Full-Funnel Growth</h4>
+                <p class="text-muted small">Your outsourced performance growth department across all organic and paid touchpoints.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹1,25,000 <span class="small text-muted fs-6">/mo</span></div>
+                  <div class="text-muted small">SAR 6,500 &bull; $2,500 / month</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Multi-Platform Paid Ads + Technical SEO Engine</li>
+                  <li class="mb-2">✔ Viral Video Scripts & Creative Strategy Direction</li>
+                  <li class="mb-2">✔ WhatsApp / Email Automated Retention Workflows</li>
+                  <li class="mb-2">✔ Dedicated Growth Lead & Senior Media Buyer</li>
+                  <li class="mb-2">✔ Bi-Weekly CRO & Landing Page Iterations</li>
+                </ul>
+                <a href="meet.html" class="btn btn-outline-light w-100 fw-bold">Partner With Us</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Plan 3: Enterprise Agency Done-For-You -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card" style="padding:32px 24px; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div style="color:#888; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:1px;">DONE-FOR-YOU PARTNER</div>
-              <h3 style="font-weight:900; font-size:1.5rem; margin:6px 0 16px;">Agency Retainer</h3>
-              <div class="mb-4">
-                <span class="plan-price" id="ent-price" style="font-size:2.5rem; font-weight:900; color:#fff;">$299</span>
-                <span class="plan-cycle" id="ent-cycle" style="color:#888; font-size:0.9rem;">/ month</span>
-                <div id="ent-subtext" style="font-size:0.8rem; color:#EAB308; margin-top:4px;">1,120 SAR • ₹ 24,999 / mo</div>
+        <!-- Tab 3: Tech & AI Automation -->
+        <div class="tab-pane fade" id="sec-tech" role="tabpanel" aria-labelledby="tab-tech">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-info align-self-start mb-3">Web Architecture</span>
+                <h4 class="fw-bold">Commercial Portal</h4>
+                <p class="text-muted small">High-speed luxury corporate website or e-commerce storefront tailored for conversions.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹85,000</div>
+                  <div class="text-muted small">SAR 4,500 &bull; $1,750 (One-time)</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Custom Responsive Design (Dark/Luxury Aesthetic)</li>
+                  <li class="mb-2">✔ Multi-Currency & Bilingual (LTR / RTL Support)</li>
+                  <li class="mb-2">✔ 100/100 Core Web Vitals & Technical Schema</li>
+                  <li class="mb-2">✔ Payment Gateway Integration (mada / Stripe / ANB)</li>
+                  <li class="mb-2">✔ Ultra-Fast Cloudflare Global CDN Setup</li>
+                </ul>
+                <a href="meet.html" class="btn btn-outline-light w-100 fw-bold">Deploy Portal</a>
               </div>
-              <ul class="product-includes">
-                <li>Complete Done-For-You Funnel Setup</li>
-                <li>Custom cold outreach campaign management</li>
-                <li>300 targeted B2B leads delivered monthly</li>
-                <li>Weekly 1-on-1 strategy call with Founder</li>
-                <li>Dedicated CRM pipeline configuration</li>
-              </ul>
             </div>
-            <a href="https://wa.me/966548905688?text=Hi%20Ismail!%20I%20want%20to%20book%20the%20Agency%20Retainer%20Plan." target="_blank" class="btn-buy text-center" id="ent-btn">PARTNER WITH US →</a>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark border-warning h-100 p-4 text-white rounded-3 shadow-lg">
+                <span class="badge bg-warning text-dark align-self-start mb-3">AI Engine</span>
+                <h4 class="fw-bold">AI Custom Automation</h4>
+                <p class="text-muted small">Autonomous business daemons, smart WhatsApp bots, and automated CRM pipelines.</p>
+                <div class="my-3 p-3 bg-black rounded border border-warning" style="background:#000 !important; border-color:#EAB308 !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹1,40,000</div>
+                  <div class="text-muted small">SAR 7,500 &bull; $2,800 (One-time)</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Custom WhatsApp / Web AI Assistant Integration</li>
+                  <li class="mb-2">✔ Automated Lead Scorer & Real-Time Alerts</li>
+                  <li class="mb-2">✔ CRM Pipeline Automation & Bi-directional Sync</li>
+                  <li class="mb-2">✔ Automated Transactional Email Sequences (Brevo)</li>
+                  <li class="mb-2">✔ Secure REST / Webhook API Integrations</li>
+                </ul>
+                <a href="meet.html" class="btn btn-warning w-100 fw-bold text-dark">Build Automation</a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-primary align-self-start mb-3">DevOps Retainer</span>
+                <h4 class="fw-bold">Tech & DevOps</h4>
+                <p class="text-muted small">Continuous server maintenance, security monitoring, and scheduled feature upgrades.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹35,000 <span class="small text-muted fs-6">/mo</span></div>
+                  <div class="text-muted small">SAR 1,800 &bull; $700 / month</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ 99.9% Uptime & Speed Monitoring</li>
+                  <li class="mb-2">✔ Automated Daily Database Backups & Patches</li>
+                  <li class="mb-2">✔ Monthly Feature Enhancements (Up to 15 hrs)</li>
+                  <li class="mb-2">✔ SSL, DNS, and Firewall Security Audits</li>
+                  <li class="mb-2">✔ Priority 2-Hour Response SLA</li>
+                </ul>
+                <a href="meet.html" class="btn btn-outline-light w-100 fw-bold">Retain DevOps</a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Tab 4: Experiences & Events -->
+        <div class="tab-pane fade" id="sec-events" role="tabpanel" aria-labelledby="tab-events">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-success align-self-start mb-3">India Staging</span>
+                <h4 class="fw-bold">Bangalore Executive Summit</h4>
+                <p class="text-muted small">Turnkey staging and AV infrastructure for corporate summits and executive roundtables.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">₹1,75,000</div>
+                  <div class="text-muted small">Starting Base Production Package</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ P2.6 Ultra-HD LED Stage Backdrop</li>
+                  <li class="mb-2">✔ Digital Line-Array Audio & Stage Monitors</li>
+                  <li class="mb-2">✔ Intelligent Warm Stage Lighting & Trussing</li>
+                  <li class="mb-2">✔ On-Ground Technical Director & Sound Engineer</li>
+                  <li class="mb-2">✔ 4K Multi-Camera Live Switcher & Recording</li>
+                </ul>
+                <a href="calculator.html" class="btn btn-outline-light w-100 fw-bold">Configure Bangalore Staging</a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark border-warning h-100 p-4 text-white rounded-3 shadow-lg">
+                <span class="badge bg-warning text-dark align-self-start mb-3">UAE Summits</span>
+                <h4 class="fw-bold">Dubai Corporate Gala</h4>
+                <p class="text-muted small">Luxury gala production, curved LED staging, and cinematic media coverage in Dubai.</p>
+                <div class="my-3 p-3 bg-black rounded border border-warning" style="background:#000 !important; border-color:#EAB308 !important;">
+                  <div class="h3 text-warning fw-bold mb-0">AED 22,000</div>
+                  <div class="text-muted small">Approx. $6,000 &bull; ₹5,00,000</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Seamless Curved LED Display Architecture</li>
+                  <li class="mb-2">✔ Multi-Channel Simultaneous Translation Booths</li>
+                  <li class="mb-2">✔ Cinematic Drone & Multi-angle Broadcast Team</li>
+                  <li class="mb-2">✔ VIP Protocol, Red Carpet, and Luxury Staging</li>
+                  <li class="mb-2">✔ End-to-End AV Operations & Show Running</li>
+                </ul>
+                <a href="calculator.html" class="btn btn-warning w-100 fw-bold text-dark">Configure Dubai Production</a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="card bg-dark h-100 p-4 text-white rounded-3">
+                <span class="badge bg-info align-self-start mb-3">KSA Vision 2030</span>
+                <h4 class="fw-bold">Riyadh VIP Summit & Gala</h4>
+                <p class="text-muted small">Large-scale government and enterprise summit activations aligned with KSA Vision 2030.</p>
+                <div class="my-3 p-3 bg-black rounded border border-secondary" style="background:#000 !important; border-color:rgba(255,255,255,0.08) !important;">
+                  <div class="h3 text-warning fw-bold mb-0">SAR 45,000+</div>
+                  <div class="text-muted small">Custom Turnkey Production</div>
+                </div>
+                <ul class="list-unstyled text-muted small my-3 flex-grow-1">
+                  <li class="mb-2">✔ Custom Architectural Stage & Exhibition Booths</li>
+                  <li class="mb-2">✔ 3D Holographic Visuals & Interactive Displays</li>
+                  <li class="mb-2">✔ VVIP Protocol Management & Show Direction</li>
+                  <li class="mb-2">✔ Local Regulatory & Venue Compliance Handling</li>
+                  <li class="mb-2">✔ Dedicated Senior Event Director On-Site</li>
+                </ul>
+                <a href="calculator.html" class="btn btn-outline-light w-100 fw-bold">Configure Riyadh Event</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
