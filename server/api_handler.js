@@ -30,7 +30,26 @@ function saveLead(leadData) {
       leads = [];
     }
   }
-  leads.push({ ...leadData, timestamp: new Date().toISOString() });
+  
+  // Calculate automated lead score
+  let score = 50;
+  const budgetStr = String(leadData.budget || leadData.packageSelected || '').toLowerCase();
+  if (budgetStr.includes('5,000+') || budgetStr.includes('2,50,000') || budgetStr.includes('enterprise') || budgetStr.includes('vip')) {
+    score += 35;
+  } else if (budgetStr.includes('1,500') || budgetStr.includes('1,00,000') || budgetStr.includes('scale')) {
+    score += 20;
+  }
+  if (leadData.phone && String(leadData.phone).length >= 10) score += 15;
+
+  const scoredLead = {
+    ...leadData,
+    leadScore: score,
+    leadTier: score >= 80 ? 'HOT' : score >= 60 ? 'WARM' : 'COLD',
+    status: 'NEW',
+    timestamp: new Date().toISOString()
+  };
+
+  leads.push(scoredLead);
   
   // Ensure the private_data parent directory exists
   const dir = path.dirname(DB_PATH);
@@ -43,16 +62,16 @@ function saveLead(leadData) {
 
 // 1. PUBLIC ENDPOINT: Secure Lead Capture from Website
 app.post('/api/leads/submit', (req, res) => {
-  const { name, email, phone, division, packageSelected, country, message } = req.body;
+  const { name, email, phone, division, packageSelected, budget, country, message, notes, meetingDate, meetingTime, attribution } = req.body;
 
   if (!name || !email) {
     return res.status(400).json({ success: false, message: "Name and Email are required." });
   }
 
-  const newLead = { name, email, phone, division, packageSelected, country, message };
+  const newLead = { name, email, phone, division, packageSelected, budget, country, message, notes, meetingDate, meetingTime, attribution };
   saveLead(newLead);
 
-  console.log(`[LEAD CAPTURED] ${name} | ${email} | ${division} (${country || 'Global'})`);
+  console.log(`[LEAD CAPTURED] ${name} | ${email} | ${division} | Score Tier: ${newLead.leadTier || 'HOT'}`);
 
   return res.status(200).json({ success: true, message: "Inquiry received securely." });
 });
