@@ -13,19 +13,27 @@
   <style>
     :root {
       --indigo-gradient: linear-gradient(135deg, #818CF8 0%, #3B82F6 50%, #06B6D4 100%);
+      --border-indigo: rgba(99, 102, 241, 0.35);
     }
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Inter', sans-serif; background:#020617; color:#fff; min-height:100vh; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
+    body { font-family:'Inter', sans-serif; background:#020617; color:#F8FAFC; min-height:100vh; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
     h1, h2, h3, h4, h5, h6, .btn, .form-label { font-family:'Plus Jakarta Sans', sans-serif; letter-spacing:-0.025em; }
     .container-calc { max-width:960px; margin:50px auto; padding:0 20px; }
     .bg-dark { background-color: #0B1120 !important; }
     .bg-black { background-color: #020617 !important; }
-    .border-secondary { border-color: rgba(255,255,255,0.08) !important; }
-    .border-warning { border-color: rgba(99,102,241,0.4) !important; }
+    .border-secondary { border-color: rgba(255,255,255,0.12) !important; }
+    .border-warning { border-color: var(--border-indigo) !important; }
     .text-warning { color: #818CF8 !important; }
-    .form-select, .form-check-input { background-color: #020617 !important; color: #fff !important; border-color: rgba(255,255,255,0.15) !important; }
-    .form-select:focus { border-color: #6366F1 !important; box-shadow: none !important; }
-    .form-check-input:checked { background-color: #6366F1 !important; border-color: #6366F1 !important; }
+    .form-label { color: #93C5FD !important; font-size:0.8rem; letter-spacing:1px; }
+    .form-check-label { color: #F8FAFC !important; font-size:0.92rem !important; cursor:pointer; }
+    .form-control, .form-select { background-color: #020617 !important; color: #FFFFFF !important; border: 1px solid var(--border-indigo) !important; padding:10px 14px; }
+    .form-control::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
+    .form-control:focus, .form-select:focus { border-color: #38BDF8 !important; box-shadow: 0 0 15px rgba(56,189,248,0.25) !important; color:#FFFFFF !important; }
+    .form-select option { background:#020617 !important; color:#FFFFFF !important; }
+    .form-check-input { background-color: #020617 !important; border-color: var(--border-indigo) !important; width:1.2em; height:1.2em; cursor:pointer; }
+    .form-check-input:checked { background-color: #3B82F6 !important; border-color: #38BDF8 !important; }
+    .btn-indigo { background: var(--indigo-gradient); color:#FFFFFF !important; font-weight:800; border:none; box-shadow:0 8px 20px rgba(99,102,241,0.35); transition:all 0.25s; }
+    .btn-indigo:hover { transform:translateY(-2px); box-shadow:0 12px 25px rgba(99,102,241,0.55); filter:brightness(1.08); }
   
     /* UNIVERSAL HIGH-CONTRAST FONT VISIBILITY (GALICON 2026) */
     body { color: #F8FAFC !important; }
@@ -160,16 +168,16 @@
 
         <!-- Output Total Column -->
         <div class="col-lg-5 d-flex flex-column justify-content-center">
-          <div class="p-4 bg-black rounded-3 border border-warning text-center">
-            <div class="text-muted small text-uppercase fw-bold">Estimated Investment</div>
-            <div class="h2 text-warning fw-bold my-2" id="estimated-price-display">₹14,999</div>
-            <div class="text-muted small mb-3" id="billing-type-label">Fixed Sprint Execution</div>
+          <div class="p-4 rounded-3 text-center" style="background:#020617; border:2px solid rgba(99,102,241,0.4); box-shadow:0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(99,102,241,0.15);">
+            <div class="text-secondary small text-uppercase fw-bold letter-spacing-1">Estimated Investment</div>
+            <div class="h2 fw-bold my-2" id="estimated-price-display" style="color:#38BDF8; font-size:2.4rem;">₹14,999</div>
+            <div class="text-secondary small mb-3" id="billing-type-label">Fixed Sprint Execution</div>
             
-            <button type="submit" class="btn btn-warning w-100 fw-bold text-dark py-2 mb-2">
+            <button type="submit" class="btn btn-indigo w-100 py-3 mb-2" style="font-size:1rem; border-radius:8px;">
               Lock In Estimated Scope ➔
             </button>
-            <a href="#" id="whatsapp-export-btn" target="_blank" class="btn btn-success w-100 fw-bold text-white py-2">
-              <i class="fab fa-whatsapp me-1"></i> WhatsApp Instant Quote
+            <a href="#" id="whatsapp-export-btn" target="_blank" class="btn btn-outline-success w-100 fw-bold text-white py-2" style="border-radius:8px; background:rgba(16,185,129,0.12); border-color:rgba(16,185,129,0.35);">
+              <i class="fab fa-whatsapp me-1 text-success"></i> WhatsApp Instant Quote
             </a>
           </div>
         </div>
