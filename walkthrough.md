@@ -1,11 +1,11 @@
 # GALICON GLOBAL — Corporate Staging & Lifecycle Platform Walkthrough
-**Founder: Ismail Kazia | Production Release 2.7**
+**Founder: Ismail Kazia | Production Release 2.8**
 
 ---
 
-## 🚀 What Was Built & Deployed Live (v2.7)
+## 🚀 What Was Built & Deployed Live (v2.8)
 
-### 1. 🛍_ Dynamic B2B Solutions Portfolio (`products.html`)
+### 1. 🛍️ Dynamic B2B Solutions Portfolio (`products.html`)
 Live URL: [https://ismailkazia302-bot.github.io/samrat-global/products.html](https://ismailkazia302-bot.github.io/samrat-global/products.html)
 
 Integrated 4 premium interactive tab panels mapping to GALICON's core business verticals:
@@ -32,3 +32,10 @@ Integrated 4 premium interactive tab panels mapping to GALICON's core business v
   - Secure lead capture webhook (`/api/leads/submit`) appending inquiries to `private_data/leads_database.json`.
   - Secure JWT authentication endpoint (`/api/admin/login`) protecting CRM dashboard routes.
   - JWT token verification checkpoint (`/api/admin/leads`) providing encrypted data pipelines.
+
+### 🔌 6. API Submit Handler & Failover Loop (`calculator.html`)
+- Integrated a secure frontend lead submission function `handleLeadFormSubmit` inside `calculator.html`.
+- Features:
+  - Transmits name, email, phone, division, package selected, and message securely to `https://api.galiconglobal.com/api/leads/submit`.
+  - On API success, alerts the user and redirects to `meet.html` to book a strategic onboarding call.
+  - On API timeout/failure, falls back to direct WhatsApp pre-filled quote message automatically, guaranteeing **zero lost leads**.
