@@ -3,32 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive B2B Pricing Estimator | GALICON GLOBAL</title>
-  <meta name="description" content="Calculate custom turnkey pricing packages across GALICON divisions. Dynamic multi-currency projections for India, Saudi Arabia, UAE, and global markets.">
+  <title>Custom Project & Retainer Estimator | GALICON GLOBAL</title>
+  <meta name="description" content="Calculate turnkey packages across our 4 core divisions. Select your required tier and currency for instant transparent estimation.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Poppins', sans-serif; background:#050505; color:#fff; min-height:100vh; line-height:1.6; }
-    .container-calc { max-width:960px; margin:40px auto 60px; padding:0 20px; }
-    .calc-card { background:#0d0d0d; border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:36px; box-shadow:0 20px 50px rgba(0,0,0,0.8); }
-    .step-title { font-size:1.1rem; font-weight:800; color:#EAB308; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
-    .option-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:28px; }
-    .calc-btn { background:#141414; border:1px solid rgba(255,255,255,0.12); color:#bbb; padding:16px; border-radius:12px; font-size:0.9rem; font-weight:600; cursor:pointer; text-align:center; transition:all 0.2s ease; user-select:none; }
-    .calc-btn:hover { border-color:#EAB308; color:#fff; }
-    .calc-btn.active { background:rgba(234,179,8,0.15); border-color:#EAB308; color:#EAB308; font-weight:800; }
-    .addon-item { display:flex; justify-content:space-between; align-items:center; background:#141414; border:1px solid rgba(255,255,255,0.08); padding:14px 18px; border-radius:10px; margin-bottom:10px; cursor:pointer; transition:border-color 0.2s; }
-    .addon-item:hover { border-color:rgba(234,179,8,0.4); }
-    .addon-item.selected { border-color:#10B981; background:rgba(16,185,129,0.08); }
-    .addon-checkbox { width:20px; height:20px; accent-color:#10B981; }
-    .result-box { background:linear-gradient(145deg, #111 0%, #080808 100%); border:2px solid #EAB308; border-radius:16px; padding:30px; text-align:center; margin-top:35px; }
-    .price-display { font-size:2.8rem; font-weight:900; color:#fff; margin:10px 0; }
-    .price-display span { color:#EAB308; }
-    .currency-switch { display:flex; justify-content:center; gap:8px; margin-bottom:20px; }
-    .curr-btn { background:#1a1a1a; border:1px solid rgba(255,255,255,0.1); color:#888; padding:6px 16px; border-radius:20px; font-size:0.8rem; font-weight:700; cursor:pointer; }
-    .curr-btn.active { background:#EAB308; color:#000; border-color:#EAB308; }
-    .btn-submit-quote { background:linear-gradient(135deg, #25D366 0%, #128C7E 100%); color:#fff; font-size:1.05rem; font-weight:800; padding:16px 36px; border-radius:12px; border:none; text-decoration:none; display:inline-flex; align-items:center; gap:10px; box-shadow:0 8px 25px rgba(37,211,102,0.3); transition:transform 0.2s; }
-    .btn-submit-quote:hover { transform:scale(1.03); color:#fff; }
+    .container-calc { max-width:960px; margin:60px auto; padding:0 20px; }
+    .bg-dark { background-color: #0d0d0d !important; }
+    .bg-black { background-color: #000000 !important; }
+    .border-secondary { border-color: rgba(255,255,255,0.08) !important; }
+    .border-warning { border-color: #EAB308 !important; }
+    .text-warning { color: #EAB308 !important; }
+    .form-select, .form-check-input { background-color: #000 !important; color: #fff !important; border-color: rgba(255,255,255,0.15) !important; }
+    .form-select:focus { border-color: #EAB308 !important; box-shadow: none !important; }
+    .form-check-input:checked { background-color: #EAB308 !important; border-color: #EAB308 !important; }
   </style>
 </head>
 <body>
@@ -37,246 +27,128 @@
   <div id="navbar-placeholder"></div>
 
   <div class="container container-calc">
-    <div class="text-center mb-5">
-      <span style="color:#EAB308; font-size:0.8rem; font-weight:800; letter-spacing:3px; text-transform:uppercase;">GALICON GLOBAL ESTIMATOR</span>
-      <h1 style="font-weight:900; font-size:2.2rem; margin-top:8px;">Interactive Unified Pricing Calculator</h1>
-      <p style="color:#888; font-size:0.95rem; max-width:650px; margin:0 auto;">
-        Estimate project scope, custom software builds, automated workflows, and staging setups across our business lifecycle divisions.
-      </p>
-    </div>
+    
+    <div class="calculator-container p-4 bg-dark text-white rounded-3 border border-secondary shadow-lg">
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <div>
+          <h4 class="fw-bold mb-0 text-warning">Custom Project & Retainer Estimator</h4>
+          <p class="text-muted small mb-0">Select your required tier and currency for instant transparent estimation.</p>
+        </div>
+        
+        <!-- Currency Selector -->
+        <div class="currency-selector">
+          <select class="form-select bg-black text-warning border-warning" onchange="window.galiconCalc.setCurrency(this.value)">
+            <option value="INR" selected>INR (₹ - India)</option>
+            <option value="SAR">SAR (ر.س - Saudi Arabia)</option>
+            <option value="USD">USD ($ - Global / US)</option>
+            <option value="AED">AED (د.إ - UAE)</option>
+          </select>
+        </div>
+      </div>
 
-    <div class="calc-card">
-      <!-- Step 1: Division -->
-      <div class="step-title"><span>1.</span> Select Business Division</div>
-      <div class="option-grid" id="division-selector"></div>
+      <div class="row g-4">
+        <!-- Configuration Column -->
+        <div class="col-lg-7">
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-bold text-uppercase">1. Select Strategic Division</label>
+            <select class="form-select bg-black text-white border-secondary" id="divisionSelect" onchange="updateTiersDropdown(this.value)">
+              <option value="consulting">Business & Consulting (/start/)</option>
+              <option value="marketing" selected>Marketing & Growth (/grow/)</option>
+              <option value="technology">Technology & AI (/technology/)</option>
+              <option value="events">Experiences & Productions (/events/)</option>
+            </select>
+          </div>
 
-      <!-- Step 2: Tier -->
-      <div class="step-title"><span>2.</span> Select Service Package</div>
-      <div class="option-grid" id="tier-selector"></div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-bold text-uppercase">2. Select Package Tier</label>
+            <select class="form-select bg-black text-white border-secondary" id="tierSelect" onchange="applyTierSelection()">
+              <option value="funnel">Funnel & Tracking Architecture (Setup)</option>
+              <option value="performance" selected>Performance Engine Retainer (Monthly)</option>
+              <option value="fullFunnel">Full-Funnel Growth Partner (Monthly)</option>
+            </select>
+          </div>
 
-      <!-- Step 3: Add-ons -->
-      <div class="step-title"><span>3.</span> Inquire Add-on Capabilities</div>
-      <div id="addons-list" class="mb-4"></div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-bold text-uppercase">3. Optional Strategic Add-Ons</label>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="add1" onchange="window.galiconCalc.toggleAddOn('zatcaKit')">
+              <label class="form-check-label small" for="add1">ZATCA Phase 2 E-Invoicing Template Pack</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="add2" onchange="window.galiconCalc.toggleAddOn('crmSync')">
+              <label class="form-check-label small" for="add2">Autonomous Node.js Lead Scorer Daemon</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="add3" onchange="window.galiconCalc.toggleAddOn('translationBooths')">
+              <label class="form-check-label small" for="add3">Simultaneous Translation Booths (AV)</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="add4" onchange="window.galiconCalc.toggleAddOn('videoProduction')">
+              <label class="form-check-label small" for="add4">4K Cinematic Aftermovie & Drone</label>
+            </div>
+          </div>
+        </div>
 
-      <!-- Result Box -->
-      <div class="result-box">
-        <div class="currency-switch" id="currency-selector"></div>
-
-        <div style="font-size:0.85rem; color:#aaa; text-transform:uppercase; letter-spacing:2px; font-weight:700;">Estimated Turnkey Investment</div>
-        <div class="price-display" id="estimated-price-display">₹ <span>0</span></div>
-        <div style="font-size:0.85rem; color:#888; margin-bottom:24px;" id="billing-type-label">(Fixed Estimate)</div>
-
-        <a href="#" id="whatsapp-export-btn" target="_blank" class="btn-submit-quote">
-          <span>📲 Lock In Project Scope on WhatsApp</span>
-        </a>
+        <!-- Output Total Column -->
+        <div class="col-lg-5 d-flex flex-column justify-content-center">
+          <div class="p-4 bg-black rounded-3 border border-warning text-center">
+            <div class="text-muted small text-uppercase fw-bold">Estimated Investment</div>
+            <div class="h2 text-warning fw-bold my-2" id="estimated-price-display">₹50,000</div>
+            <div class="text-muted small mb-3" id="billing-type-label">/ month</div>
+            
+            <a href="#" id="whatsapp-export-btn" target="_blank" class="btn btn-warning w-100 fw-bold text-dark py-2">
+              Confirm via WhatsApp ➜
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 
+  <script src="galicon_pricing_engine.js"></script>
   <script>
-    const GALICON_PRICING_CONFIG = {
-      currencies: {
-        INR: { symbol: "₹", label: "₹ INR", rate: 1 },
-        SAR: { symbol: "ر.س ", label: "🇸🇦 SAR", rate: 0.045 },
-        USD: { symbol: "$", label: "$ USD", rate: 0.012 },
-        AED: { symbol: "AED ", label: "🇦🇪 AED", rate: 0.044 }
-      },
-      divisions: {
-        consulting: {
-          name: "Business & Consulting",
-          tiers: {
-            diagnostic: { name: "Business Diagnostic", basePriceINR: 22000, type: "one-time", desc: "Audit bottlenecks & unit economics" },
-            blueprint: { name: "Business Blueprint (GTM)", basePriceINR: 75000, type: "one-time", desc: "TAM research & GTM execution plan" },
-            advisory: { name: "Strategic Advisory", basePriceINR: 45000, type: "monthly", desc: "Monthly fractional decision support" }
-          }
-        },
-        marketing: {
-          name: "Marketing & Growth",
-          tiers: {
-            funnel: { name: "Funnel Setup", basePriceINR: 45000, type: "one-time", desc: "Landing page & pixel/CAPI setups" },
-            performance: { name: "Performance Engine", basePriceINR: 50000, type: "monthly", desc: "Active Meta & Google ad operations" },
-            fullFunnel: { name: "Full-Funnel Growth", basePriceINR: 125000, type: "monthly", desc: "Paid ads + SEO + email automation" }
-          }
-        },
-        technology: {
-          name: "Technology & AI",
-          tiers: {
-            portal: { name: "Commercial Portal", basePriceINR: 85000, type: "one-time", desc: "Custom web platform with mada/Stripe" },
-            aiAutomation: { name: "AI Automation", basePriceINR: 140000, type: "one-time", desc: "Custom AI bot & automated CRM pipeline" },
-            devops: { name: "Tech & DevOps", basePriceINR: 35000, type: "monthly", desc: "Continuous uptime & system security" }
-          }
-        },
-        events: {
-          name: "Experiences & Productions",
-          tiers: {
-            bangalore: { name: "Bangalore Staging", basePriceINR: 175000, type: "project", desc: "HD LED wall backdrop + audio setup" },
-            dubai: { name: "Dubai Summit", basePriceINR: 500000, type: "project", desc: "Curved LED stage + translation booths" },
-            riyadh: { name: "Riyadh VIP Gala", basePriceINR: 1000000, type: "project", desc: "VVIP protocol + exhibition booths" }
-          }
-        }
-      },
-      addOns: {
-        zatcaKit: { name: "ZATCA Phase 2 Kit", basePriceINR: 22000, desc: "E-invoicing compliance solution" },
-        crmSync: { name: "CRM Sync Daemon", basePriceINR: 35000, desc: "Lead rating webhook sync pipeline" },
-        translationBooths: { name: "Translation Booths", basePriceINR: 65000, desc: "ISO simultaneous interpreter cabins" },
-        videoProduction: { name: "Video Production", basePriceINR: 45000, desc: "4K aftermovie & aerial drone coverage" }
-      }
-    };
-
-    class GaliconEstimator {
-      constructor() {
-        this.selectedCurrency = "INR";
-        this.selectedDivision = "marketing";
-        this.selectedTier = "performance";
-        this.selectedAddOns = new Set();
-      }
-
-      setCurrency(currencyCode) {
-        if (GALICON_PRICING_CONFIG.currencies[currencyCode]) {
-          this.selectedCurrency = currencyCode;
-          this.render();
-        }
-      }
-
-      setDivisionAndTier(divisionKey, tierKey) {
-        this.selectedDivision = divisionKey;
-        this.selectedTier = tierKey;
-        this.render();
-      }
-
-      toggleAddOn(addOnKey) {
-        if (this.selectedAddOns.has(addOnKey)) {
-          this.selectedAddOns.delete(addOnKey);
-        } else {
-          this.selectedAddOns.add(addOnKey);
-        }
-        this.render();
-      }
-
-      calculateTotal() {
-        const curr = GALICON_PRICING_CONFIG.currencies[this.selectedCurrency];
-        const division = GALICON_PRICING_CONFIG.divisions[this.selectedDivision];
-        const tier = division.tiers[this.selectedTier];
-
-        let totalINR = tier.basePriceINR;
-
-        this.selectedAddOns.forEach(addOnKey => {
-          totalINR += GALICON_PRICING_CONFIG.addOns[addOnKey].basePriceINR;
-        });
-
-        const convertedPrice = Math.round(totalINR * curr.rate);
-        return {
-          formatted: `${curr.symbol}${convertedPrice.toLocaleString()}`,
-          numeric: convertedPrice,
-          type: tier.type,
-          tierName: tier.name,
-          divisionName: division.name
-        };
-      }
-
-      generateWhatsAppUrl() {
-        const total = this.calculateTotal();
-        const addOnNames = Array.from(this.selectedAddOns)
-          .map(k => GALICON_PRICING_CONFIG.addOns[k].name)
-          .join(", ") || "None";
-          
-        const targetNumber = this.selectedCurrency === "INR" ? "916363962640" : "966548905688";
-
-        const message = 
-          `*GALICON GLOBAL - Estimate Inquiry*%0A` +
-          `--------------------------------%0A` +
-          `*Division:* ${total.divisionName}%0A` +
-          `*Package:* ${total.tierName} (${total.type})%0A` +
-          `*Selected Add-ons:* ${addOnNames}%0A` +
-          `*Estimated Price:* ${total.formatted}%0A` +
-          `--------------------------------%0A` +
-          `Hello Ismail, I would like to confirm project scope and schedule a strategy onboarding session.`;
-
-        return `https://wa.me/${targetNumber}?text=${message}`;
-      }
-
-      render() {
-        const total = this.calculateTotal();
-        
-        // Render Price and Labels
-        const priceDisplay = document.getElementById("estimated-price-display");
-        const billingTypeDisplay = document.getElementById("billing-type-label");
-        const waButton = document.getElementById("whatsapp-export-btn");
-
-        if (priceDisplay) priceDisplay.innerText = total.formatted;
-        if (billingTypeDisplay) billingTypeDisplay.innerText = total.type === "monthly" ? "/ month" : "(Fixed Estimate)";
-        if (waButton) waButton.href = this.generateWhatsAppUrl();
-
-        // Render Divisions Selector
-        const divSelector = document.getElementById("division-selector");
-        divSelector.innerHTML = "";
-        Object.keys(GALICON_PRICING_CONFIG.divisions).forEach(k => {
-          const divInfo = GALICON_PRICING_CONFIG.divisions[k];
-          const btn = document.createElement("div");
-          btn.className = `calc-btn ${k === this.selectedDivision ? 'active' : ''}`;
-          btn.innerText = divInfo.name;
-          btn.onclick = () => {
-            // Pick first tier of target division
-            const defaultTier = Object.keys(divInfo.tiers)[0];
-            this.setDivisionAndTier(k, defaultTier);
-          };
-          divSelector.appendChild(btn);
-        });
-
-        // Render Tiers Selector
-        const tierSelector = document.getElementById("tier-selector");
-        tierSelector.innerHTML = "";
-        const currentTiers = GALICON_PRICING_CONFIG.divisions[this.selectedDivision].tiers;
-        Object.keys(currentTiers).forEach(tk => {
-          const tierInfo = currentTiers[tk];
-          const btn = document.createElement("div");
-          btn.className = `calc-btn ${tk === this.selectedTier ? 'active' : ''}`;
-          btn.innerHTML = `
-            <div style="font-weight:800;">${tierInfo.name}</div>
-            <div style="font-size:0.75rem; color:#888; margin-top:4px;">${tierInfo.desc}</div>
-          `;
-          btn.onclick = () => this.setDivisionAndTier(this.selectedDivision, tk);
-          tierSelector.appendChild(btn);
-        });
-
-        // Render Addons
-        const addonsList = document.getElementById("addons-list");
-        addonsList.innerHTML = "";
-        Object.keys(GALICON_PRICING_CONFIG.addOns).forEach(ak => {
-          const addonInfo = GALICON_PRICING_CONFIG.addOns[ak];
-          const isSelected = this.selectedAddOns.has(ak);
-          const item = document.createElement("div");
-          item.className = `addon-item ${isSelected ? 'selected' : ''}`;
-          item.innerHTML = `
-            <div>
-              <div style="font-weight:700; color:#fff;">${addonInfo.name}</div>
-              <div style="font-size:0.8rem; color:#888;">${addonInfo.desc}</div>
-            </div>
-            <input type="checkbox" class="addon-checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); window.galiconCalc.toggleAddOn('${ak}')">
-          `;
-          item.onclick = () => this.toggleAddOn(ak);
-          addonsList.appendChild(item);
-        });
-
-        // Render Currencies Switcher
-        const currSelector = document.getElementById("currency-selector");
-        currSelector.innerHTML = "";
-        Object.keys(GALICON_PRICING_CONFIG.currencies).forEach(ck => {
-          const currInfo = GALICON_PRICING_CONFIG.currencies[ck];
-          const btn = document.createElement("div");
-          btn.className = `curr-btn ${ck === this.selectedCurrency ? 'active' : ''}`;
-          btn.innerText = currInfo.label;
-          btn.onclick = () => this.setCurrency(ck);
-          currSelector.appendChild(btn);
-        });
-      }
+    // Synchronize UI dropdowns with the core pricing class
+    function updateTiersDropdown(divKey) {
+      const tierSelect = document.getElementById("tierSelect");
+      tierSelect.innerHTML = "";
+      
+      const division = GALICON_PRICING_CONFIG.divisions[divKey];
+      Object.keys(division.tiers).forEach(tk => {
+        const tier = division.tiers[tk];
+        const opt = document.createElement("option");
+        opt.value = tk;
+        opt.innerText = `${tier.name} (${tier.type === "monthly" ? "Monthly" : "Fixed"})`;
+        tierSelect.appendChild(opt);
+      });
+      
+      // Auto select the first tier in new division
+      const firstTierKey = Object.keys(division.tiers)[0];
+      window.galiconCalc.setDivisionAndTier(divKey, firstTierKey);
+    }
+    
+    function applyTierSelection() {
+      const divKey = document.getElementById("divisionSelect").value;
+      const tierKey = document.getElementById("tierSelect").value;
+      window.galiconCalc.setDivisionAndTier(divKey, tierKey);
     }
 
-    // Window load initializer
-    document.addEventListener("DOMContentLoaded", () => {
-      window.galiconCalc = new GaliconEstimator();
-      window.galiconCalc.render();
-    });
+    // Wrap render function of pricing engine to keep checkboxes synced
+    const originalRender = GaliconEstimator.prototype.render;
+    GaliconEstimator.prototype.render = function() {
+      originalRender.call(this);
+      
+      // Sync checkbox state
+      const add1 = document.getElementById("add1");
+      const add2 = document.getElementById("add2");
+      const add3 = document.getElementById("add3");
+      const add4 = document.getElementById("add4");
+
+      if (add1) add1.checked = this.selectedAddOns.has("zatcaKit");
+      if (add2) add2.checked = this.selectedAddOns.has("crmSync");
+      if (add3) add3.checked = this.selectedAddOns.has("translationBooths");
+      if (add4) add4.checked = this.selectedAddOns.has("videoProduction");
+    }
   </script>
 
   <div id="footer-placeholder"></div>
