@@ -28,12 +28,19 @@
 
   <style>
     :root {
-      --bg-black: #000000;
-      --gold-primary: #EAB308;
-      --gold-hover: #FFF200;
-      --blue-accent: #3B82F6;
-      --green-accent: #10B981;
+      --bg-canvas: #04070D;
+      --bg-surface: #080D17;
+      --bg-elevated: #0E1524;
+      --gold-primary: #D4AF37;
+      --gold-light: #F3C766;
+      --gold-dark: #B89028;
+      --gold-gradient: linear-gradient(135deg, #F5D380 0%, #D4AF37 50%, #B89028 100%);
+      --blue-accent: #38BDF8;
+      --emerald-accent: #10B981;
       --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --text-pure: #F8FAFC;
+      --text-slate: #94A3B8;
       --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'Space Grotesk', monospace;
@@ -43,8 +50,8 @@
 
     body {
       font-family: var(--font-body);
-      background-color: var(--bg-black);
-      color: #FFFFFF;
+      background-color: var(--bg-canvas);
+      color: var(--text-pure);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -69,15 +76,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 50% 20%, #171d2b 0%, #060911 50%, #000000 85%);
-      padding: 90px 20px 60px;
+      background: radial-gradient(circle at 50% 15%, #111A2E 0%, #060A13 55%, #030509 90%);
+      padding: 95px 20px 65px;
       text-align: center;
       border-bottom: 1px solid var(--border-subtle);
     }
 
     .hero-badge {
-      background: rgba(234, 179, 8, 0.12);
-      color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--gold-light);
       font-weight: 800;
       font-size: 0.8rem;
       padding: 8px 22px;
@@ -86,14 +93,14 @@
       text-transform: uppercase;
       display: inline-block;
       margin-bottom: 20px;
-      border: 1px solid rgba(234, 179, 8, 0.3);
+      border: 1px solid var(--border-gold);
     }
 
     .hero-title {
       font-size: 3rem;
       font-weight: 900;
       line-height: 1.15;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.03em;
       margin-bottom: 20px;
     }
 
@@ -102,36 +109,54 @@
     }
 
     .hero-gradient-text {
-      background: linear-gradient(135deg, #FFFFFF 30%, #EAB308 100%);
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
       font-size: 1.15rem;
-      color: #cbd5e1;
+      color: var(--text-slate);
       max-width: 820px;
       margin: 0 auto 30px;
       font-weight: 400;
+      line-height: 1.7;
     }
 
     /* Trust Chips */
     .trust-chip {
-      background: #080d1a;
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(14, 21, 36, 0.8);
+      border: 1px solid var(--border-subtle);
       border-radius: 20px;
-      padding: 6px 16px;
+      padding: 7px 18px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: #93c5fd;
+      color: #CBD5E1;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Gold Action Button */
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #05080E !important;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+      transition: all 0.25s ease;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+      filter: brightness(1.05);
     }
 
     /* DIVISION QUADRANT CARDS */
     .div-card {
-      background: #080c16;
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 18px;
       padding: 32px 28px;
@@ -150,16 +175,17 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: var(--gold-primary);
+      height: 3px;
+      background: var(--gold-gradient);
       opacity: 0;
       transition: opacity 0.3s;
     }
 
     .div-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(234, 179, 8, 0.4);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px rgba(234, 179, 8, 0.1);
+      border-color: var(--border-gold);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 25px rgba(212, 175, 55, 0.08);
+      background: var(--bg-elevated);
     }
 
     .div-card:hover::before {
@@ -167,11 +193,11 @@
     }
 
     .div-price-chip {
-      background: #04060c;
-      border: 1px solid rgba(234, 179, 8, 0.3);
-      border-radius: 8px;
-      padding: 10px;
-      margin: 14px 0;
+      background: rgba(4, 7, 13, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 10px;
+      padding: 12px;
+      margin: 16px 0;
       text-align: center;
     }
 
@@ -277,14 +303,14 @@
 
       <!-- Action Buttons -->
       <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="audit/index.html" class="btn btn-warning py-3 px-4 fw-bold text-dark" style="border-radius:10px; font-size:1rem;">
+        <a href="audit/index.html" class="btn btn-gold py-3 px-4 fw-bold" style="border-radius:10px; font-size:1rem;">
           <i class="fas fa-bolt me-2"></i>Run Free 60-Sec Audit ➔
         </a>
-        <a href="calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold" style="border-radius:10px; font-size:1rem;">
+        <a href="calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold" style="border-radius:10px; font-size:1rem; border-color:var(--border-subtle);">
           <i class="fas fa-calculator me-2 text-warning"></i>Instant Estimator
         </a>
-        <a href="https://wa.me/916363962640?text=Hello%20Ismail,%20I%20would%20like%20to%20discuss%20a%20project%20for%20our%20business." target="_blank" class="btn btn-success py-3 px-4 fw-bold text-white" style="border-radius:10px; font-size:1rem;">
-          <i class="fab fa-whatsapp me-2"></i>WhatsApp Direct (5 Min)
+        <a href="https://wa.me/916363962640?text=Hello%20Ismail,%20I%20would%20like%20to%20discuss%20a%20project%20for%20our%20business." target="_blank" class="btn btn-outline-success py-3 px-4 fw-bold text-white" style="border-radius:10px; font-size:1rem; background:rgba(16,185,129,0.12); border-color:rgba(16,185,129,0.35);">
+          <i class="fab fa-whatsapp me-2 text-success"></i>WhatsApp Direct (5 Min)
         </a>
       </div>
     </div>

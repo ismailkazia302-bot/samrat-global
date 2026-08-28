@@ -12,16 +12,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family:'Inter',sans-serif; background:#000000; color:#FFFFFF; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
+    :root {
+      --bg-canvas: #04070D;
+      --gold-gradient: linear-gradient(135deg, #F5D380 0%, #D4AF37 50%, #B89028 100%);
+      --gold-primary: #D4AF37;
+    }
+    body { font-family:'Inter',sans-serif; background:var(--bg-canvas); color:#FFFFFF; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
     h1, h2, h3, h4, h5, h6, .badge, .btn, .score-num { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.025em; }
-    .hero-audit { padding:60px 20px 40px; background:radial-gradient(circle at 50% 20%, #152238 0%, #05070c 70%); text-align:center; }
-    .audit-card { background:#0a0f1d; border:2px solid rgba(234,179,8,0.4); border-radius:20px; box-shadow:0 30px 80px rgba(0,0,0,0.95); max-width:850px; margin:0 auto; padding:36px 28px; }
-    .score-circle { width:140px; height:140px; border-radius:50%; border:6px solid #eab308; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 20px; background:#050811; box-shadow:0 0 30px rgba(234,179,8,0.3); }
-    .score-num { font-size:2.8rem; font-weight:900; color:#eab308; line-height:1; }
-    .audit-choice { background:#050811; border:1px solid rgba(255,255,255,0.12); padding:14px 18px; border-radius:12px; cursor:pointer; transition:all 0.2s; text-align:left; user-select:none; margin-bottom:10px; }
-    .audit-choice:hover { border-color:#eab308; background:#0e172a; transform:translateX(4px); }
-    .audit-choice.active { border-color:#10b981; background:#0a1a15; color:#fff; font-weight:bold; }
-    .metric-badge { background:#070d18; border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:12px; text-align:center; }
+    .hero-audit { padding:65px 20px 45px; background:radial-gradient(circle at 50% 15%, #111A2E 0%, #060A13 55%, #030509 90%); text-align:center; }
+    .audit-card { background:#080D17; border:1px solid rgba(212,175,55,0.3); border-radius:20px; box-shadow:0 30px 80px rgba(0,0,0,0.95); max-width:850px; margin:0 auto; padding:36px 28px; }
+    .score-circle { width:140px; height:140px; border-radius:50%; border:5px solid #D4AF37; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 20px; background:#04070D; box-shadow:0 0 30px rgba(212,175,55,0.25); }
+    .score-num { font-size:2.8rem; font-weight:900; color:#D4AF37; line-height:1; }
+    .audit-choice { background:#04070D; border:1px solid rgba(255,255,255,0.08); padding:14px 18px; border-radius:12px; cursor:pointer; transition:all 0.2s; text-align:left; user-select:none; margin-bottom:10px; }
+    .audit-choice:hover { border-color:#D4AF37; background:#0E1524; transform:translateX(4px); }
+    .audit-choice.active { border-color:#10b981; background:#081813; color:#fff; font-weight:bold; }
+    .metric-badge { background:#04070D; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px; text-align:center; }
+    .btn-gold { background:var(--gold-gradient); color:#05080E !important; font-weight:800; border:none; box-shadow:0 10px 25px rgba(212,175,55,0.25); transition:all 0.25s ease; }
+    .btn-gold:hover { transform:translateY(-2px); box-shadow:0 15px 35px rgba(212,175,55,0.4); filter:brightness(1.05); }
   </style>
 
   <!-- Open Graph -->
@@ -112,7 +119,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-warning w-100 py-3 fw-bold text-dark" style="font-size:1.05rem; border-radius:10px;">
+            <button type="submit" class="btn btn-gold w-100 py-3 fw-bold" style="font-size:1.05rem; border-radius:10px;">
               ⚡ Generate My Free Audit Scorecard ➔
             </button>
           </form>
@@ -159,11 +166,11 @@
           </div>
 
           <div class="d-flex gap-2 justify-content-center flex-wrap">
-            <a href="../meet.html" class="btn btn-warning py-3 px-4 fw-bold text-dark" style="border-radius:10px;">
+            <a href="../meet.html" class="btn btn-gold py-3 px-4 fw-bold" style="border-radius:10px;">
               🗓️ Book Strategy Review Call (30 Min) ➔
             </a>
-            <a href="#" id="waReportBtn" target="_blank" class="btn btn-success py-3 px-4 fw-bold text-white" style="border-radius:10px;">
-              <i class="fab fa-whatsapp me-2"></i> WhatsApp Ismail for Detailed Plan
+            <a href="#" id="waReportBtn" target="_blank" class="btn btn-outline-success py-3 px-4 fw-bold text-white" style="border-radius:10px; background:rgba(16,185,129,0.12); border-color:rgba(16,185,129,0.35);">
+              <i class="fab fa-whatsapp me-2 text-success"></i> WhatsApp Ismail for Detailed Plan
             </a>
           </div>
         </div>
