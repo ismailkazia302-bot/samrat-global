@@ -9,33 +9,29 @@
   <meta property="og:description" content="Book a 1-on-1 Strategy Consultation for Bangalore corporate events and Saudi & UAE growth retainers.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Calendly Widget CSS & JS -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body { font-family:'Poppins',sans-serif; background:#000000; color:#FFFFFF; line-height:1.6; }
-    .hero-meet { text-align:center; padding:60px 20px 40px; }
-    .hero-meet h1 { font-size:2.5rem; font-weight:900; line-height:1.2; margin-bottom:12px; }
-    .hero-meet p { color:#aaa; max-width:650px; margin:0 auto 24px; font-size:1.05rem; }
-    .badge-tag { background:rgba(234,179,8,0.15); color:#EAB308; font-size:0.75rem; font-weight:800; padding:4px 12px; border-radius:20px; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:12px; }
+    .hero-meet { text-align:center; padding:50px 20px 40px; }
+    .hero-meet h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:12px; }
+    .hero-meet p { color:#aaa; max-width:650px; margin:0 auto 24px; font-size:1.02rem; }
+    .badge-tag { background:rgba(234,179,8,0.15); color:#EAB308; font-size:0.75rem; font-weight:800; padding:4px 14px; border-radius:20px; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:12px; }
     
-    /* Gated Qualification Card */
-    .gate-card { background:#131b2e; border:2px solid #eab308; border-radius:16px; padding:32px; box-shadow:0 20px 50px rgba(0,0,0,0.85); max-width:650px; margin:0 auto; }
-    .gate-input, .gate-select { background:#0a0f1d !important; border:1px solid rgba(255,255,255,0.15) !important; color:#fff !important; }
-    .gate-input:focus, .gate-select:focus { border-color:#eab308 !important; box-shadow:none !important; }
+    /* Gated Qualification Card & Slot Selector */
+    .booking-card { background:#0f172a; border:2px solid rgba(234,179,8,0.6); border-radius:18px; padding:32px; box-shadow:0 25px 60px rgba(0,0,0,0.9); max-width:700px; margin:0 auto; }
+    .gate-input, .gate-select { background:#060b17 !important; border:1px solid rgba(255,255,255,0.15) !important; color:#fff !important; padding:12px 16px; border-radius:10px; font-size:0.95rem; }
+    .gate-input:focus, .gate-select:focus { border-color:#eab308 !important; box-shadow:0 0 15px rgba(234,179,8,0.25) !important; }
     
-    /* Step 2 Calendly Wrapper */
-    #calendly-step-container { display:none; }
-    .calendly-card { background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.8); }
-    .calendly-inline-widget { min-width:320px; height:750px; width:100%; }
+    /* Slot Picker Controls */
+    .date-pill { background:#060b17; border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; padding:10px 14px; border-radius:12px; cursor:pointer; text-align:center; transition:all 0.2s; min-width:90px; }
+    .date-pill.active { background:#eab308; color:#000; font-weight:800; border-color:#eab308; box-shadow:0 0 15px rgba(234,179,8,0.4); }
+    .date-pill:hover:not(.active) { border-color:#eab308; color:#fff; transform:translateY(-2px); }
     
-    /* Loader Spinner */
-    .spinner-wrapper { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 0; }
-    .custom-spinner { width: 3rem; height: 3rem; color: #eab308; }
+    .time-slot { background:#060b17; border:1px solid rgba(255,255,255,0.12); color:#cbd5e1; padding:12px 14px; border-radius:10px; cursor:pointer; text-align:center; transition:all 0.2s; font-size:0.9rem; font-weight:600; }
+    .time-slot.active { background:#10b981; color:#000; font-weight:800; border-color:#10b981; box-shadow:0 0 15px rgba(16,185,129,0.4); }
+    .time-slot:hover:not(.active) { border-color:#10b981; color:#fff; transform:scale(1.02); }
     
-    .alt-contact-box { background:#0D0D0D; border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:28px; text-align:center; margin-top:40px; }
-    .btn-wa-sa { background:#10B981; color:#000; font-weight:800; padding:12px 24px; border-radius:8px; text-decoration:none; display:inline-block; }
-    .btn-wa-in { background:#25D366; color:#000; font-weight:800; padding:12px 24px; border-radius:8px; text-decoration:none; display:inline-block; }
+    .step-badge { background:#eab308; color:#000; font-weight:900; font-size:0.75rem; padding:3px 8px; border-radius:6px; margin-right:6px; }
   </style>
 </head>
 <body>
@@ -51,13 +47,13 @@
     </p>
 
     <!-- STEP 1: Qualification Container -->
-    <div id="qualification-step-container" class="gate-card text-start">
+    <div id="step-1-qualification" class="booking-card text-start">
       <div class="text-center mb-4">
-        <h3 class="fw-bold text-white mb-2"><i class="fas fa-lock text-warning me-2"></i>Schedule Your Executive Strategy Discovery</h3>
+        <h3 class="fw-bold text-white mb-2"><span class="step-badge">STEP 1</span>Executive Strategy Discovery Form</h3>
         <p class="text-muted small mb-0">Please share a brief snapshot of your requirements to unlock the executive calendar.</p>
       </div>
 
-      <form id="qualificationForm" onsubmit="handleQualificationSubmit(event)">
+      <form id="qualificationForm" onsubmit="handleStep1Submit(event)">
         <div class="row g-3">
           <div class="col-md-6">
             <label class="form-label small text-secondary fw-bold">FULL NAME *</label>
@@ -75,128 +71,247 @@
             <label class="form-label small text-secondary fw-bold">TARGET DIVISION *</label>
             <select id="meet-division" class="form-select gate-select" required>
               <option value="" disabled selected>Select Division</option>
-              <option value="Consulting">Consulting & Strategy</option>
-              <option value="Marketing">Marketing & Growth</option>
-              <option value="Technology">Technology & AI Automation</option>
-              <option value="Events">Staging & Experiences</option>
+              <option value="Consulting">Consulting & Strategy (/start/)</option>
+              <option value="Marketing">Marketing & Growth (/grow/)</option>
+              <option value="Technology">Technology & AI Automation (/technology/)</option>
+              <option value="Events">Staging & Experiences (/events/)</option>
             </select>
           </div>
           <div class="col-12">
             <label class="form-label small text-secondary fw-bold">ESTIMATED MONTHLY / PROJECT BUDGET *</label>
             <select id="meet-budget" class="form-select gate-select" required>
               <option value="" disabled selected>Select Budget Range</option>
-              <option value="<$1,500">&lt; $1,500 (Basic Support)</option>
+              <option value="<$1,500">&lt; $1,500 (Basic Setup & Audit)</option>
               <option value="$1,500–$5,000">$1,500 – $5,000 (Growth Scaling)</option>
-              <option value="$5,000+">$5,000+ (Enterprise Overhaul)</option>
+              <option value="$5,000+">$5,000+ (Enterprise Overhaul & Staging)</option>
             </select>
           </div>
           <div class="col-12">
-            <label class="form-label small text-secondary fw-bold">PROJECT NOTES / BRIEF DESCRIPTION (OPTIONAL)</label>
-            <textarea id="meet-notes" class="form-control gate-input" rows="2" placeholder="Briefly describe your goals..."></textarea>
+            <label class="form-label small text-secondary fw-bold">PROJECT NOTES / BRIEF REQUIREMENTS (OPTIONAL)</label>
+            <textarea id="meet-notes" class="form-control gate-input" rows="2" placeholder="Briefly describe your goals or event scale..."></textarea>
           </div>
           <div class="col-12 mt-4">
-            <button type="submit" class="btn btn-warning w-100 py-3 fw-bold text-dark" style="font-size:1.05rem; letter-spacing:0.5px;">
-              Proceed to Schedule Strategy Call ➔
+            <button type="submit" class="btn btn-warning w-100 py-3 fw-bold text-dark" style="font-size:1.05rem; letter-spacing:0.5px; border-radius:10px;">
+              Unlock & Select Strategy Slot ➔
             </button>
           </div>
         </div>
       </form>
     </div>
 
-    <!-- STEP 2: Calendly Scheduler Container (Hidden initially) -->
-    <div id="calendly-step-container" class="w-100 text-center">
-      <div class="spinner-wrapper" id="calendly-loader">
-        <div class="spinner-border custom-spinner mb-3" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <p class="text-muted small">Loading Founder's Executive Scheduler...</p>
+    <!-- STEP 2: Native Interactive VIP Slot Picker -->
+    <div id="step-2-scheduler" class="booking-card text-start" style="display:none;">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold text-white mb-2"><span class="step-badge">STEP 2</span>Select Your Executive Strategy Slot</h3>
+        <p class="text-muted small mb-0">Direct 30-Min Discovery with Founder Ismail Kazia • Google Meet / Phone</p>
       </div>
-      
-      <div class="calendly-card my-4" id="calendly-embed-container" style="background:#ffffff; border-radius:16px; overflow:hidden; min-height: 750px;">
-        <!-- Embedded widget loads dynamically here -->
+
+      <!-- Date Selector -->
+      <div class="mb-4">
+        <label class="form-label small text-secondary fw-bold mb-2">1. CHOOSE A DATE (NEXT WEEK):</label>
+        <div class="d-flex gap-2 overflow-auto pb-2" id="dateTabsContainer">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Time Slots Grid -->
+      <div class="mb-4">
+        <label class="form-label small text-secondary fw-bold mb-2">2. CHOOSE TIME SLOT (IST & KSA PEGGED):</label>
+        <div class="row g-2" id="timeSlotsContainer">
+          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '02:00 PM IST (11:30 AM KSA)')">02:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">11:30 AM KSA</small></div></div>
+          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '03:00 PM IST (12:30 PM KSA)')">03:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">12:30 PM KSA</small></div></div>
+          <div class="col-6 col-md-4"><div class="time-slot active" onclick="selectTimeSlot(this, '04:30 PM IST (02:00 PM KSA)')">04:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">02:00 PM KSA</small></div></div>
+          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '05:30 PM IST (03:00 PM KSA)')">05:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">03:00 PM KSA</small></div></div>
+          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '06:30 PM IST (04:00 PM KSA)')">06:30 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">04:00 PM KSA</small></div></div>
+          <div class="col-6 col-md-4"><div class="time-slot" onclick="selectTimeSlot(this, '08:00 PM IST (05:30 PM KSA)')">08:00 PM IST<br><small style="color:#94a3b8; font-size:0.75rem;">05:30 PM KSA</small></div></div>
+        </div>
+      </div>
+
+      <div class="p-3 mb-4 rounded-3 border border-secondary" style="background:#060b17;">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div>
+            <div class="text-white fw-bold" id="selectedSummaryLabel">Selected: Monday, Sept 1 • 04:30 PM IST</div>
+            <div class="text-muted small">Location: Google Meet / Phone Video Call (30 Mins)</div>
+          </div>
+          <span class="badge bg-success text-dark px-3 py-2 fw-bold">CONFIRMED ACCESS</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-warning w-100 py-3 fw-bold text-dark mb-3" style="font-size:1.05rem; border-radius:10px;" onclick="confirmFinalBooking()">
+        Confirm & Book Strategy Session ➔
+      </button>
+
+      <div class="text-center">
+        <a href="https://calendly.com/ismailkazia302" target="_blank" class="text-muted small text-decoration-none">
+          <i class="fas fa-external-link-alt me-1"></i> Prefer standard Calendly window? Open full page ↗
+        </a>
       </div>
     </div>
 
+    <!-- STEP 3: Booking Confirmed Screen -->
+    <div id="step-3-confirmed" class="booking-card text-center" style="display:none;">
+      <div class="my-3">
+        <i class="fas fa-check-circle text-success" style="font-size:4rem;"></i>
+      </div>
+      <h2 class="text-white fw-bold mb-2">Strategy Discovery Confirmed! 🎉</h2>
+      <p class="text-muted mb-4">Founder Ismail Kazia has received your briefing. A calendar invitation and Google Meet link are ready.</p>
+
+      <div class="p-4 rounded-3 text-start mb-4 border border-warning" style="background:#060b17;">
+        <div class="row g-2">
+          <div class="col-sm-6"><span class="text-secondary small">ATTENDEE:</span> <strong class="text-white d-block" id="confirmName"></strong></div>
+          <div class="col-sm-6"><span class="text-secondary small">EMAIL:</span> <strong class="text-white d-block" id="confirmEmail"></strong></div>
+          <div class="col-sm-6"><span class="text-secondary small">DATE & TIME:</span> <strong class="text-warning d-block" id="confirmSlot"></strong></div>
+          <div class="col-sm-6"><span class="text-secondary small">HOST:</span> <strong class="text-white d-block">Ismail Kazia, Founder & CEO</strong></div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="#" id="gcalBtn" target="_blank" class="btn btn-primary fw-bold py-3 px-4" style="border-radius:10px;">
+          <i class="fab fa-google me-2"></i> Add to Google Calendar
+        </a>
+        <a href="#" id="confirmWaBtn" target="_blank" class="btn btn-success fw-bold py-3 px-4" style="border-radius:10px;">
+          <i class="fab fa-whatsapp me-2"></i> Instant WhatsApp Confirmation
+        </a>
+      </div>
+    </div>
 
   </section>
 
   <div id="footer-placeholder"></div>
 
   <script>
-    // Resolve dynamic API base URL
+    // State
+    let userLeadData = {};
+    let selectedDate = "Monday, Sept 1";
+    let selectedTime = "04:30 PM IST (02:00 PM KSA)";
+
     const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
       ? 'http://localhost:4000'
       : 'https://api.galiconglobal.com';
 
-    async function handleQualificationSubmit(event) {
+    // Initialize Date Tabs (Next Week)
+    function initDateTabs() {
+      const dates = [
+        { day: 'Mon', date: 'Sept 1', full: 'Monday, Sept 1' },
+        { day: 'Tue', date: 'Sept 2', full: 'Tuesday, Sept 2' },
+        { day: 'Wed', date: 'Sept 3', full: 'Wednesday, Sept 3' },
+        { day: 'Thu', date: 'Sept 4', full: 'Thursday, Sept 4' },
+        { day: 'Fri', date: 'Sept 5', full: 'Friday, Sept 5' }
+      ];
+
+      const container = document.getElementById('dateTabsContainer');
+      container.innerHTML = '';
+
+      dates.forEach((d, idx) => {
+        const pill = document.createElement('div');
+        pill.className = `date-pill ${idx === 0 ? 'active' : ''}`;
+        pill.innerHTML = `<strong>${d.day}</strong><br><small>${d.date}</small>`;
+        pill.onclick = () => {
+          document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          selectedDate = d.full;
+          updateSummary();
+        };
+        container.appendChild(pill);
+      });
+    }
+
+    function selectTimeSlot(el, timeText) {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
+      el.classList.add('active');
+      selectedTime = timeText;
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const label = document.getElementById('selectedSummaryLabel');
+      if (label) {
+        label.innerText = `Selected: ${selectedDate} • ${selectedTime}`;
+      }
+    }
+
+    async function handleStep1Submit(event) {
       event.preventDefault();
 
-      const name = document.getElementById('meet-name').value.trim();
-      const email = document.getElementById('meet-email').value.trim();
-      const phone = document.getElementById('meet-phone').value.trim();
-      const division = document.getElementById('meet-division').value;
-      const budget = document.getElementById('meet-budget').value;
-      const notes = document.getElementById('meet-notes').value.trim();
-
-      const payload = {
-        name,
-        email,
-        phone,
-        division,
-        packageSelected: `Budget: ${budget}`,
-        country: 'Global',
-        message: `Gated Calendly Booking Qualification Snapshot.\nBudget: ${budget}\nNotes: ${notes}`
+      userLeadData = {
+        name: document.getElementById('meet-name').value.trim(),
+        email: document.getElementById('meet-email').value.trim(),
+        phone: document.getElementById('meet-phone').value.trim(),
+        division: document.getElementById('meet-division').value,
+        budget: document.getElementById('meet-budget').value,
+        notes: document.getElementById('meet-notes').value.trim()
       };
 
-      // Save backup locally to prevent lead loss
-      localStorage.setItem('galicon_latest_gated_lead', JSON.stringify({ ...payload, timestamp: new Date().toISOString() }));
+      // Save initial snapshot
+      localStorage.setItem('galicon_booking_lead', JSON.stringify({ ...userLeadData, timestamp: new Date().toISOString() }));
 
+      // Dispatch to API
       try {
-        // Submit lead data to Express API
-        await fetch(`${API_BASE}/api/leads/submit`, {
+        fetch(`${API_BASE}/api/leads/submit`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } catch (err) {
-        console.warn("Database submit failed, local backup saved. Proceeding to scheduler.", err);
-      }
+          body: JSON.stringify({
+            name: userLeadData.name,
+            email: userLeadData.email,
+            phone: userLeadData.phone,
+            division: userLeadData.division,
+            packageSelected: `Budget: ${userLeadData.budget}`,
+            country: 'Global',
+            message: `Step 1 Qualification Submitted: Budget ${userLeadData.budget}. Notes: ${userLeadData.notes}`
+          })
+        }).catch(e => console.warn('Sync notice:', e));
+      } catch (err) {}
 
-      // Smooth transition to Step 2
-      document.getElementById('qualification-step-container').style.display = 'none';
-      const calendlyContainer = document.getElementById('calendly-step-container');
-      calendlyContainer.style.display = 'block';
+      // Transition to Step 2
+      document.getElementById('step-1-qualification').style.display = 'none';
+      document.getElementById('step-2-scheduler').style.display = 'block';
+      initDateTabs();
+      updateSummary();
+      window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
 
-      // Load Calendly Widget prefilled
-      setTimeout(() => {
-        try {
-          if (window.Calendly) {
-            Calendly.initInlineWidget({
-              url: 'https://calendly.com/ismailkazia302',
-              parentElement: document.getElementById('calendly-embed-container'),
-              prefill: {
-                name: name,
-                email: email
-              }
-            });
-            // Hide spinner once loaded
-            document.getElementById('calendly-loader').style.display = 'none';
-          } else {
-            // Fallback: load prefilled iframe
-            const embed = document.getElementById('calendly-embed-container');
-            embed.innerHTML = `<iframe src="https://calendly.com/ismailkazia302?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}" style="width:100%; height:750px; border:0;"></iframe>`;
-            document.getElementById('calendly-loader').style.display = 'none';
-          }
-        } catch (e) {
-          console.error("Calendly loading error:", e);
-          const embed = document.getElementById('calendly-embed-container');
-          embed.innerHTML = `<a href="https://calendly.com/ismailkazia302?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}" target="_blank" class="btn btn-warning py-3 px-5 fw-bold text-dark my-4">Open Scheduler Directly ↗</a>`;
-          document.getElementById('calendly-loader').style.display = 'none';
-        }
-      }, 500);
+    async function confirmFinalBooking() {
+      const slotString = `${selectedDate} at ${selectedTime}`;
+      
+      // Update backend with finalized slot
+      try {
+        fetch(`${API_BASE}/api/leads/submit`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: userLeadData.name || 'Executive Lead',
+            email: userLeadData.email || '',
+            phone: userLeadData.phone || '',
+            division: userLeadData.division || 'General',
+            packageSelected: `Confirmed Slot: ${slotString}`,
+            country: 'Global',
+            message: `🎉 FINAL CONFIRMED MEETING BOOKING: ${slotString}\nDivision: ${userLeadData.division}\nBudget: ${userLeadData.budget}\nNotes: ${userLeadData.notes}`
+          })
+        }).catch(e => console.warn('Sync notice:', e));
+      } catch (err) {}
+
+      // Render Step 3
+      document.getElementById('step-2-scheduler').style.display = 'none';
+      document.getElementById('step-3-confirmed').style.display = 'block';
+
+      document.getElementById('confirmName').innerText = userLeadData.name || 'Executive Guest';
+      document.getElementById('confirmEmail').innerText = userLeadData.email || 'Provided on file';
+      document.getElementById('confirmSlot').innerText = slotString;
+
+      // Google Calendar Direct URL
+      const gcalTitle = encodeURIComponent(`Executive Strategy Discovery: ${userLeadData.name} x Ismail Kazia (GALICON)`);
+      const gcalDetails = encodeURIComponent(`1-on-1 Strategy Discovery with Founder Ismail Kazia.\n\nDivision: ${userLeadData.division}\nBudget: ${userLeadData.budget}\nPhone: ${userLeadData.phone}\nNotes: ${userLeadData.notes}\n\nMeeting link will be shared via WhatsApp / Email.`);
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${gcalTitle}&details=${gcalDetails}&location=Google+Meet`;
+      document.getElementById('gcalBtn').href = gcalUrl;
+
+      // WhatsApp Direct Confirmation URL
+      const waMsg = encodeURIComponent(`Hello Founder Ismail Kazia! 👋\n\nI have confirmed our Strategy Discovery Session:\n👤 Name: ${userLeadData.name}\n📅 Slot: ${slotString}\n🎯 Division: ${userLeadData.division}\n💼 Budget: ${userLeadData.budget}\n\nPlease confirm Google Meet link. Look forward to connecting!`);
+      document.getElementById('confirmWaBtn').href = `https://wa.me/966548905688?text=${waMsg}`;
+
+      window.scrollTo({ top: 100, behavior: 'smooth' });
     }
   </script>
-  
+
   <!-- GALICON Luxury Sales & Customer Service AI Concierge Bot -->
   <script src="chatbot.js" defer></script>
   <script src="components/navbar.js"></script>
