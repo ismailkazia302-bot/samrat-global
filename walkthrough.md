@@ -1,11 +1,11 @@
 # GALICON GLOBAL — Corporate Staging & Lifecycle Platform Walkthrough
-**Founder: Ismail Kazia | Production Release 2.6**
+**Founder: Ismail Kazia | Production Release 2.7**
 
 ---
 
-## 🚀 What Was Built & Deployed Live (v2.6)
+## 🚀 What Was Built & Deployed Live (v2.7)
 
-### 1. 🛍️ Dynamic B2B Solutions Portfolio (`products.html`)
+### 1. 🛍_ Dynamic B2B Solutions Portfolio (`products.html`)
 Live URL: [https://ismailkazia302-bot.github.io/samrat-global/products.html](https://ismailkazia302-bot.github.io/samrat-global/products.html)
 
 Integrated 4 premium interactive tab panels mapping to GALICON's core business verticals:
@@ -24,7 +24,11 @@ Integrated 4 premium interactive tab panels mapping to GALICON's core business v
 
 ### ⚙️ 4. Unified Dropdown Estimator Widget (`calculator.html`)
 - Refactored the interactive staging calculator into a compact card-based estimator form using dropdowns for Division and Package Tier selection.
-- Linked the DOM elements directly to `galicon_pricing_engine.js` so it automatically tracks:
-  - Selected currency transformations (**INR, SAR, USD, AED**).
-  - Multi-add-on state selections (ZATCA Phase 2 Kit, CRM Sync Daemon, Translation Booths, Video Production).
-  - WhatsApp pre-filled quotes routed directly to Founder Ismail Kazia.
+- Linked the DOM elements directly to `galicon_pricing_engine.js` so it automatically tracks currency transformations (**INR, SAR, USD, AED**) and multi-add-ons in real-time.
+
+### 🔒 5. Secure Express.js Backend Server (`backend/server.js`)
+- Implemented an Express.js backend server listening securely on port 4000.
+- Features:
+  - Secure lead capture webhook (`/api/leads/submit`) appending inquiries to `private_data/leads_database.json`.
+  - Secure JWT authentication endpoint (`/api/admin/login`) protecting CRM dashboard routes.
+  - JWT token verification checkpoint (`/api/admin/leads`) providing encrypted data pipelines.
