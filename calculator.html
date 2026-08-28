@@ -46,6 +46,7 @@
         </div>
       </div>
 
+    <form onsubmit="handleLeadFormSubmit(event)">
       <div class="row g-4">
         <!-- Configuration Column -->
         <div class="col-lg-7">
@@ -87,6 +88,24 @@
               <label class="form-check-label small" for="add4">4K Cinematic Aftermovie & Drone</label>
             </div>
           </div>
+
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-bold text-uppercase">4. Contact Information</label>
+            <div class="row g-2 mb-2">
+              <div class="col-md-6">
+                <input type="text" id="client-name" class="form-control bg-black text-white border-secondary" placeholder="Your Name *" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" id="client-email" class="form-control bg-black text-white border-secondary" placeholder="email@company.com *" required>
+              </div>
+            </div>
+            <div class="mb-2">
+              <input type="tel" id="client-phone" class="form-control bg-black text-white border-secondary" placeholder="Phone Number / WhatsApp *" required>
+            </div>
+            <div>
+              <textarea id="client-notes" class="form-control bg-black text-white border-secondary" rows="2" placeholder="Briefly describe your project or event details..."></textarea>
+            </div>
+          </div>
         </div>
 
         <!-- Output Total Column -->
@@ -96,14 +115,14 @@
             <div class="h2 text-warning fw-bold my-2" id="estimated-price-display">₹50,000</div>
             <div class="text-muted small mb-3" id="billing-type-label">/ month</div>
             
-            <a href="#" id="whatsapp-export-btn" target="_blank" class="btn btn-warning w-100 fw-bold text-dark py-2">
-              Confirm via WhatsApp ➜
-            </a>
+            <button type="submit" class="btn btn-warning w-100 fw-bold text-dark py-2 mb-2">
+              Confirm Inquiry ➜
+            </button>
+            <a href="#" id="whatsapp-export-btn" style="display:none;"></a>
           </div>
         </div>
       </div>
-    </div>
-
+    </form>
   </div>
 
   <script src="galicon_pricing_engine.js"></script>
@@ -148,6 +167,38 @@
       if (add2) add2.checked = this.selectedAddOns.has("crmSync");
       if (add3) add3.checked = this.selectedAddOns.has("translationBooths");
       if (add4) add4.checked = this.selectedAddOns.has("videoProduction");
+    }
+
+    async function handleLeadFormSubmit(event) {
+      event.preventDefault();
+
+      const payload = {
+        name: document.getElementById('client-name').value,
+        email: document.getElementById('client-email').value,
+        phone: document.getElementById('client-phone').value,
+        division: document.getElementById('divisionSelect').value,
+        packageSelected: document.getElementById('tierSelect').value,
+        country: window.galiconCalc ? window.galiconCalc.selectedCurrency : "INR",
+        message: document.getElementById('client-notes').value
+      };
+
+      try {
+        const response = await fetch('https://api.galiconglobal.com/api/leads/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          alert("Inquiry received! Founder Ismail Kazia will connect within 2 hours.");
+          window.location.href = "meet.html";
+        }
+      } catch (err) {
+        console.error("Submission error:", err);
+        // Fallback: Direct WhatsApp trigger if server is temporarily unreachable
+        window.open(window.galiconCalc.generateWhatsAppUrl(), '_blank');
+      }
     }
   </script>
 
