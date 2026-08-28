@@ -1,9 +1,9 @@
 # GALICON GLOBAL — Corporate Staging & Lifecycle Platform Walkthrough
-**Founder: Ismail Kazia | Production Release 2.5**
+**Founder: Ismail Kazia | Production Release 2.6**
 
 ---
 
-## 🚀 What Was Built & Deployed Live (v2.5)
+## 🚀 What Was Built & Deployed Live (v2.6)
 
 ### 1. 🛍️ Dynamic B2B Solutions Portfolio (`products.html`)
 Live URL: [https://ismailkazia302-bot.github.io/samrat-global/products.html](https://ismailkazia302-bot.github.io/samrat-global/products.html)
@@ -22,5 +22,9 @@ Integrated 4 premium interactive tab panels mapping to GALICON's core business v
 - Injected a visual **Lifecycle Platform** panel on the home page displaying the 6 phases of enterprise growth: **START → GROW → OPERATE → FINANCE → TECHNOLOGY → EXPAND**.
 - Aligned GALICON's brand message with the core principle: "We solve business challenges across the complete lifecycle."
 
-### ⚙️ 4. Localized Pricing Calculations (`calculator.html`)
-- Upgraded the interactive estimator logic from generic percentage-based multipliers to local currency matrices mapping directly to Bangalore, Riyadh, and Dubai markets.
+### ⚙️ 4. Unified Dropdown Estimator Widget (`calculator.html`)
+- Refactored the interactive staging calculator into a compact card-based estimator form using dropdowns for Division and Package Tier selection.
+- Linked the DOM elements directly to `galicon_pricing_engine.js` so it automatically tracks:
+  - Selected currency transformations (**INR, SAR, USD, AED**).
+  - Multi-add-on state selections (ZATCA Phase 2 Kit, CRM Sync Daemon, Translation Booths, Video Production).
+  - WhatsApp pre-filled quotes routed directly to Founder Ismail Kazia.
