@@ -1,7 +1,7 @@
 /**
  * GALICON GLOBAL — Master Unified Navbar Component
  * Automatically resolves path depths for root, subdirectories, services, and blogs.
- * Active Divisions: BUSINESS, GROWTH, TECHNOLOGY, EXPERIENCES
+ * Active Divisions: BUSINESS, GROWTH, TECHNOLOGY, EXPERIENCES, AUDIT
  */
 (function() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +10,7 @@
                      path.includes('/start/') || path.includes('/grow/') || 
                      path.includes('/technology/') || path.includes('/events/') ||
                      path.includes('/business/') || path.includes('/growth/') || 
-                     path.includes('/experiences/');
+                     path.includes('/experiences/') || path.includes('/audit/');
     const prefix = isSubdir ? '../' : '';
 
     const navPlaceholder = document.getElementById('navbar-placeholder');
@@ -32,12 +32,13 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center" style="font-size:0.85rem; font-weight:700; letter-spacing:1px;">
+        <ul class="navbar-nav ms-auto align-items-center" style="font-size:0.82rem; font-weight:700; letter-spacing:0.8px;">
           <li class="nav-item"><a class="nav-link" href="${prefix}index.html">HOME</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}business/index.html">BUSINESS</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}growth/index.html">GROWTH</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}technology/index.html">TECHNOLOGY</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}experiences/index.html">EXPERIENCES</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}audit/index.html" style="color:#10b981 !important;"><i class="fas fa-bolt me-1 text-success"></i>FREE AUDIT</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}calculator.html"><i class="fas fa-calculator me-1 text-warning"></i>ESTIMATOR</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}products.html" style="color:#FFF200 !important;"><i class="fas fa-shopping-bag me-1"></i>STORE</a></li>
           <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-warning text-dark fw-bold px-3 py-2" href="${prefix}meet.html" style="border-radius:6px; letter-spacing:0.5px;"><i class="fas fa-calendar-check me-1"></i>FIND MY SOLUTION</a></li>

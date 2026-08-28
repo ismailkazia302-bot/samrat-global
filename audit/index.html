@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free 60-Second Business & Tech Growth Audit | GALICON GLOBAL</title>
+  <meta name="description" content="Get an instant 0-100 diagnostic score for your website speed, performance ad funnels, tech stack, and business model bottlenecks. Free customized action blueprint.">
+  <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/audit/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family:'Poppins',sans-serif; background:#000000; color:#FFFFFF; line-height:1.6; }
+    .hero-audit { padding:60px 20px 40px; background:radial-gradient(circle at 50% 20%, #152238 0%, #05070c 70%); text-align:center; }
+    .audit-card { background:#0a0f1d; border:2px solid rgba(234,179,8,0.4); border-radius:20px; box-shadow:0 30px 80px rgba(0,0,0,0.95); max-width:850px; margin:0 auto; padding:36px 28px; }
+    .score-circle { width:140px; height:140px; border-radius:50%; border:6px solid #eab308; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 20px; background:#050811; box-shadow:0 0 30px rgba(234,179,8,0.3); }
+    .score-num { font-size:2.8rem; font-weight:900; color:#eab308; line-height:1; }
+    .audit-choice { background:#050811; border:1px solid rgba(255,255,255,0.12); padding:14px 18px; border-radius:12px; cursor:pointer; transition:all 0.2s; text-align:left; user-select:none; margin-bottom:10px; }
+    .audit-choice:hover { border-color:#eab308; background:#0e172a; transform:translateX(4px); }
+    .audit-choice.active { border-color:#10b981; background:#0a1a15; color:#fff; font-weight:bold; }
+    .metric-badge { background:#070d18; border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:12px; text-align:center; }
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/audit/">
+  <meta property="og:title" content="Free 60-Second Business & Tech Growth Audit | GALICON GLOBAL">
+  <meta property="og:description" content="Get an instant 0-100 diagnostic score for your website, ad funnels, and tech stack.">
+  <meta property="og:image" content="https://ismailkazia302-bot.github.io/samrat-global/galicon_logo.png">
+  <meta property="og:site_name" content="GALICON GLOBAL">
+  <meta name="author" content="Ismail Kazia">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GALICON 60-Second Growth & Tech Diagnostic Auditor",
+    "url": "https://ismailkazia302-bot.github.io/samrat-global/audit/",
+    "description": "Free instant automated audit tool for business funnels, tech stack health, and conversion optimization.",
+    "provider": {
+      "@type": "Organization",
+      "name": "GALICON GLOBAL GROUP",
+      "url": "https://ismailkazia302-bot.github.io/samrat-global/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <section class="hero-audit">
+    <div class="container">
+      <span class="badge bg-warning text-dark px-3 py-1 fw-bold rounded-pill mb-2 text-uppercase" style="letter-spacing:1px;">FREE 60-SECOND DIAGNOSTIC TOOL</span>
+      <h1 class="text-white fw-bold display-5 mb-2">Find What's Holding Your Business Back.<br><span style="color:#EAB308;">Instant Growth & Tech Health Score.</span></h1>
+      <p class="text-muted lead mx-auto mb-4" style="max-width:720px; font-size:1.05rem; color:#cbd5e1 !important;">
+        Evaluate your website speed, customer acquisition funnel, code health, and pricing strategy in 60 seconds. Get an instant score out of 100 with actionable next steps.
+      </p>
+
+      <div class="audit-card text-start">
+        
+        <!-- STEP 1: Assessment Form -->
+        <div id="audit-step-1">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <h4 class="fw-bold text-white mb-0">Step 1: Select Your Current Challenge</h4>
+            <span class="badge bg-primary text-white">4 Quick Questions</span>
+          </div>
+
+          <form id="auditForm" onsubmit="calculateAuditScore(event)">
+            <!-- Q1 -->
+            <div class="mb-3">
+              <label class="form-label text-secondary small fw-bold">1. WHAT IS YOUR PRIMARY REVENUE GOAL?</label>
+              <div class="row g-2">
+                <div class="col-md-6"><div class="audit-choice active" onclick="selectAuditOpt(this, 'q1', 25)">🚀 Scale customer acquisition & leads via paid ads</div></div>
+                <div class="col-md-6"><div class="audit-choice" onclick="selectAuditOpt(this, 'q1', 20)">🌐 Build / Redesign high-speed modern website / app</div></div>
+                <div class="col-md-6"><div class="audit-choice" onclick="selectAuditOpt(this, 'q1', 15)">🤖 Automate repetitive tasks & deploy WhatsApp AI bot</div></div>
+                <div class="col-md-6"><div class="audit-choice" onclick="selectAuditOpt(this, 'q1', 10)">🎪 Plan corporate conference, staging or executive event</div></div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="mb-3">
+              <label class="form-label text-secondary small fw-bold">2. HOW IS YOUR CURRENT CONVERSION RATE / FUNNEL?</label>
+              <div class="row g-2">
+                <div class="col-md-6"><div class="audit-choice" onclick="selectAuditOpt(this, 'q2', 25)">🟢 Strong traffic, but low visitor-to-lead conversion</div></div>
+                <div class="col-md-6"><div class="audit-choice active" onclick="selectAuditOpt(this, 'q2', 15)">🟡 Inconsistent ad performance and high Customer Acquisition Cost</div></div>
+                <div class="col-md-6"><div class="audit-choice" onclick="selectAuditOpt(this, 'q2', 10)">🔴 Outdated slow website, high bounce rate, technical glitches</div></div>
+                <div class="col-md-6"><div class="audit-choice" onclick="selectAuditOpt(this, 'q2', 20)">⚪ Starting from scratch / launching new product</div></div>
+              </div>
+            </div>
+
+            <!-- Q3 & Q4 Contact -->
+            <div class="mb-4">
+              <label class="form-label text-secondary small fw-bold">3. YOUR BUSINESS & CONTACT DETAILS FOR CUSTOM REPORT</label>
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <input type="text" id="audit-name" class="form-control bg-black text-white border-secondary" placeholder="Your Name / Business Name *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" id="audit-email" class="form-control bg-black text-white border-secondary" placeholder="Work Email *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" id="audit-phone" class="form-control bg-black text-white border-secondary" placeholder="WhatsApp / Phone Number *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" id="audit-url" class="form-control bg-black text-white border-secondary" placeholder="Website URL or Social Page (Optional)">
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-warning w-100 py-3 fw-bold text-dark" style="font-size:1.05rem; border-radius:10px;">
+              ⚡ Generate My Free Audit Scorecard ➔
+            </button>
+          </form>
+        </div>
+
+        <!-- STEP 2: Instant Results Scorecard -->
+        <div id="audit-step-2" style="display:none;" class="text-center py-2">
+          <div class="score-circle">
+            <span class="score-num" id="scoreValue">78</span>
+            <small class="text-muted fw-bold" style="font-size:0.75rem;">OUT OF 100</small>
+          </div>
+
+          <h3 class="text-white fw-bold mb-1" id="scoreGrade">Growth Potential: High Opportunity</h3>
+          <p class="text-muted small mb-4" id="scoreSummary">Your core foundation is solid, but you are likely losing 35–50% of potential pipeline due to funnel leakage and speed bottlenecks.</p>
+
+          <div class="row g-2 text-start mb-4">
+            <div class="col-md-4">
+              <div class="metric-badge">
+                <small class="text-secondary fw-bold d-block">SPEED & SEO HEALTH</small>
+                <strong class="text-warning" id="m1Score">65 / 100 (Needs CRO)</strong>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="metric-badge">
+                <small class="text-secondary fw-bold d-block">AD ACQUISITION EFFICIENCY</small>
+                <strong class="text-danger" id="m2Score">55 / 100 (High CAC)</strong>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="metric-badge">
+                <small class="text-secondary fw-bold d-block">CONVERSION AUTOMATION</small>
+                <strong class="text-success" id="m3Score">80 / 100 (AI Ready)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-3 text-start mb-4 border border-warning" style="background:#050811;">
+            <h6 class="text-warning fw-bold mb-2"><i class="fas fa-lightbulb me-2"></i>Recommended 48-Hour Action Sprint:</h6>
+            <p class="text-muted small mb-0" id="actionSprintText">
+              1. Deploy sub-second landing page architecture to cut bounce rate.<br>
+              2. Separate Meta/Google audience testing to decrease cost-per-lead by 30%.<br>
+              3. Activate automated WhatsApp AI lead response to engage prospects in &lt;15 seconds.
+            </p>
+          </div>
+
+          <div class="d-flex gap-2 justify-content-center flex-wrap">
+            <a href="../meet.html" class="btn btn-warning py-3 px-4 fw-bold text-dark" style="border-radius:10px;">
+              🗓️ Book Strategy Review Call (30 Min) ➔
+            </a>
+            <a href="#" id="waReportBtn" target="_blank" class="btn btn-success py-3 px-4 fw-bold text-white" style="border-radius:10px;">
+              <i class="fab fa-whatsapp me-2"></i> WhatsApp Ismail for Detailed Plan
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why GALICON Beats Traditional Agencies -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="text-warning small text-uppercase fw-bold letter-spacing-2">The Unfair Advantage</span>
+        <h2 class="text-white fw-bold mt-1">Why Fast-Growing Brands Choose GALICON Over Traditional Agencies</h2>
+        <p class="text-muted small">Compare our speed, pricing models, and execution architecture.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered text-center align-middle" style="background:#0a0f1d; border-color:rgba(255,255,255,0.08);">
+          <thead>
+            <tr style="background:#070b14;">
+              <th class="text-start p-3" style="width:30%;">Capability / Feature</th>
+              <th class="text-warning p-3" style="width:25%; font-size:1.1rem;"><i class="fas fa-crown me-1"></i> GALICON GLOBAL</th>
+              <th class="text-muted p-3" style="width:22%;">Traditional Large Agencies</th>
+              <th class="text-muted p-3" style="width:23%;">Freelancer Marketplaces</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-start p-3 fw-bold">Turnaround Speed</td>
+              <td class="text-success fw-bold p-3">⚡ 24–48 Hr Sprints / 5-Day Web</td>
+              <td class="text-muted p-3">3 to 6 Weeks Lag</td>
+              <td class="text-muted p-3">Unpredictable / Ghosting</td>
+            </tr>
+            <tr>
+              <td class="text-start p-3 fw-bold">Pricing Transparency</td>
+              <td class="text-warning fw-bold p-3">✔ 100% Fixed Scope (From ₹2,999)</td>
+              <td class="text-muted p-3">Opaque ₹2.5L+ Minimums</td>
+              <td class="text-muted p-3">Hidden hourly creep</td>
+            </tr>
+            <tr>
+              <td class="text-start p-3 fw-bold">Media Spend Separation</td>
+              <td class="text-success fw-bold p-3">✔ 100% Isolated Client Account</td>
+              <td class="text-muted p-3">Hidden ad spend markups</td>
+              <td class="text-muted p-3">No formal tracking</td>
+            </tr>
+            <tr>
+              <td class="text-start p-3 fw-bold">Full Ecosystem Integration</td>
+              <td class="text-warning fw-bold p-3">✔ Strategy + Ads + Tech + Staging</td>
+              <td class="text-muted p-3">Siloed single-service teams</td>
+              <td class="text-muted p-3">Disjointed freelancers</td>
+            </tr>
+            <tr>
+              <td class="text-start p-3 fw-bold">Executive Oversight</td>
+              <td class="text-success fw-bold p-3">👑 Direct Founder Ismail Kazia</td>
+              <td class="text-muted p-3">Delegated to Junior Interns</td>
+              <td class="text-muted p-3">Zero legal accountability</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../analytics_tracker.js"></script>
+  <script>
+    let qScores = { q1: 25, q2: 15 };
+
+    function selectAuditOpt(el, qKey, val) {
+      el.parentElement.parentElement.querySelectorAll('.audit-choice').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      qScores[qKey] = val;
+    }
+
+    async function calculateAuditScore(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('audit-name').value.trim();
+      const email = document.getElementById('audit-email').value.trim();
+      const phone = document.getElementById('audit-phone').value.trim();
+      const url = document.getElementById('audit-url').value.trim();
+
+      const baseScore = 40 + qScores.q1 + qScores.q2;
+      const finalScore = Math.min(Math.max(baseScore, 58), 92);
+
+      const attribution = typeof window.getGaliconAttribution === 'function' ? window.getGaliconAttribution() : {};
+
+      // Send to Backend CRM API
+      const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:4000'
+        : 'https://api.galiconglobal.com';
+
+      try {
+        fetch(`${API_BASE}/api/leads/submit`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            division: 'Audit Tool Lead',
+            packageSelected: `Score: ${finalScore}/100`,
+            country: 'INR',
+            attribution: attribution,
+            message: `Free Audit Generated: Score ${finalScore}/100. URL: ${url}. Goal: Q1-${qScores.q1}, Q2-${qScores.q2}`
+          })
+        }).catch(e => console.warn(e));
+      } catch(e) {}
+
+      // Render Step 2
+      document.getElementById('audit-step-1').style.display = 'none';
+      document.getElementById('audit-step-2').style.display = 'block';
+
+      document.getElementById('scoreValue').innerText = finalScore;
+      
+      const waText = encodeURIComponent(`Hi Ismail! 👋 I just ran the Free Growth Audit on GALICON.\n👤 Name: ${name}\n🌐 URL: ${url}\n📊 My Audit Score: ${finalScore}/100\n\nI want to discuss the recommended 48-hour action sprint for my business.`);
+      document.getElementById('waReportBtn').href = `https://wa.me/916363962640?text=${waText}`;
+    }
+  </script>
+
+  <script src="../chatbot.js" defer></script>
+  <script src="../components/navbar.js"></script>
+  <script src="../components/footer.js"></script>
+</body>
+</html>
