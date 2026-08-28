@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Multi-Currency Project Estimator | GALICON GLOBAL</title>
-  <meta name="description" content="Calculate exact project budgets and monthly retainers across INR, SAR, USD, and AED for corporate events, digital marketing, AI technology, and advisory.">
+  <meta name="description" content="Calculate transparent project budgets and monthly retainers across INR, USD, SAR, and AED for web dev, mobile apps, marketing, and business advisory.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Poppins', sans-serif; background:#050505; color:#fff; min-height:100vh; line-height:1.6; }
-    .container-calc { max-width:960px; margin:60px auto; padding:0 20px; }
+    .container-calc { max-width:960px; margin:50px auto; padding:0 20px; }
     .bg-dark { background-color: #0d0d0d !important; }
     .bg-black { background-color: #000000 !important; }
     .border-secondary { border-color: rgba(255,255,255,0.08) !important; }
@@ -22,11 +23,11 @@
   </style>
   <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/calculator.html">
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/calculator.html">
   <meta property="og:title" content="Interactive Multi-Currency Project Estimator | GALICON GLOBAL">
-  <meta property="og:description" content="Calculate exact project budgets and monthly retainers across INR, SAR, USD, and AED for corporate events, digital marketing, AI technology, and advisory.">
+  <meta property="og:description" content="Calculate transparent project budgets and monthly retainers across INR, USD, SAR, and AED.">
   <meta property="og:image" content="https://ismailkazia302-bot.github.io/samrat-global/galicon_logo.png">
   <meta property="og:site_name" content="GALICON GLOBAL">
   <meta name="author" content="Ismail Kazia">
@@ -38,7 +39,7 @@
     "@type": "Service",
     "name": "Interactive Multi-Currency Project Estimator | GALICON GLOBAL",
     "url": "https://ismailkazia302-bot.github.io/samrat-global/calculator.html",
-    "description": "Calculate exact project budgets and monthly retainers across INR, SAR, USD, and AED for corporate events, digital marketing, AI technology, and advisory.",
+    "description": "Calculate transparent project budgets and monthly retainers across INR, USD, SAR, and AED.",
     "author": {
       "@type": "Person",
       "name": "Ismail Kazia",
@@ -64,7 +65,7 @@
     <div class="calculator-container p-4 bg-dark text-white rounded-3 border border-secondary shadow-lg">
       <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
         <div>
-          <h4 class="fw-bold mb-0 text-warning">Custom Project & Retainer Estimator</h4>
+          <h4 class="fw-bold mb-0 text-warning">Project Scope & Retainer Estimator</h4>
           <p class="text-muted small mb-0">Select your required tier and currency for instant transparent estimation.</p>
         </div>
         
@@ -72,8 +73,8 @@
         <div class="currency-selector">
           <select class="form-select bg-black text-warning border-warning" onchange="window.galiconCalc.setCurrency(this.value)">
             <option value="INR" selected>INR (₹ - India)</option>
-            <option value="SAR">SAR (ر.س - Saudi Arabia)</option>
             <option value="USD">USD ($ - Global / US)</option>
+            <option value="SAR">SAR (ر.س - Saudi Arabia)</option>
             <option value="AED">AED (د.إ - UAE)</option>
           </select>
         </div>
@@ -86,39 +87,37 @@
           <div class="mb-3">
             <label class="form-label text-muted small fw-bold text-uppercase">1. Select Strategic Division</label>
             <select class="form-select bg-black text-white border-secondary" id="divisionSelect" onchange="updateTiersDropdown(this.value)">
-              <option value="consulting">Business & Consulting (/start/)</option>
-              <option value="marketing" selected>Marketing & Growth (/grow/)</option>
-              <option value="technology">Technology & AI (/technology/)</option>
-              <option value="events">Experiences & Productions (/events/)</option>
+              <option value="technology" selected>Technology & AI (/technology/)</option>
+              <option value="marketing">Marketing & Growth (/growth/)</option>
+              <option value="consulting">Business & Consulting (/business/)</option>
+              <option value="events">Experiences & Productions (/experiences/)</option>
             </select>
           </div>
 
           <div class="mb-3">
-            <label class="form-label text-muted small fw-bold text-uppercase">2. Select Package Tier</label>
+            <label class="form-label text-muted small fw-bold text-uppercase">2. Select Deliverable / Tier</label>
             <select class="form-select bg-black text-white border-secondary" id="tierSelect" onchange="applyTierSelection()">
-              <option value="funnel">Funnel & Tracking Architecture (Setup)</option>
-              <option value="performance" selected>Performance Engine Retainer (Monthly)</option>
-              <option value="fullFunnel">Full-Funnel Growth Partner (Monthly)</option>
+              <!-- Injected dynamically -->
             </select>
           </div>
 
           <div class="mb-3">
             <label class="form-label text-muted small fw-bold text-uppercase">3. Optional Strategic Add-Ons</label>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="add1" onchange="window.galiconCalc.toggleAddOn('zatcaKit')">
-              <label class="form-check-label small" for="add1">ZATCA Phase 2 E-Invoicing Template Pack</label>
+              <input class="form-check-input" type="checkbox" id="add1" onchange="window.galiconCalc.toggleAddOn('seoBoost')">
+              <label class="form-check-label small" for="add1">100/100 Technical SEO & Schema Audit (+₹5,000)</label>
             </div>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="add2" onchange="window.galiconCalc.toggleAddOn('crmSync')">
-              <label class="form-check-label small" for="add2">Autonomous Node.js Lead Scorer Daemon</label>
+              <input class="form-check-input" type="checkbox" id="add2" onchange="window.galiconCalc.toggleAddOn('paymentGateway')">
+              <label class="form-check-label small" for="add2">Razorpay / UPI / NetBanking Gateway (+₹8,000)</label>
             </div>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="add3" onchange="window.galiconCalc.toggleAddOn('translationBooths')">
-              <label class="form-check-label small" for="add3">Simultaneous Translation Booths (AV)</label>
+              <input class="form-check-input" type="checkbox" id="add3" onchange="window.galiconCalc.toggleAddOn('crmSync')">
+              <label class="form-check-label small" for="add3">Autonomous Lead Scorer Daemon & CRM Sync (+₹15,000)</label>
             </div>
             <div class="form-check mb-2">
               <input class="form-check-input" type="checkbox" id="add4" onchange="window.galiconCalc.toggleAddOn('videoProduction')">
-              <label class="form-check-label small" for="add4">4K Cinematic Aftermovie & Drone</label>
+              <label class="form-check-label small" for="add4">4K Cinematic Video & Drone Production (+₹25,000)</label>
             </div>
           </div>
 
@@ -136,7 +135,7 @@
               <input type="tel" id="client-phone" class="form-control bg-black text-white border-secondary" placeholder="Phone Number / WhatsApp *" required>
             </div>
             <div>
-              <textarea id="client-notes" class="form-control bg-black text-white border-secondary" rows="2" placeholder="Briefly describe your project or event details..."></textarea>
+              <textarea id="client-notes" class="form-control bg-black text-white border-secondary" rows="2" placeholder="Briefly describe your requirements..."></textarea>
             </div>
           </div>
         </div>
@@ -145,27 +144,31 @@
         <div class="col-lg-5 d-flex flex-column justify-content-center">
           <div class="p-4 bg-black rounded-3 border border-warning text-center">
             <div class="text-muted small text-uppercase fw-bold">Estimated Investment</div>
-            <div class="h2 text-warning fw-bold my-2" id="estimated-price-display">₹50,000</div>
-            <div class="text-muted small mb-3" id="billing-type-label">/ month</div>
+            <div class="h2 text-warning fw-bold my-2" id="estimated-price-display">₹14,999</div>
+            <div class="text-muted small mb-3" id="billing-type-label">Fixed Sprint Execution</div>
             
             <button type="submit" class="btn btn-warning w-100 fw-bold text-dark py-2 mb-2">
-              Confirm Inquiry ➜
+              Lock In Estimated Scope ➔
             </button>
-            <a href="#" id="whatsapp-export-btn" style="display:none;"></a>
+            <a href="#" id="whatsapp-export-btn" target="_blank" class="btn btn-success w-100 fw-bold text-white py-2">
+              <i class="fab fa-whatsapp me-1"></i> WhatsApp Instant Quote
+            </a>
           </div>
         </div>
       </div>
     </form>
   </div>
 
+  <script src="analytics_tracker.js"></script>
   <script src="calculator.js"></script>
   <script>
-    // Synchronize UI dropdowns with the core pricing class
     function updateTiersDropdown(divKey) {
       const tierSelect = document.getElementById("tierSelect");
       tierSelect.innerHTML = "";
       
       const division = GALICON_PRICING_CONFIG.divisions[divKey];
+      if (!division) return;
+
       Object.keys(division.tiers).forEach(tk => {
         const tier = division.tiers[tk];
         const opt = document.createElement("option");
@@ -174,7 +177,6 @@
         tierSelect.appendChild(opt);
       });
       
-      // Auto select the first tier in new division
       const firstTierKey = Object.keys(division.tiers)[0];
       window.galiconCalc.setDivisionAndTier(divKey, firstTierKey);
     }
@@ -185,25 +187,25 @@
       window.galiconCalc.setDivisionAndTier(divKey, tierKey);
     }
 
-    // Wrap render function of pricing engine to keep checkboxes synced
     const originalRender = GaliconEstimator.prototype.render;
     GaliconEstimator.prototype.render = function() {
       originalRender.call(this);
       
-      // Sync checkbox state
       const add1 = document.getElementById("add1");
       const add2 = document.getElementById("add2");
       const add3 = document.getElementById("add3");
       const add4 = document.getElementById("add4");
 
-      if (add1) add1.checked = this.selectedAddOns.has("zatcaKit");
-      if (add2) add2.checked = this.selectedAddOns.has("crmSync");
-      if (add3) add3.checked = this.selectedAddOns.has("translationBooths");
+      if (add1) add1.checked = this.selectedAddOns.has("seoBoost");
+      if (add2) add2.checked = this.selectedAddOns.has("paymentGateway");
+      if (add3) add3.checked = this.selectedAddOns.has("crmSync");
       if (add4) add4.checked = this.selectedAddOns.has("videoProduction");
     }
 
     async function handleLeadFormSubmit(event) {
       event.preventDefault();
+
+      const attribution = typeof window.getGaliconAttribution === 'function' ? window.getGaliconAttribution() : {};
 
       const payload = {
         name: document.getElementById('client-name').value,
@@ -212,6 +214,7 @@
         division: document.getElementById('divisionSelect').value,
         packageSelected: document.getElementById('tierSelect').value,
         country: window.galiconCalc ? window.galiconCalc.selectedCurrency : "INR",
+        attribution: attribution,
         message: document.getElementById('client-notes').value
       };
 
@@ -220,20 +223,15 @@
         : 'https://api.galiconglobal.com';
 
       try {
-        const response = await fetch(`${API_BASE}/api/leads/submit`, {
+        fetch(`${API_BASE}/api/leads/submit`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
-        });
+        }).catch(e => console.warn(e));
 
-        const result = await response.json();
-        if (result.success) {
-          alert("Inquiry received! Founder Ismail Kazia will connect within 2 hours.");
-          window.location.href = "meet.html";
-        }
+        alert("Inquiry received! Founder Ismail Kazia will connect with your project blueprint within 2 hours.");
+        window.location.href = "meet.html";
       } catch (err) {
-        console.error("Submission error:", err);
-        // Fallback: Direct WhatsApp trigger if server is temporarily unreachable
         window.open(window.galiconCalc.generateWhatsAppUrl(), '_blank');
       }
     }
@@ -241,6 +239,7 @@
 
   <div id="footer-placeholder"></div>
 
+  <script src="chatbot.js" defer></script>
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
 </body>
