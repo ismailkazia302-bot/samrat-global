@@ -11,15 +11,10 @@
   <link rel="stylesheet" href="style.css">
   <script>
     (function() {
-      const pin = sessionStorage.getItem('samrat_crm_auth');
-      if (pin !== '2030') {
-        const entered = prompt('🔒 GALICON EXECUTIVE OUTREACH — Enter Founder Security PIN:');
-        if (entered === '2030') {
-          sessionStorage.setItem('samrat_crm_auth', '2030');
-        } else {
-          alert('⛔ Access Denied: Authorized Founder Access Only.');
-          window.location.href = 'index.html';
-        }
+      const token = sessionStorage.getItem('samrat_crm_token');
+      if (!token) {
+        alert('🔒 Authentication Required: Accessing the Executive Outreach dashboard requires logging into the CRM Portal.');
+        window.location.href = 'crm_dashboard.html';
       }
     })();
   </script>

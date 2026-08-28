@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node auto_pilot_daemon.js",
+    "server": "node server/api_handler.js",
     "scrape": "node scraper.js",
     "pitch": "node ai_pitcher.js",
     "expand": "node scraper_expanded.js"

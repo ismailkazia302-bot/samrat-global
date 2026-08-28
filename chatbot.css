@@ -215,6 +215,19 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.chat-send-btn:hover {
-  background: #FDE047;
+
+/* Mobile Overlap Adjustments */
+@media (max-width: 576px) {
+  #samrat-chat-launcher {
+    bottom: 12px;
+    right: 12px;
+    padding: 8px 14px;
+    font-size: 0.75rem;
+  }
+  #samrat-chat-window {
+    bottom: 70px;
+    right: 12px;
+    width: calc(100vw - 24px);
+    height: 480px;
+  }
 }
