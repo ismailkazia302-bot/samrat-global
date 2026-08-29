@@ -65,12 +65,12 @@
     .calendly-card-wrapper { 
       background: #FFFFFF; 
       border: 1px solid #E6EBF1; 
-      border-radius: 20px; 
-      box-shadow: 0 15px 50px rgba(0,0,0,0.08); 
-      max-width: 1050px; 
-      margin: 0 auto 50px; 
+      border-radius: 16px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
+      max-width: 1040px; 
+      margin: 0 auto 25px; 
       overflow: hidden; 
-      padding: 10px;
+      min-height: 700px;
     }
     
     .calendly-inline-widget {
@@ -78,19 +78,17 @@
       min-width: 320px !important;
       height: 720px !important;
       border: none !important;
-      border-radius: 14px;
     }
 
     @media (max-width: 768px) {
       .hero-meet { padding: 25px 10px 15px; }
       .hero-meet h1 { font-size: 1.65rem; }
       .calendly-card-wrapper { 
-        border-radius: 14px; 
-        border-width: 1px;
-        padding: 4px;
+        border-radius: 12px; 
+        min-height: 920px;
       }
       .calendly-inline-widget {
-        height: 680px !important;
+        height: 920px !important;
       }
     }
   
@@ -146,9 +144,15 @@
     <!-- DIRECT CALENDLY EMBED CARD (ZERO DUPLICATE FORM) -->
     <div class="calendly-card-wrapper my-3">
       <!-- Calendly inline widget begin -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=ffffff&text_color=0a2540&primary_color=635bff"></div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=0a2540&primary_color=635bff" style="min-width:320px;height:720px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Calendly inline widget end -->
+    </div>
+
+    <div class="text-center mb-4">
+      <a href="https://calendly.com/ismailkazia302/30min" target="_blank" rel="noopener" class="text-decoration-none small fw-bold" style="color:#635BFF;">
+        <i class="fas fa-external-link-alt me-1"></i> Prefer a full browser window? Click here to open Calendly in new tab ➔
+      </a>
     </div>
 
     <!-- Direct Sales Desk Assistance Strip -->
