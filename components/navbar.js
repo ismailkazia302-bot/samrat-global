@@ -1,8 +1,13 @@
 /**
- * GALICON GLOBAL — Master Unified Navbar Component (Stripe.com Design System)
- * Automatically resolves path depths for root, subdirectories, services, and blogs.
- * Active Divisions: BUSINESS, GROWTH, TECHNOLOGY, EXPERIENCES, AUDIT
- * Powered by Pure Vanilla JS & Stripe Translucent Frosted Glass Architecture
+ * GALICON GLOBAL — Master Unified Navbar Component (Exact Stripe.com Color System)
+ * Official Stripe Palette:
+ * - Canvas: #0A2540 (Stripe Midnight Navy)
+ * - Card Surface: #0E2A47 / #133863
+ * - Primary Brand: #635BFF (Stripe Blurple)
+ * - Accent Cyan: #00D4FF (Stripe Cyan)
+ * - Accent Pink: #FF6B9E (Stripe Pink)
+ * - Accent Gold: #FCD34D (Stripe Amber)
+ * - Muted Text: #ADBDCC (Stripe Slate Gray)
  */
 (function() {
   // Global Toggle Function accessible everywhere
@@ -51,7 +56,7 @@
     const navPlaceholder = document.getElementById('navbar-placeholder');
     if (!navPlaceholder) return;
 
-    // Inject Master Stripe Design System CSS
+    // Inject Master Stripe Color CSS
     if (!document.getElementById('galicon-nav-style')) {
       const style = document.createElement('style');
       style.id = 'galicon-nav-style';
@@ -62,21 +67,26 @@
           --stripe-pink: #FF6B9E;
           --stripe-emerald: #00D924;
           --stripe-amber: #FCD34D;
-          --stripe-dark: #0A2540;
-          --stripe-canvas: #060A14;
-          --stripe-card: #0B132B;
-          --stripe-border: rgba(255, 255, 255, 0.1);
+          --stripe-midnight: #0A2540;
+          --stripe-dark: #00172E;
+          --stripe-card: #0E2A47;
+          --stripe-card-elevated: #133863;
+          --stripe-text-slate: #ADBDCC;
+          --stripe-border: rgba(255, 255, 255, 0.14);
           --stripe-gradient: linear-gradient(135deg, #635BFF 0%, #00D4FF 100%);
-          --stripe-mesh: radial-gradient(at 0% 0%, rgba(99, 91, 255, 0.35) 0px, transparent 50%),
-                         radial-gradient(at 100% 0%, rgba(0, 212, 255, 0.28) 0px, transparent 50%),
-                         radial-gradient(at 50% 100%, rgba(255, 107, 158, 0.2) 0px, transparent 50%);
+          --stripe-mesh: radial-gradient(at 10% 10%, rgba(99, 91, 255, 0.6) 0px, transparent 50%),
+                         radial-gradient(at 90% 10%, rgba(0, 212, 255, 0.5) 0px, transparent 50%),
+                         radial-gradient(at 50% 90%, rgba(255, 107, 158, 0.35) 0px, transparent 60%),
+                         radial-gradient(at 80% 80%, rgba(252, 211, 77, 0.25) 0px, transparent 50%),
+                         #0A2540;
         }
 
-        /* Universal Viewport & Stripe Element Safety */
+        /* Universal Viewport & Stripe Canvas */
         html, body {
           overflow-x: hidden !important;
           max-width: 100% !important;
-          background-color: var(--stripe-canvas) !important;
+          background-color: var(--stripe-midnight) !important;
+          color: #FFFFFF !important;
         }
         *, *::before, *::after {
           box-sizing: border-box !important;
@@ -85,13 +95,16 @@
           max-width: 100%;
           height: auto;
         }
+        p, li, .text-muted, .text-secondary {
+          color: #ADBDCC !important;
+        }
 
-        /* Floating Translucent Frosted Glass Navbar */
+        /* Stripe Signature Translucent Frosted Glass Navbar */
         .nav-alsayegh {
-          background: rgba(6, 10, 20, 0.82) !important;
+          background: rgba(10, 37, 64, 0.88) !important;
           backdrop-filter: blur(20px) saturate(180%) !important;
           -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
           padding: 14px 0 !important;
           position: sticky !important;
           top: 0 !important;
@@ -108,11 +121,11 @@
           height: 46px !important;
           width: auto !important;
           object-fit: contain !important;
-          filter: drop-shadow(0 0 12px rgba(99, 91, 255, 0.4));
+          filter: drop-shadow(0 0 14px rgba(99, 91, 255, 0.6));
           transition: transform 0.25s ease;
         }
         .nav-brand-wrap:hover .nav-brand-logo {
-          transform: scale(1.04);
+          transform: scale(1.05);
         }
         .nav-brand-title {
           font-family: 'Plus Jakarta Sans', sans-serif !important;
@@ -129,24 +142,23 @@
           font-size: 0.7rem !important;
           letter-spacing: 3px !important;
           font-weight: 800 !important;
-          background: linear-gradient(90deg, #635BFF, #00D4FF);
+          background: linear-gradient(90deg, #635BFF, #00D4FF, #FF6B9E);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           margin-top: 2px !important;
         }
         
         .navbar-nav .nav-link {
-          color: #94A3B8 !important;
+          color: #ADBDCC !important;
           font-family: 'Plus Jakarta Sans', sans-serif !important;
           font-weight: 700 !important;
           font-size: 0.82rem !important;
           letter-spacing: 0.8px !important;
           padding: 6px 14px !important;
           transition: all 0.2s ease !important;
-          position: relative;
         }
         .navbar-nav .nav-link:hover {
-          color: #FFFFFF !important;
+          color: #00D4FF !important;
           transform: translateY(-1px);
         }
 
@@ -160,7 +172,7 @@
           padding: 9px 20px !important;
           border-radius: 30px !important;
           border: none !important;
-          box-shadow: 0 4px 20px rgba(99, 91, 255, 0.45) !important;
+          box-shadow: 0 4px 18px rgba(99, 91, 255, 0.5) !important;
           transition: all 0.25s ease !important;
           text-decoration: none !important;
           display: inline-flex !important;
@@ -169,15 +181,15 @@
         }
         .stripe-btn-cta:hover {
           transform: translateY(-2px) !important;
-          box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6) !important;
+          box-shadow: 0 8px 30px rgba(0, 212, 255, 0.65) !important;
           color: #FFFFFF !important;
         }
 
         .navbar-toggler {
-          border: 1px solid rgba(99, 91, 255, 0.5) !important;
+          border: 1px solid rgba(99, 91, 255, 0.6) !important;
           padding: 8px 12px !important;
           border-radius: 10px !important;
-          background: rgba(99, 91, 255, 0.15) !important;
+          background: rgba(99, 91, 255, 0.2) !important;
           cursor: pointer !important;
           outline: none !important;
           display: flex !important;
@@ -185,7 +197,7 @@
           justify-content: center !important;
         }
         .navbar-toggler:focus, .navbar-toggler:active {
-          box-shadow: 0 0 15px rgba(99, 91, 255, 0.8) !important;
+          box-shadow: 0 0 15px rgba(0, 212, 255, 0.8) !important;
           border-color: #00D4FF !important;
         }
         .navbar-toggler-icon {
@@ -198,12 +210,12 @@
         @media (max-width: 991px) {
           #navbarNav {
             display: none;
-            background: #080D1A !important;
-            border: 1px solid rgba(99, 91, 255, 0.35) !important;
+            background: #00172E !important;
+            border: 1px solid rgba(99, 91, 255, 0.45) !important;
             border-radius: 16px !important;
             padding: 22px 20px !important;
             margin-top: 14px !important;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.98), 0 0 30px rgba(99, 91, 255, 0.25) !important;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.98), 0 0 30px rgba(99, 91, 255, 0.3) !important;
             position: relative !important;
             z-index: 999999 !important;
           }
