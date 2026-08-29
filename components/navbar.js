@@ -2,9 +2,43 @@
  * GALICON GLOBAL — Master Unified Navbar Component
  * Automatically resolves path depths for root, subdirectories, services, and blogs.
  * Active Divisions: BUSINESS, GROWTH, TECHNOLOGY, EXPERIENCES, AUDIT
- * Includes Pure Vanilla JS Mobile Toggler (100% Reliable on all mobile devices)
+ * Includes Direct Global Toggle Function with Inline Override for 100% Mobile Reliability
  */
 (function() {
+  // Global Toggle Function accessible everywhere
+  window.galiconToggleNav = function(e) {
+    if (e) {
+      if (typeof e.preventDefault === 'function') e.preventDefault();
+      if (typeof e.stopPropagation === 'function') e.stopPropagation();
+    }
+    const menu = document.getElementById('navbarNav');
+    const toggler = document.getElementById('galiconNavToggler');
+    if (!menu) return;
+
+    const isCurrentlyVisible = window.getComputedStyle(menu).display !== 'none' && menu.classList.contains('show');
+
+    if (isCurrentlyVisible) {
+      menu.style.setProperty('display', 'none', 'important');
+      menu.classList.remove('show', 'open');
+      if (toggler) toggler.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.style.setProperty('display', 'block', 'important');
+      menu.classList.add('show', 'open');
+      if (toggler) toggler.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  window.galiconCloseNav = function() {
+    const menu = document.getElementById('navbarNav');
+    const toggler = document.getElementById('galiconNavToggler');
+    if (!menu) return;
+    if (window.innerWidth < 992) {
+      menu.style.setProperty('display', 'none', 'important');
+      menu.classList.remove('show', 'open');
+      if (toggler) toggler.setAttribute('aria-expanded', 'false');
+    }
+  };
+
   function initNavbar() {
     const path = window.location.pathname;
     const isSubdir = path.includes('/services/') || path.includes('/blog/') || 
@@ -28,40 +62,50 @@
           padding: 12px 0 !important;
           position: sticky !important;
           top: 0 !important;
-          z-index: 1050 !important;
+          z-index: 99999 !important;
         }
         .navbar-toggler {
-          border: 1px solid rgba(99,102,241,0.5) !important;
-          padding: 6px 12px !important;
-          border-radius: 8px !important;
-          background: rgba(99,102,241,0.12) !important;
+          border: 2px solid #818CF8 !important;
+          padding: 8px 14px !important;
+          border-radius: 10px !important;
+          background: rgba(99,102,241,0.2) !important;
           cursor: pointer !important;
           outline: none !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 6px !important;
         }
-        .navbar-toggler:focus {
-          box-shadow: 0 0 12px rgba(99,102,241,0.6) !important;
+        .navbar-toggler:focus, .navbar-toggler:active {
+          box-shadow: 0 0 15px rgba(99,102,241,0.8) !important;
+          border-color: #38BDF8 !important;
         }
         .navbar-toggler-icon {
-          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.6' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
           width: 24px !important;
           height: 24px !important;
+          display: inline-block !important;
         }
         @media (max-width: 991px) {
           #navbarNav {
             display: none;
-            background: #0B1120;
-            border: 1px solid rgba(99,102,241,0.3);
-            border-radius: 14px;
-            padding: 18px 20px;
-            margin-top: 14px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.95), 0 0 20px rgba(99,102,241,0.15);
+            background: #0B1120 !important;
+            border: 2px solid rgba(99,102,241,0.4) !important;
+            border-radius: 14px !important;
+            padding: 20px !important;
+            margin-top: 14px !important;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.98), 0 0 25px rgba(99,102,241,0.25) !important;
+            position: relative !important;
+            z-index: 999999 !important;
           }
           #navbarNav.show, #navbarNav.open {
             display: block !important;
             animation: fadeInNav 0.2s ease-out;
           }
           #navbarNav .navbar-nav {
-            gap: 4px !important;
+            gap: 2px !important;
+            display: flex !important;
+            flex-direction: column !important;
           }
           #navbarNav .nav-item {
             width: 100% !important;
@@ -73,10 +117,11 @@
             padding-top: 14px !important;
           }
           #navbarNav .nav-link {
-            font-size: 0.95rem !important;
-            padding: 4px 0 !important;
+            font-size: 1rem !important;
+            padding: 6px 0 !important;
             display: block !important;
-            color: #E2E8F0 !important;
+            color: #F8FAFC !important;
+            font-weight: 700 !important;
           }
           #navbarNav .nav-link:hover {
             color: #38BDF8 !important;
@@ -85,7 +130,8 @@
             width: 100% !important;
             text-align: center !important;
             display: block !important;
-            padding: 10px !important;
+            padding: 12px !important;
+            font-size: 0.95rem !important;
           }
         }
         @keyframes fadeInNav {
@@ -107,22 +153,23 @@
         </span>
       </a>
 
-      <button class="navbar-toggler" type="button" id="galiconNavToggler" aria-label="Toggle navigation" aria-expanded="false">
+      <!-- Direct Inline Mobile Toggler Trigger -->
+      <button class="navbar-toggler" type="button" id="galiconNavToggler" onclick="window.galiconToggleNav(event)" ontouchend="window.galiconToggleNav(event)" aria-label="Toggle navigation" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center" style="font-family:'Plus Jakarta Sans', sans-serif; font-size:0.82rem; font-weight:700; letter-spacing:0.8px;">
-          <li class="nav-item"><a class="nav-link" href="${prefix}index.html">HOME</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}business/index.html">BUSINESS</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}growth/index.html">GROWTH</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}technology/index.html">TECHNOLOGY</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}experiences/index.html">EXPERIENCES</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}audit/index.html" style="color:#38BDF8 !important;"><i class="fas fa-bolt me-1" style="color:#38BDF8;"></i>FREE AUDIT</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}calculator.html"><i class="fas fa-calculator me-1" style="color:#818CF8;"></i>ESTIMATOR</a></li>
-          <li class="nav-item"><a class="nav-link" href="${prefix}products.html" style="color:#A5B4FC !important;"><i class="fas fa-shopping-bag me-1"></i>STORE</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}index.html" onclick="window.galiconCloseNav()">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}business/index.html" onclick="window.galiconCloseNav()">BUSINESS</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}growth/index.html" onclick="window.galiconCloseNav()">GROWTH</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}technology/index.html" onclick="window.galiconCloseNav()">TECHNOLOGY</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}experiences/index.html" onclick="window.galiconCloseNav()">EXPERIENCES</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}audit/index.html" onclick="window.galiconCloseNav()" style="color:#38BDF8 !important;"><i class="fas fa-bolt me-1" style="color:#38BDF8;"></i>FREE AUDIT</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}calculator.html" onclick="window.galiconCloseNav()"><i class="fas fa-calculator me-1" style="color:#818CF8;"></i>ESTIMATOR</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}products.html" onclick="window.galiconCloseNav()" style="color:#A5B4FC !important;"><i class="fas fa-shopping-bag me-1"></i>STORE</a></li>
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-sm fw-bold px-3 py-2 text-white" href="${prefix}meet.html" style="background:linear-gradient(135deg, #818CF8 0%, #3B82F6 50%, #06B6D4 100%); border-radius:6px; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(99,102,241,0.35); border:none;">
+            <a class="btn btn-sm fw-bold px-3 py-2 text-white" href="${prefix}meet.html" onclick="window.galiconCloseNav()" style="background:linear-gradient(135deg, #818CF8 0%, #3B82F6 50%, #06B6D4 100%); border-radius:6px; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(99,102,241,0.35); border:none;">
               <i class="fas fa-calendar-check me-1"></i>FIND MY SOLUTION
             </a>
           </li>
@@ -132,42 +179,6 @@
   </nav>
     `;
     navPlaceholder.innerHTML = navHTML;
-
-    // Pure Vanilla JS Mobile Toggle Handler (100% Reliable without external Bootstrap JS)
-    const toggler = document.getElementById('galiconNavToggler');
-    const menu = document.getElementById('navbarNav');
-
-    if (toggler && menu) {
-      toggler.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isOpen = menu.classList.contains('show') || menu.classList.contains('open');
-        if (isOpen) {
-          menu.classList.remove('show', 'open');
-          toggler.setAttribute('aria-expanded', 'false');
-        } else {
-          menu.classList.add('show', 'open');
-          toggler.setAttribute('aria-expanded', 'true');
-        }
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!navPlaceholder.contains(e.target)) {
-          menu.classList.remove('show', 'open');
-          toggler.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      // Close menu when clicking any nav-link on mobile
-      menu.querySelectorAll('.nav-link, .btn').forEach(link => {
-        link.addEventListener('click', function() {
-          if (window.innerWidth < 992) {
-            menu.classList.remove('show', 'open');
-            toggler.setAttribute('aria-expanded', 'false');
-          }
-        });
-      });
-    }
   }
 
   if (document.readyState === 'loading') {
