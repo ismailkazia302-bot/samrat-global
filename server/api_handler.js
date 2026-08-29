@@ -60,6 +60,16 @@ function saveLead(leadData) {
   fs.writeFileSync(DB_PATH, JSON.stringify(leads, null, 2));
 }
 
+// 0. HEALTH CHECK ENDPOINT
+app.get('/api/health', (req, res) => {
+  return res.status(200).json({
+    status: 'ONLINE',
+    service: 'GALICON Security & Lead Ingestion Server',
+    port: process.env.PORT || 4000,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // 1. PUBLIC ENDPOINT: Secure Lead Capture from Website
 app.post('/api/leads/submit', (req, res) => {
   const { name, email, phone, division, packageSelected, budget, country, message, notes, meetingDate, meetingTime, attribution } = req.body;
