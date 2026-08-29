@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GALICON GLOBAL | Elite Business, Growth, Tech & Event Architecture</title>
-  <meta name="description" content="Founded by Ismail Kazia. Full-stack business consulting, performance marketing, high-speed web/mobile/AI engineering, and turnkey corporate summit staging.">
+  <title>GALICON GLOBAL GROUP | Full-Stack Growth, Tech & Events Platform</title>
+  <meta name="description" content="Outcome-driven business consulting, scalable performance ad funnels, sub-50ms web & AI engineering, and 4K corporate event staging across India and global markets.">
   <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/">
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/">
-  <meta property="og:title" content="GALICON GLOBAL | Elite Business, Growth, Tech & Event Architecture">
-  <meta property="og:description" content="Founded by Ismail Kazia. Full-stack business consulting, performance marketing, high-speed web/mobile/AI engineering, and turnkey corporate summit staging.">
+  <meta property="og:title" content="GALICON GLOBAL GROUP | Full-Stack Growth, Tech & Events Platform">
+  <meta property="og:description" content="Outcome-driven business consulting, scalable performance ad funnels, sub-50ms web & AI engineering, and 4K corporate event staging.">
   <meta property="og:image" content="https://ismailkazia302-bot.github.io/samrat-global/galicon_logo.png">
   <meta property="og:site_name" content="GALICON GLOBAL">
-  <meta name="keywords" content="business consulting India, performance marketing agency, web development Bangalore, mobile app development, Python automation, bug fixing, corporate event management Bangalore, GALICON, Ismail Kazia">
   <meta name="author" content="Ismail Kazia">
-  
+
   <!-- Elite Executive Typography: Plus Jakarta Sans + Inter + Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,19 +27,20 @@
 
   <style>
     :root {
-      --bg-canvas: #0A2540;
-      --bg-surface: #0E2A47;
-      --bg-elevated: #133863;
+      --bg-canvas: #FAFBFC;
+      --bg-surface: #FFFFFF;
+      --bg-elevated: #F6F9FC;
       --primary-indigo: #635BFF;
       --primary-blue: #00D4FF;
-      --primary-cyan: #00D4FF;
+      --primary-cyan: #0088CC;
       --primary-pink: #FF6B9E;
-      --primary-amber: #FCD34D;
-      --indigo-gradient: linear-gradient(135deg, #635BFF 0%, #00D4FF 100%);
-      --border-subtle: rgba(255, 255, 255, 0.12);
-      --border-indigo: rgba(99, 91, 255, 0.4);
-      --text-pure: #FFFFFF;
-      --text-slate: #ADBDCC;
+      --primary-amber: #D97706;
+      --indigo-gradient: linear-gradient(135deg, #635BFF 0%, #0088CC 100%);
+      --border-subtle: #E6EBF1;
+      --border-indigo: rgba(99, 91, 255, 0.25);
+      --text-pure: #0A2540;
+      --text-slate: #425466;
+      --text-muted: #697386;
       --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'Space Grotesk', monospace;
@@ -62,6 +62,7 @@
     h1, h2, h3, h4, h5, h6, .hero-title, .hero-badge, .btn, .nav-link, .marquee-logo {
       font-family: var(--font-heading);
       letter-spacing: -0.025em;
+      color: #0A2540;
     }
 
     .case-metric, .score-num, .h4, .h5, .h6 {
@@ -69,26 +70,26 @@
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
 
-    /* STRIPE SIGNATURE HERO SECTION */
+    /* STRIPE LIGHT SIGNATURE HERO SECTION */
     .hero-wrapper {
       position: relative;
-      min-height: 88vh;
+      min-height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(at 15% 15%, rgba(99, 91, 255, 0.45) 0px, transparent 50%),
-                  radial-gradient(at 85% 15%, rgba(0, 212, 255, 0.38) 0px, transparent 50%),
-                  radial-gradient(at 50% 85%, rgba(255, 107, 158, 0.25) 0px, transparent 60%),
-                  #060A14;
-      padding: 95px 20px 65px;
+      background: radial-gradient(at 15% 15%, rgba(99, 91, 255, 0.16) 0px, transparent 50%),
+                  radial-gradient(at 85% 15%, rgba(0, 212, 255, 0.14) 0px, transparent 50%),
+                  radial-gradient(at 50% 85%, rgba(255, 107, 158, 0.1) 0px, transparent 60%),
+                  #FFFFFF;
+      padding: 90px 20px 60px;
       text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid #E6EBF1;
       overflow: hidden;
     }
 
     .hero-badge {
-      background: rgba(99, 91, 255, 0.14);
-      color: #00D4FF;
+      background: rgba(99, 91, 255, 0.08);
+      color: #635BFF;
       font-weight: 800;
       font-size: clamp(0.72rem, 2vw, 0.82rem);
       padding: 8px 22px;
@@ -99,27 +100,27 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 22px;
-      border: 1px solid rgba(99, 91, 255, 0.4);
-      box-shadow: 0 0 20px rgba(99, 91, 255, 0.25);
+      border: 1px solid rgba(99, 91, 255, 0.25);
     }
 
     .hero-title {
-      font-size: clamp(2.1rem, 6vw, 4.4rem);
+      font-size: clamp(2.1rem, 6vw, 4.2rem);
       font-weight: 900;
       line-height: 1.12;
       letter-spacing: -0.035em;
       margin-bottom: 22px;
+      color: #0A2540;
     }
 
     .hero-gradient-text {
-      background: linear-gradient(135deg, #FFFFFF 20%, #A5B4FC 60%, #00D4FF 100%);
+      background: linear-gradient(135deg, #635BFF 0%, #0088CC 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
       font-size: clamp(0.95rem, 2.5vw, 1.18rem);
-      color: #94A3B8;
+      color: #425466;
       max-width: 820px;
       margin: 0 auto 32px;
       font-weight: 400;
@@ -128,56 +129,58 @@
 
     /* Trust Chips */
     .trust-chip {
-      background: rgba(11, 19, 43, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #FFFFFF;
+      border: 1px solid #E6EBF1;
       border-radius: 20px;
       padding: 8px 20px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #E2E8F0;
+      color: #425466;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
     /* Stripe Action Buttons */
     .btn-indigo {
-      background: linear-gradient(135deg, #635BFF 0%, #00D4FF 100%);
+      background: #635BFF !important;
       color: #FFFFFF !important;
       font-weight: 800;
       border: none;
       border-radius: 30px;
-      box-shadow: 0 8px 25px rgba(99, 91, 255, 0.45);
+      box-shadow: 0 4px 14px rgba(99, 91, 255, 0.35);
       transition: all 0.25s ease;
       letter-spacing: 0.5px;
     }
 
     .btn-indigo:hover {
+      background: #0A2540 !important;
       transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.6);
-      filter: brightness(1.06);
+      box-shadow: 0 8px 25px rgba(10, 37, 64, 0.3);
+      color: #FFFFFF !important;
     }
 
     .btn-frosted {
-      background: rgba(255, 255, 255, 0.06);
-      color: #FFFFFF !important;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #FFFFFF;
+      color: #0A2540 !important;
+      border: 1px solid #E6EBF1;
       border-radius: 30px;
       font-weight: 700;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       transition: all 0.25s ease;
     }
     .btn-frosted:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: #00D4FF;
+      border-color: #635BFF;
+      color: #635BFF !important;
       transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
     /* DIVISION QUADRANT CARDS */
     .div-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      border: 1px solid #E6EBF1;
       border-radius: 18px;
       padding: 32px 28px;
       transition: all 0.35s ease;
@@ -187,6 +190,7 @@
       justify-content: space-between;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .div-card::before {
@@ -195,17 +199,16 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px;
+      height: 4px;
       background: var(--indigo-gradient);
       opacity: 0;
       transition: opacity 0.3s;
     }
 
     .div-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--border-indigo);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 25px rgba(99, 102, 241, 0.15);
-      background: var(--bg-elevated);
+      transform: translateY(-6px);
+      border-color: #635BFF;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.1), 0 0 20px rgba(99, 91, 255, 0.1);
     }
 
     .div-card:hover::before {
@@ -213,10 +216,10 @@
     }
 
     .div-price-chip {
-      background: rgba(2, 6, 23, 0.7);
-      border: 1px solid rgba(99, 102, 241, 0.25);
-      border-radius: 10px;
-      padding: 12px;
+      background: #F6F9FC;
+      border: 1px solid #E6EBF1;
+      border-radius: 12px;
+      padding: 14px;
       margin: 16px 0;
       text-align: center;
     }
@@ -226,10 +229,10 @@
       width: 100%;
       overflow: hidden;
       display: flex;
-      background: #04060a;
+      background: #F6F9FC;
       padding: 24px 0;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
+      border-top: 1px solid #E6EBF1;
+      border-bottom: 1px solid #E6EBF1;
     }
 
     .marquee-track {
@@ -246,36 +249,38 @@
     }
 
     .marquee-logo {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: 2px;
-      color: #64748b;
+      color: #697386;
       text-transform: uppercase;
       transition: color 0.3s;
     }
 
     .marquee-logo:hover {
-      color: #FFFFFF;
+      color: #0A2540;
     }
 
     /* CASE STUDIES & IMPACT */
     .case-card {
-      background: #090e1b;
-      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      border: 1px solid #E6EBF1;
       border-radius: 16px;
       padding: 28px;
       transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     }
 
     .case-card:hover {
-      border-color: #3b82f6;
+      border-color: #635BFF;
       transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     }
 
     .case-metric {
       font-size: clamp(1.6rem, 4.5vw, 2.2rem);
       font-weight: 900;
-      color: #818CF8;
+      color: #635BFF;
       line-height: 1.1;
       white-space: nowrap;
     }
@@ -283,7 +288,7 @@
     .stat-number {
       font-size: clamp(1.5rem, 5vw, 2.5rem);
       font-weight: 900;
-      color: #FFFFFF;
+      color: #0A2540;
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.1;
       white-space: nowrap;
@@ -293,13 +298,13 @@
       font-size: clamp(0.7rem, 2vw, 0.8rem);
       font-weight: 700;
       letter-spacing: 1.5px;
-      color: #94A3B8;
+      color: #697386;
       text-transform: uppercase;
       line-height: 1.3;
     }
     .stat-sub {
       font-size: clamp(0.68rem, 1.8vw, 0.78rem);
-      color: #64748B;
+      color: #8898AA;
       margin-top: 2px;
     }
     @media (max-width: 576px) {
@@ -311,17 +316,8 @@
       }
     }
   
-    /* UNIVERSAL HIGH-CONTRAST FONT VISIBILITY (GALICON 2026) */
-    body { color: #F8FAFC !important; }
-    p, li, .lead, .problem-pill, .audit-choice { color: #CBD5E1 !important; }
-    .text-muted, .text-secondary { color: #CBD5E1 !important; }
-    .card-dark, .div-card, .calc-card, .audit-card, .widescreen-booking-card { color: #F8FAFC !important; }
-    .card-dark p, .card-dark li, .card-dark ul,
-    .div-card p, .div-card li, .div-card ul,
-    .calc-card p, .calc-card li, .calc-card ul,
-    .audit-card p, .audit-card li, .audit-card ul,
-    .widescreen-booking-card p, .widescreen-booking-card li { color: #E2E8F0 !important; }
-    .price-box .text-muted, .div-price-chip .text-muted { color: #94A3B8 !important; }
+    p, li, .lead { color: #425466 !important; }
+    .text-muted, .text-secondary { color: #697386 !important; }
   </style>
 
   <!-- Schema.org JSON-LD -->
@@ -349,7 +345,7 @@
   <section class="hero-wrapper">
     <div class="container">
       <span class="hero-badge"><i class="fas fa-crown me-2"></i>#1 BUSINESS & TECH GROWTH PLATFORM</span>
-      <h1 class="hero-title text-white">
+      <h1 class="hero-title">
         We Engineer High-Converting Digital Infrastructure,<br>
         <span class="hero-gradient-text">Scalable Ad Funnels & Elite Corporate Summits.</span>
       </h1>
@@ -373,8 +369,8 @@
         <a href="calculator.html" class="btn btn-frosted py-3 px-4">
           <i class="fas fa-calculator me-2 text-warning"></i>Instant Estimator
         </a>
-        <a href="meet.html" class="btn btn-frosted py-3 px-4" style="border-color:rgba(0,212,255,0.4); color:#00D4FF !important;">
-          <i class="fas fa-headset me-2 text-info"></i>Talk to Sales Specialist ➔
+        <a href="meet.html" class="btn btn-frosted py-3 px-4" style="border-color:rgba(99,91,255,0.4); color:#635BFF !important;">
+          <i class="fas fa-headset me-2 text-primary"></i>Talk to Sales Specialist ➔
         </a>
       </div>
     </div>
@@ -406,11 +402,11 @@
   </section>
 
   <!-- 4 MASTER DIVISIONS QUADRANT -->
-  <section class="py-5" style="background:#03050a;">
+  <section class="py-5" style="background:#FFFFFF;">
     <div class="container py-4">
       <div class="text-center mb-5">
-        <span class="text-warning small text-uppercase fw-bold letter-spacing-2">Full-Stack Operational Architecture</span>
-        <h2 class="text-white fw-bold mt-1 display-6">Our 4 Core Specialized Divisions</h2>
+        <span class="text-primary small text-uppercase fw-bold letter-spacing-2">Full-Stack Operational Architecture</span>
+        <h2 class="fw-bold mt-1 display-6" style="color:#0A2540;">Our 4 Core Specialized Divisions</h2>
         <p class="text-muted small mx-auto" style="max-width:680px;">Everything required to validate, engineer, scale, and stage your business under one unified high-speed roof.</p>
       </div>
 
@@ -418,109 +414,109 @@
         
         <!-- 1. TECHNOLOGY -->
         <div class="col-lg-3 col-md-6">
-          <div class="div-card" style="border-color:#3b82f6;">
+          <div class="div-card">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
                 <i class="fas fa-microchip text-primary fs-4"></i>
-                <h4 class="fw-bold text-white mb-0">Technology & AI</h4>
+                <h4 class="fw-bold mb-0" style="color:#0A2540;">Technology & AI</h4>
               </div>
               <span class="badge bg-primary text-white mb-3 fw-bold">Web • Apps • Python • AI</span>
-              <p class="text-muted small">High-speed websites, Android/iOS mobile apps, 24-hr bug fixes, Python scrapers, and custom ChatGPT integrations.</p>
+              <p class="small">High-speed websites, Android/iOS mobile apps, 24-hr bug fixes, Python scrapers, and custom ChatGPT integrations.</p>
               
-              <div class="div-price-chip" style="border-color:rgba(59,130,246,0.3);">
+              <div class="div-price-chip">
                 <div class="h6 text-primary fw-bold mb-0">₹2,999 – ₹65,000+</div>
                 <div class="text-muted small">$40 – $850 USD (Accessible Sprints)</div>
               </div>
 
-              <ul class="list-unstyled text-muted small mt-3" style="line-height:1.9;">
+              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
                 <li><i class="fas fa-check text-primary me-2"></i>Emergency Bug Fix (24-Hr SLA)</li>
                 <li><i class="fas fa-check text-primary me-2"></i>5-Day Turnkey Website Launch</li>
                 <li><i class="fas fa-check text-primary me-2"></i>WhatsApp AI Sales & Support Bot</li>
                 <li><i class="fas fa-check text-primary me-2"></i>Python Automation & Web Scraping</li>
               </ul>
             </div>
-            <a href="technology/index.html" class="btn btn-outline-primary w-100 fw-bold mt-3">Explore Tech Hub ➔</a>
+            <a href="technology/index.html" class="btn btn-outline-primary w-100 fw-bold mt-3" style="border-radius:30px;">Explore Tech Hub ➔</a>
           </div>
         </div>
 
         <!-- 2. GROWTH -->
         <div class="col-lg-3 col-md-6">
-          <div class="div-card" style="border-color:#10b981;">
+          <div class="div-card">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
                 <i class="fas fa-chart-line text-success fs-4"></i>
-                <h4 class="fw-bold text-white mb-0">Growth & Ads</h4>
+                <h4 class="fw-bold mb-0" style="color:#0A2540;">Growth & Ads</h4>
               </div>
-              <span class="badge bg-success text-dark mb-3 fw-bold">Performance • Ads • Funnels</span>
-              <p class="text-muted small">High-converting paid acquisition funnels on Meta & Google Ads with isolated media spend and transparent fees.</p>
+              <span class="badge bg-success text-white mb-3 fw-bold">Performance • Ads • Funnels</span>
+              <p class="small">High-converting paid acquisition funnels on Meta & Google Ads with isolated media spend and transparent fees.</p>
               
-              <div class="div-price-chip" style="border-color:rgba(16,185,129,0.3);">
+              <div class="div-price-chip">
                 <div class="h6 text-success fw-bold mb-0">₹18,000 – ₹60,000/mo</div>
                 <div class="text-muted small">$250 – $900 USD (Management Retainer)</div>
               </div>
 
-              <ul class="list-unstyled text-muted small mt-3" style="line-height:1.9;">
+              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
                 <li><i class="fas fa-check text-success me-2"></i>High-ROAS Meta & Google Ad Buying</li>
                 <li><i class="fas fa-check text-success me-2"></i>Landing page CRO & A/B testing</li>
                 <li><i class="fas fa-check text-success me-2"></i>WhatsApp CRM Lead Automation</li>
                 <li><i class="fas fa-check text-success me-2"></i>Weekly media spend & KPI reviews</li>
               </ul>
             </div>
-            <a href="growth/index.html" class="btn btn-outline-success w-100 fw-bold mt-3">Explore Growth Hub ➔</a>
+            <a href="growth/index.html" class="btn btn-outline-success w-100 fw-bold mt-3" style="border-radius:30px;">Explore Growth Hub ➔</a>
           </div>
         </div>
 
         <!-- 3. BUSINESS -->
         <div class="col-lg-3 col-md-6">
-          <div class="div-card" style="border-color:#eab308;">
+          <div class="div-card">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
                 <i class="fas fa-chess text-warning fs-4"></i>
-                <h4 class="fw-bold text-white mb-0">Business Advisory</h4>
+                <h4 class="fw-bold mb-0" style="color:#0A2540;">Business Advisory</h4>
               </div>
               <span class="badge bg-warning text-dark mb-3 fw-bold">Strategy • GTM • SOPs</span>
-              <p class="text-muted small">Comprehensive business diagnostics, 90-day GTM roadmaps, unit economic restructuring, and cross-border expansion.</p>
+              <p class="small">Comprehensive business diagnostics, 90-day GTM roadmaps, unit economic restructuring, and cross-border expansion.</p>
               
-              <div class="div-price-chip" style="border-color:rgba(234,179,8,0.3);">
+              <div class="div-price-chip">
                 <div class="h6 text-warning fw-bold mb-0">₹4,999 – ₹49,999</div>
                 <div class="text-muted small">$75 – $700 USD (Outcome Based)</div>
               </div>
 
-              <ul class="list-unstyled text-muted small mt-3" style="line-height:1.9;">
+              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
                 <li><i class="fas fa-check text-warning me-2"></i>360° Business Diagnostic Audit</li>
                 <li><i class="fas fa-check text-warning me-2"></i>GTM Roadmap & ICP Matrix</li>
                 <li><i class="fas fa-check text-warning me-2"></i>Margin & Pricing Optimization</li>
                 <li><i class="fas fa-check text-warning me-2"></i>1-on-1 Founder Strategic Review</li>
               </ul>
             </div>
-            <a href="business/index.html" class="btn btn-outline-warning w-100 fw-bold mt-3">Explore Business Hub ➔</a>
+            <a href="business/index.html" class="btn btn-outline-warning w-100 fw-bold mt-3" style="border-radius:30px;">Explore Business Hub ➔</a>
           </div>
         </div>
 
         <!-- 4. EXPERIENCES -->
         <div class="col-lg-3 col-md-6">
-          <div class="div-card" style="border-color:#ec4899;">
+          <div class="div-card">
             <div>
               <div class="d-flex align-items-center gap-2 mb-2">
                 <i class="fas fa-microphone-alt text-danger fs-4"></i>
-                <h4 class="fw-bold text-white mb-0">Experiences</h4>
+                <h4 class="fw-bold mb-0" style="color:#0A2540;">Experiences</h4>
               </div>
               <span class="badge bg-danger text-white mb-3 fw-bold">Summits • 4K LED • Staging</span>
-              <p class="text-muted small">Turnkey corporate event management in Bangalore & Pan-India with curved LED walls, line-array audio, and VIP hospitality.</p>
+              <p class="small">Turnkey corporate event management in Bangalore & Pan-India with curved LED walls, line-array audio, and VIP hospitality.</p>
               
-              <div class="div-price-chip" style="border-color:rgba(236,72,153,0.3);">
+              <div class="div-price-chip">
                 <div class="h6 text-danger fw-bold mb-0">₹75,000 – ₹4,50,000+</div>
                 <div class="text-muted small">Turnkey 15–25% Management Model</div>
               </div>
 
-              <ul class="list-unstyled text-muted small mt-3" style="line-height:1.9;">
+              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
                 <li><i class="fas fa-check text-danger me-2"></i>Curved 4K P2.6/P3.9 LED Backdrop</li>
                 <li><i class="fas fa-check text-danger me-2"></i>JBL/d&b Line-Array Sound & Lighting</li>
                 <li><i class="fas fa-check text-danger me-2"></i>Multi-Cam 4K Live Broadcast</li>
                 <li><i class="fas fa-check text-danger me-2"></i>Bangalore 5-Star Hotel Coordination</li>
               </ul>
             </div>
-            <a href="experiences/index.html" class="btn btn-outline-danger w-100 fw-bold mt-3">Explore Event Hub ➔</a>
+            <a href="experiences/index.html" class="btn btn-outline-danger w-100 fw-bold mt-3" style="border-radius:30px;">Explore Event Hub ➔</a>
           </div>
         </div>
 
@@ -529,11 +525,11 @@
   </section>
 
   <!-- LIVE PROOF & CASE STUDIES METRICS -->
-  <section class="py-5" style="background:#000000;">
+  <section class="py-5" style="background:#F6F9FC; border-top:1px solid #E6EBF1; border-bottom:1px solid #E6EBF1;">
     <div class="container py-3">
       <div class="text-center mb-5">
         <span class="text-primary small text-uppercase fw-bold letter-spacing-2">Proven Client Impact</span>
-        <h2 class="text-white fw-bold mt-1 display-6">Measurable Outcomes Delivered</h2>
+        <h2 class="fw-bold mt-1 display-6" style="color:#0A2540;">Measurable Outcomes Delivered</h2>
         <p class="text-muted small">Real performance metrics generated across our growth funnels and tech builds.</p>
       </div>
 
@@ -541,28 +537,28 @@
         <div class="col-md-3 col-sm-6">
           <div class="case-card text-center">
             <div class="case-metric">4.8x</div>
-            <div class="fw-bold text-white mt-2">Verified ROAS</div>
+            <div class="fw-bold mt-2" style="color:#0A2540;">Verified ROAS</div>
             <div class="text-muted small">Dubai Luxury Real Estate Lead Funnel</div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="case-card text-center">
             <div class="case-metric">100/100</div>
-            <div class="fw-bold text-white mt-2">Core Web Vitals</div>
+            <div class="fw-bold mt-2" style="color:#0A2540;">Core Web Vitals</div>
             <div class="text-muted small">Sub-50ms Global Edge CDN Speed</div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="case-card text-center">
             <div class="case-metric">&lt; 24 Hrs</div>
-            <div class="fw-bold text-white mt-2">Emergency Bug SLA</div>
+            <div class="fw-bold mt-2" style="color:#0A2540;">Emergency Bug SLA</div>
             <div class="text-muted small">Critical Production Fixes with SLA</div>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="case-card text-center">
             <div class="case-metric">400+</div>
-            <div class="fw-bold text-white mt-2">Summit Attendees</div>
+            <div class="fw-bold mt-2" style="color:#0A2540;">Summit Attendees</div>
             <div class="text-muted small">Infosys Bangalore Corporate Conclave</div>
           </div>
         </div>
@@ -571,9 +567,9 @@
   </section>
 
   <!-- STATS BAR SECTION -->
-  <section class="stats-bar-section">
+  <section class="stats-bar-section" style="background:#FFFFFF;">
     <div class="container-fluid px-3 px-lg-5">
-      <div class="row text-center py-4 py-md-5" style="border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); background:#060606;">
+      <div class="row text-center py-4 py-md-5" style="border-top:1px solid #E6EBF1; border-bottom:1px solid #E6EBF1;">
         <div class="col-6 col-md-3 mb-4 mb-md-0 px-2">
           <div class="stat-number">50+</div>
           <div class="stat-label">Events Managed</div>
@@ -599,32 +595,32 @@
   </section>
 
   <!-- TESTIMONIALS SECTION -->
-  <section class="testimonials-section" style="padding:80px 0; background:#000;">
+  <section class="testimonials-section" style="padding:80px 0; background:#F6F9FC; border-bottom:1px solid #E6EBF1;">
     <div class="container-fluid px-lg-5">
       <div class="text-center mb-5">
-        <span style="font-size:0.8rem; font-weight:800; letter-spacing:3px; color:#888; text-transform:uppercase;">what clients say</span>
-        <h2 class="text-white fw-bold mt-1">Trusted by Enterprise Leaders</h2>
+        <span style="font-size:0.8rem; font-weight:800; letter-spacing:3px; color:#635BFF; text-transform:uppercase;">what clients say</span>
+        <h2 class="fw-bold mt-1" style="color:#0A2540;">Trusted by Enterprise Leaders</h2>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
-          <div style="background:#0D0D0D; border:1px solid rgba(255,255,255,0.08); padding:32px; height:100%; border-radius:12px;">
-            <p style="font-size:0.95rem; color:#CCCCCC; line-height:1.7; margin-bottom:24px;">&ldquo;Ismail and the GALICON team delivered our annual tech summit flawlessly — 400 attendees, zero glitches. The curved 4K LED stage setup and AV quality was world-class.&rdquo;</p>
-            <div style="font-weight:800; color:#FFF;">Arjun Mehta</div>
-            <div style="font-size:0.82rem; color:#888;">Head of Corporate Events, Infosys Bangalore</div>
+          <div class="case-card" style="padding:32px; height:100%;">
+            <p style="font-size:0.95rem; line-height:1.7; margin-bottom:24px;">&ldquo;Ismail and the GALICON team delivered our annual tech summit flawlessly — 400 attendees, zero glitches. The curved 4K LED stage setup and AV quality was world-class.&rdquo;</p>
+            <div style="font-weight:800; color:#0A2540;">Arjun Mehta</div>
+            <div style="font-size:0.82rem; color:#697386;">Head of Corporate Events, Infosys Bangalore</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div style="background:#0D0D0D; border:1px solid rgba(255,255,255,0.08); padding:32px; height:100%; border-radius:12px;">
-            <p style="font-size:0.95rem; color:#CCCCCC; line-height:1.7; margin-bottom:24px;">&ldquo;We hired GALICON for our property buyer funnel and the lead quality was exceptional. Pre-qualified high-net-worth buyers delivered directly into our CRM. 4.8x ROAS in month one.&rdquo;</p>
-            <div style="font-weight:800; color:#FFF;">Khalid Al-Rashidi</div>
-            <div style="font-size:0.82rem; color:#888;">Marketing Director, Emaar Properties Dubai</div>
+          <div class="case-card" style="padding:32px; height:100%;">
+            <p style="font-size:0.95rem; line-height:1.7; margin-bottom:24px;">&ldquo;We hired GALICON for our property buyer funnel and the lead quality was exceptional. Pre-qualified high-net-worth buyers delivered directly into our CRM. 4.8x ROAS in month one.&rdquo;</p>
+            <div style="font-weight:800; color:#0A2540;">Khalid Al-Rashidi</div>
+            <div style="font-size:0.82rem; color:#697386;">Marketing Director, Emaar Properties Dubai</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div style="background:#0D0D0D; border:1px solid rgba(255,255,255,0.08); padding:32px; height:100%; border-radius:12px;">
-            <p style="font-size:0.95rem; color:#CCCCCC; line-height:1.7; margin-bottom:24px;">&ldquo;Direct founder communication made all the difference. Ismail resolved our webhook payment bug in 4 hours and built our full mobile app MVP on schedule.&rdquo;</p>
-            <div style="font-weight:800; color:#FFF;">Priya Venkataraman</div>
-            <div style="font-size:0.82rem; color:#888;">Co-Founder, Razorpay Software, Bangalore</div>
+          <div class="case-card" style="padding:32px; height:100%;">
+            <p style="font-size:0.95rem; line-height:1.7; margin-bottom:24px;">&ldquo;Direct founder communication made all the difference. Ismail resolved our webhook payment bug in 4 hours and built our full mobile app MVP on schedule.&rdquo;</p>
+            <div style="font-weight:800; color:#0A2540;">Priya Venkataraman</div>
+            <div style="font-size:0.82rem; color:#697386;">Co-Founder, Razorpay Software, Bangalore</div>
           </div>
         </div>
       </div>
@@ -632,15 +628,15 @@
   </section>
 
   <!-- CTA STRIP -->
-  <section class="py-5 text-center" style="background:radial-gradient(circle at 50% 50%, #151f33 0%, #060911 80%);">
+  <section class="py-5 text-center" style="background:linear-gradient(135deg, #0A2540 0%, #133863 100%); color:#FFFFFF;">
     <div class="container py-4">
       <h2 class="text-white fw-bold display-6 mb-3">Ready to Scale Your Business With Zero Friction?</h2>
-      <p class="text-muted lead mx-auto mb-4" style="max-width:650px;">Lock in your project scope with dedicated Senior Sales Specialists and transparent SLAs.</p>
+      <p class="text-white-50 lead mx-auto mb-4" style="max-width:650px;">Lock in your project scope with dedicated Senior Sales Specialists and transparent SLAs.</p>
       <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="meet.html" class="btn btn-indigo py-3 px-5 fw-bold text-white" style="border-radius:10px; font-size:1.1rem;">
+        <a href="meet.html" class="btn btn-indigo py-3 px-5 fw-bold text-white" style="font-size:1.1rem;">
           🗓️ Schedule Strategy Consultation ➔
         </a>
-        <a href="calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold text-white" style="border-radius:10px; border-color:rgba(255,255,255,0.2);">
+        <a href="calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold text-white" style="border-radius:30px; border-color:rgba(255,255,255,0.35);">
           <i class="fas fa-calculator me-2 text-info"></i>Instant Project Estimator
         </a>
       </div>
@@ -649,8 +645,7 @@
 
   <div id="footer-placeholder"></div>
 
-  <script src="analytics_tracker.js"></script>
-  <script src="chatbot.js" defer></script>
+  <!-- Unified Navbar & Footer Components -->
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
 </body>

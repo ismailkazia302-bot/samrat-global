@@ -21,8 +21,8 @@
     }
     body { 
       font-family:'Inter',sans-serif; 
-      background:#0A2540; 
-      color:#FFFFFF; 
+      background:#FAFBFC; 
+      color:#0A2540; 
       line-height:1.65; 
       letter-spacing:-0.01em; 
       -webkit-font-smoothing:antialiased; 
@@ -31,39 +31,45 @@
       font-family:'Plus Jakarta Sans',sans-serif; 
       letter-spacing:-0.025em; 
       overflow-wrap: break-word;
+      color: #0A2540;
     }
     
     /* Fluid Responsive Typography */
     h1, .display-5 { 
       font-size: clamp(1.75rem, 5.5vw, 2.75rem) !important; 
       line-height: 1.25 !important; 
+      color: #0A2540 !important;
     }
     h2 { 
       font-size: clamp(1.4rem, 4.5vw, 2.2rem) !important; 
+      color: #0A2540 !important;
     }
     h3 { 
       font-size: clamp(1.2rem, 3.8vw, 1.75rem) !important; 
+      color: #0A2540 !important;
     }
     h4 { 
       font-size: clamp(1.05rem, 3.2vw, 1.35rem) !important; 
+      color: #0A2540 !important;
     }
     p, li {
       font-size: clamp(0.88rem, 2.2vw, 1rem);
       overflow-wrap: break-word;
+      color: #425466 !important;
     }
 
     .hero-section { 
       padding: 75px 20px 45px; 
-      background: radial-gradient(at 15% 15%, rgba(0, 217, 36, 0.38) 0px, transparent 50%),
-                  radial-gradient(at 85% 15%, rgba(0, 212, 255, 0.35) 0px, transparent 50%),
-                  radial-gradient(at 50% 85%, rgba(99, 91, 255, 0.22) 0px, transparent 60%),
-                  #060A14; 
+      background: radial-gradient(at 15% 15%, rgba(0, 217, 36, 0.16) 0px, transparent 50%),
+                  radial-gradient(at 85% 15%, rgba(0, 212, 255, 0.14) 0px, transparent 50%),
+                  radial-gradient(at 50% 85%, rgba(99, 91, 255, 0.1) 0px, transparent 60%),
+                  #FFFFFF; 
       text-align: center; 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid #E6EBF1;
     }
     .badge-pill { 
-      background: rgba(0, 217, 36, 0.12); 
-      color: #00D924; 
+      background: rgba(0, 217, 36, 0.1); 
+      color: #059669; 
       font-weight: 800; 
       font-size: clamp(0.7rem, 2vw, 0.8rem); 
       padding: 7px 20px; 
@@ -72,12 +78,11 @@
       text-transform: uppercase; 
       display: inline-block; 
       margin-bottom: 16px; 
-      border: 1px solid rgba(0, 217, 36, 0.35); 
-      box-shadow: 0 0 15px rgba(0, 217, 36, 0.2);
+      border: 1px solid rgba(0, 217, 36, 0.25); 
     }
     .card-dark { 
-      background: #0B132B; 
-      border: 1px solid rgba(255,255,255,0.1); 
+      background: #FFFFFF; 
+      border: 1px solid #E6EBF1; 
       border-radius: 18px; 
       padding: 28px 24px; 
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
@@ -85,24 +90,25 @@
       display: flex; 
       flex-direction: column; 
       justify-content: space-between; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
     .card-dark:hover { 
-      border-color: #00D4FF; 
+      border-color: #059669; 
       transform: translateY(-5px); 
-      box-shadow: 0 20px 45px rgba(0,0,0,0.95), 0 0 25px rgba(0, 212, 255, 0.22); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
     }
     .price-box { 
-      background: #060A14; 
-      border: 1px solid rgba(0, 217, 36, 0.35); 
+      background: #F6F9FC; 
+      border: 1px solid #E6EBF1; 
       border-radius: 12px; 
       padding: 14px; 
       margin: 16px 0; 
       text-align: center; 
     }
     .problem-pill { 
-      background: #0B132B; 
-      border: 1px solid rgba(255,255,255,0.12); 
-      color: #cbd5e1; 
+      background: #FFFFFF; 
+      border: 1px solid #E6EBF1; 
+      color: #425466; 
       padding: 12px 16px; 
       border-radius: 14px; 
       cursor: pointer; 
@@ -114,22 +120,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
     .problem-pill:hover, .problem-pill.active { 
-      background: linear-gradient(135deg, #00D924, #00D4FF); 
-      color: #000; 
-      border-color: #00D924; 
+      background: #059669; 
+      color: #FFFFFF !important; 
+      border-color: #059669; 
       font-weight: 800; 
-      box-shadow: 0 0 20px rgba(0, 217, 36, 0.35);
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
     }
     .calc-card { 
-      background: #0B132B; 
-      border: 1px solid rgba(0, 217, 36, 0.4); 
+      background: #FFFFFF; 
+      border: 1px solid #E6EBF1; 
       border-radius: 18px; 
       padding: 32px 28px; 
       max-width: 850px; 
       margin: 0 auto; 
-      box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
     }
     
     img {
@@ -159,17 +166,8 @@
       }
     }
   
-    /* UNIVERSAL HIGH-CONTRAST FONT VISIBILITY (GALICON 2026) */
-    body { color: #F8FAFC !important; }
-    p, li, .lead, .problem-pill, .audit-choice { color: #CBD5E1 !important; }
-    .text-muted, .text-secondary { color: #CBD5E1 !important; }
-    .card-dark, .div-card, .calc-card, .audit-card, .widescreen-booking-card { color: #F8FAFC !important; }
-    .card-dark p, .card-dark li, .card-dark ul,
-    .div-card p, .div-card li, .div-card ul,
-    .calc-card p, .calc-card li, .calc-card ul,
-    .audit-card p, .audit-card li, .audit-card ul,
-    .widescreen-booking-card p, .widescreen-booking-card li { color: #E2E8F0 !important; }
-    .price-box .text-muted, .div-price-chip .text-muted { color: #94A3B8 !important; }
+    p, li, .lead { color: #425466 !important; }
+    .text-muted, .text-secondary { color: #697386 !important; }
   </style>
 
   <!-- Open Graph -->
