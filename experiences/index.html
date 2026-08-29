@@ -11,15 +11,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100%; }
     body { font-family:'Inter',sans-serif; background:#020617; color:#FFFFFF; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
-    h1, h2, h3, h4, h5, h6, .badge-pill, .btn { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.025em; }
-    .hero-section { padding:80px 20px 50px; background:radial-gradient(circle at 50% 15%, #2E1065 0%, #0F172A 50%, #020617 90%); text-align:center; }
-    .badge-pill { background:rgba(168,85,247,0.12); color:#C084FC; font-weight:800; font-size:0.8rem; padding:6px 18px; border-radius:30px; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:16px; border:1px solid rgba(168,85,247,0.3); }
-    .card-dark { background:#0B1120; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:32px; transition:all 0.3s; height:100%; display:flex; flex-direction:column; justify-content:space-between; }
-    .card-dark:hover { border-color:#A855F7; transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.9), 0 0 20px rgba(168,85,247,0.2); }
-    .price-box { background:#020617; border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:16px; margin:18px 0; text-align:center; }
-    .calc-card { background:#0B1120; border:2px solid rgba(168,85,247,0.4); border-radius:16px; padding:32px; max-width:850px; margin:0 auto; }
+    h1, h2, h3, h4, h5, h6, .badge-pill, .btn { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.025em; overflow-wrap:break-word; }
+    h1, .display-5 { font-size: clamp(1.75rem, 5.5vw, 2.75rem) !important; line-height: 1.25 !important; }
+    h2 { font-size: clamp(1.4rem, 4.5vw, 2.2rem) !important; }
+    h3 { font-size: clamp(1.2rem, 3.8vw, 1.75rem) !important; }
+    h4 { font-size: clamp(1.05rem, 3.2vw, 1.35rem) !important; }
+    p, li { font-size: clamp(0.88rem, 2.2vw, 1rem); overflow-wrap:break-word; }
+    .hero-section { padding:70px 20px 45px; background:radial-gradient(circle at 50% 15%, #2E1065 0%, #0F172A 50%, #020617 90%); text-align:center; }
+    .badge-pill { background:rgba(168,85,247,0.12); color:#C084FC; font-weight:800; font-size:clamp(0.7rem, 2vw, 0.8rem); padding:6px 18px; border-radius:30px; letter-spacing:2px; text-transform:uppercase; display:inline-block; margin-bottom:16px; border:1px solid rgba(168,85,247,0.3); }
+    .card-dark { background:#0B1120; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px 24px; transition:all 0.3s; height:100%; display:flex; flex-direction:column; justify-content:space-between; }
+    .card-dark:hover { border-color:#A855F7; transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.9), 0 0 20px rgba(168,85,247,0.2); }
+    .price-box { background:#020617; border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:14px; margin:16px 0; text-align:center; }
+    .calc-card { background:#0B1120; border:2px solid rgba(168,85,247,0.4); border-radius:16px; padding:32px 28px; max-width:850px; margin:0 auto; }
+    @media (max-width: 768px) {
+      .hero-section { padding: 40px 14px 25px; }
+      .card-dark { padding: 20px 16px; border-radius: 14px; }
+      .calc-card { padding: 20px 16px; border-radius: 14px; }
+    }
   
     /* UNIVERSAL HIGH-CONTRAST FONT VISIBILITY (GALICON 2026) */
     body { color: #F8FAFC !important; }

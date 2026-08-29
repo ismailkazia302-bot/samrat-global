@@ -2,7 +2,7 @@
  * GALICON GLOBAL — Master Unified Navbar Component
  * Automatically resolves path depths for root, subdirectories, services, and blogs.
  * Active Divisions: BUSINESS, GROWTH, TECHNOLOGY, EXPERIENCES, AUDIT
- * Includes Direct Global Toggle Function with Inline Override for 100% Mobile Reliability
+ * Includes Direct Global Toggle Function with Inline Override & Fluid Logo Scaling for Mobile Devices
  */
 (function() {
   // Global Toggle Function accessible everywhere
@@ -56,6 +56,15 @@
       const style = document.createElement('style');
       style.id = 'galicon-nav-style';
       style.textContent = `
+        /* Universal Viewport & Image Safety */
+        html, body {
+          overflow-x: hidden !important;
+          max-width: 100% !important;
+        }
+        img, video, iframe {
+          max-width: 100%;
+        }
+
         .nav-alsayegh {
           background: #020617 !important;
           border-bottom: 1px solid rgba(255,255,255,0.08) !important;
@@ -64,9 +73,39 @@
           top: 0 !important;
           z-index: 99999 !important;
         }
+        .nav-brand-wrap {
+          text-decoration: none !important;
+          display: flex !important;
+          align-items: center !important;
+          gap: 10px !important;
+        }
+        .nav-brand-logo {
+          height: 48px !important;
+          width: auto !important;
+          object-fit: contain !important;
+          flex-shrink: 0 !important;
+        }
+        .nav-brand-title {
+          font-family: 'Plus Jakarta Sans', sans-serif !important;
+          font-weight: 900 !important;
+          font-size: 1.3rem !important;
+          letter-spacing: 1.5px !important;
+          color: #FFFFFF !important;
+          line-height: 1 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          text-transform: uppercase !important;
+        }
+        .nav-brand-subtitle {
+          font-size: 0.72rem !important;
+          letter-spacing: 3px !important;
+          font-weight: 800 !important;
+          color: #818CF8 !important;
+          margin-top: 2px !important;
+        }
         .navbar-toggler {
           border: 2px solid #818CF8 !important;
-          padding: 8px 14px !important;
+          padding: 8px 12px !important;
           border-radius: 10px !important;
           background: rgba(99,102,241,0.2) !important;
           cursor: pointer !important;
@@ -74,7 +113,6 @@
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          gap: 6px !important;
         }
         .navbar-toggler:focus, .navbar-toggler:active {
           box-shadow: 0 0 15px rgba(99,102,241,0.8) !important;
@@ -82,8 +120,8 @@
         }
         .navbar-toggler-icon {
           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.6' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-          width: 24px !important;
-          height: 24px !important;
+          width: 22px !important;
+          height: 22px !important;
           display: inline-block !important;
         }
         @media (max-width: 991px) {
@@ -134,6 +172,22 @@
             font-size: 0.95rem !important;
           }
         }
+        @media (max-width: 480px) {
+          .nav-brand-logo {
+            height: 38px !important;
+          }
+          .nav-brand-title {
+            font-size: 1.05rem !important;
+            letter-spacing: 1px !important;
+          }
+          .nav-brand-subtitle {
+            font-size: 0.62rem !important;
+            letter-spacing: 2px !important;
+          }
+          .navbar-toggler {
+            padding: 6px 10px !important;
+          }
+        }
         @keyframes fadeInNav {
           from { opacity: 0; transform: translateY(-8px); }
           to { opacity: 1; transform: translateY(0); }
@@ -144,12 +198,12 @@
 
     const navHTML = `
   <nav class="navbar navbar-expand-lg navbar-dark nav-alsayegh">
-    <div class="container-fluid px-lg-5">
-      <a href="${prefix}index.html" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
-        <img src="${prefix}galicon_logo.png" alt="GALICON GLOBAL" style="height:48px; width:auto; object-fit:contain;">
-        <span style="font-family:'Plus Jakarta Sans', sans-serif; font-weight:900; font-size:1.3rem; letter-spacing:1.5px; color:#FFFFFF; line-height:1; display:flex; flex-direction:column; text-transform:uppercase;">
+    <div class="container-fluid px-3 px-lg-5">
+      <a href="${prefix}index.html" class="nav-brand-wrap">
+        <img src="${prefix}galicon_logo.png" alt="GALICON GLOBAL" class="nav-brand-logo">
+        <span class="nav-brand-title">
           GALICON
-          <span style="font-size:0.72rem; letter-spacing:3px; font-weight:800; color:#818CF8; margin-top:2px;">GLOBAL GROUP</span>
+          <span class="nav-brand-subtitle">GLOBAL GROUP</span>
         </span>
       </a>
 
