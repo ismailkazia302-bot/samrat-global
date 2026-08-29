@@ -156,8 +156,24 @@
         <button class="filter-chip filter-chip-region" onclick="selectRegion('Global', this)">🇺🇸 US & Singapore (<span id="cnt-glb">0</span>)</button>
       </div>
 
+      <!-- 10-Person Sales Force Pod Dispatcher -->
+      <div class="filter-group mt-2" id="repGroup">
+        <span class="small text-secondary fw-bold me-2 d-inline-block align-self-center"><i class="fas fa-users-cog text-info me-1"></i>SALES REP POD:</span>
+        <button class="filter-chip active" onclick="selectRep('All', this)">👥 All 10 Reps</button>
+        <button class="filter-chip" onclick="selectRep('Rep 1 (Tech)', this)">⚡ Rep 1: Bug Sprints</button>
+        <button class="filter-chip" onclick="selectRep('Rep 2 (AI)', this)">🤖 Rep 2: AI WhatsApp Bots</button>
+        <button class="filter-chip" onclick="selectRep('Rep 3 (Apps)', this)">📱 Rep 3: Custom Mobile Apps</button>
+        <button class="filter-chip" onclick="selectRep('Rep 4 (Ecom)', this)">🛍️ Rep 4: D2C Ecom Ads</button>
+        <button class="filter-chip" onclick="selectRep('Rep 5 (GCC)', this)">🏙️ Rep 5: GCC Luxury Real Estate</button>
+        <button class="filter-chip" onclick="selectRep('Rep 6 (B2B)', this)">📈 Rep 6: B2B Growth Retainers</button>
+        <button class="filter-chip" onclick="selectRep('Rep 7 (BLR Events)', this)">🎪 Rep 7: Bangalore Summits</button>
+        <button class="filter-chip" onclick="selectRep('Rep 8 (Saudi Events)', this)">🇸🇦 Rep 8: Saudi Conclaves</button>
+        <button class="filter-chip" onclick="selectRep('Rep 9 (Advisory)', this)">🚀 Rep 9: Business Diagnostics</button>
+        <button class="filter-chip" onclick="selectRep('Rep 10 (Inbound SDR)', this)">⚡ Rep 10: Speed-to-Lead</button>
+      </div>
+
       <!-- Status Filter Chips -->
-      <div class="filter-group" id="statusGroup">
+      <div class="filter-group mt-2" id="statusGroup">
         <button class="filter-chip active" onclick="selectStatus('All', this)">All Status</button>
         <button class="filter-chip" onclick="selectStatus('VIP', this)">VIP High Score (95+)</button>
       </div>
@@ -258,12 +274,31 @@
       document.getElementById('cnt-glb').textContent = LEADS_STORE.filter(l => l.country === 'USA' || l.country === 'Singapore').length;
     }
 
-    function executeFilter() {
-      let result = LEADS_STORE;
+    let activeRep = 'All';
 
-      // Region Filter
+    function getAssignedRep(lead) {
+      const service = (lead.targetService || '').toLowerCase();
+      const cat = (lead.category || '').toLowerCase();
+      const country = (lead.country || '').toLowerCase();
+      const city = (lead.city || '').toLowerCase();
+
+      if (country === 'saudi arabia' || country.includes('saudi')) return { rep: 'Rep 8 (Saudi Events)', icon: '🇸🇦' };
+      if (country === 'uae' || city === 'dubai') return { rep: 'Rep 5 (GCC)', icon: '🏙️' };
+      if (service.includes('event') || cat.includes('hotel') || cat.includes('convention')) return { rep: 'Rep 7 (BLR Events)', icon: '🎪' };
+      if (cat.includes('ecommerce') || cat.includes('d2c') || cat.includes('retail') || cat.includes('fashion')) return { rep: 'Rep 4 (Ecom)', icon: '🛍️' };
+      if (cat.includes('fintech') || cat.includes('bank') || cat.includes('consulting') || cat.includes('biotech')) return { rep: 'Rep 6 (B2B)', icon: '📈' };
+      if (cat.includes('edtech') || cat.includes('saas') || cat.includes('ai') || cat.includes('software')) return { rep: 'Rep 2 (AI)', icon: '🤖' };
+      if (cat.includes('mobility') || cat.includes('health') || cat.includes('gaming')) return { rep: 'Rep 3 (Apps)', icon: '📱' };
+      if (cat.includes('strategy') || cat.includes('sop') || cat.includes('advisory')) return { rep: 'Rep 9 (Advisory)', icon: '🚀' };
+      return { rep: 'Rep 1 (Tech)', icon: '⚡' };
+    }
+
+    function executeFilter() {
+      let result = [...LEADS_STORE];
+
+      // Regional Filter
       if (activeRegion === 'Saudi Arabia') {
-        result = result.filter(l => l.country === 'Saudi Arabia' || l.country === 'KSA');
+        result = result.filter(l => l.country === 'Saudi Arabia');
       } else if (activeRegion === 'Bangalore') {
         result = result.filter(l => l.city === 'Bangalore');
       } else if (activeRegion === 'UAE') {
@@ -274,6 +309,11 @@
         result = result.filter(l => l.city === 'Mumbai');
       } else if (activeRegion === 'Global') {
         result = result.filter(l => l.country === 'USA' || l.country === 'Singapore');
+      }
+
+      // Sales Rep Filter
+      if (activeRep !== 'All') {
+        result = result.filter(l => getAssignedRep(l).rep === activeRep);
       }
 
       // Status Filter
@@ -302,6 +342,13 @@
       executeFilter();
     }
 
+    function selectRep(repName, btn) {
+      activeRep = repName;
+      document.querySelectorAll('#repGroup .filter-chip').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      executeFilter();
+    }
+
     function selectStatus(st, btn) {
       activeStatus = st;
       document.querySelectorAll('#statusGroup .filter-chip').forEach(b => b.classList.remove('active'));
@@ -326,6 +373,7 @@
       list.forEach(lead => {
         const isVip = lead.leadScore >= 95;
         const scoreClass = isVip ? 'score-high' : 'score-mid';
+        const assigned = getAssignedRep(lead);
         
         // Resolve WhatsApp Link format
         let rawPhone = lead.phone || '';
@@ -339,7 +387,7 @@
           <div>
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="score-badge ${scoreClass}">🎯 Score ${lead.leadScore || 90}</span>
-              <span class="status-tag">ACTIVE</span>
+              <span class="badge bg-primary text-white" style="font-size:0.7rem; font-weight:700;">${assigned.icon} ${assigned.rep}</span>
             </div>
             <h4 class="card-title">${lead.businessName}</h4>
             <p class="card-subtitle mb-2"><i class="fas fa-map-marker-alt text-warning me-1"></i>${lead.city}, ${lead.country} • ${lead.category}</p>
