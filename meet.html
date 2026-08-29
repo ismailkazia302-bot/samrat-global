@@ -6,6 +6,7 @@
   <title>Schedule a Strategy Session | Senior Solution Specialists | GALICON GLOBAL</title>
   <meta name="description" content="Schedule a 1-on-1 strategy and solution discovery session with GALICON GLOBAL senior client specialists for rapid tech, growth, and event scoping.">
   <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/meet.html">
+  <link rel="icon" type="image/png" href="galicon_logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,204 +17,78 @@
     *, *::before, *::after {
       box-sizing: border-box;
     }
-    body { font-family:'Inter',sans-serif; background:#020617; color:#FFFFFF; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
-    h1, h2, h3, h4, h5, h6, .hero-meet h1, .badge-tag, .btn, .date-pill, .time-slot { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.025em; }
-    .hero-meet { text-align:center; padding:35px 15px 25px; }
-    .hero-meet h1 { font-size:2.2rem; font-weight:900; line-height:1.2; margin-bottom:10px; }
-    .hero-meet p { color:#cbd5e1; max-width:680px; margin:0 auto 16px; font-size:0.95rem; }
-    .badge-tag { background:rgba(99,102,241,0.12); color:#818CF8; font-size:0.75rem; font-weight:800; padding:6px 14px; border-radius:30px; letter-spacing:1.5px; text-transform:uppercase; display:inline-block; margin-bottom:10px; border:1px solid rgba(99,102,241,0.3); }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: #020617; 
+      color: #FFFFFF; 
+      line-height: 1.65; 
+      letter-spacing: -0.01em; 
+      -webkit-font-smoothing: antialiased; 
+    }
+    h1, h2, h3, h4, h5, h6, .hero-meet h1, .badge-tag, .btn { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      letter-spacing: -0.025em; 
+    }
+    .hero-meet { 
+      text-align: center; 
+      padding: 40px 15px 25px; 
+    }
+    .hero-meet h1 { 
+      font-size: 2.2rem; 
+      font-weight: 900; 
+      line-height: 1.2; 
+      margin-bottom: 12px; 
+    }
+    .hero-meet p { 
+      color: #cbd5e1; 
+      max-width: 680px; 
+      margin: 0 auto 16px; 
+      font-size: 0.95rem; 
+    }
+    .badge-tag { 
+      background: rgba(99,102,241,0.12); 
+      color: #818CF8; 
+      font-size: 0.75rem; 
+      font-weight: 800; 
+      padding: 6px 14px; 
+      border-radius: 30px; 
+      letter-spacing: 1.5px; 
+      text-transform: uppercase; 
+      display: inline-block; 
+      margin-bottom: 10px; 
+      border: 1px solid rgba(99,102,241,0.3); 
+    }
     
-    /* Universal Adaptive Card Container */
-    .widescreen-booking-card { 
+    /* Calendly Container Card */
+    .calendly-card-wrapper { 
       background: #0B1120; 
       border: 2px solid rgba(99,102,241,0.35); 
       border-radius: 20px; 
       box-shadow: 0 30px 80px rgba(0,0,0,0.95), 0 0 30px rgba(99,102,241,0.12); 
-      max-width: 1100px; 
-      margin: 0 auto; 
+      max-width: 1050px; 
+      margin: 0 auto 50px; 
       overflow: hidden; 
+      padding: 10px;
     }
     
-    .sidebar-panel {
-      background: #060A14;
-      border-right: 1px solid rgba(255,255,255,0.08);
-      padding: 32px 24px;
-    }
-    
-    .main-panel {
-      padding: 32px 28px;
-      background: #0d1322;
-    }
-    
-    .avatar-ik {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #818CF8, #3B82F6);
-      color: #FFFFFF;
-      font-weight: 900;
-      font-size: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 15px rgba(99,102,241,0.4);
-      flex-shrink: 0;
-    }
-    
-    /* Bulletproof Non-Overflowing Input Styling */
-    .gate-input, .gate-select, input.form-control, select.form-select, textarea.form-control { 
-      background: #020617 !important; 
-      border: 1px solid rgba(99,102,241,0.35) !important; 
-      color: #FFFFFF !important; 
-      padding: 12px 14px !important; 
-      border-radius: 10px !important; 
-      font-size: 15px !important; 
+    .calendly-inline-widget {
       width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      display: block !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-    }
-    .gate-input::placeholder, input.form-control::placeholder {
-      color: #94A3B8 !important;
-      opacity: 1 !important;
-    }
-    .gate-input:focus, .gate-select:focus, input.form-control:focus, select.form-select:focus { 
-      border-color: #38BDF8 !important; 
-      box-shadow: 0 0 15px rgba(56,189,248,0.3) !important; 
-      outline: none !important;
-    }
-    
-    /* Native Touch-Friendly Date Chips */
-    .date-scroll-wrap {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 6px;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-    }
-    .date-scroll-wrap::-webkit-scrollbar {
-      height: 4px;
-    }
-    .date-scroll-wrap::-webkit-scrollbar-thumb {
-      background: rgba(99,102,241,0.4);
-      border-radius: 4px;
-    }
-    
-    .date-pill { 
-      background: #050811; 
-      border: 1px solid rgba(255,255,255,0.15); 
-      color: #cbd5e1; 
-      padding: 10px 12px; 
-      border-radius: 10px; 
-      cursor: pointer; 
-      text-align: center; 
-      transition: all 0.2s; 
-      flex: 1;
-      min-width: 75px;
-      scroll-snap-align: start;
-      user-select: none;
-    }
-    .date-pill.active { 
-      background: #6366F1; 
-      color: #FFFFFF; 
-      font-weight: 800; 
-      border-color: #6366F1; 
-      box-shadow: 0 0 15px rgba(99,102,241,0.5); 
-    }
-    .date-pill:hover:not(.active) { 
-      border-color: #818CF8; 
-      color: #fff; 
-    }
-    
-    /* Time Slot Buttons */
-    .time-slot { 
-      background: #050811; 
-      border: 1px solid rgba(255,255,255,0.12); 
-      color: #cbd5e1; 
-      padding: 10px 8px; 
-      border-radius: 10px; 
-      cursor: pointer; 
-      text-align: center; 
-      transition: all 0.2s; 
-      font-size: 0.85rem; 
-      font-weight: 600; 
-      min-height: 52px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      user-select: none;
-    }
-    .time-slot.active { 
-      background: #10b981; 
-      color: #000; 
-      font-weight: 800; 
-      border-color: #10b981; 
-      box-shadow: 0 0 15px rgba(16,185,129,0.4); 
-    }
-    .time-slot:hover:not(.active) { 
-      border-color: #10b981; 
-      color: #fff; 
-    }
-    
-    .btn-indigo {
-      background: #6366F1;
-      color: #FFFFFF;
-      font-weight: 700;
-      border: none;
-      transition: all 0.2s;
-    }
-    .btn-indigo:hover {
-      background: #4F46E5;
-      color: #FFFFFF;
-      box-shadow: 0 4px 20px rgba(99,102,241,0.4);
-    }
-    
-    .feature-check {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-    }
-    .feature-check i {
-      color: #10b981;
+      min-width: 320px !important;
+      height: 720px !important;
+      border: none !important;
+      border-radius: 14px;
     }
 
-    /* Mobile Responsive Optimizations */
-    @media (max-width: 991px) {
-      .hero-meet { padding: 20px 10px 15px; }
-      .hero-meet h1 { font-size: 1.6rem; }
-      .hero-meet p { font-size: 0.85rem; }
-      .widescreen-booking-card { 
-        border-radius: 16px; 
+    @media (max-width: 768px) {
+      .hero-meet { padding: 25px 10px 15px; }
+      .hero-meet h1 { font-size: 1.65rem; }
+      .calendly-card-wrapper { 
+        border-radius: 14px; 
         border-width: 1px;
-        margin: 0;
+        padding: 4px;
       }
-      .sidebar-panel { 
-        padding: 16px; 
-        border-right: none; 
-        border-bottom: 1px solid rgba(255,255,255,0.08); 
-      }
-      .main-panel { 
-        padding: 20px 14px; 
-      }
-      .sidebar-expanded-details {
-        display: none;
-      }
-      .date-pill {
-        min-width: 65px;
-        padding: 8px 4px;
-        font-size: 0.78rem;
-      }
-      .time-slot {
-        font-size: 0.78rem;
-        padding: 8px 2px;
-        min-height: 48px;
+      .calendly-inline-widget {
+        height: 680px !important;
       }
     }
   
@@ -260,173 +135,30 @@
 
   <!-- Hero Section -->
   <section class="hero-meet container">
-    <span class="badge-tag"><i class="fas fa-headset me-1"></i> STRATEGIC SOLUTION DISCOVERY (30 MIN)</span>
+    <span class="badge-tag"><i class="fas fa-calendar-check me-1"></i> DIRECT STRATEGIC SCHEDULER</span>
     <h1 class="text-white">Schedule a Consultation with Our<br><span style="color:#818CF8;">Senior Client Specialists & Sales Team</span></h1>
     <p>
-      Connect directly with our dedicated solution specialists for rapid project scoping, transparent pricing frameworks, and 24-hr execution assistance.
+      Select your preferred date and time slot below for a 30-minute strategic consultation, rapid project scoping, and transparent pricing.
     </p>
 
-    <!-- Fully Adaptive 1-Step Booking Card -->
-    <div class="widescreen-booking-card text-start my-3">
-      <div class="row g-0">
-        
-        <!-- Left Sidebar -->
-        <div class="col-lg-4 sidebar-panel d-flex flex-column justify-content-between">
-          <div>
-            <div class="d-flex align-items-center gap-3 mb-2 mb-lg-4">
-              <div class="avatar-ik"><i class="fas fa-headset"></i></div>
-              <div>
-                <h5 class="fw-bold text-white mb-0" style="font-size:1.1rem;">GALICON Sales Desk</h5>
-                <span class="text-info small fw-bold">Senior Solution Specialists</span>
-              </div>
-            </div>
+    <!-- DIRECT CALENDLY EMBED CARD (ZERO DUPLICATE FORM) -->
+    <div class="calendly-card-wrapper my-3">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302/30min?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=0b1120&text_color=ffffff&primary_color=6366f1"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
 
-            <div class="d-flex flex-row flex-lg-column gap-2 mb-2 mb-lg-4 text-muted small flex-wrap">
-              <div><i class="fas fa-clock text-info me-1"></i> 30 Mins Strategy Session</div>
-              <div><i class="fas fa-video text-info me-1"></i> Google Meet Video Call</div>
-              <div><i class="fas fa-phone-alt text-info me-1"></i> Direct Desk: +91 70158 44885</div>
-              <div class="d-none d-lg-block"><i class="fas fa-bolt text-info me-1"></i> 15-Min Response SLA</div>
-            </div>
-
-            <!-- Desktop Only Expanded Details -->
-            <div class="sidebar-expanded-details">
-              <hr style="border-color: rgba(255,255,255,0.08);">
-              <h6 class="text-white fw-bold small text-uppercase mb-3" style="letter-spacing:1px;">What Our Specialists Will Cover:</h6>
-              <div class="feature-check"><i class="fas fa-check-circle"></i> Project Scope & Objectives Review</div>
-              <div class="feature-check"><i class="fas fa-check-circle"></i> Budget Allocation & Pricing Breakdown</div>
-              <div class="feature-check"><i class="fas fa-check-circle"></i> Rapid 24–48 Hr Sprint Delivery Timeline</div>
-              <div class="feature-check"><i class="fas fa-check-circle"></i> Formal SOW & Invoice Issuance (INR/USD/SAR)</div>
-            </div>
-          </div>
-
-          <div class="d-none d-lg-block pt-3" style="border-top:1px solid rgba(255,255,255,0.08);">
-            <div class="text-muted small">
-              <i class="fas fa-shield-alt text-success me-1"></i> Enterprise NDA & Confidentiality Guaranteed
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Main Panel: Unified 1-Step Form -->
-        <div class="col-lg-8 main-panel">
-          
-          <!-- UNIFIED 1-STEP BOOKING FORM -->
-          <div id="unified-booking-section">
-            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-              <div>
-                <h4 class="fw-bold text-white mb-0" style="font-size:1.25rem;">Select Time & Confirm Details</h4>
-                <div class="text-muted small">1-Step Instant Reservation &bull; No Double-Form Filling</div>
-              </div>
-              <span class="badge bg-success text-dark px-2 py-1 fw-bold" style="font-size:0.75rem;">LIVE SLOTS</span>
-            </div>
-
-            <form id="unifiedBookingForm" onsubmit="handleDirectBookingSubmit(event)">
-              
-              <!-- 1. Select Date -->
-              <div class="mb-3">
-                <label class="form-label small text-secondary fw-bold mb-1">1. SELECT PREFERRED DATE:</label>
-                <div class="date-scroll-wrap" id="dateTabsContainer">
-                  <!-- Dynamically Injected -->
-                </div>
-              </div>
-
-              <!-- 2. Select Time Slot -->
-              <div class="mb-3">
-                <label class="form-label small text-secondary fw-bold mb-1">2. SELECT TIME SLOT (IST & KSA):</label>
-                <div class="row g-2" id="timeSlotsContainer">
-                  <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '02:00 PM IST (11:30 AM KSA)')">02:00 PM IST<small style="color:#94a3b8; font-size:0.72rem;">11:30 AM KSA</small></div></div>
-                  <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '03:00 PM IST (12:30 PM KSA)')">03:00 PM IST<small style="color:#94a3b8; font-size:0.72rem;">12:30 PM KSA</small></div></div>
-                  <div class="col-6 col-sm-4"><div class="time-slot active" onclick="selectTimeSlot(this, '04:30 PM IST (02:00 PM KSA)')">04:30 PM IST<small style="color:#94a3b8; font-size:0.72rem;">02:00 PM KSA</small></div></div>
-                  <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '05:30 PM IST (03:00 PM KSA)')">05:30 PM IST<small style="color:#94a3b8; font-size:0.72rem;">03:00 PM KSA</small></div></div>
-                  <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '06:30 PM IST (04:00 PM KSA)')">06:30 PM IST<small style="color:#94a3b8; font-size:0.72rem;">04:00 PM KSA</small></div></div>
-                  <div class="col-6 col-sm-4"><div class="time-slot" onclick="selectTimeSlot(this, '08:00 PM IST (05:30 PM KSA)')">08:00 PM IST<small style="color:#94a3b8; font-size:0.72rem;">05:30 PM KSA</small></div></div>
-                </div>
-              </div>
-
-              <!-- 3. Client Information (Bulletproof Inputs) -->
-              <div class="row g-2 g-md-3 mb-3">
-                <div class="col-md-6">
-                  <label class="form-label small text-secondary fw-bold mb-1">YOUR FULL NAME *</label>
-                  <input type="text" id="meet-name" class="form-control gate-input" placeholder="e.g. Arjun Mehta" required autocomplete="name">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small text-secondary fw-bold mb-1">WORK / PERSONAL EMAIL *</label>
-                  <input type="email" id="meet-email" class="form-control gate-input" placeholder="e.g. arjun@company.com" required autocomplete="email">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small text-secondary fw-bold mb-1">PHONE / DIRECT NUMBER *</label>
-                  <input type="tel" id="meet-phone" class="form-control gate-input" placeholder="e.g. +91 98765 43210" required autocomplete="tel">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small text-secondary fw-bold mb-1">PRIMARY SERVICE DIVISION *</label>
-                  <select id="meet-division" class="form-select gate-select" required>
-                    <option value="" disabled selected>Select Division</option>
-                    <option value="Technology">GALICON TECHNOLOGY (AI Bots, Web & Apps)</option>
-                    <option value="Growth">GALICON GROWTH (Ads & Performance Retainers)</option>
-                    <option value="Business">GALICON BUSINESS (Strategy & SOP Blueprints)</option>
-                    <option value="Experiences">GALICON EXPERIENCES (4K LED Event Staging)</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label class="form-label small text-secondary fw-bold mb-1">ESTIMATED BUDGET RANGE *</label>
-                  <select id="meet-budget" class="form-select gate-select" required>
-                    <option value="" disabled selected>Select Budget Range</option>
-                    <option value="<₹25k">&lt; ₹25,000 / $300 (Micro-Sprint / Bug Fix / Diagnostic / Script)</option>
-                    <option value="₹25k-₹75k">₹25,000 – ₹75,000 / $300–$1,000 (Website / AI Bot / Growth Retainer)</option>
-                    <option value="₹75k-₹2.5L">₹75,000 – ₹2,50,000 / $1,000–$3,500 (Mobile App / Scale Funnel / Summit)</option>
-                    <option value="₹2.5L+">₹2,50,000+ / $3,500+ (Custom SaaS / Enterprise Transformation)</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label class="form-label small text-secondary fw-bold mb-1">PROJECT OBJECTIVES (OPTIONAL)</label>
-                  <textarea id="meet-notes" class="form-control gate-input" rows="2" placeholder="Briefly describe what you want to achieve..."></textarea>
-                </div>
-              </div>
-
-              <!-- Selected Slot Summary Strip -->
-              <div class="p-2 p-md-3 mb-3 rounded-3 border border-secondary" style="background:#020617;">
-                <div class="d-flex justify-content-between align-items-center flex-wrap gap-1">
-                  <div>
-                    <div class="text-white fw-bold small" id="selectedSummaryLabel">Selected: Monday, Sept 1 • 04:30 PM IST</div>
-                    <div class="text-muted" style="font-size:0.75rem;">Google Meet Video Call &bull; Instant Confirmation</div>
-                  </div>
-                  <span class="badge bg-primary text-white px-2 py-1 fw-bold" style="font-size:0.7rem;">READY TO LOCK</span>
-                </div>
-              </div>
-
-              <button type="submit" id="submitBookingBtn" class="btn btn-indigo w-100 py-3 fw-bold text-white mb-2" style="font-size:1.05rem; border-radius:10px;">
-                Confirm & Lock My Session ➔
-              </button>
-            </form>
-          </div>
-
-          <!-- STEP 2: Booking Confirmed Screen (Zero Redirect) -->
-          <div id="step-confirmed-section" style="display:none;" class="text-center py-4">
-            <div class="my-2">
-              <i class="fas fa-check-circle text-success" style="font-size:3.8rem;"></i>
-            </div>
-            <h3 class="text-white fw-bold mb-2">Session Reserved Successfully! 🎉</h3>
-            <p class="text-muted small mb-4">Our Senior Sales Specialists have received your project briefing and Google Meet slot.</p>
-
-            <div class="p-3 rounded-3 text-start mb-4 border border-primary" style="background:#020617; border-color:rgba(99,102,241,0.4) !important;">
-              <div class="row g-2">
-                <div class="col-sm-6"><span class="text-secondary small">GUEST NAME:</span> <strong class="text-white d-block small" id="confirmName"></strong></div>
-                <div class="col-sm-6"><span class="text-secondary small">CONFIRMED EMAIL:</span> <strong class="text-white d-block small" id="confirmEmail"></strong></div>
-                <div class="col-12"><span class="text-secondary small">RESERVED TIME SLOT:</span> <strong class="text-info d-block" id="confirmSlot"></strong></div>
-                <div class="col-12"><span class="text-secondary small">SALES LEAD CONTACT:</span> <span class="text-white d-block small">Mr. Ayaan &bull; +91 70158 44885 &bull; Galicon@yahoo.com</span></div>
-              </div>
-            </div>
-
-            <div class="d-flex gap-2 justify-content-center flex-column flex-sm-row">
-              <a href="#" id="gcalBtn" target="_blank" class="btn btn-primary fw-bold py-2 px-3" style="border-radius:8px; font-size:0.9rem;">
-                <i class="fab fa-google me-1"></i> Add to Google Calendar
-              </a>
-              <a href="index.html" class="btn btn-outline-light fw-bold py-2 px-3" style="border-radius:8px; font-size:0.9rem;">
-                <i class="fas fa-arrow-left me-1"></i> Return to Homepage
-              </a>
-            </div>
-          </div>
-
-        </div>
+    <!-- Direct Sales Desk Assistance Strip -->
+    <div class="p-3 rounded-3 text-center mb-5 border border-secondary" style="background:#060A14; max-width:800px; margin:0 auto;">
+      <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+        <span class="text-muted small"><i class="fas fa-phone-alt text-info me-1"></i> Need Urgent Assistance?</span>
+        <a href="tel:+917015844885" class="btn btn-sm btn-outline-info fw-bold py-1 px-3" style="border-radius:6px;">
+          Call Sales Desk: Mr. Ayaan (+91 70158 44885)
+        </a>
+        <a href="calculator.html" class="btn btn-sm btn-outline-light fw-bold py-1 px-3" style="border-radius:6px;">
+          <i class="fas fa-calculator me-1"></i> Project Estimator
+        </a>
       </div>
     </div>
 
@@ -435,122 +167,6 @@
   <div id="footer-placeholder"></div>
 
   <script src="analytics_tracker.js"></script>
-  <script>
-    let selectedDate = "Monday, Sept 1";
-    let selectedTime = "04:30 PM IST (02:00 PM KSA)";
-
-    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      ? 'http://localhost:4000'
-      : 'https://ismailkazia302-bot.github.io/samrat-global';
-
-    function initDateTabs() {
-      const dates = [
-        { day: 'Mon', date: 'Sept 1', full: 'Monday, Sept 1' },
-        { day: 'Tue', date: 'Sept 2', full: 'Tuesday, Sept 2' },
-        { day: 'Wed', date: 'Sept 3', full: 'Wednesday, Sept 3' },
-        { day: 'Thu', date: 'Sept 4', full: 'Thursday, Sept 4' },
-        { day: 'Fri', date: 'Sept 5', full: 'Friday, Sept 5' }
-      ];
-
-      const container = document.getElementById('dateTabsContainer');
-      container.innerHTML = '';
-
-      dates.forEach((d, idx) => {
-        const pill = document.createElement('div');
-        pill.className = `date-pill ${idx === 0 ? 'active' : ''}`;
-        pill.innerHTML = `<strong>${d.day}</strong><br><small>${d.date}</small>`;
-        pill.onclick = () => {
-          document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-          selectedDate = d.full;
-          updateSummary();
-        };
-        container.appendChild(pill);
-      });
-    }
-
-    function selectTimeSlot(el, timeText) {
-      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
-      el.classList.add('active');
-      selectedTime = timeText;
-      updateSummary();
-    }
-
-    function updateSummary() {
-      const label = document.getElementById('selectedSummaryLabel');
-      if (label) {
-        label.innerText = `Selected: ${selectedDate} • ${selectedTime}`;
-      }
-    }
-
-    async function handleDirectBookingSubmit(event) {
-      event.preventDefault();
-
-      const submitBtn = document.getElementById('submitBookingBtn');
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Locking Slot...';
-
-      const name = document.getElementById('meet-name').value.trim();
-      const email = document.getElementById('meet-email').value.trim();
-      const phone = document.getElementById('meet-phone').value.trim();
-      const division = document.getElementById('meet-division').value;
-      const budget = document.getElementById('meet-budget').value;
-      const notes = document.getElementById('meet-notes').value.trim();
-      const slotString = `${selectedDate} at ${selectedTime}`;
-
-      const leadPayload = {
-        name,
-        email,
-        phone,
-        division,
-        budget,
-        packageSelected: `Meeting Reserved: ${slotString}`,
-        meetingDate: selectedDate,
-        meetingTime: selectedTime,
-        country: 'Global',
-        notes,
-        message: `🎉 1-STEP MEETING RESERVATION: ${slotString}\nDivision: ${division}\nBudget: ${budget}\nNotes: ${notes}`
-      };
-
-      // Save locally in browser
-      localStorage.setItem('galicon_booking_lead', JSON.stringify({ ...leadPayload, timestamp: new Date().toISOString() }));
-
-      // Dispatch to local API and n8n webhook
-      try {
-        fetch(`http://localhost:4000/api/leads/submit`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadPayload)
-        }).catch(e => console.warn('Sync note:', e));
-
-        fetch(`http://localhost:4000/api/webhook/n8n-trigger`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ event: 'INBOUND_MEETING_RESERVED', ...leadPayload })
-        }).catch(e => console.warn('n8n note:', e));
-      } catch (err) {}
-
-      // Transition to Confirmed View
-      document.getElementById('unified-booking-section').style.display = 'none';
-      document.getElementById('step-confirmed-section').style.display = 'block';
-
-      document.getElementById('confirmName').innerText = name || 'Executive Guest';
-      document.getElementById('confirmEmail').innerText = email || 'Provided on file';
-      document.getElementById('confirmSlot').innerText = slotString;
-
-      // Google Calendar Direct Link
-      const gcalTitle = encodeURIComponent(`Strategy Session: ${name} x GALICON Senior Solution Specialists`);
-      const gcalDetails = encodeURIComponent(`Strategy Session with GALICON Senior Solution Specialists.\n\nDivision: ${division}\nBudget: ${budget}\nPhone: ${phone}\nNotes: ${notes}\n\nGoogle Meet Link will be active at meeting time.`);
-      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${gcalTitle}&details=${gcalDetails}&location=Google+Meet`;
-      document.getElementById('gcalBtn').href = gcalUrl;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      initDateTabs();
-      updateSummary();
-    });
-  </script>
-
   <script src="chatbot.js" defer></script>
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
