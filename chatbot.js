@@ -273,13 +273,13 @@
             <div class="chat-chip" data-chip="retainer">📈 Dubai / GCC Growth Retainer ($1,450 - $2,950/mo)</div>
             <div class="chat-chip" data-chip="zatca">🛍️ Buy Saudi ZATCA Phase 2 Kit ($97)</div>
             <div class="chat-chip" data-chip="bank">🏦 Saudi ANB Bank Transfer & IBAN Details</div>
-            <div class="chat-chip" data-chip="call">📅 Schedule 30-Min Call with Ismail Kazia</div>
-            <div class="chat-chip" data-chip="wa" style="border-color:#10B981; color:#10B981;">💬 Direct WhatsApp with Founder Ismail Kazia →</div>
+            <div class="chat-chip" data-chip="call">📅 Schedule Strategy Session with Senior Sales Specialist</div>
+            <div class="chat-chip" data-chip="sales" style="border-color:#38BDF8; color:#38BDF8;">📞 Call Sales Desk Directly: +91 70158 44885 →</div>
           </div>
         </div>
 
         <div class="chat-footer">
-          <input type="text" id="samratChatInput" class="chat-input" placeholder="Type your message / Apka sawaal yahan likhein...">
+          <input type="text" id="samratChatInput" class="chat-input" placeholder="Type your message / Apka sawaal yahan likhein..." style="box-sizing:border-box !important; max-width:100% !important;">
           <button class="chat-send-btn" id="samratChatSendBtn">Send</button>
         </div>
       </div>
@@ -389,6 +389,15 @@
           <strong>📅 30-Minute Strategic Consultation:</strong><br>
           Aap direct video meeting slot hamare booking page se reserve kar sakte hain:<br><br>
           👉 <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 14px; border-radius:6px; text-decoration:none;">Booking Page (meet.html) Kholein →</a>
+        `, "bot");
+      }, 400);
+    } else if (type === 'sales') {
+      appendMsg("Senior Sales Officer Mr. Ayaan ko call karna hai.", "user");
+      setTimeout(() => {
+        appendMsg(`
+          <strong>📞 Direct Sales Desk Assistance:</strong><br>
+          Aap hamare Sales Executive Officer <strong>Mr. Ayaan</strong> se directly baat kar sakte hain:<br><br>
+          👉 <a href="tel:+917015844885" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:8px 16px; border-radius:6px; text-decoration:none;">Call Mr. Ayaan (+91 70158 44885) ➔</a>
         `, "bot");
       }, 400);
     } else if (type === 'wa') {
