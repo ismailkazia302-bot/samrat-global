@@ -63,7 +63,8 @@
             </div>
             <div>Founder & CEO: <strong>Ismail Kazia</strong></div>
             <div>Direct Desk: <span style="color:#fff;">+91 63639 62640 / +966 54 890 5688</span></div>
-            <div>Corporate Email: <a href="mailto:ismailkazia302@gmail.com" style="color:#38bdf8; text-decoration:none;">ismailkazia302@gmail.com</a></div>
+            <div>Corporate Email: <a href="mailto:Galicon@yahoo.com" style="color:#38bdf8; font-weight:700; text-decoration:none;">Galicon@yahoo.com</a></div>
+            <div style="font-size:0.75rem; color:#64748b;">Direct Founder Desk: <a href="mailto:ismailkazia302@gmail.com" style="color:#94a3b8; text-decoration:none;">ismailkazia302@gmail.com</a></div>
           </div>
         </div>
       </div>
