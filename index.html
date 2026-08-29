@@ -67,89 +67,109 @@
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
 
-    /* HERO SECTION */
+    /* STRIPE SIGNATURE HERO SECTION */
     .hero-wrapper {
       position: relative;
-      min-height: 85vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 50% 15%, #1E1B4B 0%, #0F172A 50%, #020617 90%);
+      background: radial-gradient(at 15% 15%, rgba(99, 91, 255, 0.45) 0px, transparent 50%),
+                  radial-gradient(at 85% 15%, rgba(0, 212, 255, 0.38) 0px, transparent 50%),
+                  radial-gradient(at 50% 85%, rgba(255, 107, 158, 0.25) 0px, transparent 60%),
+                  #060A14;
       padding: 95px 20px 65px;
       text-align: center;
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
     }
 
     .hero-badge {
-      background: rgba(99, 102, 241, 0.12);
-      color: #A5B4FC;
+      background: rgba(99, 91, 255, 0.14);
+      color: #00D4FF;
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: clamp(0.72rem, 2vw, 0.82rem);
       padding: 8px 22px;
       border-radius: 30px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      display: inline-block;
-      margin-bottom: 20px;
-      border: 1px solid var(--border-indigo);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(99, 91, 255, 0.4);
+      box-shadow: 0 0 20px rgba(99, 91, 255, 0.25);
     }
 
     .hero-title {
-      font-size: 3rem;
+      font-size: clamp(2.1rem, 6vw, 4.4rem);
       font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    @media (min-width: 768px) {
-      .hero-title { font-size: 4.2rem; }
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 22px;
     }
 
     .hero-gradient-text {
-      background: var(--indigo-gradient);
+      background: linear-gradient(135deg, #FFFFFF 20%, #A5B4FC 60%, #00D4FF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-slate);
+      font-size: clamp(0.95rem, 2.5vw, 1.18rem);
+      color: #94A3B8;
       max-width: 820px;
-      margin: 0 auto 30px;
+      margin: 0 auto 32px;
       font-weight: 400;
       line-height: 1.7;
     }
 
     /* Trust Chips */
     .trust-chip {
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid var(--border-subtle);
+      background: rgba(11, 19, 43, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 20px;
-      padding: 7px 18px;
-      font-size: 0.8rem;
+      padding: 8px 20px;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: #93C5FD;
+      color: #E2E8F0;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      backdrop-filter: blur(10px);
+      gap: 8px;
+      backdrop-filter: blur(12px);
     }
 
-    /* Primary Action Button */
+    /* Stripe Action Buttons */
     .btn-indigo {
-      background: var(--indigo-gradient);
+      background: linear-gradient(135deg, #635BFF 0%, #00D4FF 100%);
       color: #FFFFFF !important;
       font-weight: 800;
       border: none;
-      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(99, 91, 255, 0.45);
       transition: all 0.25s ease;
+      letter-spacing: 0.5px;
     }
 
     .btn-indigo:hover {
       transform: translateY(-2px);
-      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.55);
-      filter: brightness(1.08);
+      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.6);
+      filter: brightness(1.06);
+    }
+
+    .btn-frosted {
+      background: rgba(255, 255, 255, 0.06);
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 30px;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+    .btn-frosted:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #00D4FF;
+      transform: translateY(-2px);
     }
 
     /* DIVISION QUADRANT CARDS */
@@ -343,15 +363,15 @@
         <span class="trust-chip"><i class="fas fa-headset text-info"></i> Dedicated Senior Sales & Technical Assistance</span>
       </div>
 
-      <!-- Action Buttons -->
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="audit/index.html" class="btn btn-indigo py-3 px-4 fw-bold" style="border-radius:10px; font-size:1rem;">
+      <!-- Stripe Action Buttons -->
+      <div class="d-flex gap-2 gap-sm-3 justify-content-center flex-wrap">
+        <a href="audit/index.html" class="btn btn-indigo py-3 px-4 fw-bold">
           <i class="fas fa-bolt me-2"></i>Run Free 60-Sec Audit ➔
         </a>
-        <a href="calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold" style="border-radius:10px; font-size:1rem; border-color:var(--border-subtle);">
+        <a href="calculator.html" class="btn btn-frosted py-3 px-4">
           <i class="fas fa-calculator me-2 text-warning"></i>Instant Estimator
         </a>
-        <a href="meet.html" class="btn btn-outline-info py-3 px-4 fw-bold text-white" style="border-radius:10px; font-size:1rem; background:rgba(56,189,248,0.12); border-color:rgba(56,189,248,0.35);">
+        <a href="meet.html" class="btn btn-frosted py-3 px-4" style="border-color:rgba(0,212,255,0.4); color:#00D4FF !important;">
           <i class="fas fa-headset me-2 text-info"></i>Talk to Sales Specialist ➔
         </a>
       </div>
