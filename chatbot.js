@@ -331,8 +331,8 @@
           • <strong>Executive Launchpad:</strong> ₹8.5 Lakh ($10,500) • 250 pax, 5-Star Stage<br>
           • <strong>Flagship Tech Summit:</strong> ₹18.5 Lakh ($22,000) • P2.6 Curved LED + 4K Cinema Broadcast<br>
           • <strong>Imperial Mega Conclave:</strong> ₹38 Lakh ($45,000) • 1,000+ pax arena staging (Leela Palace / ITC)<br><br>
-          👉 <a href="proposal_template.html" target="_blank" style="color:#EAB308; font-weight:bold;">Proposal Lookbook Kholein</a> ya seedha WhatsApp par baat karein:<br>
-          <a href="https://wa.me/916363962640?text=Hi%20Ismail!%20Inquiring%20about%20Bangalore%20Corporate%20Event%20Packages." target="_blank" style="display:inline-block; margin-top:6px; background:#25D366; color:#000; font-weight:bold; padding:4px 10px; border-radius:6px; text-decoration:none;">WhatsApp India (+91 63639 62640) →</a>
+          👉 <a href="proposal_template.html" target="_blank" style="color:#818CF8; font-weight:bold;">Proposal Lookbook Kholein</a> ya Sales Specialist se connect karein:<br>
+          <a href="meet.html" target="_blank" style="display:inline-block; margin-top:6px; background:#6366F1; color:#fff; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Connect with Sales Specialist →</a>
         `, "bot");
       }, 400);
     } else if (type === 'saudi') {
@@ -344,7 +344,7 @@
           • Bilingual Arabic/English simultaneous interpretation booths<br>
           • VIP protocol & diplomatic staging<br>
           • Direct Saudi Arab National Bank (ANB) transfer<br><br>
-          <a href="https://wa.me/966548905688?text=Marhaba%20Ismail!%20Inquiring%20about%20Saudi%20Arabia%20event%20staging." target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:4px 10px; border-radius:6px; text-decoration:none;">Connect Saudi WhatsApp (+966 54 890 5688) →</a>
+          <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Book Consultation with Sales Specialist →</a>
         `, "bot");
       }, 400);
     } else if (type === 'retainer') {
@@ -353,10 +353,10 @@
         appendMsg(`
           <strong>📈 High-Net-Worth Performance Marketing (UAE & KSA):</strong><br>
           • <strong>Growth Sprint:</strong> $1,450 / month (5,450 SAR • AED 5,300)<br>
-          • <strong>Executive Performance:</strong> $2,950 / month (11,000 SAR • AED 10,800) • 300 Qualified Leads + WhatsApp CRM<br>
+          • <strong>Executive Performance:</strong> $2,950 / month (11,000 SAR • AED 10,800) • 300 Qualified Leads + CRM<br>
           • <strong>Imperial Authority:</strong> $5,500 / month (20,600 SAR)<br><br>
           Recent Dubai Real Estate campaign ROAS: <strong>4.8x</strong>.<br>
-          <a href="meet.html" target="_blank" style="color:#EAB308; font-weight:bold;">Ismail Kazia ke saath 30-Min Call Book Karein →</a>
+          <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Schedule Strategy Session with Sales Consultant →</a>
         `, "bot");
       }, 400);
     } else if (type === 'zatca') {
@@ -367,7 +367,7 @@
           Includes XML UBL 2.1 templates, cryptographic stamps, API payload blueprints.<br>
           • <strong>Price:</strong> $97 (365 SAR • ₹7,999)<br>
           • Instant download after payment via Mada, STC Pay ya ANB Bank!<br><br>
-          👉 <a href="products.html" target="_blank" style="color:#EAB308; font-weight:bold;">Digital Store Par Buy Karein →</a>
+          👉 <a href="products.html" target="_blank" style="color:#818CF8; font-weight:bold;">Digital Store Par Buy Karein →</a>
         `, "bot");
       }, 400);
     } else if (type === 'bank') {
@@ -379,20 +379,20 @@
           • <strong>Bank Name:</strong> Arab National Bank (ANB)<br>
           • <strong>Account No:</strong> <code>0108039658540010</code><br>
           • <strong>IBAN:</strong> <code style="color:#10B981; font-weight:bold;">SA1730400108039658540010</code><br><br>
-          Transfer ke baad receipt WhatsApp par share karein: <a href="https://wa.me/966548905688" target="_blank" style="color:#10B981; font-weight:bold;">+966 54 890 5688</a>.
+          Transfer ke baad confirmation ke liye sales team se connect karein: <a href="meet.html" target="_blank" style="color:#38BDF8; font-weight:bold;">Discovery Session Book Karein →</a>
         `, "bot");
       }, 400);
     } else if (type === 'call') {
-      appendMsg("Founder Ismail Kazia ke saath meeting book karni hai.", "user");
+      appendMsg("Senior Sales Specialist ke saath meeting book karni hai.", "user");
       setTimeout(() => {
         appendMsg(`
-          <strong>📅 30-Minute Executive Strategy Call:</strong><br>
-          Aap direct Google Meet slot hamare interactive page se book kar sakte hain:<br><br>
-          👉 <a href="meet.html" target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:5px 12px; border-radius:6px; text-decoration:none;">Booking Page (meet.html) Kholein →</a>
+          <strong>📅 30-Minute Strategic Consultation:</strong><br>
+          Aap direct video meeting slot hamare booking page se reserve kar sakte hain:<br><br>
+          👉 <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 14px; border-radius:6px; text-decoration:none;">Booking Page (meet.html) Kholein →</a>
         `, "bot");
       }, 400);
     } else if (type === 'wa') {
-      window.open("https://wa.me/966548905688?text=Hello%20Founder%20Ismail%20Kazia!%20Connecting%20from%20GALICON%20website.", "_blank");
+      window.location.href = "meet.html";
     }
   }
 
@@ -411,8 +411,8 @@
       if (text.match(/^(hi|hello|hey|salam|marhaba|assalam|kem cho|namaste)/)) {
         appendMsg(`
           <strong>Walekum Assalam / Hello! 👋</strong><br>
-          Welcome to GALICON GLOBAL! Main Founder Ismail Kazia ka AI sales executive hoon. 
-          Aapko Bangalore corporate event organize karna hai, ya Saudi/Dubai business expansion ke liye baat karni hai?
+          Welcome to GALICON GLOBAL! Main GALICON Sales & Technical Advisory Team ka assistant hoon. 
+          Hamare senior sales specialists aapki specific requirements (Events, Tech, AI, Marketing) me directly assist karenge.
         `, 'bot');
       } else if (text.includes('event') || text.includes('conference') || text.includes('summit') || text.includes('stage') || text.includes('bangalore') || text.includes('wedding') || text.includes('conclave')) {
         appendMsg(`
@@ -420,7 +420,7 @@
           Hum Bangalore (The Leela Palace, ITC Gardenia, BIEC) aur Pan-India me end-to-end turnkey event management karte hain:<br>
           • <strong>Packages:</strong> ₹8.5 Lakh (Launchpad) | ₹18.5 Lakh (Flagship 4K LED) | ₹38 Lakh (Imperial)<br>
           • <strong>Specs:</strong> P2.6 Curved LED walls, line-array acoustics, multi-cam 4K broadcast.<br><br>
-          Aapka event kab aur kitne logon ka plan ho raha hai?
+          Hamare senior event specialists se instant call book karein: <a href="meet.html" target="_blank" style="color:#818CF8; font-weight:bold;">Session Schedule Karein →</a>
         `, 'bot');
       } else if (text.includes('saudi') || text.includes('riyadh') || text.includes('jeddah') || text.includes('dubai') || text.includes('uae') || text.includes('marketing') || text.includes('real estate') || text.includes('lead')) {
         appendMsg(`
@@ -429,23 +429,21 @@
           1. <strong>Vision 2030 Mega Events & Staging</strong> deliver karte hain.<br>
           2. <strong>Luxury Real Estate Buyer Funnels</strong> manage karte hain ($1,450 - $2,950/mo retainers).<br>
           Local Saudi ANB Bank payment available hai!<br><br>
-          Aapko WhatsApp par direct proposal chahiye?
+          Hamare senior growth specialists se connect karein: <a href="meet.html" target="_blank" style="color:#818CF8; font-weight:bold;">Talk to Sales Specialist →</a>
         `, 'bot');
       } else if (text.includes('price') || text.includes('cost') || text.includes('kitna') || text.includes('rate') || text.includes('package') || text.includes('fees')) {
         appendMsg(`
           <strong>💰 GALICON Pricing Overview:</strong><br>
-          • <strong>Corporate Events:</strong> ₹8.5 Lakh to ₹38 Lakh ($10,500 - $45,000)<br>
+          • <strong>Tech & AI Development:</strong> ₹2,999 (Bug Fix) | ₹14,999 (Web) | ₹19,999 (AI Bot)<br>
           • <strong>Growth Retainers (KSA/UAE):</strong> $1,450 to $2,950 / month (5,450 SAR - 11,000 SAR)<br>
-          • <strong>Digital Products:</strong> $29 to $97 (ZATCA Kit)<br><br>
-          Aapko kis specific service ka custom quote chahiye?
+          • <strong>Corporate Events:</strong> ₹8.5 Lakh to ₹38 Lakh ($10,500 - $45,000)<br><br>
+          Instant custom estimate ke liye: <a href="calculator.html" target="_blank" style="color:#38BDF8; font-weight:bold;">Project Estimator Kholein →</a>
         `, 'bot');
-      } else if (text.includes('call') || text.includes('phone') || text.includes('number') || text.includes('contact') || text.includes('whatsapp') || text.includes('ismail') || text.includes('founder') || text.includes('ceo')) {
+      } else if (text.includes('call') || text.includes('phone') || text.includes('number') || text.includes('contact') || text.includes('whatsapp') || text.includes('ismail') || text.includes('sales') || text.includes('salesman')) {
         appendMsg(`
-          <strong>Direct Contact to Founder & CEO Ismail Kazia:</strong><br>
-          • 🇸🇦 Saudi WhatsApp/Call: <strong>+966 54 890 5688</strong><br>
-          • 🇮🇳 India WhatsApp/Call: <strong>+91 63639 62640</strong><br>
-          • 📧 Email: <strong>ismail@galiconglobal.com</strong><br><br>
-          <a href="https://wa.me/966548905688" target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:5px 12px; border-radius:6px; text-decoration:none;">WhatsApp Direct Kholein →</a>
+          <strong>Direct Sales Team Assistance:</strong><br>
+          Hamare senior client specialists aapke project scope ko evaluate karke directly assist karenge.<br><br>
+          👉 <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 14px; border-radius:6px; text-decoration:none;">Schedule Consultation with Sales Specialist →</a>
         `, 'bot');
       } else if (text.includes('bank') || text.includes('iban') || text.includes('anb') || text.includes('pay') || text.includes('account')) {
         appendMsg(`
