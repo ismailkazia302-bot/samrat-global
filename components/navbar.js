@@ -1,16 +1,8 @@
 /**
- * GALICON GLOBAL — Master Unified Navbar Component (Stripe Light Pristine Edition)
- * Official Stripe Light Theme Palette:
- * - Canvas: #F6F9FC / #FFFFFF
- * - Primary Text: #0A2540 (Deep Slate Black)
- * - Body Text: #425466
- * - Muted Text: #697386
- * - Borders: #E6EBF1 / rgba(0,0,0,0.08)
- * - Brand Primary: #635BFF (Stripe Blurple)
- * - Accent Cyan: #00D4FF
+ * GALICON GLOBAL — Master Unified Navbar Component (Stripe Light Edition)
+ * CTA: "BOOK A CALL ➔"
  */
 (function() {
-  // Global Toggle Function accessible everywhere
   window.galiconToggleNav = function(e) {
     if (e) {
       if (typeof e.preventDefault === 'function') e.preventDefault();
@@ -63,10 +55,10 @@
       style.textContent = `
         :root {
           --stripe-blurple: #635BFF;
-          --stripe-cyan: #00D4FF;
+          --stripe-cyan: #0088CC;
           --stripe-pink: #FF6B9E;
-          --stripe-emerald: #00D924;
-          --stripe-amber: #FCD34D;
+          --stripe-emerald: #059669;
+          --stripe-amber: #D97706;
           --stripe-light-bg: #FFFFFF;
           --stripe-light-surface: #F6F9FC;
           --stripe-light-card: #FFFFFF;
@@ -99,7 +91,7 @@
 
         /* Stripe Signature Translucent Frosted Glass Navbar (Light Edition) */
         .nav-alsayegh {
-          background: rgba(255, 255, 255, 0.92) !important;
+          background: rgba(255, 255, 255, 0.95) !important;
           backdrop-filter: blur(20px) saturate(180%) !important;
           -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
           border-bottom: 1px solid #E6EBF1 !important;
@@ -120,7 +112,7 @@
           height: 46px !important;
           width: auto !important;
           object-fit: contain !important;
-          filter: drop-shadow(0 2px 8px rgba(99, 91, 255, 0.25));
+          filter: drop-shadow(0 2px 8px rgba(99, 91, 255, 0.2));
           transition: transform 0.25s ease;
         }
         .nav-brand-wrap:hover .nav-brand-logo {
@@ -183,14 +175,15 @@
           color: #FFFFFF !important;
         }
 
+        /* TOGGLER: Explicitly Hidden on Desktop, Only Visible on Mobile */
         .navbar-toggler {
+          display: none !important;
           border: 1px solid #E6EBF1 !important;
           padding: 8px 12px !important;
           border-radius: 10px !important;
           background: #F6F9FC !important;
           cursor: pointer !important;
           outline: none !important;
-          display: flex !important;
           align-items: center !important;
           justify-content: center !important;
         }
@@ -206,6 +199,9 @@
         }
 
         @media (max-width: 991px) {
+          .navbar-toggler {
+            display: flex !important;
+          }
           #navbarNav {
             display: none;
             background: #FFFFFF !important;
@@ -289,7 +285,7 @@
         </span>
       </a>
 
-      <!-- Direct Inline Mobile Toggler Trigger -->
+      <!-- Direct Inline Mobile Toggler Trigger (Hidden on Desktop) -->
       <button class="navbar-toggler" type="button" id="galiconNavToggler" onclick="window.galiconToggleNav(event)" ontouchend="window.galiconToggleNav(event)" aria-label="Toggle navigation" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -306,7 +302,7 @@
           <li class="nav-item"><a class="nav-link" href="${prefix}products.html" onclick="window.galiconCloseNav()" style="color:#E11D48 !important;"><i class="fas fa-shopping-bag me-1"></i>STORE</a></li>
           <li class="nav-item ms-lg-3">
             <a class="stripe-btn-cta" href="${prefix}meet.html" onclick="window.galiconCloseNav()">
-              <i class="fas fa-calendar-check"></i> FIND MY SOLUTION ➔
+              <i class="fas fa-phone-alt"></i> BOOK A CALL ➔
             </a>
           </li>
         </ul>

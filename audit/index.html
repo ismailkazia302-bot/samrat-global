@@ -13,36 +13,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg-canvas: #020617;
-      --indigo-gradient: linear-gradient(135deg, #818CF8 0%, #3B82F6 50%, #06B6D4 100%);
-      --primary-indigo: #6366F1;
-      --border-indigo: rgba(99, 102, 241, 0.3);
+      --bg-canvas: #FAFBFC;
+      --indigo-gradient: linear-gradient(135deg, #635BFF 0%, #0088CC 100%);
+      --primary-indigo: #635BFF;
+      --border-indigo: #E6EBF1;
     }
-    body { font-family:'Inter',sans-serif; background:var(--bg-canvas); color:#FFFFFF; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
-    h1, h2, h3, h4, h5, h6, .badge, .btn, .score-num { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.025em; }
-    .hero-audit { padding:65px 20px 45px; background:radial-gradient(circle at 50% 15%, #1E1B4B 0%, #0F172A 50%, #020617 90%); text-align:center; }
-    .audit-card { background:#0B1120; border:1px solid var(--border-indigo); border-radius:20px; box-shadow:0 30px 80px rgba(0,0,0,0.95), 0 0 30px rgba(99,102,241,0.1); max-width:850px; margin:0 auto; padding:36px 28px; }
-    .score-circle { width:140px; height:140px; border-radius:50%; border:5px solid #6366F1; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 20px; background:#020617; box-shadow:0 0 30px rgba(99,102,241,0.35); }
-    .score-num { font-size:2.8rem; font-weight:900; color:#818CF8; line-height:1; }
-    .audit-choice { background:#020617; border:1px solid rgba(255,255,255,0.08); padding:14px 18px; border-radius:12px; cursor:pointer; transition:all 0.2s; text-align:left; user-select:none; margin-bottom:10px; }
-    .audit-choice:hover { border-color:#6366F1; background:#111A2E; transform:translateX(4px); }
-    .audit-choice.active { border-color:#38BDF8; background:#0F2338; color:#fff; font-weight:bold; }
-    .metric-badge { background:#020617; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px; text-align:center; }
-    .btn-indigo { background:var(--indigo-gradient); color:#FFFFFF !important; font-weight:800; border:none; box-shadow:0 10px 25px rgba(99,102,241,0.35); transition:all 0.25s ease; }
-    .btn-indigo:hover { transform:translateY(-2px); box-shadow:0 15px 35px rgba(99,102,241,0.55); filter:brightness(1.08); }
-    .form-control { background-color: #020617 !important; color: #FFFFFF !important; border: 1px solid rgba(99,102,241,0.3) !important; padding: 12px 14px !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; font-size: 15px !important; overflow: hidden !important; text-overflow: ellipsis !important; }
-    .form-control::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
-    .form-control:focus { border-color: #38BDF8 !important; box-shadow: 0 0 15px rgba(56,189,248,0.25) !important; color: #FFFFFF !important; }
+    body { font-family:'Inter',sans-serif; background:var(--bg-canvas); color:#0A2540; line-height:1.65; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased; }
+    h1, h2, h3, h4, h5, h6, .badge, .btn, .score-num { font-family:'Plus Jakarta Sans',sans-serif; letter-spacing:-0.025em; color:#0A2540; }
+    .hero-audit { 
+      padding:65px 20px 45px; 
+      background: radial-gradient(at 15% 15%, rgba(0, 136, 204, 0.14) 0px, transparent 50%),
+                  radial-gradient(at 85% 15%, rgba(99, 91, 255, 0.16) 0px, transparent 50%),
+                  #FFFFFF; 
+      text-align:center; 
+      border-bottom:1px solid #E6EBF1;
+    }
+    .audit-card { background:#FFFFFF; border:1px solid #E6EBF1; border-radius:20px; box-shadow:0 15px 50px rgba(0,0,0,0.06); max-width:850px; margin:0 auto; padding:36px 28px; }
+    .score-circle { width:140px; height:140px; border-radius:50%; border:5px solid #635BFF; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 20px; background:#F6F9FC; box-shadow:0 0 25px rgba(99,91,255,0.15); }
+    .score-num { font-size:2.8rem; font-weight:900; color:#635BFF; line-height:1; }
+    .audit-choice { background:#FFFFFF; border:1px solid #E6EBF1; padding:14px 18px; border-radius:12px; cursor:pointer; transition:all 0.2s; text-align:left; user-select:none; margin-bottom:10px; color:#425466; box-shadow:0 2px 6px rgba(0,0,0,0.02); }
+    .audit-choice:hover { border-color:#635BFF; background:#F6F9FC; transform:translateX(4px); }
+    .audit-choice.active { border-color:#635BFF; background:#635BFF; color:#FFFFFF !important; font-weight:bold; box-shadow:0 4px 14px rgba(99,91,255,0.3); }
+    .metric-badge { background:#F6F9FC; border:1px solid #E6EBF1; border-radius:10px; padding:12px; text-align:center; }
+    .btn-indigo { background:#635BFF; color:#FFFFFF !important; font-weight:800; border:none; border-radius:30px; box-shadow:0 4px 14px rgba(99,91,255,0.35); transition:all 0.25s ease; }
+    .btn-indigo:hover { background:#0A2540; transform:translateY(-2px); box-shadow:0 8px 25px rgba(10,37,64,0.3); }
+    .form-control { background-color: #FFFFFF !important; color: #0A2540 !important; border: 1px solid #E6EBF1 !important; padding: 12px 14px !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; font-size: 15px !important; border-radius:10px !important; }
+    .form-control::placeholder { color: #8898AA !important; opacity: 1 !important; }
+    .form-control:focus { border-color: #635BFF !important; box-shadow: 0 0 15px rgba(99,91,255,0.2) !important; color: #0A2540 !important; }
   
-    /* UNIVERSAL HIGH-CONTRAST FONT VISIBILITY (GALICON 2026) */
-    body { color: #F8FAFC !important; }
-    p, li, .lead, .problem-pill, .audit-choice { color: #CBD5E1 !important; }
-    .text-muted, .text-secondary { color: #CBD5E1 !important; }
-    .card-dark, .div-card, .calc-card, .audit-card, .widescreen-booking-card { color: #F8FAFC !important; }
-    .card-dark p, .card-dark li, .card-dark ul,
-    .div-card p, .div-card li, .div-card ul,
-    .calc-card p, .calc-card li, .calc-card ul,
-    .audit-card p, .audit-card li, .audit-card ul,
+    p, li, .lead { color: #425466 !important; }
+    .text-muted, .text-secondary { color: #697386 !important; }
     .widescreen-booking-card p, .widescreen-booking-card li { color: #E2E8F0 !important; }
     .price-box .text-muted, .div-price-chip .text-muted { color: #94A3B8 !important; }
   </style>
@@ -78,9 +78,9 @@
 
   <section class="hero-audit">
     <div class="container">
-      <span class="badge bg-warning text-dark px-3 py-1 fw-bold rounded-pill mb-2 text-uppercase" style="letter-spacing:1px;">FREE 60-SECOND DIAGNOSTIC TOOL</span>
-      <h1 class="text-white fw-bold display-5 mb-2">Find What's Holding Your Business Back.<br><span style="color:#EAB308;">Instant Growth & Tech Health Score.</span></h1>
-      <p class="text-muted lead mx-auto mb-4" style="max-width:720px; font-size:1.05rem; color:#cbd5e1 !important;">
+      <span class="badge bg-primary text-white px-3 py-1 fw-bold rounded-pill mb-2 text-uppercase" style="letter-spacing:1px; background:#635BFF !important;">FREE 60-SECOND DIAGNOSTIC TOOL</span>
+      <h1 class="fw-bold display-5 mb-2" style="color:#0A2540;">Find What's Holding Your Business Back.<br><span style="color:#635BFF;">Instant Growth & Tech Health Score.</span></h1>
+      <p class="text-muted lead mx-auto mb-4" style="max-width:720px; font-size:1.05rem; color:#425466 !important;">
         Evaluate your website speed, customer acquisition funnel, code health, and pricing strategy in 60 seconds. Get an instant score out of 100 with actionable next steps.
       </p>
 
@@ -89,8 +89,8 @@
         <!-- STEP 1: Assessment Form -->
         <div id="audit-step-1">
           <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-            <h4 class="fw-bold text-white mb-0">Step 1: Select Your Current Challenge</h4>
-            <span class="badge bg-primary text-white">4 Quick Questions</span>
+            <h4 class="fw-bold mb-0" style="color:#0A2540;">Step 1: Select Your Current Challenge</h4>
+            <span class="badge bg-primary text-white" style="background:#635BFF !important;">4 Quick Questions</span>
           </div>
 
           <form id="auditForm" onsubmit="calculateAuditScore(event)">
@@ -121,21 +121,21 @@
               <label class="form-label text-secondary small fw-bold">3. YOUR BUSINESS & CONTACT DETAILS FOR CUSTOM REPORT</label>
               <div class="row g-2">
                 <div class="col-md-6">
-                  <input type="text" id="audit-name" class="form-control bg-black text-white border-secondary" placeholder="Your Name / Business Name *" required>
+                  <input type="text" id="audit-name" class="form-control" placeholder="Your Name / Business Name *" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="email" id="audit-email" class="form-control bg-black text-white border-secondary" placeholder="Work Email *" required>
+                  <input type="email" id="audit-email" class="form-control" placeholder="Work Email *" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="tel" id="audit-phone" class="form-control bg-black text-white border-secondary" placeholder="WhatsApp / Phone Number *" required>
+                  <input type="tel" id="audit-phone" class="form-control" placeholder="WhatsApp / Phone Number *" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" id="audit-url" class="form-control bg-black text-white border-secondary" placeholder="Website URL or Social Page (Optional)">
+                  <input type="text" id="audit-url" class="form-control" placeholder="Website URL or Social Page (Optional)">
                 </div>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-indigo w-100 py-3 fw-bold" style="font-size:1.05rem; border-radius:10px;">
+            <button type="submit" class="btn btn-indigo w-100 py-3 fw-bold" style="font-size:1.05rem; border-radius:30px;">
               ⚡ Generate My Free Audit Scorecard ➔
             </button>
           </form>
@@ -148,33 +148,33 @@
             <small class="text-muted fw-bold" style="font-size:0.75rem;">OUT OF 100</small>
           </div>
 
-          <h3 class="text-white fw-bold mb-1" id="scoreGrade">Growth Potential: High Opportunity</h3>
+          <h3 class="fw-bold mb-1" id="scoreGrade" style="color:#0A2540;">Growth Potential: High Opportunity</h3>
           <p class="text-muted small mb-4" id="scoreSummary">Your core foundation is solid, but you are likely losing 35–50% of potential pipeline due to funnel leakage and speed bottlenecks.</p>
 
           <div class="row g-2 text-start mb-4">
             <div class="col-md-4">
               <div class="metric-badge">
                 <small class="text-secondary fw-bold d-block">SPEED & SEO HEALTH</small>
-                <strong class="text-warning" id="m1Score">65 / 100 (Needs CRO)</strong>
+                <strong class="text-warning" id="m1Score" style="color:#D97706 !important;">65 / 100 (Needs CRO)</strong>
               </div>
             </div>
             <div class="col-md-4">
               <div class="metric-badge">
                 <small class="text-secondary fw-bold d-block">AD ACQUISITION EFFICIENCY</small>
-                <strong class="text-danger" id="m2Score">55 / 100 (High CAC)</strong>
+                <strong class="text-danger" id="m2Score" style="color:#E11D48 !important;">55 / 100 (High CAC)</strong>
               </div>
             </div>
             <div class="col-md-4">
               <div class="metric-badge">
                 <small class="text-secondary fw-bold d-block">CONVERSION AUTOMATION</small>
-                <strong class="text-success" id="m3Score">80 / 100 (AI Ready)</strong>
+                <strong class="text-success" id="m3Score" style="color:#059669 !important;">80 / 100 (AI Ready)</strong>
               </div>
             </div>
           </div>
 
-          <div class="p-3 rounded-3 text-start mb-4 border border-primary" style="background:#020617;">
-            <h6 class="text-primary fw-bold mb-2"><i class="fas fa-lightbulb me-2"></i>Recommended 48-Hour Action Sprint:</h6>
-            <p class="text-muted small mb-0" id="actionSprintText">
+          <div class="p-3 rounded-3 text-start mb-4" style="background:#F6F9FC; border:1px solid #E6EBF1;">
+            <h6 class="fw-bold mb-2" style="color:#635BFF;"><i class="fas fa-lightbulb me-2"></i>Recommended 48-Hour Action Sprint:</h6>
+            <p class="text-muted small mb-0" id="actionSprintText" style="color:#425466 !important;">
               1. Deploy sub-second landing page architecture to cut bounce rate.<br>
               2. Separate Meta/Google audience testing to decrease cost-per-lead by 30%.<br>
               3. Activate automated AI lead response to engage prospects in &lt;15 seconds.
@@ -182,11 +182,11 @@
           </div>
 
           <div class="d-flex gap-2 justify-content-center flex-wrap">
-            <a href="../meet.html" class="btn btn-indigo py-3 px-4 fw-bold" style="border-radius:10px;">
+            <a href="../meet.html" class="btn btn-indigo py-3 px-4 fw-bold" style="border-radius:30px;">
               🗓️ Book Strategy Review with Sales Specialist ➔
             </a>
-            <a href="../calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold text-white" style="border-radius:10px; border-color:rgba(255,255,255,0.2);">
-              <i class="fas fa-calculator me-2 text-info"></i> Project Scope Estimator
+            <a href="../calculator.html" class="btn btn-outline-secondary py-3 px-4 fw-bold" style="border-radius:30px; border-color:#E6EBF1;">
+              <i class="fas fa-calculator me-2 text-primary"></i> Project Scope Estimator
             </a>
           </div>
         </div>
@@ -196,59 +196,57 @@
   </section>
 
   <!-- Why GALICON Beats Traditional Agencies -->
-  <section class="py-5">
+  <section class="py-5" style="background:#FFFFFF;">
     <div class="container">
       <div class="text-center mb-5">
-        <span class="text-warning small text-uppercase fw-bold letter-spacing-2">The Unfair Advantage</span>
-        <h2 class="text-white fw-bold mt-1">Why Fast-Growing Brands Choose GALICON Over Traditional Agencies</h2>
+        <span class="text-primary small text-uppercase fw-bold letter-spacing-2" style="color:#635BFF !important;">The Unfair Advantage</span>
+        <h2 class="fw-bold mt-1" style="color:#0A2540;">Why Fast-Growing Brands Choose GALICON Over Traditional Agencies</h2>
         <p class="text-muted small">Compare our speed, pricing models, and execution architecture.</p>
       </div>
 
       <div class="table-responsive">
-        <table class="table table-dark table-bordered text-center align-middle" style="background:#0a0f1d; border-color:rgba(255,255,255,0.08);">
+        <table class="table table-bordered text-center align-middle" style="background:#FFFFFF; border-color:#E6EBF1;">
           <thead>
-            <tr style="background:#070b14;">
-              <th class="text-start p-3" style="width:30%;">Capability / Feature</th>
-              <th class="text-warning p-3" style="width:25%; font-size:1.1rem;"><i class="fas fa-crown me-1"></i> GALICON GLOBAL</th>
+            <tr style="background:#F6F9FC;">
+              <th class="text-start p-3" style="width:30%; color:#0A2540;">Capability / Feature</th>
+              <th class="p-3" style="width:25%; font-size:1.1rem; color:#635BFF;"><i class="fas fa-crown me-1"></i> GALICON GLOBAL</th>
               <th class="text-muted p-3" style="width:22%;">Traditional Large Agencies</th>
               <th class="text-muted p-3" style="width:23%;">Freelancer Marketplaces</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="text-start p-3 fw-bold">Turnaround Speed</td>
-              <td class="text-success fw-bold p-3">⚡ 24–48 Hr Sprints / 5-Day Web</td>
+              <td class="text-start p-3 fw-bold" style="color:#0A2540;">Turnaround Speed</td>
+              <td class="text-success fw-bold p-3" style="color:#059669 !important;">⚡ 24–48 Hr Sprints / 5-Day Web</td>
               <td class="text-muted p-3">3 to 6 Weeks Lag</td>
               <td class="text-muted p-3">Unpredictable / Ghosting</td>
             </tr>
             <tr>
-              <td class="text-start p-3 fw-bold">Pricing Transparency</td>
-              <td class="text-warning fw-bold p-3">✔ 100% Fixed Scope (From ₹2,999)</td>
+              <td class="text-start p-3 fw-bold" style="color:#0A2540;">Pricing Transparency</td>
+              <td class="text-warning fw-bold p-3" style="color:#D97706 !important;">✔ 100% Fixed Scope (From ₹2,999)</td>
               <td class="text-muted p-3">Opaque ₹2.5L+ Minimums</td>
               <td class="text-muted p-3">Hidden hourly creep</td>
             </tr>
             <tr>
-              <td class="text-start p-3 fw-bold">Media Spend Separation</td>
-              <td class="text-success fw-bold p-3">✔ 100% Isolated Client Account</td>
+              <td class="text-start p-3 fw-bold" style="color:#0A2540;">Media Spend Separation</td>
+              <td class="text-success fw-bold p-3" style="color:#059669 !important;">✔ 100% Isolated Client Account</td>
               <td class="text-muted p-3">Hidden ad spend markups</td>
               <td class="text-muted p-3">No formal tracking</td>
             </tr>
             <tr>
-              <td class="text-start p-3 fw-bold">Full Ecosystem Integration</td>
-              <td class="text-warning fw-bold p-3">✔ Strategy + Ads + Tech + Staging</td>
+              <td class="text-start p-3 fw-bold" style="color:#0A2540;">Full Ecosystem Integration</td>
+              <td class="text-primary fw-bold p-3" style="color:#635BFF !important;">✔ Strategy + Ads + Tech + Staging</td>
               <td class="text-muted p-3">Siloed single-service teams</td>
               <td class="text-muted p-3">Disjointed freelancers</td>
             </tr>
             <tr>
-              <td class="text-start p-3 fw-bold">Executive Oversight</td>
-              <td class="text-success fw-bold p-3">👑 Direct Founder Ismail Kazia</td>
+              <td class="text-start p-3 fw-bold" style="color:#0A2540;">Executive Oversight</td>
+              <td class="text-success fw-bold p-3" style="color:#059669 !important;">👑 Direct Founder Ismail Kazia</td>
               <td class="text-muted p-3">Delegated to Junior Interns</td>
               <td class="text-muted p-3">Zero legal accountability</td>
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
   </section>
 
   <div id="footer-placeholder"></div>
