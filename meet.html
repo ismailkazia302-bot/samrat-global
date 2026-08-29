@@ -32,19 +32,20 @@
     }
     .hero-meet { 
       text-align: center; 
-      padding: 40px 15px 25px; 
+      padding: 24px 15px 10px; 
+      max-width: 100%;
     }
     .hero-meet h1 { 
-      font-size: 2.2rem; 
+      font-size: clamp(1.6rem, 4vw, 2.4rem); 
       font-weight: 900; 
       line-height: 1.2; 
-      margin-bottom: 12px; 
+      margin-bottom: 8px; 
       color: #0A2540;
     }
     .hero-meet p { 
       color: #425466; 
-      max-width: 680px; 
-      margin: 0 auto 16px; 
+      max-width: 720px; 
+      margin: 0 auto 12px; 
       font-size: 0.95rem; 
     }
     .badge-tag { 
@@ -52,27 +53,37 @@
       color: #635BFF; 
       font-size: 0.78rem; 
       font-weight: 800; 
-      padding: 7px 18px; 
+      padding: 6px 18px; 
       border-radius: 30px; 
       letter-spacing: 2px; 
       text-transform: uppercase; 
       display: inline-block; 
-      margin-bottom: 12px; 
+      margin-bottom: 10px; 
       border: 1px solid rgba(99,91,255,0.25); 
     }
     
-    /* Standard Calendly Embed */
+    /* Full-Screen Seamless Calendly Embed */
+    .calendly-fullscreen-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      min-height: 950px;
+    }
     .calendly-inline-widget {
-      min-width: 320px;
-      height: 700px;
-      margin: 20px auto 40px;
+      width: 100% !important;
+      min-width: 320px !important;
+      height: 950px !important;
+      min-height: 900px !important;
+      border: none !important;
     }
 
     @media (max-width: 768px) {
-      .hero-meet { padding: 25px 10px 15px; }
-      .hero-meet h1 { font-size: 1.65rem; }
+      .hero-meet { padding: 18px 10px 8px; }
+      .calendly-fullscreen-container { min-height: 1050px; }
       .calendly-inline-widget {
-        height: 850px;
+        height: 1050px !important;
+        min-height: 1000px !important;
       }
     }
   
@@ -118,21 +129,25 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Hero Section -->
-  <section class="hero-meet container">
-    <span class="badge-tag"><i class="fas fa-calendar-check me-1"></i> DIRECT STRATEGIC SCHEDULER</span>
-    <h1 style="color:#0A2540;">Book a Strategy Call with Our<br><span style="color:#635BFF;">Senior Client Specialists & Sales Team</span></h1>
-    <p>
-      Select your preferred date and time slot below for a 30-minute strategic consultation, rapid project scoping, and transparent pricing.
-    </p>
+  <section class="hero-meet">
+    <div class="container-fluid px-3">
+      <span class="badge-tag"><i class="fas fa-calendar-check me-1"></i> DIRECT STRATEGIC SCHEDULER</span>
+      <h1 style="color:#0A2540;">Book a Strategy Call with Our<br><span style="color:#635BFF;">Senior Client Specialists & Sales Team</span></h1>
+      <p>
+        Select your preferred date and time slot below for a 30-minute strategic consultation, rapid project scoping, and transparent pricing.
+      </p>
+    </div>
 
-    <!-- Standard Official Calendly Embed -->
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302/30min" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
+    <!-- FULL SCREEN CALENDLY EMBED -->
+    <div class="calendly-fullscreen-container">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/ismailkazia302/30min" style="min-width:320px;height:950px;width:100%;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
 
     <!-- Direct Sales Desk Assistance Strip -->
-    <div class="p-3 rounded-3 text-center mb-5" style="background:#FFFFFF; border:1px solid #E6EBF1; box-shadow:0 4px 15px rgba(0,0,0,0.04); max-width:800px; margin:0 auto;">
+    <div class="p-3 rounded-3 text-center mb-5 mx-auto" style="background:#FFFFFF; border:1px solid #E6EBF1; box-shadow:0 4px 15px rgba(0,0,0,0.04); max-width:800px;">
       <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
         <span class="text-muted small"><i class="fas fa-phone-alt text-primary me-1"></i> Need Urgent Assistance?</span>
         <a href="tel:+917015844885" class="btn btn-sm btn-outline-primary fw-bold py-1 px-3" style="border-radius:20px;">
