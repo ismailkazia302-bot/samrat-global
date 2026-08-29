@@ -1,0 +1,108 @@
+{
+  "name": "GALICON 02 — Turnkey WhatsApp AI Sales Closer Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp-inbound-msg",
+        "options": {}
+      },
+      "name": "WhatsApp Inbound Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incoming Customer Message: \"{{ $json.body.message || $json.body.text || $json.message }}\"\nCustomer Phone: {{ $json.body.from || $json.from || 'Customer' }}",
+        "options": {
+          "systemMessage": "=You are the Elite AI Sales & Solution Specialist for GALICON GLOBAL (Founder: Ismail Kazia, Sales Lead: Mr. Ayaan).\nYour goal is to warmly welcome prospects in professional English or Roman Urdu, understand their project requirement across 4 core divisions (Technology, Growth Ads, Business Strategy, Corporate Events), provide transparent pricing starting with low-friction entry sprints, and guide them to schedule a discovery call.\n\nPRICING KNOWLEDGE:\n• Bug Fix / Speed Optimization Sprint: ₹2,999 (24-Hr SLA)\n• 5-Day High-Converting Website: ₹14,999 ($199)\n• Turnkey WhatsApp AI Sales Bot: ₹19,999 ($249)\n• Custom Mobile Apps (iOS/Android): ₹65,000+ ($850+)\n• Performance Growth Ads Retainer: ₹18,000 to ₹60,000/mo ($250 to $750/mo)\n• Corporate 4K LED Staging: ₹8.5 Lakh to ₹18.5 Lakh\n• Business Diagnostic & SOP Blueprint: ₹4,999\n\nRULES:\n1. Keep responses under 3 short paragraphs.\n2. Always include a clear call-to-action.\n3. Mention our Sales Executive Officer Mr. Ayaan (+91 70158 44885) for instant direct escalation."
+        }
+      },
+      "name": "GALICON AI Sales Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "name": "OpenAI / Gemini Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [440, 520]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.body.from || $json.from || 'session_default' }}"
+      },
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2,
+      "position": [580, 520]
+    },
+    {
+      "parameters": {
+        "name": "lookup_pricing",
+        "description": "Call this tool to get exact pricing and scope for any GALICON service.",
+        "jsCode": "const division = $input.item.json.division || 'general';\nreturn JSON.stringify({\n  technology: { bug_sprint: '₹2,999', website_5day: '₹14,999', ai_bot: '₹19,999', mobile_app: '₹65,000' },\n  growth: { starter_ads: '₹18,000/mo', scale_funnel: '₹35,000/mo', gcc_realestate: '$1,450/mo' },\n  events: { launchpad: '₹8.5 Lakh', flagship_4k: '₹18.5 Lakh', imperial: '₹38 Lakh' },\n  business: { diagnostic: '₹4,999', full_gtm_blueprint: '₹14,999' }\n});"
+      },
+      "name": "Pricing Calculator Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1,
+      "position": [720, 520]
+    }
+  ],
+  "connections": {
+    "WhatsApp Inbound Webhook": {
+      "main": [
+        [
+          {
+            "node": "GALICON AI Sales Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI / Gemini Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "GALICON AI Sales Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "GALICON AI Sales Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pricing Calculator Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "GALICON AI Sales Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

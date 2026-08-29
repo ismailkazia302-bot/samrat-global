@@ -1,0 +1,83 @@
+{
+  "name": "GALICON 01 — Inbound Lead Instant Dispatcher & Sales Alert",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "galicon-inbound-lead",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "name": "Webhook Inbound Lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json.body || $input.first().json;\n\n// Calculate Lead Tier\nlet score = 50;\nconst budget = String(item.budget || item.packageSelected || '').toLowerCase();\nif (budget.includes('5,000+') || budget.includes('2,50,000') || budget.includes('enterprise') || budget.includes('vip')) {\n  score += 35;\n} else if (budget.includes('1,500') || budget.includes('1,00,000') || budget.includes('scale')) {\n  score += 20;\n}\n\nif (item.phone && String(item.phone).length >= 10) score += 15;\nif (item.email && !item.email.includes('gmail.com') && !item.email.includes('yahoo.com')) score += 15;\n\nconst tier = score >= 80 ? '🔥 HOT VIP' : score >= 60 ? '⚡ WARM' : '❄️ COLD';\n\n// Auto-assign Sales Rep Pod\nconst service = String(item.division || item.targetService || '').toLowerCase();\nlet assignedRep = 'Rep 1: Bug Sprints & Web';\nlet repPhone = '+917015844885'; // Mr. Ayaan (Sales Lead)\n\nif (service.includes('event') || service.includes('experience')) {\n  assignedRep = 'Rep 7: Bangalore Summits';\n} else if (service.includes('growth') || service.includes('ad')) {\n  assignedRep = 'Rep 6: B2B Growth Retainers';\n} else if (service.includes('business') || service.includes('strategy')) {\n  assignedRep = 'Rep 9: Business Diagnostics';\n} else if (service.includes('tech') || service.includes('ai')) {\n  assignedRep = 'Rep 2: AI WhatsApp Bots';\n}\n\nconst alertMsg = `🚨 NEW INBOUND LEAD DETECTED!\\n━━━━━━━━━━━━━━━━━━━━\\n👤 Name: ${item.name || 'N/A'}\\n📧 Email: ${item.email || 'N/A'}\\n📞 Phone: ${item.phone || 'N/A'}\\n🏢 Division: ${item.division || 'General'}\\n💰 Budget: ${item.budget || 'Not specified'}\\n🎯 Score: ${score}/100 (${tier})\\n👥 Assigned To: ${assignedRep}\\n━━━━━━━━━━━━━━━━━━━━\\n⚡ ACTION REQUIRED: Call in <3 mins!`;\n\nreturn {\n  ...item,\n  leadScore: score,\n  leadTier: tier,\n  assignedRep,\n  salesLeadPhone: repPhone,\n  alertMsg,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "name": "AI Lead Scorer & Pod Assigner",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:4000/api/leads/submit",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "name": "Sync with GALICON Local DB",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.telegram.org/botYOUR_TELEGRAM_BOT_TOKEN/sendMessage",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"chat_id\": \"YOUR_CHAT_ID\",\n  \"text\": \"{{ $json.alertMsg }}\"\n}",
+        "options": {}
+      },
+      "name": "Instant Sales Officer Alert (Mr. Ayaan)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [680, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Inbound Lead": {
+      "main": [
+        [
+          {
+            "node": "AI Lead Scorer & Pod Assigner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Lead Scorer & Pod Assigner": {
+      "main": [
+        [
+          {
+            "node": "Sync with GALICON Local DB",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Instant Sales Officer Alert (Mr. Ayaan)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -86,6 +86,32 @@ app.post('/api/leads/submit', (req, res) => {
   return res.status(200).json({ success: true, message: "Inquiry received securely." });
 });
 
+// 1.5 N8N WEBHOOK & WORKFLOW REGISTRY ENDPOINT
+app.get('/api/n8n/workflows', (req, res) => {
+  const wfDir = path.join(__dirname, '..', 'n8n_workflows');
+  if (fs.existsSync(wfDir)) {
+    const files = fs.readdirSync(wfDir).filter(f => f.endsWith('.json'));
+    const list = files.map(f => ({
+      name: f.replace('.json', ''),
+      filename: f,
+      path: `/n8n_workflows/${f}`
+    }));
+    return res.status(200).json({ success: true, count: list.length, workflows: list });
+  }
+  return res.status(200).json({ success: true, count: 0, workflows: [] });
+});
+
+app.post('/api/webhook/n8n-trigger', (req, res) => {
+  const payload = req.body;
+  console.log('[N8N WEBHOOK TRIGGER RECEIVED]', payload);
+  return res.status(200).json({
+    success: true,
+    status: 'DISPATCHED_TO_N8N',
+    timestamp: new Date().toISOString(),
+    payloadReceived: payload
+  });
+});
+
 // 2. SECURE ADMIN LOGIN: Issue JWT Token
 app.post('/api/admin/login', (req, res) => {
   const { password } = req.body;
