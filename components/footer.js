@@ -54,11 +54,16 @@
           </ul>
         </div>
         <div class="col-lg-3 col-md-6">
-          <div style="font-weight:800; font-size:0.85rem; color:#EAB308; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Executive Contact</div>
+          <div style="font-weight:800; font-size:0.85rem; color:#818CF8; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Sales & Executive Contact</div>
           <div style="font-size:0.82rem; color:#94a3b8; line-height:1.8;">
+            <div style="margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.06);">
+              <div style="color:#FFFFFF; font-weight:700;"><i class="fas fa-headset text-info me-1"></i> Sales Executive Officer:</div>
+              <div style="color:#38BDF8; font-weight:800; font-size:0.95rem;">Mr. Ayaan</div>
+              <div>Direct Phone / Sales: <a href="tel:+917015844885" style="color:#FFFFFF; text-decoration:none; font-weight:700;">+91 70158 44885</a></div>
+            </div>
             <div>Founder & CEO: <strong>Ismail Kazia</strong></div>
             <div>Direct Desk: <span style="color:#fff;">+91 63639 62640 / +966 54 890 5688</span></div>
-            <div>Email: <span style="color:#38bdf8;">ismailkazia302@gmail.com</span></div>
+            <div>Corporate Email: <a href="mailto:ismailkazia302@gmail.com" style="color:#38bdf8; text-decoration:none;">ismailkazia302@gmail.com</a></div>
           </div>
         </div>
       </div>
