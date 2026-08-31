@@ -10,7 +10,7 @@ app.use(cors({ origin: ['https://galiconglobal.com', 'http://localhost:3000'] })
 
 // Environment Variables (Store in .env file)
 const ADMIN_SECRET_KEY = process.env.JWT_SECRET || "galicon_secure_jwt_secret_2026";
-const ADMIN_PASSWORD = process.env.ADMIN_PASS || "GaliconExecutive#2026";
+const ADMIN_PASSWORD = process.env.ADMIN_PASS || "galicon2030";
 const DB_PATH = path.join(__dirname, '..', 'private_data', 'leads_database.json');
 
 // Helper to append leads securely

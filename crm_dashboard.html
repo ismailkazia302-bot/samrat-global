@@ -198,27 +198,42 @@
 
     // Check token on load
     window.addEventListener('DOMContentLoaded', () => {
-      const token = sessionStorage.getItem('samrat_crm_token');
+      const token = sessionStorage.getItem('samrat_crm_token') || localStorage.getItem('samrat_crm_token');
       if (token) {
         loadLeads(token);
       }
     });
 
     async function handleLogin(event) {
-      event.preventDefault();
-      const password = (document.getElementById('admin-password').value || '').trim();
+      if (event) event.preventDefault();
+      const rawInput = document.getElementById('admin-password').value || '';
+      const password = rawInput.trim();
+      const cleanPass = password.toLowerCase();
       const errorDiv = document.getElementById('login-error');
-      errorDiv.style.display = 'none';
+      if (errorDiv) errorDiv.style.display = 'none';
 
-      const validPasswords = ['GaliconExecutive#2026', 'ismail2026', 'admin123', '123456', 'galicon2026'];
+      // Accepted passcodes (Main: galicon2030)
+      const validPasswords = [
+        'galicon2030',
+        'galicon2026',
+        'ismail2030',
+        'ismail2026',
+        'galiconexecutive#2026',
+        'admin123',
+        '123456'
+      ];
 
-      // Check offline / GitHub Pages passcode first or fallback
-      if (validPasswords.includes(password)) {
-        sessionStorage.setItem('samrat_crm_token', 'galicon_authenticated_executive_token_2026');
-        await loadLeads('galicon_authenticated_executive_token_2026');
+      if (validPasswords.includes(cleanPass) || password === 'Galicon2030' || password === 'GaliconExecutive#2026') {
+        const token = 'galicon_authenticated_executive_token_2030';
+        sessionStorage.setItem('samrat_crm_token', token);
+        localStorage.setItem('samrat_crm_token', token);
+        document.getElementById('login-view').style.display = 'none';
+        document.getElementById('dashboard-view').style.display = 'block';
+        await loadLeads(token);
         return;
       }
 
+      // If backend API is online, try backend check
       try {
         const response = await fetch(`${API_BASE}/api/admin/login`, {
           method: 'POST',
@@ -226,22 +241,28 @@
           body: JSON.stringify({ password })
         });
         const result = await response.json();
-        if (result.success) {
+        if (result.success && result.token) {
           sessionStorage.setItem('samrat_crm_token', result.token);
+          localStorage.setItem('samrat_crm_token', result.token);
+          document.getElementById('login-view').style.display = 'none';
+          document.getElementById('dashboard-view').style.display = 'block';
           loadLeads(result.token);
-        } else {
-          errorDiv.style.display = 'block';
-          errorDiv.textContent = result.message || 'Invalid passcode. Please use: GaliconExecutive#2026';
+          return;
         }
       } catch (err) {
+        // Backend offline
+      }
+
+      if (errorDiv) {
         errorDiv.style.display = 'block';
-        errorDiv.textContent = 'Passcode incorrect. Please use: GaliconExecutive#2026';
+        errorDiv.innerHTML = 'Incorrect password. Please use: <strong style="color:#EAB308;">galicon2030</strong>';
       }
     }
 
     function handleLogout(event) {
       if (event) event.preventDefault();
       sessionStorage.removeItem('samrat_crm_token');
+      localStorage.removeItem('samrat_crm_token');
       window.location.reload();
     }
 
