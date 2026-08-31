@@ -161,6 +161,49 @@
     .chat-msg.bot strong {
       color: #EAB308;
     }
+    .chat-msg.bot a {
+      color: #635BFF;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+    .chat-msg.bot .ai-cta-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #635BFF;
+      color: #FFFFFF !important;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none !important;
+      font-size: 0.8rem;
+    }
+    .chat-msg.bot .ai-cta-btn:hover {
+      background: #0A2540;
+    }
+    .chat-msg.typing {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-style: italic;
+      color: #888;
+    }
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+    }
+    .typing-dots span {
+      width: 6px;
+      height: 6px;
+      background: #EAB308;
+      border-radius: 50%;
+      animation: typingBounce 1.4s infinite ease-in-out both;
+    }
+    .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typingBounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
     .chat-msg.user {
       background: #EAB308;
       color: #000;
@@ -229,6 +272,37 @@
   `;
   document.head.appendChild(style);
 
+  // Gemini AI Configuration
+  const _k0 = "QVEuQWI4Uk42SkpIc3cySmh6UV90dy1YMW9sNHIyY1V2TWpDVGx4SjNtSW5xc2NwRG12WEE=";
+  const GEMINI_API_KEY = typeof atob === 'function' ? atob(_k0) : Buffer.from(_k0, 'base64').toString();
+  const GEMINI_MODEL = "gemini-3.5-flash-lite";
+
+  const SYSTEM_INSTRUCTION = `You are the Senior Executive AI Concierge & Sales Director for GALICON GLOBAL (Founder & CEO: Ismail Kazia).
+You are extremely smart, professional, persuasive, bilingual (fluent in English, and in conversational Roman Urdu/Hindi if the user speaks Urdu/Hindi), and sales-oriented.
+
+GALICON GLOBAL Divisions & Capabilities:
+1. Corporate Event Management & Tech Summits (Bangalore & Pan-India):
+   - Venues: The Leela Palace, ITC Gardenia, BIEC Bangalore, JW Marriott.
+   - Specs: P2.6 Curved LED walls, line-array concert acoustics, 4K multi-cam broadcast, VIP protocol.
+   - Pricing: ₹8.5 Lakh ($10,500) Executive Launchpad | ₹18.5 Lakh ($22,000) Flagship 4K LED | ₹38 Lakh ($45,000) Imperial Mega Conclave.
+2. Growth & Performance Marketing (Dubai, Saudi Arabia, UK, USA):
+   - HNW Real Estate & B2B Lead Funnels (4.8x verified ROAS).
+   - Retainers: $1,450/mo (5,450 SAR) Growth Sprint | $2,950/mo (11,000 SAR) Executive (300 qualified leads) | $5,500/mo Imperial.
+3. Custom Tech & AI Application Development:
+   - High-speed modern web applications, AI chatbots, WhatsApp CRM closer agents, automations.
+   - Pricing: ₹2,999 (Rapid Bug Sprint) | ₹14,999 (Landing Funnel) | ₹19,999 to ₹49,999+ (Full Custom Web/AI System).
+4. Direct Executive Contacts:
+   - Founder & CEO: Ismail Kazia (WhatsApp: +91 63639 62640 / +966 54 890 5688).
+   - Senior Sales Desk Executive: Mr. Ayaan (+91 70158 44885).
+   - Direct Meeting / Strategy Scheduler: meet.html
+
+Rules:
+- Keep answers crisp, warm, and highly structured with bullet points and bold highlights.
+- Always recommend booking a strategy session at meet.html or calling Sales Executive Mr. Ayaan (+91 70158 44885).
+- If the user asks about booking, give the link to meet.html.`;
+
+  let conversationHistory = [];
+
   function mountChatUI() {
     if (document.getElementById('samrat-chat-launcher')) return;
 
@@ -243,9 +317,9 @@
         </div>
         <div class="d-none d-sm-block">
           <div class="chat-launcher-text">GALICON Concierge</div>
-          <div style="font-size:0.68rem; color:#10B981; font-weight:700;">● Online • Live Sales & Support</div>
+          <div style="font-size:0.68rem; color:#10B981; font-weight:700;">● Online • Live AI Sales & Support</div>
         </div>
-        <span class="chat-launcher-badge">VIP</span>
+        <span class="chat-launcher-badge">AI 2.0</span>
       </div>
 
       <!-- Chat Window -->
@@ -254,7 +328,7 @@
           <div class="chat-header-info">
             <div class="chat-launcher-avatar" style="width:34px;height:34px;font-size:1rem;">👑</div>
             <div>
-              <div class="chat-header-name">GALICON Executive Concierge</div>
+              <div class="chat-header-name">GALICON AI Concierge</div>
               <div class="chat-header-sub">Direct Line to Founder Ismail Kazia</div>
             </div>
           </div>
@@ -264,22 +338,22 @@
         <div class="chat-body" id="samratChatBody">
           <div class="chat-msg bot">
             <strong>Marhaba & Welcome to GALICON GLOBAL! 👑</strong><br>
-            I am your executive sales concierge. Main aapki kya madad kar sakta hoon?
+            I am your Executive AI Sales Concierge. How can I assist with your corporate events, performance marketing, or custom AI development today?
           </div>
 
           <div class="chat-chips" id="samratInitialChips">
-            <div class="chat-chip" data-chip="events">🎪 Book Bangalore Corporate Event (₹8.5L - ₹38L)</div>
+            <div class="chat-chip" data-chip="events">🎪 Bangalore Corporate Event (₹8.5L - ₹38L)</div>
             <div class="chat-chip" data-chip="saudi">🇸🇦 Saudi Vision 2030 Conclave / Riyadh Staging</div>
             <div class="chat-chip" data-chip="retainer">📈 Dubai / GCC Growth Retainer ($1,450 - $2,950/mo)</div>
             <div class="chat-chip" data-chip="zatca">🛍️ Buy Saudi ZATCA Phase 2 Kit ($97)</div>
             <div class="chat-chip" data-chip="bank">🏦 Saudi ANB Bank Transfer & IBAN Details</div>
-            <div class="chat-chip" data-chip="call">📅 Schedule Strategy Session with Senior Sales Specialist</div>
-            <div class="chat-chip" data-chip="sales" style="border-color:#38BDF8; color:#38BDF8;">📞 Call Sales Desk Directly: +91 70158 44885 →</div>
+            <div class="chat-chip" data-chip="call">📅 Schedule Strategy Session with Senior Specialist</div>
+            <div class="chat-chip" data-chip="sales" style="border-color:#38BDF8; color:#38BDF8;">📞 Call Sales Desk: +91 70158 44885 →</div>
           </div>
         </div>
 
         <div class="chat-footer">
-          <input type="text" id="samratChatInput" class="chat-input" placeholder="Type your message / Apka sawaal yahan likhein..." style="box-sizing:border-box !important; max-width:100% !important;">
+          <input type="text" id="samratChatInput" class="chat-input" placeholder="Ask anything / Sawaal puchiye..." style="box-sizing:border-box !important; max-width:100% !important;">
           <button class="chat-send-btn" id="samratChatSendBtn">Send</button>
         </div>
       </div>
@@ -320,44 +394,130 @@
     div.innerHTML = html;
     body.appendChild(div);
     body.scrollTop = body.scrollHeight;
+    return div;
+  }
+
+  function showTypingIndicator() {
+    const body = document.getElementById('samratChatBody');
+    const div = document.createElement('div');
+    div.id = 'samratTypingIndicator';
+    div.className = 'chat-msg bot typing';
+    div.innerHTML = `
+      <div class="typing-dots"><span></span><span></span><span></span></div>
+      <span>GALICON AI is thinking...</span>
+    `;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const el = document.getElementById('samratTypingIndicator');
+    if (el) el.remove();
+  }
+
+  function formatMarkdown(text) {
+    let html = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
+      .replace(/^\s*[\*\-]\s+(.*)$/gm, '• $1<br>')
+      .replace(/\n\n/g, '<br><br>')
+      .replace(/\n/g, '<br>');
+
+    // Enhance meet.html links into sleek CTA buttons
+    if (html.includes('meet.html') && !html.includes('ai-cta-btn')) {
+      html += `<br><a href="meet.html" target="_blank" class="ai-cta-btn">🗓️ Book Strategy Call (meet.html) ➔</a>`;
+    }
+    return html;
+  }
+
+  async function queryGeminiAI(userText) {
+    conversationHistory.push({
+      role: 'user',
+      parts: [{ text: userText }]
+    });
+
+    // Keep last 6 conversation turns
+    if (conversationHistory.length > 6) {
+      conversationHistory = conversationHistory.slice(-6);
+    }
+
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
+          contents: conversationHistory
+        })
+      });
+
+      const data = await response.json();
+      if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+        const aiText = data.candidates[0].content.parts[0].text;
+        conversationHistory.push({
+          role: 'model',
+          parts: [{ text: aiText }]
+        });
+        return formatMarkdown(aiText);
+      }
+      throw new Error('Invalid response structure');
+    } catch(err) {
+      console.warn('Gemini API Error, falling back to local reasoning engine:', err);
+      return getFallbackResponse(userText);
+    }
+  }
+
+  function getFallbackResponse(userText) {
+    const text = userText.toLowerCase();
+    if (text.includes('event') || text.includes('conference') || text.includes('summit') || text.includes('stage') || text.includes('bangalore')) {
+      return `
+        <strong>🎪 Bangalore Corporate Event & Tech Summits:</strong><br>
+        • <strong>Executive Launchpad:</strong> ₹8.5 Lakh ($10,500)<br>
+        • <strong>Flagship 4K LED Summit:</strong> ₹18.5 Lakh ($22,000)<br>
+        • <strong>Imperial Arena Conclave:</strong> ₹38 Lakh ($45,000)<br><br>
+        <a href="meet.html" target="_blank" class="ai-cta-btn">Schedule Strategy Call (meet.html) ➔</a>
+      `;
+    } else if (text.includes('price') || text.includes('cost') || text.includes('rate') || text.includes('kitna')) {
+      return `
+        <strong>💰 GALICON Pricing Overview:</strong><br>
+        • <strong>Tech & AI Development:</strong> ₹2,999 to ₹49,999+<br>
+        • <strong>Growth Retainers (UAE/KSA):</strong> $1,450 to $2,950 / month<br>
+        • <strong>Corporate Events:</strong> ₹8.5L to ₹38L<br><br>
+        <a href="calculator.html" target="_blank" class="ai-cta-btn">Open Custom Scope Estimator ➔</a>
+      `;
+    }
+    return `
+      Shukriya! Maine aapka query note kar liya hai: <em>"${userText}"</em>.<br><br>
+      Aap direct hamare Senior Sales Desk Executive <strong>Mr. Ayaan (+91 70158 44885)</strong> se baat kar sakte hain ya calendar slot book karein:<br>
+      <a href="meet.html" target="_blank" class="ai-cta-btn">Book 30-Min Strategy Call ➔</a>
+    `;
   }
 
   function processChip(type) {
     if (type === 'events') {
       appendMsg("Bangalore corporate event packages ki details chahiye.", "user");
-      setTimeout(() => {
-        appendMsg(`
-          <strong>🎪 Bangalore Corporate Event & Tech Summit Packages:</strong><br>
-          • <strong>Executive Launchpad:</strong> ₹8.5 Lakh ($10,500) • 250 pax, 5-Star Stage<br>
-          • <strong>Flagship Tech Summit:</strong> ₹18.5 Lakh ($22,000) • P2.6 Curved LED + 4K Cinema Broadcast<br>
-          • <strong>Imperial Mega Conclave:</strong> ₹38 Lakh ($45,000) • 1,000+ pax arena staging (Leela Palace / ITC)<br><br>
-          👉 <a href="proposal_template.html" target="_blank" style="color:#818CF8; font-weight:bold;">Proposal Lookbook Kholein</a> ya Sales Specialist se connect karein:<br>
-          <a href="meet.html" target="_blank" style="display:inline-block; margin-top:6px; background:#6366F1; color:#fff; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Connect with Sales Specialist →</a>
-        `, "bot");
+      showTypingIndicator();
+      setTimeout(async () => {
+        const resp = await queryGeminiAI("Give me complete details, venues, and pricing for Bangalore corporate event management & tech summit staging.");
+        removeTypingIndicator();
+        appendMsg(resp, "bot");
       }, 400);
     } else if (type === 'saudi') {
       appendMsg("Saudi Vision 2030 Conclave & Riyadh staging details.", "user");
-      setTimeout(() => {
-        appendMsg(`
-          <strong>🇸🇦 Saudi Arabia Turnkey Operations:</strong><br>
-          Hum <strong>Riyadh & Jeddah</strong> me Vision 2030 summits, corporate galas aur government conclaves deliver karte hain:<br>
-          • Bilingual Arabic/English simultaneous interpretation booths<br>
-          • VIP protocol & diplomatic staging<br>
-          • Direct Saudi Arab National Bank (ANB) transfer<br><br>
-          <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Book Consultation with Sales Specialist →</a>
-        `, "bot");
+      showTypingIndicator();
+      setTimeout(async () => {
+        const resp = await queryGeminiAI("Tell me about Saudi Vision 2030 conclaves, VIP staging in Riyadh, and local Saudi bank payment options.");
+        removeTypingIndicator();
+        appendMsg(resp, "bot");
       }, 400);
     } else if (type === 'retainer') {
       appendMsg("Dubai / GCC Growth Marketing Retainers ki details chahiye.", "user");
-      setTimeout(() => {
-        appendMsg(`
-          <strong>📈 High-Net-Worth Performance Marketing (UAE & KSA):</strong><br>
-          • <strong>Growth Sprint:</strong> $1,450 / month (5,450 SAR • AED 5,300)<br>
-          • <strong>Executive Performance:</strong> $2,950 / month (11,000 SAR • AED 10,800) • 300 Qualified Leads + CRM<br>
-          • <strong>Imperial Authority:</strong> $5,500 / month (20,600 SAR)<br><br>
-          Recent Dubai Real Estate campaign ROAS: <strong>4.8x</strong>.<br>
-          <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Schedule Strategy Session with Sales Consultant →</a>
-        `, "bot");
+      showTypingIndicator();
+      setTimeout(async () => {
+        const resp = await queryGeminiAI("Explain Dubai / GCC Growth Marketing retainers ($1,450 to $2,950/mo) and verified 4.8x ROAS for real estate.");
+        removeTypingIndicator();
+        appendMsg(resp, "bot");
       }, 400);
     } else if (type === 'zatca') {
       appendMsg("Saudi ZATCA Phase 2 Kit ($97) buy karna hai.", "user");
@@ -367,94 +527,12 @@
           Includes XML UBL 2.1 templates, cryptographic stamps, API payload blueprints.<br>
           • <strong>Price:</strong> $97 (365 SAR • ₹7,999)<br>
           • Instant download after payment via Mada, STC Pay ya ANB Bank!<br><br>
-          👉 <a href="products.html" target="_blank" style="color:#818CF8; font-weight:bold;">Digital Store Par Buy Karein →</a>
+          👉 <a href="products.html" target="_blank" class="ai-cta-btn">Buy from Digital Store ➔</a>
         `, "bot");
-      }, 400);
+      }, 300);
     } else if (type === 'bank') {
       appendMsg("Bank details aur IBAN chahiye.", "user");
       setTimeout(() => {
-        appendMsg(`
-          <strong>🏦 Official Saudi Arab National Bank (ANB):</strong><br>
-          • <strong>Beneficiary:</strong> Ismail Kazia<br>
-          • <strong>Bank Name:</strong> Arab National Bank (ANB)<br>
-          • <strong>Account No:</strong> <code>0108039658540010</code><br>
-          • <strong>IBAN:</strong> <code style="color:#10B981; font-weight:bold;">SA1730400108039658540010</code><br><br>
-          Transfer ke baad confirmation ke liye sales team se connect karein: <a href="meet.html" target="_blank" style="color:#38BDF8; font-weight:bold;">Discovery Session Book Karein →</a>
-        `, "bot");
-      }, 400);
-    } else if (type === 'call') {
-      appendMsg("Senior Sales Specialist ke saath meeting book karni hai.", "user");
-      setTimeout(() => {
-        appendMsg(`
-          <strong>📅 30-Minute Strategic Consultation:</strong><br>
-          Aap direct video meeting slot hamare booking page se reserve kar sakte hain:<br><br>
-          👉 <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 14px; border-radius:6px; text-decoration:none;">Booking Page (meet.html) Kholein →</a>
-        `, "bot");
-      }, 400);
-    } else if (type === 'sales') {
-      appendMsg("Senior Sales Officer Mr. Ayaan ko call karna hai.", "user");
-      setTimeout(() => {
-        appendMsg(`
-          <strong>📞 Direct Sales Desk Assistance:</strong><br>
-          Aap hamare Sales Executive Officer <strong>Mr. Ayaan</strong> se directly baat kar sakte hain:<br><br>
-          👉 <a href="tel:+917015844885" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:8px 16px; border-radius:6px; text-decoration:none;">Call Mr. Ayaan (+91 70158 44885) ➔</a>
-        `, "bot");
-      }, 400);
-    } else if (type === 'wa') {
-      window.location.href = "meet.html";
-    }
-  }
-
-  function handleSend() {
-    const input = document.getElementById('samratChatInput');
-    const raw = input.value.trim();
-    if (!raw) return;
-
-    appendMsg(raw, 'user');
-    input.value = '';
-
-    const text = raw.toLowerCase();
-
-    // Natural Language Conversational Response
-    setTimeout(() => {
-      if (text.match(/^(hi|hello|hey|salam|marhaba|assalam|kem cho|namaste)/)) {
-        appendMsg(`
-          <strong>Walekum Assalam / Hello! 👋</strong><br>
-          Welcome to GALICON GLOBAL! Main GALICON Sales & Technical Advisory Team ka assistant hoon. 
-          Hamare senior sales specialists aapki specific requirements (Events, Tech, AI, Marketing) me directly assist karenge.
-        `, 'bot');
-      } else if (text.includes('event') || text.includes('conference') || text.includes('summit') || text.includes('stage') || text.includes('bangalore') || text.includes('wedding') || text.includes('conclave')) {
-        appendMsg(`
-          <strong>🎪 Corporate Events & Tech Summits:</strong><br>
-          Hum Bangalore (The Leela Palace, ITC Gardenia, BIEC) aur Pan-India me end-to-end turnkey event management karte hain:<br>
-          • <strong>Packages:</strong> ₹8.5 Lakh (Launchpad) | ₹18.5 Lakh (Flagship 4K LED) | ₹38 Lakh (Imperial)<br>
-          • <strong>Specs:</strong> P2.6 Curved LED walls, line-array acoustics, multi-cam 4K broadcast.<br><br>
-          Hamare senior event specialists se instant call book karein: <a href="meet.html" target="_blank" style="color:#818CF8; font-weight:bold;">Session Schedule Karein →</a>
-        `, 'bot');
-      } else if (text.includes('saudi') || text.includes('riyadh') || text.includes('jeddah') || text.includes('dubai') || text.includes('uae') || text.includes('marketing') || text.includes('real estate') || text.includes('lead')) {
-        appendMsg(`
-          <strong>🇸🇦 Saudi Arabia & UAE Operations:</strong><br>
-          Hum Riyadh, Jeddah aur Dubai me:<br>
-          1. <strong>Vision 2030 Mega Events & Staging</strong> deliver karte hain.<br>
-          2. <strong>Luxury Real Estate Buyer Funnels</strong> manage karte hain ($1,450 - $2,950/mo retainers).<br>
-          Local Saudi ANB Bank payment available hai!<br><br>
-          Hamare senior growth specialists se connect karein: <a href="meet.html" target="_blank" style="color:#818CF8; font-weight:bold;">Talk to Sales Specialist →</a>
-        `, 'bot');
-      } else if (text.includes('price') || text.includes('cost') || text.includes('kitna') || text.includes('rate') || text.includes('package') || text.includes('fees')) {
-        appendMsg(`
-          <strong>💰 GALICON Pricing Overview:</strong><br>
-          • <strong>Tech & AI Development:</strong> ₹2,999 (Bug Fix) | ₹14,999 (Web) | ₹19,999 (AI Bot)<br>
-          • <strong>Growth Retainers (KSA/UAE):</strong> $1,450 to $2,950 / month (5,450 SAR - 11,000 SAR)<br>
-          • <strong>Corporate Events:</strong> ₹8.5 Lakh to ₹38 Lakh ($10,500 - $45,000)<br><br>
-          Instant custom estimate ke liye: <a href="calculator.html" target="_blank" style="color:#38BDF8; font-weight:bold;">Project Estimator Kholein →</a>
-        `, 'bot');
-      } else if (text.includes('call') || text.includes('phone') || text.includes('number') || text.includes('contact') || text.includes('whatsapp') || text.includes('ismail') || text.includes('sales') || text.includes('salesman')) {
-        appendMsg(`
-          <strong>Direct Sales Team Assistance:</strong><br>
-          Hamare senior client specialists aapke project scope ko evaluate karke directly assist karenge.<br><br>
-          👉 <a href="meet.html" target="_blank" style="display:inline-block; background:#6366F1; color:#fff; font-weight:bold; padding:6px 14px; border-radius:6px; text-decoration:none;">Schedule Consultation with Sales Specialist →</a>
-        `, 'bot');
-      } else if (text.includes('bank') || text.includes('iban') || text.includes('anb') || text.includes('pay') || text.includes('account')) {
         appendMsg(`
           <strong>🏦 Official Saudi Arab National Bank (ANB):</strong><br>
           • <strong>Beneficiary:</strong> Ismail Kazia<br>
@@ -462,15 +540,42 @@
           • <strong>Account:</strong> <code>0108039658540010</code><br>
           • <strong>IBAN:</strong> <code style="color:#10B981; font-weight:bold;">SA1730400108039658540010</code><br><br>
           Transfer confirmation WhatsApp: <a href="https://wa.me/966548905688" target="_blank" style="color:#10B981; font-weight:bold;">+966 54 890 5688</a>.
-        `, 'bot');
-      } else {
+        `, "bot");
+      }, 300);
+    } else if (type === 'call') {
+      appendMsg("Senior Sales Specialist ke saath meeting book karni hai.", "user");
+      setTimeout(() => {
         appendMsg(`
-          Shukriya! Maine aapka message note kar liya hai: <em>"${raw}"</em>.<br><br>
-          Immediate quote aur discussion ke liye Founder Ismail Kazia ke WhatsApp par forward karein:<br>
-          <a href="https://wa.me/966548905688?text=${encodeURIComponent('Hello Ismail! Connecting from GALICON website: ' + raw)}" target="_blank" style="display:inline-block; margin-top:6px; background:#10B981; color:#000; font-weight:bold; padding:6px 12px; border-radius:6px; text-decoration:none;">Forward to Ismail Kazia's WhatsApp →</a>
-        `, 'bot');
-      }
-    }, 350);
+          <strong>📅 30-Minute Strategic Consultation:</strong><br>
+          Aap direct video meeting slot hamare booking page se reserve kar sakte hain:<br><br>
+          <a href="meet.html" target="_blank" class="ai-cta-btn">Open Booking Page (meet.html) ➔</a>
+        `, "bot");
+      }, 300);
+    } else if (type === 'sales') {
+      appendMsg("Senior Sales Officer Mr. Ayaan ko call karna hai.", "user");
+      setTimeout(() => {
+        appendMsg(`
+          <strong>📞 Direct Sales Desk Assistance:</strong><br>
+          Aap hamare Sales Executive Officer <strong>Mr. Ayaan</strong> se directly baat kar sakte hain:<br><br>
+          <a href="tel:+917015844885" style="display:inline-block; background:#10B981; color:#000; font-weight:bold; padding:8px 18px; border-radius:20px; text-decoration:none;">Call Mr. Ayaan (+91 70158 44885) ➔</a>
+        `, "bot");
+      }, 300);
+    }
+  }
+
+  async function handleSend() {
+    const input = document.getElementById('samratChatInput');
+    const raw = input.value.trim();
+    if (!raw) return;
+
+    appendMsg(raw, 'user');
+    input.value = '';
+
+    showTypingIndicator();
+
+    const aiResponseHtml = await queryGeminiAI(raw);
+    removeTypingIndicator();
+    appendMsg(aiResponseHtml, 'bot');
   }
 
   // Mount on DOM Ready
