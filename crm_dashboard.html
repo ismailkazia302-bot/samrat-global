@@ -196,10 +196,18 @@
     let activeStatus = 'All';
     let searchKeyword = '';
 
-    // Check token on load
+    // Check token or url param on load
     window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('auth') === 'galicon2030' || urlParams.get('pass') === 'galicon2030') {
+        sessionStorage.setItem('samrat_crm_token', 'galicon_authenticated_executive_token_2030');
+        localStorage.setItem('samrat_crm_token', 'galicon_authenticated_executive_token_2030');
+      }
+
       const token = sessionStorage.getItem('samrat_crm_token') || localStorage.getItem('samrat_crm_token');
       if (token) {
+        document.getElementById('login-view').style.display = 'none';
+        document.getElementById('dashboard-view').style.display = 'block';
         loadLeads(token);
       }
     });
@@ -207,23 +215,24 @@
     async function handleLogin(event) {
       if (event) event.preventDefault();
       const rawInput = document.getElementById('admin-password').value || '';
-      const password = rawInput.trim();
-      const cleanPass = password.toLowerCase();
+      const cleanPass = rawInput.trim().toLowerCase();
       const errorDiv = document.getElementById('login-error');
       if (errorDiv) errorDiv.style.display = 'none';
 
-      // Accepted passcodes (Main: galicon2030)
+      // Accepted passcodes
       const validPasswords = [
         'galicon2030',
         'galicon2026',
         'ismail2030',
         'ismail2026',
+        'galicon',
+        '2030',
         'galiconexecutive#2026',
         'admin123',
         '123456'
       ];
 
-      if (validPasswords.includes(cleanPass) || password === 'Galicon2030' || password === 'GaliconExecutive#2026') {
+      if (validPasswords.includes(cleanPass)) {
         const token = 'galicon_authenticated_executive_token_2030';
         sessionStorage.setItem('samrat_crm_token', token);
         localStorage.setItem('samrat_crm_token', token);
@@ -233,29 +242,9 @@
         return;
       }
 
-      // If backend API is online, try backend check
-      try {
-        const response = await fetch(`${API_BASE}/api/admin/login`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ password })
-        });
-        const result = await response.json();
-        if (result.success && result.token) {
-          sessionStorage.setItem('samrat_crm_token', result.token);
-          localStorage.setItem('samrat_crm_token', result.token);
-          document.getElementById('login-view').style.display = 'none';
-          document.getElementById('dashboard-view').style.display = 'block';
-          loadLeads(result.token);
-          return;
-        }
-      } catch (err) {
-        // Backend offline
-      }
-
       if (errorDiv) {
         errorDiv.style.display = 'block';
-        errorDiv.innerHTML = 'Incorrect password. Please use: <strong style="color:#EAB308;">galicon2030</strong>';
+        errorDiv.innerHTML = 'Incorrect passcode. Please enter: <strong style="color:#EAB308;">galicon2030</strong>';
       }
     }
 
@@ -263,7 +252,7 @@
       if (event) event.preventDefault();
       sessionStorage.removeItem('samrat_crm_token');
       localStorage.removeItem('samrat_crm_token');
-      window.location.reload();
+      window.location.href = 'crm_dashboard.html';
     }
 
     async function loadLeads(token) {
