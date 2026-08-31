@@ -908,29 +908,28 @@
       }
     };
 
-    const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
-
     document.querySelectorAll('.gumroad-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
         const pKey = this.dataset.product;
         const pInfo = PRODUCTS_DATA[pKey] || PRODUCTS_DATA['mega-bundle'];
 
-        document.getElementById('modalProductTitle').textContent = pInfo.title;
-        document.getElementById('modalProductPrice').textContent = `${pInfo.usd} • ${pInfo.sar} • ${pInfo.inr}`;
+        let priceInr = 3999;
+        if (pKey === 'ai-prompts') priceInr = 2499;
+        else if (pKey === 'outreach') priceInr = 2199;
+        else if (pKey === 'startup-kit') priceInr = 3499;
+        else if (pKey === 'social-calendar') priceInr = 999;
+        else if (pKey === 'crm-template') priceInr = 1699;
+        else if (pKey === 'zatca-kit') priceInr = 7999;
+        else if (pKey === 'mega-bundle') priceInr = 3999;
 
-        // Gumroad Link
-        document.getElementById('modalGumroadBtn').href = `https://gumroad.com/l/${pInfo.gumroadSlug}`;
-
-        // Saudi Arabia WhatsApp Direct Buy (Mada / STC Pay / Al-Rajhi)
-        const saMsg = encodeURIComponent(`Marhaba Ismail! 👋\nI would like to purchase "${pInfo.title}" via Saudi Arabia payment (Mada / STC Pay / Al-Rajhi).\nPrice: ${pInfo.sar} ($ ${pInfo.usd}).\nPlease send me the transfer details.`);
-        document.getElementById('modalSaudiBtn').href = `https://wa.me/966548905688?text=${saMsg}`;
-
-        // India UPI WhatsApp Direct Buy (GPay / PhonePe / UPI)
-        const inMsg = encodeURIComponent(`Hi Ismail! 👋\nI want to buy "${pInfo.title}" via Indian UPI / GPay.\nPrice: ${pInfo.inr} ($ ${pInfo.usd}).\nPlease share your UPI ID / QR code.`);
-        document.getElementById('modalIndiaBtn').href = `https://wa.me/916363962640?text=${inMsg}`;
-
-        checkoutModal.show();
+        if (typeof window.openGaliconCheckout === 'function') {
+          window.openGaliconCheckout({
+            title: pInfo.title,
+            priceInr: priceInr,
+            category: 'Digital Blueprint & Master Kit'
+          });
+        }
       });
     });
 
@@ -986,6 +985,7 @@
     }
   </script>
   <!-- GALICON Luxury Sales & Customer Service AI Concierge Bot -->
+  <script src="checkout_modal.js"></script>
   <script src="chatbot.js" defer></script>
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>

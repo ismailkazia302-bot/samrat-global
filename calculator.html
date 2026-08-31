@@ -229,40 +229,39 @@
     async function handleLeadFormSubmit(event) {
       event.preventDefault();
 
-      const attribution = typeof window.getGaliconAttribution === 'function' ? window.getGaliconAttribution() : {};
+      const name = document.getElementById('client-name').value;
+      const email = document.getElementById('client-email').value;
+      const phone = document.getElementById('client-phone').value;
+      const divName = document.getElementById('divisionSelect').options[document.getElementById('divisionSelect').selectedIndex].text;
+      const tierName = document.getElementById('tierSelect').options[document.getElementById('tierSelect').selectedIndex].text;
 
-      const payload = {
-        name: document.getElementById('client-name').value,
-        email: document.getElementById('client-email').value,
-        phone: document.getElementById('client-phone').value,
-        division: document.getElementById('divisionSelect').value,
-        packageSelected: document.getElementById('tierSelect').value,
-        country: window.galiconCalc ? window.galiconCalc.selectedCurrency : "INR",
-        attribution: attribution,
-        message: document.getElementById('client-notes').value
-      };
+      let calcPrice = 14999;
+      if (window.galiconCalc && typeof window.galiconCalc.calculateTotal === 'function') {
+        const res = window.galiconCalc.calculateTotal();
+        calcPrice = res.total || 14999;
+      }
 
-      const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://localhost:4000'
-        : 'https://api.galiconglobal.com';
+      if (typeof window.openGaliconCheckout === 'function') {
+        window.openGaliconCheckout({
+          title: `${divName} — ${tierName}`,
+          priceInr: calcPrice,
+          category: 'Custom Project Scope'
+        });
 
-      try {
-        fetch(`${API_BASE}/api/leads/submit`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).catch(e => console.warn(e));
-
-        alert("Inquiry received! Founder Ismail Kazia will connect with your project blueprint within 2 hours.");
-        window.location.href = "meet.html";
-      } catch (err) {
-        window.open(window.galiconCalc.generateWhatsAppUrl(), '_blank');
+        // Pre-fill fields if available
+        const nameInput = document.getElementById('chkClientName');
+        const phoneInput = document.getElementById('chkClientPhone');
+        const emailInput = document.getElementById('chkClientEmail');
+        if (nameInput) nameInput.value = name;
+        if (phoneInput) phoneInput.value = phone;
+        if (emailInput) emailInput.value = email;
       }
     }
   </script>
 
   <div id="footer-placeholder"></div>
 
+  <script src="checkout_modal.js"></script>
   <script src="chatbot.js" defer></script>
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
