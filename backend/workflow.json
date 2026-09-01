@@ -1,0 +1,221 @@
+{
+  "name": "Universal AI-as-a-Service Core Router",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "universal-stitch-receiver",
+        "responseMode": "onReceived",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "id": "webhook-trigger-node",
+      "name": "Universal Stitch Receiver"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "x-goog-api-key",
+              "value": "={{ $env.GEMINI_API_KEY || 'GEMINI_API_KEY_PLACEHOLDER' }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Classify this request task_type as planning or execution in JSON format: \" + JSON.stringify($json.body)\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseMimeType\": \"application/json\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 0],
+      "id": "google-ai-studio-core-node",
+      "name": "Google AI Studio Core"
+    },
+    {
+      "parameters": {
+        "jsCode": "const responseText = $json.candidates?.[0]?.content?.parts?.[0]?.text || '{}';\nlet parsed = {};\ntry {\n  parsed = JSON.parse(responseText);\n} catch (e) {\n  parsed = { task_type: 'execution', error: 'Failed to parse Gemini output', raw: responseText };\n}\n\nreturn {\n  json: {\n    task_type: parsed.task_type || 'execution',\n    project: parsed.project || 'ecommerce',\n    summary: parsed.summary || '',\n    opal_url: 'https://opal.google/app/1KKDuJwa4amQ6xaG13TaouxrlGIWbzABc',\n    jules_url: 'https://jules.google.com/session',\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 0],
+      "id": "response-parser-node",
+      "name": "Extract Task Type"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "loose"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.task_type }}",
+                    "rightValue": "planning",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Planning Branch"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "loose"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.task_type }}",
+                    "rightValue": "execution",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Execution Branch"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [740, 0],
+      "id": "master-router-node",
+      "name": "Master Router"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://opal.google/app/1KKDuJwa4amQ6xaG13TaouxrlGIWbzABc",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"project\": \"{{ $json.project }}\",\n  \"task\": \"planning\",\n  \"context\": {{ JSON.stringify($json) }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1040, -120],
+      "id": "opal-api-node",
+      "name": "Opal API - Planning"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://jules.google.com/session",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={\n  \"project\": \"{{ $json.project }}\",\n  \"task\": \"execution\",\n  \"action\": \"build_and_execute\",\n  \"context\": {{ JSON.stringify($json) }}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1040, 120],
+      "id": "jules-api-node",
+      "name": "Jules API - Execution"
+    }
+  ],
+  "connections": {
+    "Universal Stitch Receiver": {
+      "main": [
+        [
+          {
+            "node": "Google AI Studio Core",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google AI Studio Core": {
+      "main": [
+        [
+          {
+            "node": "Extract Task Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Task Type": {
+      "main": [
+        [
+          {
+            "node": "Master Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Master Router": {
+      "main": [
+        [
+          {
+            "node": "Opal API - Planning",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Jules API - Execution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
