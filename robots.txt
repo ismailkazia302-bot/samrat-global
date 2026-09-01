@@ -1,13 +1,11 @@
 User-agent: *
-Disallow: /crm_dashboard.html
-Disallow: /outreach.html
-Disallow: /leads_database.csv
-Disallow: /leads_database.json
-Disallow: /crm_status.csv
-Disallow: /outreach_ready.csv
-Disallow: /leads_with_pitches.json
-Disallow: /daily_reports/
-Disallow: /research_reports/
 Allow: /
+Disallow: /admin
+Disallow: /dashboard
 
+# Crawl-delay for optimal indexing
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://galicon.com/sitemap.xml
 Sitemap: https://ismailkazia302-bot.github.io/samrat-global/sitemap.xml

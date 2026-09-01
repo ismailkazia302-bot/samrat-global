@@ -1,141 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Master Homepage -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://galicon.com/</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Productized Dev & AI Subscription -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/business/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://galicon.com/subscription.html</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+  </url>
+
+  <!-- High-Intent Bangalore Wedding Pillar Guide -->
+  <url>
+    <loc>https://galicon.com/bangalore-luxury-wedding-guide.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+
+  <!-- High-Intent Bangalore Corporate Events & Summits Guide -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/growth/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://galicon.com/bangalore-corporate-event-management.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+
+  <!-- Global US/UK/Gulf Next.js & AI Developers Landing Page -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/technology/</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://galicon.com/hire-nextjs-ai-developers-india.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+
+  <!-- Events & Bangalore Weddings Practice -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/experiences/</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/audit/</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/calculator.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/meet.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/products.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/growth-strategy-consulting-india.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://galicon.com/event-management.html</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Web & AI Software Development Practice -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/performance-marketing-b2b-lead-generation-agency.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://galicon.com/web-development.html</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Performance Marketing & SEO Practice -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/custom-web-application-ai-agent-development.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://galicon.com/digital-marketing.html</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Strategic Business Consulting -->
   <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/corporate-conferences-tech-summits-bangalore.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/corporate-event-management-whitefield-bangalore.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/saudi-arabia-corporate-summit-production-riyadh.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/services/dubai-luxury-real-estate-buyer-acquisition-agency.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/blog/bangalore-corporate-event-management-guide-2026.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/blog/dubai-luxury-real-estate-performance-marketing.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/blog/saudi-arabia-vision-2030-business-events.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/blog/corporate-event-production-checklist-bangalore-2026.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/blog/corporate-event-management-riyadh-vip-staging-guide-2026.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/blog/dubai-corporate-gala-event-production-guide-2026.html</loc>
-    <lastmod>2026-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ismailkazia302-bot.github.io/samrat-global/card.html</loc>
-    <lastmod>2026-08-28</lastmod>
+    <loc>https://galicon.com/consulting.html</loc>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
 </urlset>

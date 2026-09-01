@@ -1,652 +1,721 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GALICON GLOBAL GROUP | Full-Stack Growth, Tech & Events Platform</title>
-  <meta name="description" content="Outcome-driven business consulting, scalable performance ad funnels, sub-50ms web & AI engineering, and 4K corporate event staging across India and global markets.">
-  <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/">
-  <meta property="og:title" content="GALICON GLOBAL GROUP | Full-Stack Growth, Tech & Events Platform">
-  <meta property="og:description" content="Outcome-driven business consulting, scalable performance ad funnels, sub-50ms web & AI engineering, and 4K corporate event staging.">
-  <meta property="og:image" content="https://ismailkazia302-bot.github.io/samrat-global/galicon_logo.png">
-  <meta property="og:site_name" content="GALICON GLOBAL">
-  <meta name="author" content="Ismail Kazia">
-
-  <!-- Elite Executive Typography: Plus Jakarta Sans + Inter + Space Grotesk -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <title>GALICON GLOBAL | Enterprise Tech, Marketing & Bangalore Events</title>
+  <meta name="description" content="Unified enterprise solutions: unlimited dev subscriptions, high-ROI performance marketing, and luxury Bangalore corporate summits and palace weddings.">
   
-  <!-- Bootstrap 5 & FontAwesome -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    :root {
-      --bg-canvas: #FAFBFC;
-      --bg-surface: #FFFFFF;
-      --bg-elevated: #F6F9FC;
-      --primary-indigo: #635BFF;
-      --primary-blue: #00D4FF;
-      --primary-cyan: #0088CC;
-      --primary-pink: #FF6B9E;
-      --primary-amber: #D97706;
-      --indigo-gradient: linear-gradient(135deg, #635BFF 0%, #0088CC 100%);
-      --border-subtle: #E6EBF1;
-      --border-indigo: rgba(99, 91, 255, 0.25);
-      --text-pure: #0A2540;
-      --text-slate: #425466;
-      --text-muted: #697386;
-      --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'Space Grotesk', monospace;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: var(--font-body);
-      background-color: var(--bg-canvas);
-      color: var(--text-pure);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.65;
-      letter-spacing: -0.01em;
-    }
-
-    h1, h2, h3, h4, h5, h6, .hero-title, .hero-badge, .btn, .nav-link, .marquee-logo {
-      font-family: var(--font-heading);
-      letter-spacing: -0.025em;
-      color: #0A2540;
-    }
-
-    .case-metric, .score-num, .h4, .h5, .h6 {
-      font-family: var(--font-heading);
-      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    }
-
-    /* STRIPE LIGHT SIGNATURE HERO SECTION */
-    .hero-wrapper {
-      position: relative;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(at 15% 15%, rgba(99, 91, 255, 0.16) 0px, transparent 50%),
-                  radial-gradient(at 85% 15%, rgba(0, 212, 255, 0.14) 0px, transparent 50%),
-                  radial-gradient(at 50% 85%, rgba(255, 107, 158, 0.1) 0px, transparent 60%),
-                  #FFFFFF;
-      padding: 90px 20px 60px;
-      text-align: center;
-      border-bottom: 1px solid #E6EBF1;
-      overflow: hidden;
-    }
-
-    .hero-badge {
-      background: rgba(99, 91, 255, 0.08);
-      color: #635BFF;
-      font-weight: 800;
-      font-size: clamp(0.72rem, 2vw, 0.82rem);
-      padding: 8px 22px;
-      border-radius: 30px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 22px;
-      border: 1px solid rgba(99, 91, 255, 0.25);
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 6vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.12;
-      letter-spacing: -0.035em;
-      margin-bottom: 22px;
-      color: #0A2540;
-    }
-
-    .hero-gradient-text {
-      background: linear-gradient(135deg, #635BFF 0%, #0088CC 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(0.95rem, 2.5vw, 1.18rem);
-      color: #425466;
-      max-width: 820px;
-      margin: 0 auto 32px;
-      font-weight: 400;
-      line-height: 1.7;
-    }
-
-    /* Trust Chips */
-    .trust-chip {
-      background: #FFFFFF;
-      border: 1px solid #E6EBF1;
-      border-radius: 20px;
-      padding: 8px 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #425466;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    /* Stripe Action Buttons */
-    .btn-indigo {
-      background: #635BFF !important;
-      color: #FFFFFF !important;
-      font-weight: 800;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 4px 14px rgba(99, 91, 255, 0.35);
-      transition: all 0.25s ease;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-indigo:hover {
-      background: #0A2540 !important;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(10, 37, 64, 0.3);
-      color: #FFFFFF !important;
-    }
-
-    .btn-frosted {
-      background: #FFFFFF;
-      color: #0A2540 !important;
-      border: 1px solid #E6EBF1;
-      border-radius: 30px;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      transition: all 0.25s ease;
-    }
-    .btn-frosted:hover {
-      border-color: #635BFF;
-      color: #635BFF !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    /* DIVISION QUADRANT CARDS */
-    .div-card {
-      background: #FFFFFF;
-      border: 1px solid #E6EBF1;
-      border-radius: 18px;
-      padding: 32px 28px;
-      transition: all 0.35s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .div-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--indigo-gradient);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .div-card:hover {
-      transform: translateY(-6px);
-      border-color: #635BFF;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.1), 0 0 20px rgba(99, 91, 255, 0.1);
-    }
-
-    .div-card:hover::before {
-      opacity: 1;
-    }
-
-    .div-price-chip {
-      background: #F6F9FC;
-      border: 1px solid #E6EBF1;
-      border-radius: 12px;
-      padding: 14px;
-      margin: 16px 0;
-      text-align: center;
-    }
-
-    /* MARQUEE RUNNER */
-    .marquee-container {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      background: #F6F9FC;
-      padding: 24px 0;
-      border-top: 1px solid #E6EBF1;
-      border-bottom: 1px solid #E6EBF1;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 60px;
-      animation: marqueeRun 25s linear infinite;
-      white-space: nowrap;
-      align-items: center;
-    }
-
-    @keyframes marqueeRun {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .marquee-logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #697386;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
-
-    .marquee-logo:hover {
-      color: #0A2540;
-    }
-
-    /* CASE STUDIES & IMPACT */
-    .case-card {
-      background: #FFFFFF;
-      border: 1px solid #E6EBF1;
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    }
-
-    .case-card:hover {
-      border-color: #635BFF;
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    .case-metric {
-      font-size: clamp(1.6rem, 4.5vw, 2.2rem);
-      font-weight: 900;
-      color: #635BFF;
-      line-height: 1.1;
-      white-space: nowrap;
-    }
-
-    .stat-number {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-      font-weight: 900;
-      color: #0A2540;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.1;
-      white-space: nowrap;
-      margin-bottom: 4px;
-    }
-    .stat-label {
-      font-size: clamp(0.7rem, 2vw, 0.8rem);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #697386;
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-    .stat-sub {
-      font-size: clamp(0.68rem, 1.8vw, 0.78rem);
-      color: #8898AA;
-      margin-top: 2px;
-    }
-    @media (max-width: 576px) {
-      .stat-number {
-        font-size: 1.5rem !important;
-      }
-      .case-metric {
-        font-size: 1.6rem !important;
-      }
-    }
-  
-    p, li, .lead { color: #425466 !important; }
-    .text-muted, .text-secondary { color: #697386 !important; }
-  </style>
-
-  <!-- Schema.org JSON-LD -->
+  <!-- Structured JSON-LD Schema for #1 Google SEO Ranking -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "GALICON GLOBAL GROUP",
-    "url": "https://ismailkazia302-bot.github.io/samrat-global/",
-    "logo": "https://ismailkazia302-bot.github.io/samrat-global/galicon_logo.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Ismail Kazia",
-      "jobTitle": "Founder & CEO"
-    },
-    "description": "Full-stack business consulting, performance marketing, high-speed web/mobile/AI engineering, and turnkey corporate summit staging."
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://ismailkazia302-bot.github.io/samrat-global/#organization",
+        "name": "Galicon Global Group",
+        "url": "https://ismailkazia302-bot.github.io/samrat-global",
+        "logo": "https://ismailkazia302-bot.github.io/samrat-global/assets/logo.png",
+        "description": "Full-stack enterprise business solutions, custom Next.js web development, performance marketing, and luxury Bangalore wedding & corporate event planning.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "MG Road / Indiranagar",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "telephone": "+91-70158-44885",
+        "priceRange": "$$$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "148"
+        }
+      },
+      {
+        "@type": "EventPlanningService",
+        "name": "Galicon Bangalore Luxury Wedding Planning",
+        "areaServed": "Bangalore, Karnataka, India",
+        "serviceType": "Luxury Palace Weddings, Corporate Summits, Trade Expos"
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "Galicon Software & Growth Engineering",
+        "serviceType": "Next.js Web Apps, Custom SaaS, B2B Performance Marketing",
+        "areaServed": ["United States", "United Kingdom", "United Arab Emirates", "India", "Europe"]
+      }
+    ]
   }
   </script>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/">
+
+  <!-- Open Graph / WhatsApp Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/">
+  <meta property="og:title" content="GALICON GLOBAL | Enterprise Tech, Marketing & Bangalore Events">
+  <meta property="og:description" content="Unified enterprise solutions: unlimited dev subscriptions, high-ROI performance marketing, and luxury Bangalore corporate summits and palace weddings.">
+  <meta property="og:image" content="https://ismailkazia302-bot.github.io/samrat-global/assets/logo.png">
+  <meta property="og:site_name" content="GALICON GLOBAL">
+  <meta name="author" content="Ismail Kazia">
 </head>
 <body>
 
-  <div id="navbar-placeholder"></div>
+  <!-- Top Announcement & Global Controls Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-badge">
+        <span class="pulse-dot"></span>
+        <span>Active Overlap: India (IST) • US (EST/PST) • UK (GMT) • Gulf (GST)</span>
+      </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero-wrapper">
+      <div class="top-bar-controls">
+        <!-- Language Selector -->
+        <select id="lang-selector" class="lang-dropdown" onchange="setLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+          <option value="ar">🇦🇪 العربية</option>
+        </select>
+
+        <!-- Currency Selector -->
+        <select id="currency-selector" class="currency-dropdown" onchange="setCurrency(this.value)">
+          <option value="USD">🇺🇸 USD ($)</option>
+          <option value="INR">🇮🇳 INR (₹)</option>
+          <option value="GBP">🇬🇧 GBP (£)</option>
+          <option value="EUR">🇪🇺 EUR (€)</option>
+          <option value="AED">🇦🇪 AED (د.إ)</option>
+        </select>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+          <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="tel:+918049502026" style="color: var(--text-slate); text-decoration: none; font-weight: 700;">
+          <i class="fa-solid fa-phone" style="color: var(--primary-indigo);"></i> +91 70158 44885
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo.png" alt="Galicon Falcon Logo" style="height: 34px; width: 34px; border-radius: 6px;">
+        <span>GALICON</span>
+        <span class="logo-badge">Global</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="subscription.html" style="color: #10b981; font-weight: 800;"><i class="fa-solid fa-bolt"></i> Sprint Pass</a></li>
+        <li><a href="event-management.html">Events & Weddings</a></li>
+        <li><a href="digital-marketing.html">Performance Growth</a></li>
+        <li><a href="web-development.html">Web & AI Apps</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="subscription.html" class="btn btn-secondary btn-sm" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+          <i class="fa-solid fa-bolt"></i> $1,499/mo Pass
+        </a>
+        <button onclick="openCheckout('Galicon Priority Retainer', 425000)" class="btn btn-secondary btn-sm" style="color: var(--primary-indigo);">
+          <i class="fa-solid fa-coins" style="color: #f59e0b;"></i> Binance & Card Pay
+        </button>
+        <a href="#funnel" class="btn btn-primary btn-sm">
+          <span>Book Session</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="container">
-      <span class="hero-badge"><i class="fas fa-crown me-2"></i>#1 BUSINESS & TECH GROWTH PLATFORM</span>
-      <h1 class="hero-title">
-        We Engineer High-Converting Digital Infrastructure,<br>
-        <span class="hero-gradient-text">Scalable Ad Funnels & Elite Corporate Summits.</span>
+      <div class="pill-badge">
+        <i class="fa-solid fa-bolt"></i> Elite India-Based Global Delivery Hub
+      </div>
+      <h1 id="i18n-hero-title">
+        World-Class Engineering, Growth & <br>
+        <span class="gradient-text">Luxury Bangalore Events</span>
       </h1>
-      <p class="hero-subtitle">
-        From ₹2,999 emergency code sprints and turnkey 5-day websites to multi-crore ad engines and 4K curved LED staging — engineered for Pan-India dominance and global scale.
+      <p class="lead" id="i18n-hero-lead">
+        Galicon delivers high-production corporate summits, luxury Bangalore palace weddings, sub-50ms web & AI software, and high-ROAS marketing funnels across India, US, UK, and the Gulf.
       </p>
 
-      <!-- Trust Badges -->
-      <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
-        <span class="trust-chip"><i class="fas fa-shield-alt text-success"></i> 100% Pan-India Remote Delivery</span>
-        <span class="trust-chip"><i class="fas fa-file-invoice text-warning"></i> GST Invoicing & Escrow Protection</span>
-        <span class="trust-chip"><i class="fas fa-bolt text-primary"></i> 24–48 Hr Sprint SLA</span>
-        <span class="trust-chip"><i class="fas fa-headset text-info"></i> Dedicated Senior Sales & Technical Assistance</span>
+      <div class="hero-cta-group">
+        <a href="subscription.html" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Unlimited Dev Subscription ($1,499/mo)</span>
+        </a>
+        <a href="#smart-wizard" class="btn btn-secondary btn-lg">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>30s Plan Wizard</span>
+        </a>
+        <a href="#wedding-decor-gallery" class="btn btn-gold btn-lg">
+          <i class="fa-solid fa-gem"></i>
+          <span>Bangalore Weddings</span>
+        </a>
       </div>
 
-      <!-- Stripe Action Buttons -->
-      <div class="d-flex gap-2 gap-sm-3 justify-content-center flex-wrap">
-        <a href="audit/index.html" class="btn btn-indigo py-3 px-4 fw-bold">
-          <i class="fas fa-bolt me-2"></i>Run Free 60-Sec Audit ➔
-        </a>
-        <a href="calculator.html" class="btn btn-frosted py-3 px-4">
-          <i class="fas fa-calculator me-2 text-warning"></i>Instant Estimator
-        </a>
-        <a href="meet.html" class="btn btn-frosted py-3 px-4" style="border-color:rgba(99,91,255,0.4); color:#635BFF !important;">
-          <i class="fas fa-headset me-2 text-primary"></i>Talk to Sales Specialist ➔
-        </a>
+      <!-- Trust Metrics -->
+      <div class="trust-proof">
+        <div class="trust-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span><strong>120+</strong> Corporate Summits & Bangalore Weddings</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span><strong>4.8x</strong> Average Client Marketing ROAS</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span><strong>100%</strong> Escrow & IP Ownership Handover</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-coins" style="color: #f59e0b;"></i>
+          <span><strong>Binance Pay & Stripe</strong> Instant Escrow Settlement</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MARQUEE CLIENTS & ECOSYSTEM -->
-  <section class="marquee-container">
-    <div class="marquee-track">
-      <span class="marquee-logo">INFOSYS BANGALORE</span>
-      <span class="marquee-logo">EMAAR PROPERTIES</span>
-      <span class="marquee-logo">RAZORPAY SOFTWARE</span>
-      <span class="marquee-logo">SWIGGY INDIA</span>
-      <span class="marquee-logo">NEOM PROJECT</span>
-      <span class="marquee-logo">GRAB SINGAPORE</span>
-      <span class="marquee-logo">SAVILLS LONDON</span>
-      <span class="marquee-logo">META PREMIER PARTNER</span>
-      <span class="marquee-logo">GOOGLE ADS PARTNER</span>
-      <!-- Loop -->
-      <span class="marquee-logo">INFOSYS BANGALORE</span>
-      <span class="marquee-logo">EMAAR PROPERTIES</span>
-      <span class="marquee-logo">RAZORPAY SOFTWARE</span>
-      <span class="marquee-logo">SWIGGY INDIA</span>
-      <span class="marquee-logo">NEOM PROJECT</span>
-      <span class="marquee-logo">GRAB SINGAPORE</span>
-      <span class="marquee-logo">SAVILLS LONDON</span>
-      <span class="marquee-logo">META PREMIER PARTNER</span>
-      <span class="marquee-logo">GOOGLE ADS PARTNER</span>
-    </div>
-  </section>
-
-  <!-- 4 MASTER DIVISIONS QUADRANT -->
-  <section class="py-5" style="background:#FFFFFF;">
-    <div class="container py-4">
-      <div class="text-center mb-5">
-        <span class="text-primary small text-uppercase fw-bold letter-spacing-2">Full-Stack Operational Architecture</span>
-        <h2 class="fw-bold mt-1 display-6" style="color:#0A2540;">Our 4 Core Specialized Divisions</h2>
-        <p class="text-muted small mx-auto" style="max-width:680px;">Everything required to validate, engineer, scale, and stage your business under one unified high-speed roof.</p>
+  <!-- FEATURE 1: 3-Question Smart Plan Wizard -->
+  <section id="smart-wizard" class="container" style="padding: 40px 24px 60px;">
+    <div class="wizard-box">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <span class="section-tag">Interactive Recommendation Engine</span>
+        <h2 class="section-title">Find Your Custom Execution Blueprint</h2>
+        <p class="section-desc">Answer 3 quick questions to receive a tailored roadmap & budget breakdown.</p>
       </div>
 
-      <div class="row g-4">
+      <div id="wizard-step-1">
+        <h3 style="font-size: 17px; font-weight: 800; margin-bottom: 16px; color: var(--text-pure);">1. What is your primary objective?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+          <div class="wizard-option-card wizard-goal-card selected" onclick="selectWizardGoal('wedding', this)">
+            <i class="fa-solid fa-gem" style="color: var(--accent-gold); font-size: 20px;"></i>
+            <span>Bangalore Luxury Wedding</span>
+          </div>
+          <div class="wizard-option-card wizard-goal-card" onclick="selectWizardGoal('saas', this)">
+            <i class="fa-solid fa-code" style="color: var(--primary-indigo); font-size: 20px;"></i>
+            <span>Custom Web App / SaaS MVP</span>
+          </div>
+          <div class="wizard-option-card wizard-goal-card" onclick="selectWizardGoal('ads', this)">
+            <i class="fa-solid fa-chart-line" style="color: var(--accent-green); font-size: 20px;"></i>
+            <span>Scale B2B Paid Ads & SEO</span>
+          </div>
+          <div class="wizard-option-card wizard-goal-card" onclick="selectWizardGoal('summit', this)">
+            <i class="fa-solid fa-champagne-glasses" style="color: var(--primary-cyan); font-size: 20px;"></i>
+            <span>Corporate Summit / Expo</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="wizard-step-2" style="display: none;">
+        <h3 style="font-size: 17px; font-weight: 800; margin-bottom: 16px; color: var(--text-pure);">2. What is your target execution timeline?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+          <div class="wizard-option-card wizard-timeline-card selected" onclick="selectWizardTimeline('immediate', this)">
+            <i class="fa-solid fa-bolt" style="color: var(--primary-indigo);"></i>
+            <span>Immediate / Within 30 Days</span>
+          </div>
+          <div class="wizard-option-card wizard-timeline-card" onclick="selectWizardTimeline('quarter', this)">
+            <i class="fa-solid fa-calendar-days" style="color: var(--accent-green);"></i>
+            <span>Next 1-3 Months</span>
+          </div>
+          <div class="wizard-option-card wizard-timeline-card" onclick="selectWizardTimeline('future', this)">
+            <i class="fa-solid fa-hourglass-half" style="color: var(--accent-gold);"></i>
+            <span>3-6 Months Planning Window</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="wizard-step-3" style="display: none;">
+        <h3 style="font-size: 17px; font-weight: 800; margin-bottom: 16px; color: var(--text-pure);">3. What is your estimated project scale?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+          <div class="wizard-option-card wizard-scale-card" onclick="selectWizardScale('growth', this)">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Growth Essentials Tier</span>
+          </div>
+          <div class="wizard-option-card wizard-scale-card" onclick="selectWizardScale('enterprise', this)">
+            <i class="fa-solid fa-building"></i>
+            <span>Enterprise Scale Tier</span>
+          </div>
+          <div class="wizard-option-card wizard-scale-card" onclick="selectWizardScale('palatial', this)">
+            <i class="fa-solid fa-crown"></i>
+            <span>Mega / Palatial Turnkey Tier</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="wizard-result" style="display: none; background: var(--bg-elevated); padding: 24px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-top: 20px;">
+        <span class="section-tag" style="color: var(--accent-green);">Tailored Recommendation</span>
+        <h4 id="wizard-result-title" style="font-size: 22px; font-weight: 900; margin: 6px 0 10px; color: var(--text-pure);">Bangalore Heritage Luxury Wedding Blueprint</h4>
+        <div id="wizard-result-cost" style="font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--primary-indigo); margin-bottom: 14px;">$11,400 Estimated</div>
         
-        <!-- 1. TECHNOLOGY -->
-        <div class="col-lg-3 col-md-6">
-          <div class="div-card">
-            <div>
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <i class="fas fa-microchip text-primary fs-4"></i>
-                <h4 class="fw-bold mb-0" style="color:#0A2540;">Technology & AI</h4>
-              </div>
-              <span class="badge bg-primary text-white mb-3 fw-bold">Web • Apps • Python • AI</span>
-              <p class="small">High-speed websites, Android/iOS mobile apps, 24-hr bug fixes, Python scrapers, and custom ChatGPT integrations.</p>
-              
-              <div class="div-price-chip">
-                <div class="h6 text-primary fw-bold mb-0">₹2,999 – ₹65,000+</div>
-                <div class="text-muted small">$40 – $850 USD (Accessible Sprints)</div>
-              </div>
+        <ul id="wizard-result-features" style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--text-slate); margin-bottom: 20px;">
+        </ul>
 
-              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
-                <li><i class="fas fa-check text-primary me-2"></i>Emergency Bug Fix (24-Hr SLA)</li>
-                <li><i class="fas fa-check text-primary me-2"></i>5-Day Turnkey Website Launch</li>
-                <li><i class="fas fa-check text-primary me-2"></i>WhatsApp AI Sales & Support Bot</li>
-                <li><i class="fas fa-check text-primary me-2"></i>Python Automation & Web Scraping</li>
-              </ul>
-            </div>
-            <a href="technology/index.html" class="btn btn-outline-primary w-100 fw-bold mt-3" style="border-radius:30px;">Explore Tech Hub ➔</a>
-          </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button onclick="openCheckout(document.getElementById('wizard-result-title').textContent, 950000)" class="btn btn-primary">
+            <i class="fa-solid fa-lock"></i> Lock With 40% Escrow Deposit
+          </button>
+          <a href="#funnel" class="btn btn-secondary">
+            Schedule Briefing <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button onclick="resetWizard()" class="btn btn-secondary" style="border: none;">
+            <i class="fa-solid fa-rotate-left"></i> Reset
+          </button>
         </div>
-
-        <!-- 2. GROWTH -->
-        <div class="col-lg-3 col-md-6">
-          <div class="div-card">
-            <div>
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <i class="fas fa-chart-line text-success fs-4"></i>
-                <h4 class="fw-bold mb-0" style="color:#0A2540;">Growth & Ads</h4>
-              </div>
-              <span class="badge bg-success text-white mb-3 fw-bold">Performance • Ads • Funnels</span>
-              <p class="small">High-converting paid acquisition funnels on Meta & Google Ads with isolated media spend and transparent fees.</p>
-              
-              <div class="div-price-chip">
-                <div class="h6 text-success fw-bold mb-0">₹18,000 – ₹60,000/mo</div>
-                <div class="text-muted small">$250 – $900 USD (Management Retainer)</div>
-              </div>
-
-              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
-                <li><i class="fas fa-check text-success me-2"></i>High-ROAS Meta & Google Ad Buying</li>
-                <li><i class="fas fa-check text-success me-2"></i>Landing page CRO & A/B testing</li>
-                <li><i class="fas fa-check text-success me-2"></i>WhatsApp CRM Lead Automation</li>
-                <li><i class="fas fa-check text-success me-2"></i>Weekly media spend & KPI reviews</li>
-              </ul>
-            </div>
-            <a href="growth/index.html" class="btn btn-outline-success w-100 fw-bold mt-3" style="border-radius:30px;">Explore Growth Hub ➔</a>
-          </div>
-        </div>
-
-        <!-- 3. BUSINESS -->
-        <div class="col-lg-3 col-md-6">
-          <div class="div-card">
-            <div>
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <i class="fas fa-chess text-warning fs-4"></i>
-                <h4 class="fw-bold mb-0" style="color:#0A2540;">Business Advisory</h4>
-              </div>
-              <span class="badge bg-warning text-dark mb-3 fw-bold">Strategy • GTM • SOPs</span>
-              <p class="small">Comprehensive business diagnostics, 90-day GTM roadmaps, unit economic restructuring, and cross-border expansion.</p>
-              
-              <div class="div-price-chip">
-                <div class="h6 text-warning fw-bold mb-0">₹4,999 – ₹49,999</div>
-                <div class="text-muted small">$75 – $700 USD (Outcome Based)</div>
-              </div>
-
-              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
-                <li><i class="fas fa-check text-warning me-2"></i>360° Business Diagnostic Audit</li>
-                <li><i class="fas fa-check text-warning me-2"></i>GTM Roadmap & ICP Matrix</li>
-                <li><i class="fas fa-check text-warning me-2"></i>Margin & Pricing Optimization</li>
-                <li><i class="fas fa-check text-warning me-2"></i>1-on-1 Founder Strategic Review</li>
-              </ul>
-            </div>
-            <a href="business/index.html" class="btn btn-outline-warning w-100 fw-bold mt-3" style="border-radius:30px;">Explore Business Hub ➔</a>
-          </div>
-        </div>
-
-        <!-- 4. EXPERIENCES -->
-        <div class="col-lg-3 col-md-6">
-          <div class="div-card">
-            <div>
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <i class="fas fa-microphone-alt text-danger fs-4"></i>
-                <h4 class="fw-bold mb-0" style="color:#0A2540;">Experiences</h4>
-              </div>
-              <span class="badge bg-danger text-white mb-3 fw-bold">Summits • 4K LED • Staging</span>
-              <p class="small">Turnkey corporate event management in Bangalore & Pan-India with curved LED walls, line-array audio, and VIP hospitality.</p>
-              
-              <div class="div-price-chip">
-                <div class="h6 text-danger fw-bold mb-0">₹75,000 – ₹4,50,000+</div>
-                <div class="text-muted small">Turnkey 15–25% Management Model</div>
-              </div>
-
-              <ul class="list-unstyled small mt-3" style="line-height:1.9;">
-                <li><i class="fas fa-check text-danger me-2"></i>Curved 4K P2.6/P3.9 LED Backdrop</li>
-                <li><i class="fas fa-check text-danger me-2"></i>JBL/d&b Line-Array Sound & Lighting</li>
-                <li><i class="fas fa-check text-danger me-2"></i>Multi-Cam 4K Live Broadcast</li>
-                <li><i class="fas fa-check text-danger me-2"></i>Bangalore 5-Star Hotel Coordination</li>
-              </ul>
-            </div>
-            <a href="experiences/index.html" class="btn btn-outline-danger w-100 fw-bold mt-3" style="border-radius:30px;">Explore Event Hub ➔</a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- LIVE PROOF & CASE STUDIES METRICS -->
-  <section class="py-5" style="background:#F6F9FC; border-top:1px solid #E6EBF1; border-bottom:1px solid #E6EBF1;">
-    <div class="container py-3">
-      <div class="text-center mb-5">
-        <span class="text-primary small text-uppercase fw-bold letter-spacing-2">Proven Client Impact</span>
-        <h2 class="fw-bold mt-1 display-6" style="color:#0A2540;">Measurable Outcomes Delivered</h2>
-        <p class="text-muted small">Real performance metrics generated across our growth funnels and tech builds.</p>
-      </div>
+  <!-- Interactive Instant Quote Estimator -->
+  <section id="calculator" class="container">
+    <div class="calculator-box">
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <span class="section-tag">Transparent Estimator</span>
+          <h3>Configure Your Custom Scope</h3>
 
-      <div class="row g-4">
-        <div class="col-md-3 col-sm-6">
-          <div class="case-card text-center">
-            <div class="case-metric">4.8x</div>
-            <div class="fw-bold mt-2" style="color:#0A2540;">Verified ROAS</div>
-            <div class="text-muted small">Dubai Luxury Real Estate Lead Funnel</div>
+          <div class="form-group">
+            <label>1. Select Primary Practice Sector:</label>
+            <div class="pill-selector">
+              <div class="pill-option calc-pill-service active" data-service="weddings">
+                <i class="fa-solid fa-gem"></i> Bangalore Weddings
+              </div>
+              <div class="pill-option calc-pill-service" data-service="events">
+                <i class="fa-solid fa-champagne-glasses"></i> Corporate Events
+              </div>
+              <div class="pill-option calc-pill-service" data-service="marketing">
+                <i class="fa-solid fa-chart-line"></i> Performance Growth
+              </div>
+              <div class="pill-option calc-pill-service" data-service="webdev">
+                <i class="fa-solid fa-code"></i> Web & App Dev
+              </div>
+              <div class="pill-option calc-pill-service" data-service="consulting">
+                <i class="fa-solid fa-chess-knight"></i> Advisory
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>2. Select Scale Tier:</label>
+            <div class="pill-selector">
+              <div class="pill-option calc-pill-tier" data-tier="low">
+                Growth Essentials
+              </div>
+              <div class="pill-option calc-pill-tier active" data-tier="mid">
+                Enterprise Recommended
+              </div>
+              <div class="pill-option calc-pill-tier" data-tier="high">
+                Mega / Palatial Scale
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>3. Delivery Priority:</label>
+            <div class="pill-selector">
+              <div class="pill-option calc-pill-speed active" data-speed="normal">
+                Standard Timeline (Guaranteed SLA)
+              </div>
+              <div class="pill-option calc-pill-speed" data-speed="rush">
+                Priority Sprint (+25%)
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="case-card text-center">
-            <div class="case-metric">100/100</div>
-            <div class="fw-bold mt-2" style="color:#0A2540;">Core Web Vitals</div>
-            <div class="text-muted small">Sub-50ms Global Edge CDN Speed</div>
+
+        <div class="calc-summary">
+          <div>
+            <h4>Estimated Investment</h4>
+            <div class="calc-total-price" id="calc-price-display" data-inr-raw="950000">$11,400</div>
+            <div style="font-weight: 700; color: var(--text-pure); font-size: 15px;" id="calc-tier-name">
+              Grand Heritage & Luxury Palace Wedding (Bangalore)
+            </div>
+
+            <ul class="calc-breakdown" id="calc-deliverables-list">
+              <li><i class="fa-solid fa-circle-check"></i> Multi-Day Sangeet, Mehendi & Reception Decor</li>
+              <li><i class="fa-solid fa-circle-check"></i> 3D Thematic Visual Sets & Aerial Drones</li>
+              <li><i class="fa-solid fa-circle-check"></i> Celebrity / Classical Artist Management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Luxury Bridal Concierge & VIP Logistics</li>
+            </ul>
           </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="case-card text-center">
-            <div class="case-metric">&lt; 24 Hrs</div>
-            <div class="fw-bold mt-2" style="color:#0A2540;">Emergency Bug SLA</div>
-            <div class="text-muted small">Critical Production Fixes with SLA</div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="case-card text-center">
-            <div class="case-metric">400+</div>
-            <div class="fw-bold mt-2" style="color:#0A2540;">Summit Attendees</div>
-            <div class="text-muted small">Infosys Bangalore Corporate Conclave</div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+            <button onclick="openCheckout()" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-lock"></i> Pay 40% Kickoff Deposit & Lock Scope
+            </button>
+            <div style="display: flex; gap: 10px;">
+              <button onclick="window.print()" class="btn btn-secondary" style="flex: 1;" title="Print or Save PDF Blueprint">
+                <i class="fa-solid fa-file-pdf"></i> Save PDF
+              </button>
+              <a href="#funnel" class="btn btn-secondary" style="flex: 1;">
+                Book Briefing <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS BAR SECTION -->
-  <section class="stats-bar-section" style="background:#FFFFFF;">
-    <div class="container-fluid px-3 px-lg-5">
-      <div class="row text-center py-4 py-md-5" style="border-top:1px solid #E6EBF1; border-bottom:1px solid #E6EBF1;">
-        <div class="col-6 col-md-3 mb-4 mb-md-0 px-2">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Events Managed</div>
-          <div class="stat-sub">Bangalore & Pan-India</div>
-        </div>
-        <div class="col-6 col-md-3 mb-4 mb-md-0 px-2">
-          <div class="stat-number">₹2.5Cr+</div>
-          <div class="stat-label">Client Revenue Generated</div>
-          <div class="stat-sub">Through our growth funnels</div>
-        </div>
-        <div class="col-6 col-md-3 mb-4 mb-md-0 px-2">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Countries Active</div>
-          <div class="stat-sub">India 🇮🇳 & Saudi Arabia 🇸🇦</div>
-        </div>
-        <div class="col-6 col-md-3 px-2">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Direct Governance</div>
-          <div class="stat-sub">Senior Client Specialists</div>
-        </div>
-      </div>
+  <!-- Multi-Step Qualification Funnel -->
+  <section id="funnel" class="container" style="padding: 60px 24px 90px;">
+    <div class="section-header">
+      <span class="section-tag">Direct Executive Consultation</span>
+      <h2 class="section-title">Schedule With The Galicon Client Advisory Desk</h2>
+      <p class="section-desc">
+        Submit your specifications below. Our Senior Advisory Partner will review and schedule an executive briefing.
+      </p>
     </div>
-  </section>
 
-  <!-- TESTIMONIALS SECTION -->
-  <section class="testimonials-section" style="padding:80px 0; background:#F6F9FC; border-bottom:1px solid #E6EBF1;">
-    <div class="container-fluid px-lg-5">
-      <div class="text-center mb-5">
-        <span style="font-size:0.8rem; font-weight:800; letter-spacing:3px; color:#635BFF; text-transform:uppercase;">what clients say</span>
-        <h2 class="fw-bold mt-1" style="color:#0A2540;">Trusted by Enterprise Leaders</h2>
+    <div class="calculator-box" style="max-width: 760px; margin: 0 auto; padding: 40px;">
+      <div class="pill-selector" style="justify-content: center; margin-bottom: 30px;">
+        <div class="progress-step active" id="prog-1" style="font-weight: 700;">1. Requirements</div>
+        <div class="progress-step" id="prog-2" style="font-weight: 700; opacity: 0.5;">2. Scale & Budget</div>
+        <div class="progress-step" id="prog-3" style="font-weight: 700; opacity: 0.5;">3. Confirmation</div>
       </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="case-card" style="padding:32px; height:100%;">
-            <p style="font-size:0.95rem; line-height:1.7; margin-bottom:24px;">&ldquo;Ismail and the GALICON team delivered our annual tech summit flawlessly — 400 attendees, zero glitches. The curved 4K LED stage setup and AV quality was world-class.&rdquo;</p>
-            <div style="font-weight:800; color:#0A2540;">Arjun Mehta</div>
-            <div style="font-size:0.82rem; color:#697386;">Head of Corporate Events, Infosys Bangalore</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="case-card" style="padding:32px; height:100%;">
-            <p style="font-size:0.95rem; line-height:1.7; margin-bottom:24px;">&ldquo;We hired GALICON for our property buyer funnel and the lead quality was exceptional. Pre-qualified high-net-worth buyers delivered directly into our CRM. 4.8x ROAS in month one.&rdquo;</p>
-            <div style="font-weight:800; color:#0A2540;">Khalid Al-Rashidi</div>
-            <div style="font-size:0.82rem; color:#697386;">Marketing Director, Emaar Properties Dubai</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="case-card" style="padding:32px; height:100%;">
-            <p style="font-size:0.95rem; line-height:1.7; margin-bottom:24px;">&ldquo;Direct founder communication made all the difference. Ismail resolved our webhook payment bug in 4 hours and built our full mobile app MVP on schedule.&rdquo;</p>
-            <div style="font-weight:800; color:#0A2540;">Priya Venkataraman</div>
-            <div style="font-size:0.82rem; color:#697386;">Co-Founder, Razorpay Software, Bangalore</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA STRIP -->
-  <section class="py-5 text-center" style="background:linear-gradient(135deg, #0A2540 0%, #133863 100%); color:#FFFFFF;">
-    <div class="container py-4">
-      <h2 class="text-white fw-bold display-6 mb-3">Ready to Scale Your Business With Zero Friction?</h2>
-      <p class="text-white-50 lead mx-auto mb-4" style="max-width:650px;">Lock in your project scope with dedicated Senior Sales Specialists and transparent SLAs.</p>
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="meet.html" class="btn btn-indigo py-3 px-5 fw-bold text-white" style="font-size:1.1rem;">
-          🗓️ Schedule Strategy Consultation ➔
-        </a>
-        <a href="calculator.html" class="btn btn-outline-light py-3 px-4 fw-bold text-white" style="border-radius:30px; border-color:rgba(255,255,255,0.35);">
-          <i class="fas fa-calculator me-2 text-info"></i>Instant Project Estimator
+      <div class="funnel-step-content" id="funnel-step-1">
+        <h3 style="font-size: 18px; margin-bottom: 16px;">What is your primary area of focus?</h3>
+        <div class="pill-selector" style="margin-bottom: 24px;">
+          <div class="pill-option funnel-pill-sector active" data-value="Bangalore Luxury Wedding">
+            <i class="fa-solid fa-gem"></i> Bangalore Luxury Wedding
+          </div>
+          <div class="pill-option funnel-pill-sector" data-value="Corporate Events & Summits">
+            <i class="fa-solid fa-champagne-glasses"></i> Corporate Summit / Expo
+          </div>
+          <div class="pill-option funnel-pill-sector" data-value="Web & App Development">
+            <i class="fa-solid fa-code"></i> Web & AI Application
+          </div>
+          <div class="pill-option funnel-pill-sector" data-value="Performance Marketing">
+            <i class="fa-solid fa-chart-line"></i> Performance Ads & SEO
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="goToStep(2)" style="width: 100%;">
+          Continue to Scale & Details <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="funnel-step-content" id="funnel-step-2" style="display: none;">
+        <h3 style="font-size: 18px; margin-bottom: 16px;">What is your estimated scale?</h3>
+        <div class="form-group">
+          <label>Target Budget Range:</label>
+          <div class="pill-selector">
+            <div class="pill-option funnel-pill-scale active" data-value="Standard Growth Tier">
+              Growth Essentials
+            </div>
+            <div class="pill-option funnel-pill-scale" data-value="Enterprise Scale">
+              Enterprise Scale
+            </div>
+            <div class="pill-option funnel-pill-scale" data-value="Mega Palatial Scale">
+              Mega / Palatial Turnkey
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 24px;">
+          <button class="btn btn-secondary" onclick="goToStep(1)" style="flex: 1;">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </button>
+          <button class="btn btn-primary" onclick="goToStep(3)" style="flex: 2;">
+            Next: Contact Details <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="funnel-step-content" id="funnel-step-3" style="display: none;">
+        <h3 style="font-size: 18px; margin-bottom: 16px;">Where should we transmit your blueprint?</h3>
+        
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="funnel-name" class="input-field" placeholder="e.g. Rahul Sharma / David Miller" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure);" required>
+        </div>
+
+        <div class="form-group">
+          <label>Business / Personal Email *</label>
+          <input type="email" id="funnel-email" class="input-field" placeholder="name@company.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure);" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label>Phone / WhatsApp</label>
+            <input type="text" id="funnel-phone" class="input-field" placeholder="+91 98765 43210" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure);">
+          </div>
+          <div class="form-group">
+            <label>Company / Family Name</label>
+            <input type="text" id="funnel-company" class="input-field" placeholder="Acme Corp / Sharma Family" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure);">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Specific Objectives or Event Dates</label>
+          <textarea id="funnel-notes" class="input-field" rows="2" placeholder="Tell us about your event dates, guest count, or software scope..." style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure);"></textarea>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 24px;">
+          <button class="btn btn-secondary" onclick="goToStep(2)" style="flex: 1;">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </button>
+          <button id="btn-submit-funnel" class="btn btn-primary" onclick="submitFunnel()" style="flex: 2;">
+            Schedule Executive Call <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="funnel-step-content" id="funnel-step-4" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 54px; color: #10b981; margin-bottom: 16px;">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">Executive Request Registered!</h3>
+        <p style="color: var(--text-slate); max-width: 480px; margin: 0 auto 24px; font-size: 15px;">
+          The <strong>Galicon Client Advisory Desk</strong> has analyzed your requirements and dispatched them to the senior partner in charge. You will receive our formal blueprint shortly.
+        </p>
+        <a href="https://calendly.com" target="_blank" class="btn btn-primary">
+          <i class="fa-solid fa-calendar-days"></i> Choose Direct Calendar Slot
         </a>
       </div>
     </div>
   </section>
 
-  <div id="footer-placeholder"></div>
+  <!-- UNIFIED ESCROW CHECKOUT MODAL (BINANCE PAY + STRIPE + RAZORPAY) -->
+  <div class="payment-modal-backdrop" id="payment-modal">
+    <div class="payment-modal-box">
+      <div class="payment-modal-header">
+        <div>
+          <h3 style="font-size: 18px; font-weight: 800; margin: 0; color: var(--text-pure);">
+            <i class="fa-solid fa-shield-halved" style="color: var(--accent-green);"></i> Galicon Secure Escrow Checkout
+          </h3>
+          <p style="font-size: 12px; color: var(--text-muted); margin: 2px 0 0;">Binance Pay (USDT/USDC) • Stripe • Razorpay</p>
+        </div>
+        <button onclick="closeCheckout()" style="background: transparent; border: none; font-size: 22px; cursor: pointer; color: var(--text-muted);">&times;</button>
+      </div>
 
-  <!-- Unified Navbar & Footer Components -->
-  <script src="components/navbar.js"></script>
-  <script src="components/footer.js"></script>
+      <div id="checkout-form-view">
+        <div style="display: flex; gap: 8px; margin-bottom: 18px;">
+          <button type="button" id="milestone-tab-deposit" class="btn btn-secondary btn-sm milestone-tab active" onclick="setMilestonePaymentType('deposit')" style="flex: 1;">
+            40% Kickoff Deposit
+          </button>
+          <button type="button" id="milestone-tab-full" class="btn btn-secondary btn-sm milestone-tab" onclick="setMilestonePaymentType('full')" style="flex: 1;">
+            100% Full Payment
+          </button>
+        </div>
+
+        <div style="background: var(--bg-elevated); padding: 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-bottom: 20px;">
+          <div style="font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Selected Milestone Scope:</div>
+          <div id="checkout-item-title" style="font-weight: 800; font-size: 15px; color: var(--text-pure); margin: 4px 0;">Galicon Project Retainer</div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border-subtle);">
+            <span style="font-size: 13px; font-weight: 600; color: var(--text-slate);">Amount Due Today:</span>
+            <span id="checkout-due-amount" style="font-family: var(--font-display); font-size: 26px; font-weight: 900; color: var(--primary-indigo);">$4,560</span>
+          </div>
+          <div id="checkout-full-amount" style="font-size: 11px; color: var(--text-dim); text-align: right;">Total Scope: $11,400</div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px;">Select Payment Gateway:</label>
+          
+          <!-- Method 1: Binance Pay / USDT -->
+          <div class="payment-method-card active" onclick="selectPaymentMethod('binance', this)">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-coins" style="font-size: 20px; color: #f59e0b;"></i>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-pure);">Binance Pay & USDT / USDC (Instant 0% Fee)</div>
+                <div style="font-size: 11px; color: var(--text-muted);">BEP-20, ERC-20, Polygon, Arbitrum Settlement</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check" style="color: var(--primary-indigo);"></i>
+          </div>
+
+          <!-- Method 2: Stripe / Cards -->
+          <div class="payment-method-card" onclick="selectPaymentMethod('stripe', this)">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-brands fa-stripe" style="font-size: 24px; color: #635bff;"></i>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-pure);">Stripe International (US/UK/Gulf/Global)</div>
+                <div style="font-size: 11px; color: var(--text-muted);">Credit/Debit Cards, Apple Pay, Google Pay</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check" style="color: var(--border-subtle);"></i>
+          </div>
+
+          <!-- Method 3: Razorpay / UPI -->
+          <div class="payment-method-card" onclick="selectPaymentMethod('razorpay', this)">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-wallet" style="font-size: 20px; color: #0088cc;"></i>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-pure);">Razorpay / UPI (India Domestic)</div>
+                <div style="font-size: 11px; color: var(--text-muted);">GPay, PhonePe, NetBanking, Domestic Cards</div>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check" style="color: var(--border-subtle);"></i>
+          </div>
+        </div>
+
+        <!-- Binance Pay Specific Address Box -->
+        <div id="binance-pay-details" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--accent-gold); text-transform: uppercase;">
+              <i class="fa-solid fa-wallet"></i> Binance Escrow Deposit Address:
+            </span>
+            <span id="binance-usdt-amount" style="font-weight: 800; font-size: 13px; color: #10b981;">4,560 USDT</span>
+          </div>
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 6px; font-family: monospace; font-size: 12px; word-break: break-all; color: var(--text-pure); margin-bottom: 8px;">
+            0xd861f0f29146fb9b0acc8d0b80681e6aa334986a
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 11px; color: var(--text-muted);">Networks: BEP-20 (BSC) / ERC-20 / Polygon</span>
+            <button type="button" id="btn-copy-address" onclick="copyBinanceAddress()" class="btn btn-secondary btn-sm" style="padding: 4px 12px; font-size: 11px;">
+              <i class="fa-solid fa-copy"></i> Copy Address
+            </button>
+          </div>
+        </div>
+
+        <form onsubmit="processPayment(event)">
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label style="font-size: 12px;">Billing Name / Entity *</label>
+            <input type="text" id="checkout-name" required placeholder="Full name or Company legal entity" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure); font-size: 13px;">
+          </div>
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label style="font-size: 12px;">Receipt Email *</label>
+            <input type="email" id="checkout-email" required placeholder="billing@company.com" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure); font-size: 13px;">
+          </div>
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label style="font-size: 12px;">Crypto TXN Hash / Ref (Optional)</label>
+            <input type="text" id="checkout-txnhash" placeholder="e.g. 0x8a9b2c... or Binance Pay ID" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-pure); font-size: 13px;">
+          </div>
+
+          <button type="submit" id="btn-confirm-payment" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 15px;">
+            <i class="fa-solid fa-lock"></i> Authorize & Lock Escrow Milestone
+          </button>
+        </form>
+      </div>
+
+      <div id="checkout-success-view" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 56px; color: #10b981; margin-bottom: 16px;">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 style="font-size: 22px; font-weight: 800; color: var(--text-pure); margin-bottom: 6px;">Escrow Milestone Confirmed!</h3>
+        <p style="font-size: 13px; color: var(--text-slate); margin-bottom: 18px;">Your milestone funds are safely locked in escrow and project onboarding has been triggered.</p>
+        
+        <div style="background: var(--bg-elevated); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle); font-family: monospace; font-size: 12px; margin-bottom: 20px; text-align: left;">
+          <div><strong>TXN ID:</strong> <span id="receipt-txn-id">TXN_8928374</span></div>
+          <div><strong>PAID AMOUNT:</strong> <span id="receipt-amount">$4,560</span></div>
+          <div><strong>DESTINATION:</strong> 0xd861f0f29146fb9b...</div>
+          <div><strong>ESCROW STATUS:</strong> <span style="color: #10b981;">VERIFIED & ACTIVE</span></div>
+        </div>
+
+        <button onclick="closeCheckout()" class="btn btn-primary" style="width: 100%;">
+          Return to Dashboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Galicon Client Advisory Desk Chat Button -->
+  <div class="chat-widget-btn" onclick="toggleChat()" title="Galicon Client Advisory Desk">
+    <i class="fa-solid fa-headset"></i>
+  </div>
+
+  <!-- Client Advisory Desk Chat Modal -->
+  <div class="chat-modal" id="chat-modal">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <h4>Galicon Client Advisory Desk</h4>
+        <p>● Senior Client Solutions Advisor (Online)</p>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()">&times;</button>
+    </div>
+
+    <div class="chat-body" id="chat-messages">
+      <div class="chat-bubble bot">
+        Welcome to the <strong>Galicon Client Advisory Desk</strong>.<br><br>
+        How may we assist you today? Ask about our <strong>Galicon Sprint ($1,499/mo Unlimited Dev Subscription)</strong>, <strong>Binance Pay (USDT/USDC)</strong>, or <strong>Bangalore Luxury Weddings</strong>.
+      </div>
+    </div>
+
+    <form class="chat-input-area" onsubmit="handleChatSubmit(event)">
+      <input type="text" id="chat-user-input" class="chat-input" placeholder="Type your inquiry or requirements..." autocomplete="off">
+      <button type="submit" class="chat-send-btn">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-logo" style="margin-bottom: 14px;">
+          <span>GALICON</span>
+          <span class="logo-badge">Global</span>
+        </a>
+        <p style="color: var(--text-slate); font-size: 14px; margin-top: 10px; max-width: 320px;">
+          Unified full-service enterprise execution engine. Unlimited dev subscriptions, luxury Bangalore weddings, corporate summits, and performance growth.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice Sectors</h4>
+        <ul class="footer-links">
+          <li><a href="subscription.html" style="color: #10b981; font-weight: bold;">⚡ Unlimited Dev Subscription</a></li>
+          <li><a href="event-management.html#wedding-section">Bangalore Luxury Weddings</a></li>
+          <li><a href="event-management.html">Corporate Summits & Expos</a></li>
+          <li><a href="digital-marketing.html">Performance Growth & SEO</a></li>
+          <li><a href="web-development.html">Web & AI Software Dev</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Client Tools</h4>
+        <ul class="footer-links">
+          <li><a href="subscription.html">Galicon Sprint Pass</a></li>
+          <li><a href="#smart-wizard">Smart Plan Wizard (30s)</a></li>
+          <li><a href="#wedding-decor-gallery">Bangalore Decor Gallery</a></li>
+          <li><a href="#case-studies">Enterprise Case Studies</a></li>
+          <li><a href="http://localhost:8080/dashboard" target="_blank">Antigravity AI Live Hub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Priority Helpline</h4>
+        <p style="color: var(--text-slate); font-size: 14px; margin-bottom: 8px;">
+          <i class="fa-solid fa-phone" style="color: var(--primary-indigo); margin-right: 8px;"></i>
+          +91 70158 44885 (Bangalore HQ)
+        </p>
+        <p style="color: var(--text-slate); font-size: 14px; margin-bottom: 8px;">
+          <i class="fa-solid fa-envelope" style="color: var(--primary-indigo); margin-right: 8px;"></i>
+          advisory@galicon.com
+        </p>
+        <p style="color: var(--text-slate); font-size: 13px; margin-top: 10px;">
+          <i class="fa-solid fa-location-dot" style="color: var(--accent-gold); margin-right: 6px;"></i>
+          Bangalore, Karnataka, India
+        </p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      &copy; 2026 Galicon Global Group. All rights reserved. Powered by Antigravity Autonomous Core.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Unified Global Engines -->
+  <script src="checkout_modal.js"></script>
+  <script src="chatbot.js" defer></script>
 </body>
 </html>
