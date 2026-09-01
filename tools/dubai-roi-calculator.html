@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dubai Real Estate ROI & Rental Yield Calculator 2026 | GALICON</title>
+  <meta name="description" content="Calculate net rental yields, Golden Visa eligibility, capital appreciation, and short-term Airbnb returns for Dubai luxury properties (Downtown, Marina, Palm).">
+  <link rel="canonical" href="https://ismailkazia302-bot.github.io/samrat-global/tools/dubai-roi-calculator.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ismailkazia302-bot.github.io/samrat-global/tools/dubai-roi-calculator.html">
+  <meta property="og:title" content="Dubai Real Estate ROI & Rental Yield Calculator 2026">
+  <meta property="og:description" content="Instant ROI & Yield calculations for Dubai off-plan and luxury secondary property investments.">
+  <meta property="og:image" content="https://ismailkazia302-bot.github.io/samrat-global/assets/logo.png">
+
+  <!-- Schema.org SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GALICON Dubai Real Estate ROI Calculator",
+    "url": "https://ismailkazia302-bot.github.io/samrat-global/tools/dubai-roi-calculator.html",
+    "applicationCategory": "FinancialApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AED"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #06090E;
+      color: #F1F5F9;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+    .tool-header {
+      background: linear-gradient(180deg, rgba(234, 179, 8, 0.15) 0%, rgba(6, 9, 14, 0) 100%);
+      padding: 60px 0 30px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .brand-badge {
+      background: rgba(234, 179, 8, 0.15);
+      border: 1px solid #EAB308;
+      color: #EAB308;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .tool-card {
+      background: #0D1117;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      margin-bottom: 30px;
+    }
+    .calc-input {
+      background: #161B22;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFF;
+      padding: 12px 16px;
+      border-radius: 10px;
+      width: 100%;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .calc-input:focus {
+      border-color: #EAB308;
+      box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+    }
+    .result-box {
+      background: linear-gradient(135deg, #1C1905 0%, #0D1117 100%);
+      border: 2px solid #EAB308;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+    .cost-display {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #EAB308;
+    }
+    .btn-action-gold {
+      background: #EAB308;
+      color: #000;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      border: none;
+      width: 100%;
+    }
+    .btn-action-gold:hover { background: #FDE047; box-shadow: 0 0 25px rgba(234, 179, 8, 0.4); color: #000; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="tool-header">
+    <div class="container">
+      <a href="../index.html" style="text-decoration:none; color:#FFF; font-weight:900; font-size:1.3rem; letter-spacing:2px;">
+        👑 GALICON <span style="color:#EAB308">GLOBAL</span>
+      </a>
+      <div class="mt-3">
+        <span class="brand-badge">🇦🇪 DUBAI LUXURY REAL ESTATE</span>
+      </div>
+      <h1 class="fw-bold mt-2 display-6">Dubai Real Estate ROI & Yield Calculator</h1>
+      <p class="text-secondary max-w-600 mx-auto">
+        Forecast net rental yields, Golden Visa eligibility (AED 2M+), service charges, and 5-year capital appreciation.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Calculator -->
+  <main class="container my-5">
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-7">
+        <div class="tool-card">
+          <h4 class="fw-bold mb-4 text-white"><i class="fa-solid fa-building me-2 text-warning"></i> Property Parameters</h4>
+          
+          <div class="mb-3">
+            <label class="form-label text-secondary fw-bold">Purchase Price (AED)</label>
+            <input type="number" id="propPrice" class="calc-input" value="2500000" step="50000" oninput="calcRoi()">
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label text-secondary fw-bold">Location Tier</label>
+              <select id="locTier" class="calc-input" onchange="calcRoi()">
+                <option value="prime" selected>Downtown / Palm Jumeirah / DIFC (8.2% Yield)</option>
+                <option value="growth">Dubai Marina / Business Bay / Hills (8.8% Yield)</option>
+                <option value="emerging">JVC / Arjan / Creek Harbour (9.4% Yield)</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-secondary fw-bold">Rental Strategy</label>
+              <select id="rentStrat" class="calc-input" onchange="calcRoi()">
+                <option value="long">Long-Term Annual Lease (Ejari)</option>
+                <option value="short" selected>Short-Term Holiday Home (Airbnb +25%)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-secondary fw-bold">Annual Service Charges (AED / sq.ft)</label>
+            <input type="number" id="serviceCharge" class="calc-input" value="18" oninput="calcRoi()">
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Summary Column -->
+      <div class="col-lg-5">
+        <div class="tool-card">
+          <div class="result-box mb-4">
+            <div class="text-secondary small text-uppercase fw-bold">Estimated Net Rental Yield</div>
+            <div class="cost-display" id="netYield">9.1%</div>
+            <div class="text-white fw-bold mt-1" id="annualIncome">AED 227,500 / year</div>
+          </div>
+
+          <div class="p-3 bg-black rounded border border-secondary mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-secondary small">Golden Visa (AED 2M+):</span>
+              <span class="fw-bold text-success" id="visaStatus">✓ ELIGIBLE (10 Years)</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-secondary small">5-Yr Projected Growth:</span>
+              <span class="fw-bold text-warning">+34.5% (AED 862,500)</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-secondary small">DLD 4% One-Time Fee:</span>
+              <span class="fw-bold text-white" id="dldFee">AED 100,000</span>
+            </div>
+          </div>
+
+          <a href="../meet.html" class="btn-action-gold text-center">
+            🚀 Launch High-Converting Buyer Acquisition Ads ➔
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function calcRoi() {
+      const price = parseFloat(document.getElementById('propPrice').value) || 2500000;
+      const loc = document.getElementById('locTier').value;
+      const strat = document.getElementById('rentStrat').value;
+
+      let baseYield = 0.082;
+      if (loc === 'growth') baseYield = 0.088;
+      if (loc === 'emerging') baseYield = 0.094;
+      if (strat === 'short') baseYield *= 1.25;
+
+      const grossRent = price * baseYield;
+      const netRent = grossRent * 0.88; // after service charges & management
+      const netYieldPct = (netRent / price) * 100;
+
+      document.getElementById('netYield').textContent = netYieldPct.toFixed(1) + '%';
+      document.getElementById('annualIncome').textContent = 'AED ' + Math.round(netRent).toLocaleString('en-US') + ' / year';
+      document.getElementById('dldFee').textContent = 'AED ' + Math.round(price * 0.04).toLocaleString('en-US');
+
+      const visa = document.getElementById('visaStatus');
+      if (price >= 2000000) {
+        visa.textContent = '✓ ELIGIBLE (10 Years)';
+        visa.className = 'fw-bold text-success';
+      } else {
+        visa.textContent = '✗ Requires AED 2M+';
+        visa.className = 'fw-bold text-secondary';
+      }
+    }
+
+    calcRoi();
+  </script>
+
+  <!-- Global AI Concierge & Checkout -->
+  <script src="../checkout_modal.js"></script>
+  <script src="../chatbot.js" defer></script>
+</body>
+</html>
