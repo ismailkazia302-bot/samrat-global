@@ -423,7 +423,7 @@
           </div>
 
           <div class="checkout-footer-note">
-            🔒 256-bit SSL Encrypted • Direct Founder Guarantee • Instant Invoice Delivery
+            🔒 256-bit SSL Encrypted • Enterprise SLA Guarantee • Instant Invoice Delivery
           </div>
         </div>
       </div>

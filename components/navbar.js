@@ -299,6 +299,7 @@
           <li class="nav-item"><a class="nav-link" href="${prefix}experiences/index.html" onclick="window.galiconCloseNav()">EXPERIENCES</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}audit/index.html" onclick="window.galiconCloseNav()" style="color:#0088CC !important;"><i class="fas fa-bolt me-1" style="color:#0088CC;"></i>FREE AUDIT</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}calculator.html" onclick="window.galiconCloseNav()"><i class="fas fa-calculator me-1" style="color:#635BFF;"></i>ESTIMATOR</a></li>
+          <li class="nav-item"><a class="nav-link" href="${prefix}funnel.html" onclick="window.galiconCloseNav()" style="color:#059669 !important;"><i class="fas fa-filter me-1" style="color:#059669;"></i>FUNNEL (30s)</a></li>
           <li class="nav-item"><a class="nav-link" href="${prefix}products.html" onclick="window.galiconCloseNav()" style="color:#E11D48 !important;"><i class="fas fa-shopping-bag me-1"></i>STORE</a></li>
           <li class="nav-item ms-lg-3">
             <a class="stripe-btn-cta" href="${prefix}meet.html" onclick="window.galiconCloseNav()">
